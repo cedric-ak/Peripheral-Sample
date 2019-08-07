@@ -18,7 +18,7 @@ void MCP23008_Init(uint8_t portDirection);
 void MCP23008_Write(uint8_t data);
 
 
-void MCP23008_Init(uint8_t portDirection){
+void MCP23008_Init(uint8_t portDirection){   //Simular to TRIS register in MCU
     I2C_start();
     I2C_Write(MCP23008_WriteAddress);  //device address
     I2C_Write(0x00);  //GPIO Direction control bit (IODIR Register)

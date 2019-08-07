@@ -76,7 +76,7 @@ void main(void)
     SYSTEM_Initialize();
     interrupt_Init();
     //I2C_Init(400);    //I2C clock frequency at 400KHz
-    chipErase();
+    chipErase();        //25LC512 EEPROM
     
     while (true) {
         EEPROM_25LC512_loop();

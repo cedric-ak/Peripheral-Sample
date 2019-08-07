@@ -46,10 +46,10 @@ double MCP9801_get_temp(void) {
     while (!SSP2STATbits.BF);
     ADC.MSB_LSB[0] = SSP2BUF;  //MSB Data
     __delay_ms(240);
-    while(SSP2CON2bits.ACKSTAT)  //if acknowledge not received stop 
-    ADC.MSB_LSB[1] = SSP2BUF;  //LSB Data
-    SSP2CON2bits.ACKDT = 1;    //NACK acknowledge
-    SSP2CON2bits.ACKEN = 1;
+    while(SSP2CON2bits.ACKSTAT) //if acknowledge not received stop 
+    ADC.MSB_LSB[1] = SSP2BUF;   //LSB Data
+    SSP2CON2bits.ACKDT = 1;     //NACK acknowledge
+    SSP2CON2bits.ACKEN = 1;     //send a NACK
     while(SSP2CON2bits.ACKEN);
     I2C_stop();
     __delay_ms(240);

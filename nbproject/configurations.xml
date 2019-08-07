@@ -39,6 +39,8 @@
       <itemPath>I2C.c</itemPath>
       <itemPath>MCP23008_IO_expender.c</itemPath>
       <itemPath>MCP9801_Temp_Sensor.c</itemPath>
+      <itemPath>DS1307_RTC.c</itemPath>
+      <itemPath>_24AA512_EEPROM.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
