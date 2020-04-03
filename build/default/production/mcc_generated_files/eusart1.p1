@@ -7283,7 +7283,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _txData `uc ~T0 @X0 1 r1 ]
 "136
 [f ]
-[; ;eusart1.c: 138: while(0 == PIR1bits.TX1IF)
+[; ;eusart1.c: 138: while(!PIR1bits.TX1IF)
 "138
 [e $U 846  ]
 [e :U 847 ]
@@ -7294,7 +7294,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 [e :U 846 ]
 "138
-[e $ == -> 0 `i -> . . _PIR1bits 0 4 `i 847  ]
+[e $ ! != -> . . _PIR1bits 0 4 `i -> -> -> 0 `i `Vuc `i 847  ]
 [e :U 848 ]
 [; ;eusart1.c: 140: }
 [; ;eusart1.c: 141: while (!TXSTA1bits.TRMT);
@@ -7304,9 +7304,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 849 ]
 [e $ ! != -> . . _TXSTA1bits 0 1 `i -> -> -> 0 `i `Vuc `i 850  ]
 [e :U 851 ]
-[; ;eusart1.c: 142: TXREG1 = TxData;
+[; ;eusart1.c: 142: TXREG1 = txData;
 "142
-[e = _TXREG1 -> &U _TxData `Vuc ]
+[e = _TXREG1 _txData ]
 [; ;eusart1.c: 143: }
 "143
 [e :UE 845 ]

@@ -16,7 +16,7 @@
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
         Device            :  PIC18LF46J13
         Driver Version    :  2.00
-*/
+ */
 
 /*
     (c) 2018 Microchip Technology Inc. and its subsidiaries. 
@@ -39,9 +39,10 @@
     CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
     OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
     SOFTWARE.
-*/
+ */
 
 #include "mcc_generated_files/mcc.h"
+#include <string.h>
 
 #define Input                  0xFF
 #define Output                 0x00
@@ -63,6 +64,7 @@ void EEPROM_25LC512_loop(void);
 extern void MCP23008_Init(uint8_t portDirection);
 extern void MCP23008_Write(uint8_t data);
 extern void MCP23008_loop(void);
+extern char MCP23008_read(void);
 
 extern void MCP9801_Init(void);
 extern double MCP9801_get_temp(void);
@@ -70,21 +72,30 @@ extern double MCP9801_get_temp(void);
 extern void interrupt_Init(void);
 extern char sData;
 
-void main(void)
-{
-  // Initialize the device
-    SYSTEM_Initialize();
+void main(void) {
+    // Initialize the device
     interrupt_Init();
-    //I2C_Init(400);    //I2C clock frequency at 400KHz
-    chipErase();        //25LC512 EEPROM
-    
+    SYSTEM_Initialize();
+    __delay_ms(10);
+    MCP23008_Init(Input);
+    MCP23008_Init(Input);
+    EUSART1_Write(MCP23008_read());
+
     while (true) {
-        EEPROM_25LC512_loop();
-        EEPROM_25LC512_Write(0x12,0x54);
-        __delay_ms(1000);
+
+
+        if (Button2_GetValue()) {
+            __delay_ms(10);
+            if (!Button2_GetValue()) {
+                Led_Toggle();
+            }
+        }
     }
+
 }
+
+
 
 /**
  End of File
-*/
+ */

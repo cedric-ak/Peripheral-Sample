@@ -9340,6 +9340,7 @@ SSP2CON1bits.SSPM = 0x08;
 SSP2CON2bits.ACKDT = 0;
 SSP2CON2bits.ACKEN = 1;
 SSP2ADD = (16000000/((F_clock*1000) * 4))-1;
+
 }
 
 void I2C_Write(uint8_t data){
@@ -9347,7 +9348,6 @@ SSP2BUF = data;
 while(!SSP2STATbits.BF);
 while(!PIR3bits.SSP2IF);
 PIR3bits.SSP2IF = 0;
-while (!SSP2STATbits.BF);
 if(SSP2CON2bits.ACKSTAT){
 I2C_stop();
 return;
@@ -9356,6 +9356,7 @@ return;
 
 void recieveEnable(void){
 SSP2CON2bits.RCEN = 1;
+while(!SSP2STATbits.BF);
 }
 
 void I2C_start(void){

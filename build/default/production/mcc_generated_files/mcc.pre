@@ -9479,6 +9479,7 @@ PIN_MANAGER_Initialize();
 OSCILLATOR_Initialize();
 SPI1_Initialize();
 EUSART1_Initialize();
+I2C_Init(100);
 }
 
 void OSCILLATOR_Initialize(void)

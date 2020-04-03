@@ -7,6 +7,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _SPI1_Initialize `(v ~T0 @X0 0 ef ]
 "114 mcc_generated_files/eusart1.h
 [v _EUSART1_Initialize `(v ~T0 @X0 0 ef ]
+"11 mcc_generated_files/../I2C.h
+[v _I2C_Init `(v ~T0 @X0 0 ef1`uc ]
 "16016 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
 [v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
 "9689
@@ -7062,34 +7064,37 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.c: 55: EUSART1_Initialize();
 "55
 [e ( _EUSART1_Initialize ..  ]
-[; ;mcc.c: 56: }
+[; ;mcc.c: 56: I2C_Init(100);
 "56
+[e ( _I2C_Init (1 -> -> 100 `i `uc ]
+[; ;mcc.c: 57: }
+"57
 [e :UE 835 ]
 }
-"58
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
 "59
+[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
+"60
 {
-[; ;mcc.c: 58: void OSCILLATOR_Initialize(void)
-[; ;mcc.c: 59: {
+[; ;mcc.c: 59: void OSCILLATOR_Initialize(void)
+[; ;mcc.c: 60: {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-[; ;mcc.c: 61: OSCCON = 0x70;
-"61
+[; ;mcc.c: 62: OSCCON = 0x70;
+"62
 [e = _OSCCON -> -> 112 `i `uc ]
-[; ;mcc.c: 63: OSCTUNE = 0x00;
-"63
+[; ;mcc.c: 64: OSCTUNE = 0x00;
+"64
 [e = _OSCTUNE -> -> 0 `i `uc ]
-[; ;mcc.c: 65: REFOCON = 0x00;
-"65
+[; ;mcc.c: 66: REFOCON = 0x00;
+"66
 [e = _REFOCON -> -> 0 `i `uc ]
-[; ;mcc.c: 67: OSCCON2 = 0x14;
-"67
-[e = _OSCCON2 -> -> 20 `i `uc ]
-[; ;mcc.c: 68: _delay((unsigned long)((500)*(16000000/4000.0)));
+[; ;mcc.c: 68: OSCCON2 = 0x14;
 "68
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;mcc.c: 69: }
+[e = _OSCCON2 -> -> 20 `i `uc ]
+[; ;mcc.c: 69: _delay((unsigned long)((500)*(16000000/4000.0)));
 "69
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;mcc.c: 70: }
+"70
 [e :UE 836 ]
 }

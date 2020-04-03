@@ -9472,7 +9472,7 @@ void SYSTEM_Initialize(void);
 # 84
 void OSCILLATOR_Initialize(void);
 
-# 17 "MCP23008_IO_expender.c"
+# 20 "MCP23008_IO_expender.c"
 void MCP23008_Init(uint8_t portDirection);
 void MCP23008_Write(uint8_t data);
 
@@ -9493,16 +9493,19 @@ I2C_Write(data);
 I2C_stop();
 }
 
+char MCP23008_read(void){
+char dataRead;
+I2C_start();
+I2C_Write(0x40);
+I2C_Write(0x09);
+I2C_repeated_Start();
+I2C_Write(0x41);
+recieveEnable();
+I2C_stop();
+return SSP2BUF;
+}
 void MCP23008_loop(void) {
-for (int leftShif = 0; leftShif < 8; leftShif++) {
-MCP23008_Write(0x01<<leftShif);
-_delay((unsigned long)((500)*(16000000/4000.0)));
-}
-_delay((unsigned long)((1000)*(16000000/4000.0)));
+MCP23008_Write(0x7);
 
-for (int rightShif = 0; rightShif <8; rightShif++) {
-MCP23008_Write(0x80>>rightShif);
-_delay((unsigned long)((500)*(16000000/4000.0)));
-}
-_delay((unsigned long)((1000)*(16000000/4000.0)));
+# 64
 }

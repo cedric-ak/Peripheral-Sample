@@ -12,27 +12,33 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/production\Peripheral_Exercices_2.X.production.obj
-cinit CODE 0 1126 1126 2A 1
-text0 CODE 0 10F2 10F2 34 1
-text1 CODE 0 11AA 11AA A 1
-text2 CODE 0 10BC 10BC 36 1
-text3 CODE 0 117A 117A 12 1
-text4 CODE 0 119C 119C E 1
-text5 CODE 0 FFC FFC 44 1
-text6 CODE 0 1150 1150 2A 1
-text7 CODE 0 1040 1040 3E 1
-text8 CODE 0 11B4 11B4 A 1
-text9 CODE 0 11BE 11BE A 1
-text10 CODE 0 11C8 11C8 A 1
-text11 CODE 0 F3C F3C 78 1
-text12 CODE 0 FB4 FB4 48 1
-text13 CODE 0 107E 107E 3E 1
-text14 CODE 0 118C 118C 10 1
-cstackCOMRAM COMRAM 1 16 16 A 1
+cinit CODE 0 113C 113C 2A 1
+text0 CODE 0 1008 1008 5E 1
+text1 CODE 0 124A 124A A 1
+text2 CODE 0 1214 1214 18 1
+text3 CODE 0 123C 123C E 1
+text4 CODE 0 10BA 10BA 44 1
+text5 CODE 0 1166 1166 2A 1
+text6 CODE 0 1066 1066 54 1
+text7 CODE 0 1190 1190 26 1
+text8 CODE 0 F3C F3C CC 1
+text9 CODE 0 10FE 10FE 3E 1
+text10 CODE 0 1254 1254 A 1
+text11 CODE 0 125E 125E A 1
+text12 CODE 0 1268 1268 A 1
+text13 CODE 0 11B6 11B6 26 1
+text14 CODE 0 1290 1290 8 1
+text15 CODE 0 1272 1272 A 1
+text16 CODE 0 11DC 11DC 1E 1
+text17 CODE 0 127C 127C A 1
+text18 CODE 0 11FA 11FA 1A 1
+text19 CODE 0 1286 1286 A 1
+text20 CODE 0 122C 122C 10 1
+cstackCOMRAM COMRAM 1 1 1 16 1
 bssBANK1 BANK1 1 100 100 100 1
 smallconst SMALLCONST 0 F00 F00 3C 1
-bssCOMRAM COMRAM 1 1 1 15 1
-$C:\Users\CEDRIC\AppData\Local\Temp\sa7g.obj
+bssCOMRAM COMRAM 1 17 17 15 1
+$C:\Users\CEDRIC\AppData\Local\Temp\s9ig.obj
 init CODE 0 0 0 4 1
 config CONFIG 0 FFF8 FFF8 8 1
 # %UNUSED Section
@@ -54,20 +60,20 @@ BANK7 700-7FF 1
 BANK8 800-8FF 1
 BANK9 900-9FF 1
 CONST 4-EFF 1
-CONST 11D2-FFF7 1
+CONST 1298-FFF7 1
 STACK 200-EAF 1
-SMALLCONST 11D2-FFF7 1
+SMALLCONST 1298-FFF7 1
 CODE 4-EFF 1
-CODE 11D2-FFF7 1
+CODE 1298-FFF7 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
 BANK13 D00-DFF 1
 BANK14 E00-EAF 1
-BIGRAM 20-FF 1
+BIGRAM 2C-FF 1
 BIGRAM 200-EAF 1
-COMRAM 20-5F 1
-MEDIUMCONST 11D2-FFF7 1
+COMRAM 2C-5F 1
+MEDIUMCONST 1298-FFF7 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -82,155 +88,197 @@ MEDIUMCONST 11D2-FFF7 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Peripheral_Exercices_2.X.production.obj
-118C text14 CODE >79:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/spi1.c
-118E text14 CODE >82:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/spi1.c
-1190 text14 CODE >84:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/spi1.c
-1194 text14 CODE >86:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/spi1.c
-1198 text14 CODE >90:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/spi1.c
-119A text14 CODE >91:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/spi1.c
-107E text13 CODE >49:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-1080 text13 CODE >50:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-1082 text13 CODE >51:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-1092 text13 CODE >52:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-1098 text13 CODE >53:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-109E text13 CODE >54:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-10A4 text13 CODE >55:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-10AA text13 CODE >56:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-10BA text13 CODE >60:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-FB4 text12 CODE >32:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-FB6 text12 CODE >33:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-FB8 text12 CODE >34:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-FBE text12 CODE >35:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-FC0 text12 CODE >37:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-FC2 text12 CODE >38:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-FD2 text12 CODE >39:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-FD8 text12 CODE >40:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-FDE text12 CODE >41:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-FE4 text12 CODE >42:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-FEA text12 CODE >43:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-FFA text12 CODE >47:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-F3C text11 CODE >89:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-F3C text11 CODE >90:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-F40 text11 CODE >91:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-F44 text11 CODE >92:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-F4E text11 CODE >93:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-F66 text11 CODE >94:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-F6C text11 CODE >93:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-F72 text11 CODE >96:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-F74 text11 CODE >98:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-F78 text11 CODE >100:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-F7C text11 CODE >101:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-F80 text11 CODE >102:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-F86 text11 CODE >103:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-F9E text11 CODE >104:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-FA6 text11 CODE >103:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-FAC text11 CODE >106:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-FAE text11 CODE >108:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-11C8 text10 CODE >177:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-11C8 text10 CODE >178:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-11D0 text10 CODE >179:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-11BE text9 CODE >169:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-11BE text9 CODE >170:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-11C6 text9 CODE >171:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-11B4 text8 CODE >173:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-11B4 text8 CODE >174:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-11BC text8 CODE >175:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-1040 text7 CODE >69:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-1040 text7 CODE >74:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-1044 text7 CODE >77:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-1048 text7 CODE >80:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-104C text7 CODE >83:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-1050 text7 CODE >86:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-1054 text7 CODE >89:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-1060 text7 CODE >90:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-106C text7 CODE >91:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-1078 text7 CODE >93:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-107C text7 CODE >95:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
-1150 text6 CODE >58:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
-1150 text6 CODE >61:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
-1154 text6 CODE >63:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
-1158 text6 CODE >65:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
-115E text6 CODE >67:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
-1162 text6 CODE >68:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
-1178 text6 CODE >69:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
-FFC text5 CODE >52:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-FFC text5 CODE >57:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-1000 text5 CODE >58:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-1004 text5 CODE >59:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-1008 text5 CODE >60:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-100C text5 CODE >61:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-1010 text5 CODE >66:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-1014 text5 CODE >67:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-1018 text5 CODE >68:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-101C text5 CODE >69:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-1020 text5 CODE >70:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-1022 text5 CODE >75:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-1028 text5 CODE >76:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-102C text5 CODE >81:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-102E text5 CODE >82:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-1030 text5 CODE >83:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-1032 text5 CODE >88:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-1036 text5 CODE >89:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-103A text5 CODE >90:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-103E text5 CODE >95:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
-119C text4 CODE >65:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/spi1.c
-119C text4 CODE >70:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/spi1.c
-11A0 text4 CODE >73:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/spi1.c
-11A4 text4 CODE >76:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/spi1.c
-11A8 text4 CODE >77:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/spi1.c
-117A text3 CODE >50:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
-117A text3 CODE >52:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
-117E text3 CODE >53:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
-1182 text3 CODE >54:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
-1186 text3 CODE >55:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
-118A text3 CODE >56:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
-10BC text2 CODE >62:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-10BC text2 CODE >63:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-10BE text2 CODE >64:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-10C4 text2 CODE >65:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-10C6 text2 CODE >66:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-10D6 text2 CODE >67:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-10D8 text2 CODE >68:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-10E8 text2 CODE >69:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-10EE text2 CODE >70:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
-11AA text1 CODE >15:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\Interrupt.c
-11AA text1 CODE >16:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\Interrupt.c
-11AC text1 CODE >17:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\Interrupt.c
-11AE text1 CODE >18:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\Interrupt.c
-11B0 text1 CODE >19:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\Interrupt.c
-11B2 text1 CODE >20:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\Interrupt.c
-10F2 text0 CODE >73:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\main.c
-10F2 text0 CODE >76:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\main.c
-10F6 text0 CODE >77:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\main.c
-10FA text0 CODE >79:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\main.c
-10FE text0 CODE >81:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\main.c
-10FE text0 CODE >82:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\main.c
-1102 text0 CODE >83:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\main.c
-110C text0 CODE >84:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\main.c
-1124 text0 CODE >81:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\main.c
-1126 cinit CODE >7982:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-1126 cinit CODE >7984:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-1126 cinit CODE >7987:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-1126 cinit CODE >8024:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-112A cinit CODE >8025:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-112E cinit CODE >8026:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-112E cinit CODE >8027:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-1130 cinit CODE >8028:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-1132 cinit CODE >8029:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-1134 cinit CODE >8030:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-1136 cinit CODE >8031:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-1138 cinit CODE >8032:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-113A cinit CODE >8035:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-113E cinit CODE >8036:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-1140 cinit CODE >8037:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-1140 cinit CODE >8038:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-1142 cinit CODE >8039:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-1144 cinit CODE >8040:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-1146 cinit CODE >8046:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-1146 cinit CODE >8049:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-1148 cinit CODE >8050:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-114A cinit CODE >8051:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
-114C cinit CODE >8052:C:\Users\CEDRIC\AppData\Local\Temp\sa7g.
+122C text20 CODE >135:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+122E text20 CODE >138:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+1232 text20 CODE >141:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+1236 text20 CODE >142:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+123A text20 CODE >143:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+1286 text19 CODE >58:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+1286 text19 CODE >59:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+1288 text19 CODE >60:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+128C text19 CODE >61:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+128E text19 CODE >62:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+11FA text18 CODE >30:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+11FC text18 CODE >31:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+1200 text18 CODE >32:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+1204 text18 CODE >33:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+1208 text18 CODE >34:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+120A text18 CODE >35:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+120E text18 CODE >36:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+1212 text18 CODE >37:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+127C text17 CODE >46:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+127C text17 CODE >47:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+127E text17 CODE >48:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+1282 text17 CODE >49:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+1284 text17 CODE >50:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+11DC text16 CODE >24:F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23008_IO_expender.c
+11DE text16 CODE >25:F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23008_IO_expender.c
+11E2 text16 CODE >26:F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23008_IO_expender.c
+11E8 text16 CODE >27:F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23008_IO_expender.c
+11EE text16 CODE >28:F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23008_IO_expender.c
+11F4 text16 CODE >29:F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23008_IO_expender.c
+11F8 text16 CODE >30:F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23008_IO_expender.c
+1272 text15 CODE >52:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+1272 text15 CODE >53:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+1274 text15 CODE >54:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+1278 text15 CODE >55:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+127A text15 CODE >56:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+1290 text14 CODE >41:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+1290 text14 CODE >42:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+1292 text14 CODE >43:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+11B6 text13 CODE >40:F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23008_IO_expender.c
+11B6 text13 CODE >42:F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23008_IO_expender.c
+11BA text13 CODE >43:F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23008_IO_expender.c
+11C0 text13 CODE >44:F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23008_IO_expender.c
+11C6 text13 CODE >45:F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23008_IO_expender.c
+11CA text13 CODE >46:F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23008_IO_expender.c
+11D0 text13 CODE >47:F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23008_IO_expender.c
+11D4 text13 CODE >48:F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23008_IO_expender.c
+11D8 text13 CODE >49:F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23008_IO_expender.c
+1268 text12 CODE >177:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+1268 text12 CODE >178:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+1270 text12 CODE >179:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+125E text11 CODE >169:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+125E text11 CODE >170:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+1266 text11 CODE >171:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+1254 text10 CODE >173:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+1254 text10 CODE >174:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+125C text10 CODE >175:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+10FE text9 CODE >69:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+10FE text9 CODE >74:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+1102 text9 CODE >77:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+1106 text9 CODE >80:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+110A text9 CODE >83:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+110E text9 CODE >86:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+1112 text9 CODE >89:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+111E text9 CODE >90:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+112A text9 CODE >91:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+1136 text9 CODE >93:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+113A text9 CODE >95:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+F3C text8 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+F3C text8 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+F40 text8 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+F44 text8 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+F54 text8 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+F58 text8 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+F58 text8 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+F5C text8 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+F6C text8 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+F70 text8 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+F70 text8 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+F80 text8 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+F8C text8 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+F90 text8 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+F92 text8 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+F9C text8 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+F9E text8 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+F9E text8 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+FA2 text8 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+FAC text8 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+FC0 text8 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+FD0 text8 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+FD2 text8 CODE >35:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+FD2 text8 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+FDC text8 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+FE0 text8 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+FE6 text8 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+FF6 text8 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+1190 text7 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+1190 text7 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+119C text7 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+11A4 text7 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+11AC text7 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+1066 text6 CODE >18:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+1068 text6 CODE >19:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+106A text6 CODE >20:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+106C text6 CODE >21:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+106E text6 CODE >22:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+1070 text6 CODE >23:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+1078 text6 CODE >24:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+107A text6 CODE >25:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+107C text6 CODE >26:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+10B8 text6 CODE >28:F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+1166 text5 CODE >59:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
+1166 text5 CODE >62:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
+116A text5 CODE >64:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
+116E text5 CODE >66:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
+1174 text5 CODE >68:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
+1178 text5 CODE >69:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
+118E text5 CODE >70:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
+10BA text4 CODE >52:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10BA text4 CODE >57:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10BE text4 CODE >58:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10C2 text4 CODE >59:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10C6 text4 CODE >60:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10CA text4 CODE >61:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10CE text4 CODE >66:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10D2 text4 CODE >67:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10D6 text4 CODE >68:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10DA text4 CODE >69:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10DE text4 CODE >70:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10E0 text4 CODE >75:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10E6 text4 CODE >76:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10EA text4 CODE >81:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10EC text4 CODE >82:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10EE text4 CODE >83:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10F0 text4 CODE >88:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10F4 text4 CODE >89:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10F8 text4 CODE >90:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+10FC text4 CODE >95:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/pin_manager.c
+123C text3 CODE >65:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/spi1.c
+123C text3 CODE >70:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/spi1.c
+1240 text3 CODE >73:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/spi1.c
+1244 text3 CODE >76:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/spi1.c
+1248 text3 CODE >77:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/spi1.c
+1214 text2 CODE >50:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
+1214 text2 CODE >52:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
+1218 text2 CODE >53:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
+121C text2 CODE >54:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
+1220 text2 CODE >55:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
+1224 text2 CODE >56:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
+122A text2 CODE >57:F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
+124A text1 CODE >15:F:\WORK\Personal\Peripheral_Exercices_2.X\Interrupt.c
+124A text1 CODE >16:F:\WORK\Personal\Peripheral_Exercices_2.X\Interrupt.c
+124C text1 CODE >17:F:\WORK\Personal\Peripheral_Exercices_2.X\Interrupt.c
+124E text1 CODE >18:F:\WORK\Personal\Peripheral_Exercices_2.X\Interrupt.c
+1250 text1 CODE >19:F:\WORK\Personal\Peripheral_Exercices_2.X\Interrupt.c
+1252 text1 CODE >20:F:\WORK\Personal\Peripheral_Exercices_2.X\Interrupt.c
+1008 text0 CODE >75:F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
+1008 text0 CODE >77:F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
+100C text0 CODE >78:F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
+1010 text0 CODE >79:F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
+101E text0 CODE >80:F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
+1024 text0 CODE >81:F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
+102A text0 CODE >82:F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
+1032 text0 CODE >84:F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
+1032 text0 CODE >87:F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
+1036 text0 CODE >88:F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
+1044 text0 CODE >89:F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
+1048 text0 CODE >90:F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
+1064 text0 CODE >84:F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
+113C cinit CODE >9270:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+113C cinit CODE >9272:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+113C cinit CODE >9275:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+113C cinit CODE >9312:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+1140 cinit CODE >9313:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+1144 cinit CODE >9314:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+1144 cinit CODE >9315:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+1146 cinit CODE >9316:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+1148 cinit CODE >9317:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+114A cinit CODE >9318:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+114C cinit CODE >9319:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+114E cinit CODE >9320:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+1150 cinit CODE >9323:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+1154 cinit CODE >9324:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+1156 cinit CODE >9325:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+1156 cinit CODE >9326:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+1158 cinit CODE >9327:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+115A cinit CODE >9328:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+115C cinit CODE >9334:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+115C cinit CODE >9337:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+115E cinit CODE >9338:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+1160 cinit CODE >9339:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
+1162 cinit CODE >9340:C:\Users\CEDRIC\AppData\Local\Temp\s9ig.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -243,83 +291,100 @@ FFC text5 CODE >57:C:\Users\CEDRIC\Desktop\Peripheral_Exercices_2.X\mcc_generate
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-EEPROM_25LC512_Write@data 17 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Peripheral_Exercices_2.X.production.obj
+__size_of_recieveEnable 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hspace_0 10000 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hspace_1 200 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hspace_2 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _SSP1STATbits FC7 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-EUSART1_SetErrorHandler@interruptHandler 16 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+EUSART1_SetErrorHandler@interruptHandler 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\Peripheral_Exercices_2.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\CEDRIC\AppData\Local\Temp\sa7g.obj
-_EUSART1_Initialize 1040 0 CODE 0 text7 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\CEDRIC\AppData\Local\Temp\s9ig.obj
+_EUSART1_Initialize 10FE 0 CODE 0 text9 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_WPCFG$OFF 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of_I2C_Write 1214 0 CODE 0 text18 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lsmallconst F00 0 SMALLCONST 0 smallconst dist/default/production\Peripheral_Exercices_2.X.production.obj
 _LATA F89 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _LATB F8A 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _LATC F8B 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _LATD F8C 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _LATE F8D 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\CEDRIC\AppData\Local\Temp\sa7g.obj
-_main 10F2 0 CODE 0 text0 dist/default/production\Peripheral_Exercices_2.X.production.obj
-start 0 0 CODE 0 init C:\Users\CEDRIC\AppData\Local\Temp\sa7g.obj
+___sp 0 0 STACK 2 stack C:\Users\CEDRIC\AppData\Local\Temp\s9ig.obj
+__end_of_I2C_start 1286 0 CODE 0 text17 dist/default/production\Peripheral_Exercices_2.X.production.obj
+_main 1008 0 CODE 0 text0 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__size_of_I2C_Write 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
+start 0 0 CODE 0 init C:\Users\CEDRIC\AppData\Local\Temp\s9ig.obj
+__size_of___aldiv 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
+__size_of_I2C_start 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
-__end_of_SPI1_Initialize 11AA 0 CODE 0 text4 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of_SPI1_Initialize 124A 0 CODE 0 text3 dist/default/production\Peripheral_Exercices_2.X.production.obj
+?___wmul 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of_recieveEnable 1298 0 CODE 0 text14 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__size_of_I2C_Init 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
+__size_of_I2C_stop 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hpowerup 0 0 CODE 0 powerup dist/default/production\Peripheral_Exercices_2.X.production.obj
+_I2C_Write 11FA 0 CODE 0 text18 dist/default/production\Peripheral_Exercices_2.X.production.obj
+_I2C_start 127C 0 CODE 0 text17 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\CEDRIC\AppData\Local\Temp\sa7g.obj
-intlevel0 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\sa7g.obj
-intlevel1 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\sa7g.obj
-intlevel2 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\sa7g.obj
-intlevel3 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\sa7g.obj
+__accesstop 60 0 ABS 0 - C:\Users\CEDRIC\AppData\Local\Temp\s9ig.obj
+intlevel0 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\s9ig.obj
+intlevel1 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\s9ig.obj
+intlevel2 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\s9ig.obj
+intlevel3 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\s9ig.obj
 __size_of_EUSART1_SetErrorHandler 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __end_oflog@coeff F3A 0 SMALLCONST 0 smallconst dist/default/production\Peripheral_Exercices_2.X.production.obj
+___aldiv@divisor B 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_RTCOSC$T1OSCREF 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\Peripheral_Exercices_2.X.production.obj
+___aldiv@sign 10 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+EUSART1_Write@txData 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\Peripheral_Exercices_2.X.production.obj
-_SPI1_Initialize 119C 0 CODE 0 text4 dist/default/production\Peripheral_Exercices_2.X.production.obj
+___wmul@multiplicand 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+_SPI1_Initialize 123C 0 CODE 0 text3 dist/default/production\Peripheral_Exercices_2.X.production.obj
 _ANCON0 F48 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _ANCON1 F49 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\CEDRIC\AppData\Local\Temp\sa7g.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\CEDRIC\AppData\Local\Temp\sa7g.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\CEDRIC\AppData\Local\Temp\s9ig.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\CEDRIC\AppData\Local\Temp\s9ig.obj
+_I2C_Init 1066 0 CODE 0 text6 dist/default/production\Peripheral_Exercices_2.X.production.obj
+_I2C_stop 1286 0 CODE 0 text19 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\Peripheral_Exercices_2.X.production.obj
-EEPROM_25LC512_loop@d_Zise 1A 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of___wmul 11B6 0 CODE 0 text7 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Peripheral_Exercices_2.X.production.obj
 _TXSTA1bits FAD 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Peripheral_Exercices_2.X.production.obj
-__size_of_SPI1_Exchange8bit 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of_I2C_Init 10BA 0 CODE 0 text6 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of_I2C_stop 1290 0 CODE 0 text19 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hintcodelo 0 0 CODE 0 intcodelo dist/default/production\Peripheral_Exercices_2.X.production.obj
-EUSART1_SetFramingErrorHandler@interruptHandler 16 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
-__end_of_chipErase 10F2 0 CODE 0 text2 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of___aldiv 1008 0 CODE 0 text8 dist/default/production\Peripheral_Exercices_2.X.production.obj
+EUSART1_SetFramingErrorHandler@interruptHandler 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_SOSCSEL$DIG 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-__size_of_chipErase 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _INTCON2bits FF1 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lintcodelo 0 0 CODE 0 intcodelo dist/default/production\Peripheral_Exercices_2.X.production.obj
-_PIN_MANAGER_Initialize FFC 0 CODE 0 text5 dist/default/production\Peripheral_Exercices_2.X.production.obj
+_PIN_MANAGER_Initialize 10BA 0 CODE 0 text4 dist/default/production\Peripheral_Exercices_2.X.production.obj
 _SSP2CON1bits F72 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-start_initialization 1126 0 CODE 0 cinit dist/default/production\Peripheral_Exercices_2.X.production.obj
+start_initialization 113C 0 CODE 0 cinit dist/default/production\Peripheral_Exercices_2.X.production.obj
 _SSP2CON2bits F71 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-_eusart1RxLastError 15 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+_eusart1RxLastError 2B 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 _ODCON1 F42 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _ODCON2 F41 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _ODCON3 F40 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of_I2C_repeated_Start 127C 0 CODE 0 text15 dist/default/production\Peripheral_Exercices_2.X.production.obj
 _OSCCON FD3 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 _TRISDbits F95 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _TRISEbits F96 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
+___aldiv@quotient 11 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 ___rparam_used 1 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _RCREG1 FAF 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _RCSTA1 FAC 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-_chipErase 10BC 0 CODE 0 text2 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__end_of_SYSTEM_Initialize 118C 0 CODE 0 text3 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of_SYSTEM_Initialize 122C 0 CODE 0 text2 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_WDTPS$32768 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __size_of_interrupt_Init 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _SPBRG1 FB0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-EEPROM_25LC512_Write@address 19 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 _TXREG1 FAE 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _TXSTA1 FAD 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_WPDIS$OFF 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
@@ -329,6 +394,8 @@ _EUSART1_DefaultFramingErrorHandler 0 0 ABS 0 - dist/default/production\Peripher
 _EUSART1_DefaultOverrunErrorHandler 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_CFGPLLEN$OFF 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __size_of_EUSART1_Initialize 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
+_EUSART1_Write 122C 0 CODE 0 text20 dist/default/production\Peripheral_Exercices_2.X.production.obj
+_I2C_repeated_Start 1272 0 CODE 0 text15 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hbank0 0 0 ABS 0 bank0 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hbank1 0 0 ABS 0 bank1 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hbank2 0 0 ABS 0 bank2 dist/default/production\Peripheral_Exercices_2.X.production.obj
@@ -367,7 +434,7 @@ __Hbank13 0 0 ABS 0 bank13 dist/default/production\Peripheral_Exercices_2.X.prod
 __Hbank14 0 0 ABS 0 bank14 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\Peripheral_Exercices_2.X.production.obj
-__smallconst F00 0 SMALLCONST 0 smallconst C:\Users\CEDRIC\AppData\Local\Temp\sa7g.obj
+__smallconst F00 0 SMALLCONST 0 smallconst C:\Users\CEDRIC\AppData\Local\Temp\s9ig.obj
 _BAUDCON1 F7E 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hconfig 10000 0 CONFIG 0 config dist/default/production\Peripheral_Exercices_2.X.production.obj
@@ -399,8 +466,8 @@ __Ltext6 0 0 ABS 0 text6 dist/default/production\Peripheral_Exercices_2.X.produc
 __Ltext7 0 0 ABS 0 text7 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Ltext8 0 0 ABS 0 text8 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Ltext9 0 0 ABS 0 text9 dist/default/production\Peripheral_Exercices_2.X.production.obj
-_EUSART1_FramingErrorHandler 13 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
-_EUSART1_OverrunErrorHandler 11 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+_EUSART1_FramingErrorHandler 29 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+_EUSART1_OverrunErrorHandler 27 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hfarbss 0 0 FARRAM 0 farbss dist/default/production\Peripheral_Exercices_2.X.production.obj
 __size_of_EUSART1_SetFramingErrorHandler 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __size_of_EUSART1_SetOverrunErrorHandler 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
@@ -425,12 +492,12 @@ __Ltext 0 0 ABS 0 text dist/default/production\Peripheral_Exercices_2.X.producti
 __CFG_XINST$OFF 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _SSP1CON1 FC6 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _SSP1STAT FC7 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-__end_of_SPI1_Exchange8bit 119C 0 CODE 0 text14 dist/default/production\Peripheral_Exercices_2.X.production.obj
+___wmul 1190 0 CODE 0 text7 dist/default/production\Peripheral_Exercices_2.X.production.obj
 _SSP2STATbits F73 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hintret 0 0 ABS 0 intret dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hirdata 0 0 CODE 0 irdata dist/default/production\Peripheral_Exercices_2.X.production.obj
-_ADC D 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+_ADC 23 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __S0 10000 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __S1 200 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __S2 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
@@ -440,35 +507,45 @@ __CFG_ADCSEL$BIT10 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.
 __CFG_DSWDTEN$ON 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_DSWDTPS$G2 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_PLLDIV$1 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-__size_of_EEPROM_25LC512_Write 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\Peripheral_Exercices_2.X.production.obj
-_SYSTEM_Initialize 117A 0 CODE 0 text3 dist/default/production\Peripheral_Exercices_2.X.production.obj
+_SYSTEM_Initialize 1214 0 CODE 0 text2 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lintentry 0 0 ABS 0 intentry dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_WPEND$PAGE_WPFP 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hramtop F00 0 RAM 0 ramtop dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hrparam 0 0 COMRAM 1 rparam dist/default/production\Peripheral_Exercices_2.X.production.obj
-__end_of_EEPROM_25LC512_Write FFC 0 CODE 0 text12 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __activetblptr 2 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hstruct 0 0 COMRAM 1 struct dist/default/production\Peripheral_Exercices_2.X.production.obj
+__size_of___wmul 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __LbssBANK1 0 0 ABS 0 bssBANK1 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Htext10 0 0 ABS 0 text10 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Htext11 0 0 ABS 0 text11 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Htext12 0 0 ABS 0 text12 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Htext13 0 0 ABS 0 text13 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Htext14 0 0 ABS 0 text14 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__Htext15 0 0 ABS 0 text15 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__Htext16 0 0 ABS 0 text16 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__Htext17 0 0 ABS 0 text17 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__Htext18 0 0 ABS 0 text18 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__Htext19 0 0 ABS 0 text19 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__Htext20 0 0 ABS 0 text20 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-__size_of_EEPROM_25LC512_Read 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-__size_of_EEPROM_25LC512_loop 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _PIE3bits FA3 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-__ptext10 11C8 0 CODE 0 text10 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__ptext11 F3C 0 CODE 0 text11 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__ptext12 FB4 0 CODE 0 text12 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__ptext13 107E 0 CODE 0 text13 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__ptext14 118C 0 CODE 0 text14 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__end_of_PIN_MANAGER_Initialize 1040 0 CODE 0 text5 dist/default/production\Peripheral_Exercices_2.X.production.obj
-_EUSART1_ErrorHandler F 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
-EEPROM_25LC512_Read@address 18 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+__size_of_EUSART1_Write 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext10 1254 0 CODE 0 text10 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext11 125E 0 CODE 0 text11 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext12 1268 0 CODE 0 text12 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext13 11B6 0 CODE 0 text13 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext14 1290 0 CODE 0 text14 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext15 1272 0 CODE 0 text15 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext16 11DC 0 CODE 0 text16 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext17 127C 0 CODE 0 text17 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext18 11FA 0 CODE 0 text18 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext19 1286 0 CODE 0 text19 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext20 122C 0 CODE 0 text20 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of_PIN_MANAGER_Initialize 10FE 0 CODE 0 text4 dist/default/production\Peripheral_Exercices_2.X.production.obj
+___aldiv F3C 0 CODE 0 text8 dist/default/production\Peripheral_Exercices_2.X.production.obj
+_EUSART1_ErrorHandler 25 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lbank10 0 0 ABS 0 bank10 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lbank11 0 0 ABS 0 bank11 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lbank12 0 0 ABS 0 bank12 dist/default/production\Peripheral_Exercices_2.X.production.obj
@@ -480,90 +557,105 @@ __CFG_MSSP7B_EN$MSK7 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.
 __Lcomram 0 0 ABS 0 comram dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lconfig FFF8 0 CONFIG 0 config dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_IESO$ON 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
+___wmul@multiplier 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+_LATBbits F8A 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _LATCbits F8B 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-_EUSART1_SetErrorHandler 11C8 0 CODE 0 text10 dist/default/production\Peripheral_Exercices_2.X.production.obj
+MCP23008_Init@portDirection 2 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+_EUSART1_SetErrorHandler 1268 0 CODE 0 text12 dist/default/production\Peripheral_Exercices_2.X.production.obj
 _RCSTA1bits FAC 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-__end_of_EUSART1_SetErrorHandler 11D2 0 CODE 0 text10 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of_EUSART1_SetErrorHandler 1272 0 CODE 0 text12 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_WPFP$PAGE_63 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\Peripheral_Exercices_2.X.production.obj
-_SPI1_Exchange8bit 118C 0 CODE 0 text14 dist/default/production\Peripheral_Exercices_2.X.production.obj
+_MCP23008_Init 11DC 0 CODE 0 text16 dist/default/production\Peripheral_Exercices_2.X.production.obj
+_MCP23008_read 11B6 0 CODE 0 text13 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\Peripheral_Exercices_2.X.production.obj
-__end_of_EUSART1_SetFramingErrorHandler 11C8 0 CODE 0 text9 dist/default/production\Peripheral_Exercices_2.X.production.obj
-stackhi EAF 0 ABS 0 - C:\Users\CEDRIC\AppData\Local\Temp\sa7g.obj
-stacklo 200 0 ABS 0 - C:\Users\CEDRIC\AppData\Local\Temp\sa7g.obj
-__end_of_EUSART1_SetOverrunErrorHandler 11BE 0 CODE 0 text8 dist/default/production\Peripheral_Exercices_2.X.production.obj
-SPI1_Exchange8bit@data 16 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of_EUSART1_SetFramingErrorHandler 1268 0 CODE 0 text11 dist/default/production\Peripheral_Exercices_2.X.production.obj
+stackhi EAF 0 ABS 0 - C:\Users\CEDRIC\AppData\Local\Temp\s9ig.obj
+stacklo 200 0 ABS 0 - C:\Users\CEDRIC\AppData\Local\Temp\s9ig.obj
+__end_of_EUSART1_SetOverrunErrorHandler 125E 0 CODE 0 text10 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of_EUSART1_Write 123C 0 CODE 0 text20 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lintcode 0 0 CODE 0 intcode dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_PLLSEL$PLL4X 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _OSCCON2 F87 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _OSCTUNE F9B 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production\Peripheral_Exercices_2.X.production.obj
-_EEPROM_25LC512_Read 107E 0 CODE 0 text13 dist/default/production\Peripheral_Exercices_2.X.production.obj
-_EEPROM_25LC512_loop F3C 0 CODE 0 text11 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lspace_0 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lspace_1 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lspace_2 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-__pbssCOMRAM 1 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+__pbssCOMRAM 17 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_DSWDTOSC$INTOSCREF 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
+I2C_Write@data 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 _PIR1bits F9E 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _PIR3bits FA4 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
-end_of_initialization 1146 0 CODE 0 cinit dist/default/production\Peripheral_Exercices_2.X.production.obj
+end_of_initialization 115C 0 CODE 0 cinit dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hintentry 0 0 ABS 0 intentry dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_CLKOEC$ON 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_OSC$HS 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
+?___aldiv 7 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hreset_vec 0 0 CODE 0 reset_vec dist/default/production\Peripheral_Exercices_2.X.production.obj
 __HbssBANK1 0 0 ABS 0 bssBANK1 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lramtop F00 0 RAM 0 ramtop dist/default/production\Peripheral_Exercices_2.X.production.obj
+__size_of_I2C_repeated_Start 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production\Peripheral_Exercices_2.X.production.obj
-__pcinit 1126 0 CODE 0 cinit dist/default/production\Peripheral_Exercices_2.X.production.obj
-__ptext0 10F2 0 CODE 0 text0 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__ptext1 11AA 0 CODE 0 text1 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__ptext2 10BC 0 CODE 0 text2 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__ptext3 117A 0 CODE 0 text3 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__ptext4 119C 0 CODE 0 text4 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__ptext5 FFC 0 CODE 0 text5 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__ptext6 1150 0 CODE 0 text6 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__ptext7 1040 0 CODE 0 text7 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__ptext8 11B4 0 CODE 0 text8 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__ptext9 11BE 0 CODE 0 text9 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__pcinit 113C 0 CODE 0 cinit dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext0 1008 0 CODE 0 text0 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext1 124A 0 CODE 0 text1 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext2 1214 0 CODE 0 text2 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext3 123C 0 CODE 0 text3 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext4 10BA 0 CODE 0 text4 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext5 1166 0 CODE 0 text5 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext6 1066 0 CODE 0 text6 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext7 1190 0 CODE 0 text7 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext8 F3C 0 CODE 0 text8 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ptext9 10FE 0 CODE 0 text9 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\Peripheral_Exercices_2.X.production.obj
+I2C_Init@F_clock 15 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Ltext10 0 0 ABS 0 text10 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Ltext11 0 0 ABS 0 text11 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Ltext12 0 0 ABS 0 text12 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Ltext13 0 0 ABS 0 text13 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Ltext14 0 0 ABS 0 text14 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__ramtop F00 0 RAM 0 ramtop C:\Users\CEDRIC\AppData\Local\Temp\sa7g.obj
+__Ltext15 0 0 ABS 0 text15 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__Ltext16 0 0 ABS 0 text16 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__Ltext17 0 0 ABS 0 text17 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__Ltext18 0 0 ABS 0 text18 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__Ltext19 0 0 ABS 0 text19 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__Ltext20 0 0 ABS 0 text20 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__ramtop F00 0 RAM 0 ramtop C:\Users\CEDRIC\AppData\Local\Temp\s9ig.obj
+___aldiv@dividend 7 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\Peripheral_Exercices_2.X.production.obj
-_interrupt_Init 11AA 0 CODE 0 text1 dist/default/production\Peripheral_Exercices_2.X.production.obj
+_interrupt_Init 124A 0 CODE 0 text1 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __psmallconst F00 0 SMALLCONST 0 smallconst dist/default/production\Peripheral_Exercices_2.X.production.obj
+_recieveEnable 1290 0 CODE 0 text14 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\Peripheral_Exercices_2.X.production.obj
 ___param_bank 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Peripheral_Exercices_2.X.production.obj
-__end_of__initialization 1146 0 CODE 0 cinit dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of__initialization 115C 0 CODE 0 cinit dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production\Peripheral_Exercices_2.X.production.obj
+__size_of_MCP23008_Init 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
+__size_of_MCP23008_read 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\Peripheral_Exercices_2.X.production.obj
 _SSP1CON1bits FC6 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _SPBRGH1 F7F 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-__pcstackCOMRAM 16 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 _SSP1ADD FC8 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _SSP1BUF FC9 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _SSP2ADD F74 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _SSP2BUF F75 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-__end_of_EEPROM_25LC512_Read 10BC 0 CODE 0 text13 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__end_of_EEPROM_25LC512_loop FB4 0 CODE 0 text11 dist/default/production\Peripheral_Exercices_2.X.production.obj
-_EUSART1_SetFramingErrorHandler 11BE 0 CODE 0 text9 dist/default/production\Peripheral_Exercices_2.X.production.obj
-_EUSART1_SetOverrunErrorHandler 11B4 0 CODE 0 text8 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__end_of_main 1126 0 CODE 0 text0 dist/default/production\Peripheral_Exercices_2.X.production.obj
+___aldiv@counter F 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+_EUSART1_SetFramingErrorHandler 125E 0 CODE 0 text11 dist/default/production\Peripheral_Exercices_2.X.production.obj
+_EUSART1_SetOverrunErrorHandler 1254 0 CODE 0 text10 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of_main 1066 0 CODE 0 text0 dist/default/production\Peripheral_Exercices_2.X.production.obj
 _TRISA F92 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _TRISB F93 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _TRISC F94 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _TRISD F95 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _TRISE F96 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-__end_of_interrupt_Init 11B4 0 CODE 0 text1 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of_interrupt_Init 1254 0 CODE 0 text1 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_CP0$OFF 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_IOL1WAY$ON 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __HRAM 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
@@ -574,23 +666,24 @@ __LRAM 1 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.o
 __Lbss 0 0 RAM 1 bss dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lram 0 0 ABS 0 ram dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lsfr 0 0 ABS 0 sfr dist/default/production\Peripheral_Exercices_2.X.production.obj
-_errno B 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
-_sData 1 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+_errno 21 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+_sData 17 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-__end_of_EUSART1_Initialize 107E 0 CODE 0 text7 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__end_of_OSCILLATOR_Initialize 117A 0 CODE 0 text6 dist/default/production\Peripheral_Exercices_2.X.production.obj
-EEPROM_25LC512_loop@d_Zise_1013 1C 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
-__initialization 1126 0 CODE 0 cinit dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of_MCP23008_Init 11FA 0 CODE 0 text16 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of_MCP23008_read 11DC 0 CODE 0 text13 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of_EUSART1_Initialize 113C 0 CODE 0 text9 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__end_of_OSCILLATOR_Initialize 1190 0 CODE 0 text5 dist/default/production\Peripheral_Exercices_2.X.production.obj
+__initialization 113C 0 CODE 0 cinit dist/default/production\Peripheral_Exercices_2.X.production.obj
 __pbssBANK1 100 0 BANK1 1 bssBANK1 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __end_ofexp@coeff F1F 0 SMALLCONST 0 smallconst dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production\Peripheral_Exercices_2.X.production.obj
+___wmul@product 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hsmallconst F3C 0 SMALLCONST 0 smallconst dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lifardata 0 0 CODE 0 ifardata dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Peripheral_Exercices_2.X.production.obj
-EUSART1_SetOverrunErrorHandler@interruptHandler 16 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
+EUSART1_SetOverrunErrorHandler@interruptHandler 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hintcode 0 0 CODE 0 intcode dist/default/production\Peripheral_Exercices_2.X.production.obj
-_OSCILLATOR_Initialize 1150 0 CODE 0 text6 dist/default/production\Peripheral_Exercices_2.X.production.obj
-_EEPROM_25LC512_Write FB4 0 CODE 0 text12 dist/default/production\Peripheral_Exercices_2.X.production.obj
+_OSCILLATOR_Initialize 1166 0 CODE 0 text5 dist/default/production\Peripheral_Exercices_2.X.production.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -615,9 +708,9 @@ _EEPROM_25LC512_Write FB4 0 CODE 0 text12 dist/default/production\Peripheral_Exe
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text11 0 F3C F3C 296 1
+text8 0 F3C F3C 35C 1
+cstackCOMRAM 1 1 1 2B 1
 reset_vec 0 0 0 4 1
 bssBANK1 1 100 100 100 1
 smallconst 0 F00 F00 3C 1
-bssCOMRAM 1 1 1 1F 1
 config 0 FFF8 FFF8 8 1

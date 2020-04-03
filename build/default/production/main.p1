@@ -1,19 +1,62 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
+"72 main.c
+[v _interrupt_Init `(v ~T0 @X0 0 ef ]
 "71 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"70 main.c
-[v _interrupt_Init `(v ~T0 @X0 0 ef ]
-"58
-[v _chipErase `(v ~T0 @X0 0 ef ]
-"61
-[v _EEPROM_25LC512_loop `(v ~T0 @X0 0 ef ]
-"56
-[v _EEPROM_25LC512_Write `(v ~T0 @X0 0 ef2`uc`uc ]
 [v F7202 `(v ~T0 @X0 1 tf1`ul ]
 "164 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h
 [v __delay `JF7202 ~T0 @X0 0 e ]
 [p i __delay ]
+"64 main.c
+[v _MCP23008_Init `(v ~T0 @X0 0 ef1`uc ]
+"345 mcc_generated_files/eusart1.h
+[v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
+"67 main.c
+[v _MCP23008_read `(uc ~T0 @X0 0 ef ]
+"7214 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
+[s S359 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S359 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"7224
+[s S360 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S360 . AN12 AN10 AN8 AN9 PMA1 PMA0 KBI2 KBI3 ]
+"7234
+[s S361 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S361 . INT0 PMPBE CTED1 CTED2 KBI0 KBI1 PGC PGD ]
+"7244
+[s S362 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S362 . RP3 RTCC PMA3 PMA2 . RP9 RP10 ]
+"7253
+[s S363 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S363 . . PMBE REFO ]
+"7258
+[s S364 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S364 . . RP4 RP5 RP6 RP7 RP8 ]
+"7266
+[s S365 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S365 . C3IND C3INC C2INC C3INA ]
+"7272
+[s S366 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S366 . . CCP4 CCP5 CCP6 CCP7 ]
+"7279
+[s S367 :3 `uc 1 :1 `uc 1 ]
+[n S367 . . CCP2_PA2 ]
+"7213
+[u S358 `S359 1 `S360 1 `S361 1 `S362 1 `S363 1 `S364 1 `S365 1 `S366 1 `S367 1 ]
+[n S358 . . . . . . . . . . ]
+"7284
+[v _PORTBbits `VS358 ~T0 @X0 0 e@3969 ]
+"8461
+[s S405 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S405 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"8471
+[s S406 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S406 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
+"8460
+[u S404 `S405 1 `S406 1 ]
+[n S404 . . . ]
+"8482
+[v _LATBbits `VS404 ~T0 @X0 0 e@3978 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7037,63 +7080,88 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;I2C.h: 17: void recieveEnable(void);
 [; ;mcc.h: 71: void SYSTEM_Initialize(void);
 [; ;mcc.h: 84: void OSCILLATOR_Initialize(void);
-[; ;main.c: 49: extern void MCP4131Write(uint8_t value);
-[; ;main.c: 50: extern void MCP4131P_loop(void);
-[; ;main.c: 51: extern void MCP23S08Write(uint8_t data);
-[; ;main.c: 52: extern void MCP23S08_Init(uint8_t portDirection);
-[; ;main.c: 53: extern void MCP23S08_loop(void);
-[; ;main.c: 56: extern void EEPROM_25LC512_Write(uint8_t address, uint8_t data);
-[; ;main.c: 57: extern uint8_t EEPROM_25LC512_Read(uint8_t address);
-[; ;main.c: 58: extern void chipErase(void);
-[; ;main.c: 59: extern void rStatus_Reg(void);
-[; ;main.c: 60: extern void wStatus_Reg(void);
-[; ;main.c: 61: void EEPROM_25LC512_loop(void);
-[; ;main.c: 63: extern void MCP23008_Init(uint8_t portDirection);
-[; ;main.c: 64: extern void MCP23008_Write(uint8_t data);
-[; ;main.c: 65: extern void MCP23008_loop(void);
-[; ;main.c: 67: extern void MCP9801_Init(void);
-[; ;main.c: 68: extern double MCP9801_get_temp(void);
-[; ;main.c: 70: extern void interrupt_Init(void);
-[; ;main.c: 71: extern char sData;
+[; ;main.c: 50: extern void MCP4131Write(uint8_t value);
+[; ;main.c: 51: extern void MCP4131P_loop(void);
+[; ;main.c: 52: extern void MCP23S08Write(uint8_t data);
+[; ;main.c: 53: extern void MCP23S08_Init(uint8_t portDirection);
+[; ;main.c: 54: extern void MCP23S08_loop(void);
+[; ;main.c: 57: extern void EEPROM_25LC512_Write(uint8_t address, uint8_t data);
+[; ;main.c: 58: extern uint8_t EEPROM_25LC512_Read(uint8_t address);
+[; ;main.c: 59: extern void chipErase(void);
+[; ;main.c: 60: extern void rStatus_Reg(void);
+[; ;main.c: 61: extern void wStatus_Reg(void);
+[; ;main.c: 62: void EEPROM_25LC512_loop(void);
+[; ;main.c: 64: extern void MCP23008_Init(uint8_t portDirection);
+[; ;main.c: 65: extern void MCP23008_Write(uint8_t data);
+[; ;main.c: 66: extern void MCP23008_loop(void);
+[; ;main.c: 67: extern char MCP23008_read(void);
+[; ;main.c: 69: extern void MCP9801_Init(void);
+[; ;main.c: 70: extern double MCP9801_get_temp(void);
+[; ;main.c: 72: extern void interrupt_Init(void);
+[; ;main.c: 73: extern char sData;
 [v $root$_main `(v ~T0 @X0 0 e ]
-"73 main.c
+"75 main.c
 [v _main `(v ~T0 @X0 1 ef ]
-"74
 {
-[; ;main.c: 73: void main(void)
-[; ;main.c: 74: {
+[; ;main.c: 75: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 76: SYSTEM_Initialize();
-"76
-[e ( _SYSTEM_Initialize ..  ]
 [; ;main.c: 77: interrupt_Init();
 "77
 [e ( _interrupt_Init ..  ]
-[; ;main.c: 79: chipErase();
+[; ;main.c: 78: SYSTEM_Initialize();
+"78
+[e ( _SYSTEM_Initialize ..  ]
+[; ;main.c: 79: _delay((unsigned long)((10)*(16000000/4000.0)));
 "79
-[e ( _chipErase ..  ]
-[; ;main.c: 81: while (1) {
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 80: MCP23008_Init(0xFF);
+"80
+[e ( _MCP23008_Init (1 -> -> 255 `i `uc ]
+[; ;main.c: 81: MCP23008_Init(0xFF);
 "81
+[e ( _MCP23008_Init (1 -> -> 255 `i `uc ]
+[; ;main.c: 82: EUSART1_Write(MCP23008_read());
+"82
+[e ( _EUSART1_Write (1 ( _MCP23008_read ..  ]
+[; ;main.c: 84: while (1) {
+"84
 [e :U 837 ]
 {
-[; ;main.c: 82: EEPROM_25LC512_loop();
-"82
-[e ( _EEPROM_25LC512_loop ..  ]
-[; ;main.c: 83: EEPROM_25LC512_Write(0x12,0x54);
-"83
-[e ( _EEPROM_25LC512_Write (2 , -> -> 18 `i `uc -> -> 84 `i `uc ]
-[; ;main.c: 84: _delay((unsigned long)((1000)*(16000000/4000.0)));
-"84
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"85
+[; ;main.c: 87: if (PORTBbits.RB0) {
+"87
+[e $ ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 839  ]
+{
+[; ;main.c: 88: _delay((unsigned long)((10)*(16000000/4000.0)));
+"88
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 89: if (!PORTBbits.RB0) {
+"89
+[e $ ! ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 840  ]
+{
+[; ;main.c: 90: do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0);
+"90
+[e :U 843 ]
+{
+[e = . . _LATBbits 0 5 -> ~ -> . . _LATBbits 0 5 `i `uc ]
+}
+[e :U 842 ]
+"91
+}
+[e :U 840 ]
+"92
+}
+[e :U 839 ]
+"93
 }
 [e :U 836 ]
-"81
+"84
 [e $U 837  ]
 [e :U 838 ]
-[; ;main.c: 85: }
-[; ;main.c: 86: }
-"86
+[; ;main.c: 91: }
+[; ;main.c: 92: }
+[; ;main.c: 93: }
+[; ;main.c: 95: }
+"95
 [e :UE 835 ]
 }

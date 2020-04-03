@@ -9472,7 +9472,7 @@ void SYSTEM_Initialize(void);
 # 84
 void OSCILLATOR_Initialize(void);
 
-# 49 "main.c"
+# 50 "main.c"
 extern void MCP4131Write(uint8_t value);
 extern void MCP4131P_loop(void);
 extern void MCP23S08Write(uint8_t data);
@@ -9490,6 +9490,7 @@ void EEPROM_25LC512_loop(void);
 extern void MCP23008_Init(uint8_t portDirection);
 extern void MCP23008_Write(uint8_t data);
 extern void MCP23008_loop(void);
+extern char MCP23008_read(void);
 
 extern void MCP9801_Init(void);
 extern double MCP9801_get_temp(void);
@@ -9497,18 +9498,25 @@ extern double MCP9801_get_temp(void);
 extern void interrupt_Init(void);
 extern char sData;
 
-void main(void)
-{
+void main(void) {
 
-SYSTEM_Initialize();
 interrupt_Init();
-
-chipErase();
+SYSTEM_Initialize();
+_delay((unsigned long)((10)*(16000000/4000.0)));
+MCP23008_Init(0xFF);
+MCP23008_Init(0xFF);
+EUSART1_Write(MCP23008_read());
 
 while (1) {
-EEPROM_25LC512_loop();
-EEPROM_25LC512_Write(0x12,0x54);
-_delay((unsigned long)((1000)*(16000000/4000.0)));
+
+
+if (PORTBbits.RB0) {
+_delay((unsigned long)((10)*(16000000/4000.0)));
+if (!PORTBbits.RB0) {
+do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0);
 }
+}
+}
+
 }
 

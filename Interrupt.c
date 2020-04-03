@@ -13,7 +13,7 @@
  * 
  */
 void interrupt_Init(void){
-    INTCONbits.GIE  = 1;    //Enable global interrupt
+    INTCONbits.GIE  = 1;   //Enable global interrupt
     INTCONbits.PEIE = 1;   //enable peripheral Interrupt
     PIE3bits.SSP2IE = 1;   //Enable Master Synchronous Serial Port 2 Interrupt
     PIR3bits.SSP2IF = 0;   //clear Master Synchronous Serial Port 2 Interrupt Flag   

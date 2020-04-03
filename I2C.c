@@ -24,6 +24,7 @@ void I2C_Init(uint8_t F_clock) {
     SSP2CON2bits.ACKDT = 0;      //Acknowledge enable
     SSP2CON2bits.ACKEN = 1;      //Acknowledge Sequence Enable 
     SSP2ADD = (_XTAL_FREQ/((F_clock*1000) * 4))-1;   //baud rate equation (I2C clock frenquency)
+ 
 }
 
 void I2C_Write(uint8_t data){
@@ -31,15 +32,15 @@ void I2C_Write(uint8_t data){
     while(!SSP2STATbits.BF);  //wait for buffer to be filled up   
     while(!PIR3bits.SSP2IF);  //wait for transmission to complete
     PIR3bits.SSP2IF = 0;      //clear interrupt flag
-    while (!SSP2STATbits.BF);
-    if(SSP2CON2bits.ACKSTAT){ //if acknowledge not received stop 
+    if(SSP2CON2bits.ACKSTAT){ //if acknowledge not received stop transmission process
         I2C_stop();
         return;
     }
 }
 
 void recieveEnable(void){
-    SSP2CON2bits.RCEN = 1;   
+    SSP2CON2bits.RCEN = 1;  
+    while(!SSP2STATbits.BF);
 }
 
 void I2C_start(void){

@@ -53,6 +53,7 @@ void SYSTEM_Initialize(void)
     OSCILLATOR_Initialize();
     SPI1_Initialize();
     EUSART1_Initialize();
+    I2C_Init(100);    // I2C clock frequency in Khz
 }
 
 void OSCILLATOR_Initialize(void)

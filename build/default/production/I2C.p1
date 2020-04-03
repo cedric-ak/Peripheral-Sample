@@ -7091,47 +7091,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;I2C.c: 26: SSP2ADD = (16000000/((F_clock*1000) * 4))-1;
 "26
 [e = _SSP2ADD -> - / -> 16000000 `l -> * * -> _F_clock `i -> 1000 `i -> 4 `i `l -> -> 1 `i `l `uc ]
-[; ;I2C.c: 27: }
-"27
+[; ;I2C.c: 28: }
+"28
 [e :UE 833 ]
 }
-"29
+"30
 [v _I2C_Write `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;I2C.c: 29: void I2C_Write(uint8_t data){
+[; ;I2C.c: 30: void I2C_Write(uint8_t data){
 [e :U _I2C_Write ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;I2C.c: 30: SSP2BUF = data;
-"30
-[e = _SSP2BUF _data ]
-[; ;I2C.c: 31: while(!SSP2STATbits.BF);
+[; ;I2C.c: 31: SSP2BUF = data;
 "31
+[e = _SSP2BUF _data ]
+[; ;I2C.c: 32: while(!SSP2STATbits.BF);
+"32
 [e $U 835  ]
 [e :U 836 ]
 [e :U 835 ]
 [e $ ! != -> . . _SSP2STATbits 2 0 `i -> -> -> 0 `i `Vuc `i 836  ]
 [e :U 837 ]
-[; ;I2C.c: 32: while(!PIR3bits.SSP2IF);
-"32
+[; ;I2C.c: 33: while(!PIR3bits.SSP2IF);
+"33
 [e $U 838  ]
 [e :U 839 ]
 [e :U 838 ]
 [e $ ! != -> . . _PIR3bits 0 7 `i -> -> -> 0 `i `Vuc `i 839  ]
 [e :U 840 ]
-[; ;I2C.c: 33: PIR3bits.SSP2IF = 0;
-"33
-[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
-[; ;I2C.c: 34: while (!SSP2STATbits.BF);
+[; ;I2C.c: 34: PIR3bits.SSP2IF = 0;
 "34
-[e $U 841  ]
-[e :U 842 ]
-[e :U 841 ]
-[e $ ! != -> . . _SSP2STATbits 2 0 `i -> -> -> 0 `i `Vuc `i 842  ]
-[e :U 843 ]
+[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
 [; ;I2C.c: 35: if(SSP2CON2bits.ACKSTAT){
 "35
-[e $ ! != -> . . _SSP2CON2bits 0 6 `i -> -> -> 0 `i `Vuc `i 844  ]
+[e $ ! != -> . . _SSP2CON2bits 0 6 `i -> -> -> 0 `i `Vuc `i 841  ]
 {
 [; ;I2C.c: 36: I2C_stop();
 "36
@@ -7141,7 +7134,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $UE 834  ]
 "38
 }
-[e :U 844 ]
+[e :U 841 ]
 [; ;I2C.c: 38: }
 [; ;I2C.c: 39: }
 "39
@@ -7156,76 +7149,83 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;I2C.c: 42: SSP2CON2bits.RCEN = 1;
 "42
 [e = . . _SSP2CON2bits 0 3 -> -> 1 `i `uc ]
-[; ;I2C.c: 43: }
+[; ;I2C.c: 43: while(!SSP2STATbits.BF);
 "43
-[e :UE 845 ]
+[e $U 843  ]
+[e :U 844 ]
+[e :U 843 ]
+[e $ ! != -> . . _SSP2STATbits 2 0 `i -> -> -> 0 `i `Vuc `i 844  ]
+[e :U 845 ]
+[; ;I2C.c: 44: }
+"44
+[e :UE 842 ]
 }
-"45
+"46
 [v _I2C_start `(v ~T0 @X0 1 ef ]
 {
-[; ;I2C.c: 45: void I2C_start(void){
+[; ;I2C.c: 46: void I2C_start(void){
 [e :U _I2C_start ]
 [f ]
-[; ;I2C.c: 46: SSP2CON2bits.SEN = 1;
-"46
-[e = . . _SSP2CON2bits 0 0 -> -> 1 `i `uc ]
-[; ;I2C.c: 47: while(SSP2CON2bits.SEN);
+[; ;I2C.c: 47: SSP2CON2bits.SEN = 1;
 "47
+[e = . . _SSP2CON2bits 0 0 -> -> 1 `i `uc ]
+[; ;I2C.c: 48: while(SSP2CON2bits.SEN);
+"48
 [e $U 847  ]
 [e :U 848 ]
 [e :U 847 ]
 [e $ != -> . . _SSP2CON2bits 0 0 `i -> -> -> 0 `i `Vuc `i 848  ]
 [e :U 849 ]
-[; ;I2C.c: 48: PIR3bits.SSP2IF = 0;
-"48
-[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
-[; ;I2C.c: 49: }
+[; ;I2C.c: 49: PIR3bits.SSP2IF = 0;
 "49
+[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
+[; ;I2C.c: 50: }
+"50
 [e :UE 846 ]
 }
-"51
+"52
 [v _I2C_repeated_Start `(v ~T0 @X0 1 ef ]
 {
-[; ;I2C.c: 51: void I2C_repeated_Start(void) {
+[; ;I2C.c: 52: void I2C_repeated_Start(void) {
 [e :U _I2C_repeated_Start ]
 [f ]
-[; ;I2C.c: 52: SSP2CON2bits.RSEN = 1;
-"52
-[e = . . _SSP2CON2bits 0 1 -> -> 1 `i `uc ]
-[; ;I2C.c: 53: while (SSP2CON2bits.RSEN);
+[; ;I2C.c: 53: SSP2CON2bits.RSEN = 1;
 "53
+[e = . . _SSP2CON2bits 0 1 -> -> 1 `i `uc ]
+[; ;I2C.c: 54: while (SSP2CON2bits.RSEN);
+"54
 [e $U 851  ]
 [e :U 852 ]
 [e :U 851 ]
 [e $ != -> . . _SSP2CON2bits 0 1 `i -> -> -> 0 `i `Vuc `i 852  ]
 [e :U 853 ]
-[; ;I2C.c: 54: PIR3bits.SSP2IF = 0;
-"54
-[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
-[; ;I2C.c: 55: }
+[; ;I2C.c: 55: PIR3bits.SSP2IF = 0;
 "55
+[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
+[; ;I2C.c: 56: }
+"56
 [e :UE 850 ]
 }
-"57
+"58
 [v _I2C_stop `(v ~T0 @X0 1 ef ]
 {
-[; ;I2C.c: 57: void I2C_stop(void){
+[; ;I2C.c: 58: void I2C_stop(void){
 [e :U _I2C_stop ]
 [f ]
-[; ;I2C.c: 58: SSP2CON2bits.PEN = 1;
-"58
-[e = . . _SSP2CON2bits 0 2 -> -> 1 `i `uc ]
-[; ;I2C.c: 59: while(SSP2CON2bits.PEN);
+[; ;I2C.c: 59: SSP2CON2bits.PEN = 1;
 "59
+[e = . . _SSP2CON2bits 0 2 -> -> 1 `i `uc ]
+[; ;I2C.c: 60: while(SSP2CON2bits.PEN);
+"60
 [e $U 855  ]
 [e :U 856 ]
 [e :U 855 ]
 [e $ != -> . . _SSP2CON2bits 0 2 `i -> -> -> 0 `i `Vuc `i 856  ]
 [e :U 857 ]
-[; ;I2C.c: 60: PIR3bits.SSP2IF = 0;
-"60
-[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
-[; ;I2C.c: 61: }
+[; ;I2C.c: 61: PIR3bits.SSP2IF = 0;
 "61
+[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
+[; ;I2C.c: 62: }
+"62
 [e :UE 854 ]
 }
