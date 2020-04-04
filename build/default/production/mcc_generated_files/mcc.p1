@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"23 mcc_generated_files/../MCP9801.h
+"24 mcc_generated_files/../MCP9801.h
 [u S835 `uc -> 2 `i `ui 1 ]
 [n S835 . MSB_LSB TempData ]
 "183 mcc_generated_files/pin_manager.h
@@ -7092,14 +7092,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP28003.h: 21: void MCP23008_Write(uint8_t data);
 [; ;MCP28003.h: 22: void MCP23008_loop(void);
 [; ;MCP28003.h: 23: char MCP23008_read(void);
-[; ;MCP9801.h: 20: void MCP9801_Init(void);
-[; ;MCP9801.h: 21: double MCP9801_get_temp(void);
-"26 mcc_generated_files/../MCP9801.h
+[; ;MCP9801.h: 21: void MCP9801_Init(void);
+[; ;MCP9801.h: 22: uint8_t MCP9801_TempRead(void);
+"27 mcc_generated_files/../MCP9801.h
 [v _ADC `S835 ~T0 @X0 1 e ]
-[; ;MCP9801.h: 23: union{
-[; ;MCP9801.h: 24: uint8_t MSB_LSB[2];
-[; ;MCP9801.h: 25: uint16_t TempData;
-[; ;MCP9801.h: 26: }ADC;
+[; ;MCP9801.h: 24: union{
+[; ;MCP9801.h: 25: uint8_t MSB_LSB[2];
+[; ;MCP9801.h: 26: uint16_t TempData;
+[; ;MCP9801.h: 27: }ADC;
 [; ;_24AA512.h: 17: uint8_t EEPROM_24AA512_Read(int addHigh, int addLow);
 [; ;_24AA512.h: 18: void EEPROM_24AA512_Write(int addHigh, int AddLow, int data);
 [; ;_24AA512.h: 19: uint8_t EEPROM_24AA512_pageWrite(uint8_t page,int data);

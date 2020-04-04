@@ -9521,9 +9521,9 @@ void MCP23008_Write(uint8_t data);
 void MCP23008_loop(void);
 char MCP23008_read(void);
 
-# 20 "mcc_generated_files/../MCP9801.h"
+# 21 "mcc_generated_files/../MCP9801.h"
 void MCP9801_Init(void);
-double MCP9801_get_temp(void);
+uint8_t MCP9801_TempRead(void);
 
 union{
 uint8_t MSB_LSB[2];
@@ -9544,35 +9544,24 @@ void OSCILLATOR_Initialize(void);
 # 12 "MCP9801_Temp_Sensor.c"
 void MCP9801_Init(void) {
 I2C_start();
-I2C_Write(0x9E);
+I2C_Write(0x90);
 I2C_Write(0x01);
 I2C_Write(0x60);
-I2C_stop();
-
-_delay((unsigned long)((10)*(16000000/4000.0)));
-I2C_start();
-I2C_Write(0x9E);
-I2C_Write(0x00);
 I2C_stop();
 }
 
 
-double MCP9801_get_temp(void) {
-double temperature;
+uint8_t MCP9801_TempRead(void){
 I2C_start();
-I2C_Write(0x9F);
-
-while (!SSP2STATbits.BF);
-ADC.MSB_LSB[0] = SSP2BUF;
-_delay((unsigned long)((240)*(16000000/4000.0)));
-while(SSP2CON2bits.ACKSTAT)
+I2C_Write(0x90);
+I2C_Write(0x00);
+I2C_repeated_Start();
+I2C_Write(0x90 |0x01);
+I2C_read(0);
 ADC.MSB_LSB[1] = SSP2BUF;
-SSP2CON2bits.ACKDT = 1;
-SSP2CON2bits.ACKEN = 1;
-while(SSP2CON2bits.ACKEN);
+I2C_read(1);
+ADC.MSB_LSB[0] = SSP2BUF;
 I2C_stop();
-_delay((unsigned long)((240)*(16000000/4000.0)));
-temperature = ADC.TempData * pow(2, -4);
-return (uint8_t)temperature;
+return (ADC.TempData * pow(2, -4)*0.0625);
 }
 

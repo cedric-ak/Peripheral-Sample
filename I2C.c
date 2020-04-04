@@ -45,7 +45,7 @@ int I2C_read(int ACK_NACK) {
     while (!SSP2STATbits.BF);
     SSP2CON2bits.ACKDT = ACK_NACK;
     while (SSP2CON2bits.ACKEN);
-    return SSP2BUF;
+    //return SSP2BUF;
 }
 
 void I2C_start(void) {

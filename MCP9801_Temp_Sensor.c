@@ -12,35 +12,24 @@
 void MCP9801_Init(void) {
     I2C_start();
     I2C_Write(MCP9801_ADDRES_WRITE);
-    I2C_Write(MCP98001_CONFIG_ADD);
-    I2C_Write(0x60); //ADC 12 bit or 0.0625°C resolution
-    I2C_stop();
-
-    __delay_ms(10);
-    I2C_start();
-    I2C_Write(MCP9801_ADDRES_WRITE);
-    I2C_Write(MCP98001_TA_ADD);
+    I2C_Write(MCP9801_CONFIG_ADD);
+    I2C_Write(0x60); //oneshot disabled, ADC 12 bit resolution, fault queue default, active low(default), COMP/INT power up default, shutdown disabled
     I2C_stop();
 }
 
 
-double MCP9801_get_temp(void) {
-    double temperature;
+uint8_t MCP9801_TempRead(void){
     I2C_start();
-    I2C_Write(MCP9801_ADDRES_READ);
-//    recieveEnable();
-    while (!SSP2STATbits.BF);
-    ADC.MSB_LSB[0] = SSP2BUF;  //MSB Data
-    __delay_ms(240);
-    while(SSP2CON2bits.ACKSTAT) //if acknowledge not received stop 
-    ADC.MSB_LSB[1] = SSP2BUF;   //LSB Data
-    SSP2CON2bits.ACKDT = 1;     //NACK acknowledge
-    SSP2CON2bits.ACKEN = 1;     //send a NACK
-    while(SSP2CON2bits.ACKEN);
+    I2C_Write(MCP9801_ADDRES_WRITE);   //write command
+    I2C_Write(MCP9801_TA_ADD);
+    I2C_repeated_Start();
+    I2C_Write(MCP9801_ADDRES_WRITE |0x01);   //read command
+    I2C_read(ACK);
+    ADC.MSB_LSB[1] = SSP2BUF;  //MSB data
+    I2C_read(NACK);
+    ADC.MSB_LSB[0] = SSP2BUF; //LSB data
     I2C_stop();
-    __delay_ms(240);
-    temperature = ADC.TempData * pow(2, -4);
-    return (uint8_t)temperature;  
+    return (ADC.TempData * pow(2, -4)*0.0625);      //return converted temperature
 }
 
 

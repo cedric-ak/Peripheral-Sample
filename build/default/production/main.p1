@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"23 mcc_generated_files/../MCP9801.h
+"24 mcc_generated_files/../MCP9801.h
 [u S835 `uc -> 2 `i `ui 1 ]
 [n S835 . MSB_LSB TempData ]
 [p mainexit ]
@@ -9,14 +9,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "19 mcc_generated_files/../I2C.h
 [v _I2C_buffClear `(v ~T0 @X0 0 ef ]
-"19 mcc_generated_files/../_24AA512.h
-[v _EEPROM_24AA512_pageWrite `(uc ~T0 @X0 0 ef2`uc`i ]
+"21 mcc_generated_files/../MCP9801.h
+[v _MCP9801_Init `(v ~T0 @X0 0 ef ]
+"347 mcc_generated_files/eusart1.h
+[v _EUSART1_itoa `(v ~T0 @X0 0 ef2`ul`i ]
+"22 mcc_generated_files/../MCP9801.h
+[v _MCP9801_TempRead `(uc ~T0 @X0 0 ef ]
 [v F7202 `(v ~T0 @X0 1 tf1`ul ]
 "164 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h
 [v __delay `JF7202 ~T0 @X0 0 e ]
 [p i __delay ]
-"17 mcc_generated_files/../_24AA512.h
-[v _EEPROM_24AA512_Read `(uc ~T0 @X0 0 ef2`i`i ]
 "7214 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
 [s S359 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S359 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
@@ -7128,25 +7130,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP28003.h: 21: void MCP23008_Write(uint8_t data);
 [; ;MCP28003.h: 22: void MCP23008_loop(void);
 [; ;MCP28003.h: 23: char MCP23008_read(void);
-[; ;MCP9801.h: 20: void MCP9801_Init(void);
-[; ;MCP9801.h: 21: double MCP9801_get_temp(void);
-"26 mcc_generated_files/../MCP9801.h
+[; ;MCP9801.h: 21: void MCP9801_Init(void);
+[; ;MCP9801.h: 22: uint8_t MCP9801_TempRead(void);
+"27 mcc_generated_files/../MCP9801.h
 [v _ADC `S835 ~T0 @X0 1 e ]
-[; ;MCP9801.h: 23: union{
-[; ;MCP9801.h: 24: uint8_t MSB_LSB[2];
-[; ;MCP9801.h: 25: uint16_t TempData;
-[; ;MCP9801.h: 26: }ADC;
+[; ;MCP9801.h: 24: union{
+[; ;MCP9801.h: 25: uint8_t MSB_LSB[2];
+[; ;MCP9801.h: 26: uint16_t TempData;
+[; ;MCP9801.h: 27: }ADC;
 [; ;_24AA512.h: 17: uint8_t EEPROM_24AA512_Read(int addHigh, int addLow);
 [; ;_24AA512.h: 18: void EEPROM_24AA512_Write(int addHigh, int AddLow, int data);
 [; ;_24AA512.h: 19: uint8_t EEPROM_24AA512_pageWrite(uint8_t page,int data);
 [; ;mcc.h: 84: void SYSTEM_Initialize(void);
 [; ;mcc.h: 97: void OSCILLATOR_Initialize(void);
 [; ;main.c: 3: extern void interrupt_Init(void);
-"4 main.c
-[v _tem `uc ~T0 @X0 -> 10 `i e ]
-[; ;main.c: 4: char tem[10];
 [v $root$_main `(v ~T0 @X0 0 e ]
-"5
+"5 main.c
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [; ;main.c: 5: void main(void) {
@@ -7161,56 +7160,53 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 9: I2C_buffClear();
 "9
 [e ( _I2C_buffClear ..  ]
-[; ;main.c: 10: EEPROM_24AA512_pageWrite(3,0xA4);
+[; ;main.c: 10: MCP9801_Init();
 "10
-[e ( _EEPROM_24AA512_pageWrite (2 , -> -> 3 `i `uc -> 164 `i ]
-[; ;main.c: 11: _delay((unsigned long)((5)*(16000000/4000.0)));
-"11
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 12: EEPROM_24AA512_Read(0x01, 0x7E);
+[e ( _MCP9801_Init ..  ]
+[; ;main.c: 12: while (1) {
 "12
-[e ( _EEPROM_24AA512_Read (2 , -> 1 `i -> 126 `i ]
-[; ;main.c: 13: while (1) {
-"13
 [e :U 838 ]
 {
-[; ;main.c: 15: _delay((unsigned long)((500)*(16000000/4000.0)));
+[; ;main.c: 13: EUSART1_itoa(MCP9801_TempRead(), 10);
+"13
+[e ( _EUSART1_itoa (2 , -> ( _MCP9801_TempRead ..  `ul -> 10 `i ]
+[; ;main.c: 14: _delay((unsigned long)((200)*(16000000/4000.0)));
+"14
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 15: if (PORTBbits.RB0) {
 "15
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 16: if (PORTBbits.RB0) {
-"16
 [e $ ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 840  ]
 {
-[; ;main.c: 17: _delay((unsigned long)((10)*(16000000/4000.0)));
-"17
+[; ;main.c: 16: _delay((unsigned long)((10)*(16000000/4000.0)));
+"16
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 18: if (!PORTBbits.RB0) {
-"18
+[; ;main.c: 17: if (!PORTBbits.RB0) {
+"17
 [e $ ! ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 841  ]
 {
-[; ;main.c: 19: do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0);
-"19
+[; ;main.c: 18: do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0);
+"18
 [e :U 844 ]
 {
 [e = . . _LATBbits 0 5 -> ~ -> . . _LATBbits 0 5 `i `uc ]
 }
 [e :U 843 ]
-"20
+"19
 }
 [e :U 841 ]
-"21
+"20
 }
 [e :U 840 ]
-"22
+"21
 }
 [e :U 837 ]
-"13
+"12
 [e $U 838  ]
 [e :U 839 ]
+[; ;main.c: 19: }
 [; ;main.c: 20: }
 [; ;main.c: 21: }
-[; ;main.c: 22: }
-[; ;main.c: 24: }
-"24
+[; ;main.c: 23: }
+"23
 [e :UE 836 ]
 }

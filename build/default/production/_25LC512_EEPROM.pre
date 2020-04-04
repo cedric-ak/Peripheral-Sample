@@ -9521,9 +9521,9 @@ void MCP23008_Write(uint8_t data);
 void MCP23008_loop(void);
 char MCP23008_read(void);
 
-# 20 "mcc_generated_files/../MCP9801.h"
+# 21 "mcc_generated_files/../MCP9801.h"
 void MCP9801_Init(void);
-double MCP9801_get_temp(void);
+uint8_t MCP9801_TempRead(void);
 
 union{
 uint8_t MSB_LSB[2];

@@ -1,18 +1,17 @@
 #include "mcc_generated_files/mcc.h"
 
 extern void interrupt_Init(void);
-char tem[10];
+
 void main(void) {
     // Initialize the device
     interrupt_Init();
     SYSTEM_Initialize();
     I2C_buffClear();
-    EEPROM_24AA512_pageWrite(3,0xA4);  
-    __delay_ms(5);
-    EEPROM_24AA512_Read(0x01, 0x7E);
-    while (true) {
+    MCP9801_Init();
 
-        __delay_ms(500);
+    while (true) {
+        EUSART1_itoa(MCP9801_TempRead(), DEC);
+        __delay_ms(200);
         if (Button2_GetValue()) {
             __delay_ms(10);
             if (!Button2_GetValue()) {

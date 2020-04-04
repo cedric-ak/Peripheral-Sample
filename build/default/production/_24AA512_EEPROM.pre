@@ -9521,9 +9521,9 @@ void MCP23008_Write(uint8_t data);
 void MCP23008_loop(void);
 char MCP23008_read(void);
 
-# 20 "mcc_generated_files/../MCP9801.h"
+# 21 "mcc_generated_files/../MCP9801.h"
 void MCP9801_Init(void);
-double MCP9801_get_temp(void);
+uint8_t MCP9801_TempRead(void);
 
 union{
 uint8_t MSB_LSB[2];
@@ -9555,7 +9555,7 @@ uint8_t EEPROM_24AA512_Read(int addHigh, int addLow) {
 I2C_start();
 I2C_Write(0xA0);
 I2C_Write(addHigh);
-I2C_Write(addLow);
+
 I2C_repeated_Start();
 I2C_Write(0xA0 | 0x01);
 I2C_read(1);

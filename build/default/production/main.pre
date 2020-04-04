@@ -9521,9 +9521,9 @@ void MCP23008_Write(uint8_t data);
 void MCP23008_loop(void);
 char MCP23008_read(void);
 
-# 20 "mcc_generated_files/../MCP9801.h"
+# 21 "mcc_generated_files/../MCP9801.h"
 void MCP9801_Init(void);
-double MCP9801_get_temp(void);
+uint8_t MCP9801_TempRead(void);
 
 union{
 uint8_t MSB_LSB[2];
@@ -9543,18 +9543,17 @@ void OSCILLATOR_Initialize(void);
 
 # 3 "main.c"
 extern void interrupt_Init(void);
-char tem[10];
+
 void main(void) {
 
 interrupt_Init();
 SYSTEM_Initialize();
 I2C_buffClear();
-EEPROM_24AA512_pageWrite(3,0xA4);
-_delay((unsigned long)((5)*(16000000/4000.0)));
-EEPROM_24AA512_Read(0x01, 0x7E);
-while (1) {
+MCP9801_Init();
 
-_delay((unsigned long)((500)*(16000000/4000.0)));
+while (1) {
+EUSART1_itoa(MCP9801_TempRead(), 10);
+_delay((unsigned long)((200)*(16000000/4000.0)));
 if (PORTBbits.RB0) {
 _delay((unsigned long)((10)*(16000000/4000.0)));
 if (!PORTBbits.RB0) {

@@ -7172,10 +7172,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 846 ]
 [e $ != -> . . _SSP2CON2bits 0 4 `i -> -> -> 0 `i `Vuc `i 847  ]
 [e :U 848 ]
-[; ;I2C.c: 48: return SSP2BUF;
-"48
-[e ) -> _SSP2BUF `i ]
-[e $UE 842  ]
 [; ;I2C.c: 49: }
 "49
 [e :UE 842 ]

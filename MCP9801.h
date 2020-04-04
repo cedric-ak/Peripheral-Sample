@@ -12,13 +12,14 @@
 extern "C" {
 #endif
 
-#define MCP9801_ADDRES_WRITE  0x9E
-#define MCP9801_ADDRES_READ   0x9F
-#define MCP98001_CONFIG_ADD   0x01
-#define MCP98001_TA_ADD       0x00   //ambiant Temperature address
+#define MCP9801_ADDRES_WRITE 0x90
+#define MCP9801_CONFIG_ADD   0x01   //Configuration register
+#define MCP9801_TA_ADD       0x00   //Ambiant Temperature address
+#define MCP9801_THYST        0x10   //Temperature Hysteresis register (
+#define MCP9801_TSET         0x11   //Temperature Limit-set register
 
 void MCP9801_Init(void);
-double MCP9801_get_temp(void);
+uint8_t MCP9801_TempRead(void);
 
 union{
     uint8_t MSB_LSB[2];
