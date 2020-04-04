@@ -1,5 +1,5 @@
 
-# 1 "_25LC512_EEPROM.c"
+# 1 "_24AA512_EEPROM.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9482,89 +9482,3 @@ void SYSTEM_Initialize(void);
 # 86
 void OSCILLATOR_Initialize(void);
 
-# 11 "_25LC512_EEPROM.c"
-char sData[10];
-void EEPROM_25LC512_Write(uint8_t address, uint8_t data);
-uint8_t EEPROM_25LC512_Read(uint8_t address);
-void chipErase(void);
-void rStatus_Reg(void);
-void wStatus_Reg(void);
-
-# 32
-void EEPROM_25LC512_Write(uint8_t address, uint8_t data) {
-do { LATCbits.LATC0 = 0; } while(0);
-SPI1_Exchange8bit(0x06);
-do { LATCbits.LATC0 = 1; } while(0);
-
-do { LATCbits.LATC0 = 0; } while(0);
-_delay((unsigned long)((2)*(16000000/4000.0)));
-SPI1_Exchange8bit(0x02);
-SPI1_Exchange8bit(address >> 8);
-SPI1_Exchange8bit(address);
-SPI1_Exchange8bit(data);
-_delay((unsigned long)((2)*(16000000/4000.0)));
-
-# 47
-}
-
-uint8_t EEPROM_25LC512_Read(uint8_t address) {
-do { LATCbits.LATC0 = 0; } while(0);
-_delay((unsigned long)((2)*(16000000/4000.0)));
-SPI1_Exchange8bit(0x03);
-SPI1_Exchange8bit(address >> 8);
-SPI1_Exchange8bit(address);
-SPI1_Exchange8bit(0xff);
-_delay((unsigned long)((2)*(16000000/4000.0)));
-
-# 60
-}
-
-void chipErase(void) {
-do { LATCbits.LATC0 = 0; } while(0);
-SPI1_Exchange8bit(0x06);
-do { LATCbits.LATC0 = 1; } while(0);
-_delay((unsigned long)((2)*(16000000/4000.0)));
-do { LATCbits.LATC0 = 0; } while(0);
-_delay((unsigned long)((2)*(16000000/4000.0)));
-SPI1_Exchange8bit(0xC7);
-do { LATCbits.LATC0 = 1; } while(0);
-}
-
-void rStatus_Reg(void) {
-do { LATCbits.LATC0 = 0; } while(0);
-SPI1_Exchange8bit(0x05);
-SPI1_Exchange8bit(0xff);
-do { LATCbits.LATC0 = 1; } while(0);
-_delay((unsigned long)((2)*(16000000/4000.0)));
-}
-
-void wStatus_Reg(void) {
-do { LATCbits.LATC0 = 0; } while(0);
-SPI1_Exchange8bit(0x01);
-SPI1_Exchange8bit(0x00);
-do { LATCbits.LATC0 = 1; } while(0);
-_delay((unsigned long)((5)*(16000000/4000.0)));
-}
-
-void EEPROM_25LC512_loop(void) {
-if (PORTBbits.RB7) {
-if (PORTBbits.RB7) {
-EEPROM_25LC512_Write(0x12, (0x00));
-for (int d_Zise = 0; d_Zise < 128; d_Zise++) {
-SPI1_Exchange8bit(0x00 + d_Zise);
-}
-do { LATCbits.LATC0 = 1; } while(0);
-}
-while (PORTBbits.RB7);
-}
-if (PORTBbits.RB0) {
-if (PORTBbits.RB0) {
-EEPROM_25LC512_Read(0x12);
-for (int d_Zise = 0; d_Zise < 128; d_Zise++) {
-SPI1_Exchange8bit(0x12 + d_Zise);
-}
-do { LATCbits.LATC0 = 1; } while(0);
-}
-while (PORTBbits.RB0);
-}
-}

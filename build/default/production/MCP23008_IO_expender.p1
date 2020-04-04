@@ -8,9 +8,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "16
 [v _I2C_repeated_Start `(v ~T0 @X0 0 ef ]
 "17
-[v _recieveEnable `(v ~T0 @X0 0 ef ]
-"5957 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
-[v _SSP2BUF `Vuc ~T0 @X0 0 e@3957 ]
+[v _I2C_read `(i ~T0 @X0 0 ef1`i ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7031,9 +7029,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;I2C.h: 14: void I2C_stop(void);
 [; ;I2C.h: 15: void I2C_start(void);
 [; ;I2C.h: 16: void I2C_repeated_Start(void);
-[; ;I2C.h: 17: void recieveEnable(void);
-[; ;mcc.h: 71: void SYSTEM_Initialize(void);
-[; ;mcc.h: 84: void OSCILLATOR_Initialize(void);
+[; ;I2C.h: 17: int I2C_read(int ACK_NACK);
+[; ;I2C.h: 18: void I2C_BusSCan(void);
+[; ;MCP4131.h: 15: void MCP4131Write(uint8_t value);
+[; ;MCP4131.h: 16: void MCP4131P_loop(void);
+[; ;MCP23S08.h: 15: void MCP23S08Write(uint8_t data);
+[; ;MCP23S08.h: 16: void MCP23S08_Init(uint8_t portDirection);
+[; ;MCP23S08.h: 17: void MCP23S08_loop(void);
+[; ;mcc.h: 73: void SYSTEM_Initialize(void);
+[; ;mcc.h: 86: void OSCILLATOR_Initialize(void);
 [; ;MCP23008_IO_expender.c: 20: void MCP23008_Init(uint8_t portDirection);
 [; ;MCP23008_IO_expender.c: 21: void MCP23008_Write(uint8_t data);
 "24 MCP23008_IO_expender.c
@@ -7094,48 +7098,41 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP23008_IO_expender.c: 40: char MCP23008_read(void){
 [e :U _MCP23008_read ]
 [f ]
+[; ;MCP23008_IO_expender.c: 41: I2C_start();
 "41
-[v _dataRead `uc ~T0 @X0 1 a ]
-[; ;MCP23008_IO_expender.c: 41: char dataRead;
-[; ;MCP23008_IO_expender.c: 42: I2C_start();
-"42
 [e ( _I2C_start ..  ]
-[; ;MCP23008_IO_expender.c: 43: I2C_Write(0x40);
-"43
+[; ;MCP23008_IO_expender.c: 42: I2C_Write(0x40);
+"42
 [e ( _I2C_Write (1 -> -> 64 `i `uc ]
-[; ;MCP23008_IO_expender.c: 44: I2C_Write(0x09);
-"44
+[; ;MCP23008_IO_expender.c: 43: I2C_Write(0x09);
+"43
 [e ( _I2C_Write (1 -> -> 9 `i `uc ]
-[; ;MCP23008_IO_expender.c: 45: I2C_repeated_Start();
-"45
+[; ;MCP23008_IO_expender.c: 44: I2C_repeated_Start();
+"44
 [e ( _I2C_repeated_Start ..  ]
-[; ;MCP23008_IO_expender.c: 46: I2C_Write(0x41);
-"46
+[; ;MCP23008_IO_expender.c: 45: I2C_Write(0x41);
+"45
 [e ( _I2C_Write (1 -> -> 65 `i `uc ]
-[; ;MCP23008_IO_expender.c: 47: recieveEnable();
+[; ;MCP23008_IO_expender.c: 46: I2C_read(0);
+"46
+[e ( _I2C_read (1 -> 0 `i ]
+[; ;MCP23008_IO_expender.c: 47: I2C_stop();
 "47
-[e ( _recieveEnable ..  ]
-[; ;MCP23008_IO_expender.c: 48: I2C_stop();
-"48
 [e ( _I2C_stop ..  ]
-[; ;MCP23008_IO_expender.c: 49: return SSP2BUF;
-"49
-[e ) _SSP2BUF ]
-[e $UE 837  ]
-[; ;MCP23008_IO_expender.c: 50: }
-"50
+[; ;MCP23008_IO_expender.c: 48: }
+"48
 [e :UE 837 ]
 }
-"51
+"49
 [v _MCP23008_loop `(v ~T0 @X0 1 ef ]
 {
-[; ;MCP23008_IO_expender.c: 51: void MCP23008_loop(void) {
+[; ;MCP23008_IO_expender.c: 49: void MCP23008_loop(void) {
 [e :U _MCP23008_loop ]
 [f ]
-[; ;MCP23008_IO_expender.c: 52: MCP23008_Write(0x7);
-"52
+[; ;MCP23008_IO_expender.c: 50: MCP23008_Write(0x7);
+"50
 [e ( _MCP23008_Write (1 -> -> 7 `i `uc ]
-[; ;MCP23008_IO_expender.c: 64: }
-"64
+[; ;MCP23008_IO_expender.c: 62: }
+"62
 [e :UE 838 ]
 }

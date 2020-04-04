@@ -1,6 +1,6 @@
- build/default/production/MCP4131_digital_Pot.d  \
- build/default/production/MCP4131_digital_Pot.p1:  \
- MCP4131_digital_Pot.c  \
+ build/default/production/DS1307_RTC.d  \
+ build/default/production/DS1307_RTC.p1:  \
+ DS1307_RTC.c  \
 mcc_generated_files/mcc.h  \
 mcc_generated_files/../I2C.h  \
 mcc_generated_files/eusart1.h  \

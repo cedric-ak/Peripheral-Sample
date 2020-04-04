@@ -14,12 +14,17 @@ void I2C_Write(uint8_t data);
 void I2C_stop(void);
 void I2C_start(void);
 void I2C_repeated_Start(void);
-void recieveEnable(void);
+int I2C_read(int ACK_NACK);
+void I2C_BusSCan(void);
+
 #ifdef	__cplusplus
 extern "C" {
 #endif
 
-
+#define ACK 0
+#define NACK 1 
+#define Input                  0xFF
+#define Output                 0x00
 
 
 #ifdef	__cplusplus

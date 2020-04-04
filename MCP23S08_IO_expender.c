@@ -8,11 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void MCP23S08Write(uint8_t data);
-void MCP23S08_Init(uint8_t portDirection);
 
-#define MCP23S08_WriteAddress  0x40
-#define MCP23S08_ReadAddress   0x41
 
 void MCP23S08_Init(uint8_t portDirection) {
     CS1_SetLow();

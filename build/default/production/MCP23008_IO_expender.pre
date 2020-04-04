@@ -9464,12 +9464,22 @@ void I2C_Write(uint8_t data);
 void I2C_stop(void);
 void I2C_start(void);
 void I2C_repeated_Start(void);
-void recieveEnable(void);
+int I2C_read(int ACK_NACK);
+void I2C_BusSCan(void);
 
-# 71 "mcc_generated_files/mcc.h"
+# 15 "mcc_generated_files/../MCP4131.h"
+void MCP4131Write(uint8_t value);
+void MCP4131P_loop(void);
+
+# 15 "mcc_generated_files/../MCP23S08.h"
+void MCP23S08Write(uint8_t data);
+void MCP23S08_Init(uint8_t portDirection);
+void MCP23S08_loop(void);
+
+# 73 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 84
+# 86
 void OSCILLATOR_Initialize(void);
 
 # 20 "MCP23008_IO_expender.c"
@@ -9494,18 +9504,16 @@ I2C_stop();
 }
 
 char MCP23008_read(void){
-char dataRead;
 I2C_start();
 I2C_Write(0x40);
 I2C_Write(0x09);
 I2C_repeated_Start();
 I2C_Write(0x41);
-recieveEnable();
+I2C_read(0);
 I2C_stop();
-return SSP2BUF;
 }
 void MCP23008_loop(void) {
 MCP23008_Write(0x7);
 
-# 64
+# 62
 }

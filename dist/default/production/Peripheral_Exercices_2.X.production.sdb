@@ -61,21 +61,21 @@
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"18 F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+"20 F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
 [v _I2C_Init I2C_Init `(v  1 e 1 0 ]
-"30
+"32
 [v _I2C_Write I2C_Write `(v  1 e 1 0 ]
-"41
-[v _recieveEnable recieveEnable `(v  1 e 1 0 ]
-"46
-[v _I2C_start I2C_start `(v  1 e 1 0 ]
+"43
+[v _I2C_read I2C_read `(i  1 e 2 0 ]
 "52
-[v _I2C_repeated_Start I2C_repeated_Start `(v  1 e 1 0 ]
+[v _I2C_start I2C_start `(v  1 e 1 0 ]
 "58
+[v _I2C_repeated_Start I2C_repeated_Start `(v  1 e 1 0 ]
+"64
 [v _I2C_stop I2C_stop `(v  1 e 1 0 ]
 "15 F:\WORK\Personal\Peripheral_Exercices_2.X\Interrupt.c
 [v _interrupt_Init interrupt_Init `(v  1 e 1 0 ]
-"75 F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
+"65 F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "69 F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
@@ -109,7 +109,7 @@
 [v _MCP23008_Write MCP23008_Write `(v  1 e 1 0 ]
 "40
 [v _MCP23008_read MCP23008_read `(uc  1 e 1 0 ]
-"26 F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23S08_IO_expender.c
+"22 F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23S08_IO_expender.c
 [v _MCP23S08Write MCP23S08Write `(v  1 e 1 0 ]
 "17 F:\WORK\Personal\Peripheral_Exercices_2.X\MCP4131_digital_Pot.c
 [v _MCP4131Write MCP4131Write `(v  1 e 1 0 ]
@@ -704,13 +704,13 @@
 [v _EUSART1_OverrunErrorHandler EUSART1_OverrunErrorHandler `*.37(v  1 e 2 0 ]
 "60
 [v _EUSART1_ErrorHandler EUSART1_ErrorHandler `*.37(v  1 e 2 0 ]
-[u S1646 . 2 `[2]uc 1 MSB_LSB 2 0 `ui 1 TempData 2 0 ]
+[u S1648 . 2 `[2]uc 1 MSB_LSB 2 0 `ui 1 TempData 2 0 ]
 "24 F:\WORK\Personal\Peripheral_Exercices_2.X\MCP9801_Temp_Sensor.c
-[v _ADC ADC `S1646  1 e 2 0 ]
-"75 F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
+[v _ADC ADC `S1648  1 e 2 0 ]
+"65 F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"95
+"86
 } 0
 "15 F:\WORK\Personal\Peripheral_Exercices_2.X\Interrupt.c
 [v _interrupt_Init interrupt_Init `(v  1 e 1 0 ]
@@ -737,13 +737,13 @@
 {
 "70
 } 0
-"18 F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+"20 F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
 [v _I2C_Init I2C_Init `(v  1 e 1 0 ]
 {
 [v I2C_Init@F_clock F_clock `uc  1 a 1 wreg ]
 [v I2C_Init@F_clock F_clock `uc  1 a 1 wreg ]
 [v I2C_Init@F_clock F_clock `uc  1 a 1 20 ]
-"28
+"30
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -794,17 +794,18 @@
 "40 F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23008_IO_expender.c
 [v _MCP23008_read MCP23008_read `(uc  1 e 1 0 ]
 {
-"50
+"48
 } 0
-"41 F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
-[v _recieveEnable recieveEnable `(v  1 e 1 0 ]
-{
-"44
-} 0
-"52
+"58 F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
 [v _I2C_repeated_Start I2C_repeated_Start `(v  1 e 1 0 ]
 {
-"56
+"62
+} 0
+"43
+[v _I2C_read I2C_read `(i  1 e 2 0 ]
+{
+[v I2C_read@ACK_NACK ACK_NACK `i  1 p 2 0 ]
+"50
 } 0
 "24 F:\WORK\Personal\Peripheral_Exercices_2.X\MCP23008_IO_expender.c
 [v _MCP23008_Init MCP23008_Init `(v  1 e 1 0 ]
@@ -814,23 +815,23 @@
 [v MCP23008_Init@portDirection portDirection `uc  1 a 1 1 ]
 "30
 } 0
-"46 F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+"52 F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
 [v _I2C_start I2C_start `(v  1 e 1 0 ]
 {
-"50
+"56
 } 0
-"30
+"32
 [v _I2C_Write I2C_Write `(v  1 e 1 0 ]
 {
 [v I2C_Write@data data `uc  1 a 1 wreg ]
 [v I2C_Write@data data `uc  1 a 1 wreg ]
 [v I2C_Write@data data `uc  1 a 1 0 ]
-"39
+"41
 } 0
-"58
+"64
 [v _I2C_stop I2C_stop `(v  1 e 1 0 ]
 {
-"62
+"68
 } 0
 "135 F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]

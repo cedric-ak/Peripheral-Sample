@@ -1,18 +1,18 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"72 main.c
+"62 main.c
 [v _interrupt_Init `(v ~T0 @X0 0 ef ]
-"71 mcc_generated_files/mcc.h
+"73 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 [v F7202 `(v ~T0 @X0 1 tf1`ul ]
 "164 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h
 [v __delay `JF7202 ~T0 @X0 0 e ]
 [p i __delay ]
-"64 main.c
+"54 main.c
 [v _MCP23008_Init `(v ~T0 @X0 0 ef1`uc ]
 "345 mcc_generated_files/eusart1.h
 [v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
-"67 main.c
+"57 main.c
 [v _MCP23008_read `(uc ~T0 @X0 0 ef ]
 "7214 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
 [s S359 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -7077,91 +7077,95 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;I2C.h: 14: void I2C_stop(void);
 [; ;I2C.h: 15: void I2C_start(void);
 [; ;I2C.h: 16: void I2C_repeated_Start(void);
-[; ;I2C.h: 17: void recieveEnable(void);
-[; ;mcc.h: 71: void SYSTEM_Initialize(void);
-[; ;mcc.h: 84: void OSCILLATOR_Initialize(void);
-[; ;main.c: 50: extern void MCP4131Write(uint8_t value);
-[; ;main.c: 51: extern void MCP4131P_loop(void);
-[; ;main.c: 52: extern void MCP23S08Write(uint8_t data);
-[; ;main.c: 53: extern void MCP23S08_Init(uint8_t portDirection);
-[; ;main.c: 54: extern void MCP23S08_loop(void);
-[; ;main.c: 57: extern void EEPROM_25LC512_Write(uint8_t address, uint8_t data);
-[; ;main.c: 58: extern uint8_t EEPROM_25LC512_Read(uint8_t address);
-[; ;main.c: 59: extern void chipErase(void);
-[; ;main.c: 60: extern void rStatus_Reg(void);
-[; ;main.c: 61: extern void wStatus_Reg(void);
-[; ;main.c: 62: void EEPROM_25LC512_loop(void);
-[; ;main.c: 64: extern void MCP23008_Init(uint8_t portDirection);
-[; ;main.c: 65: extern void MCP23008_Write(uint8_t data);
-[; ;main.c: 66: extern void MCP23008_loop(void);
-[; ;main.c: 67: extern char MCP23008_read(void);
-[; ;main.c: 69: extern void MCP9801_Init(void);
-[; ;main.c: 70: extern double MCP9801_get_temp(void);
-[; ;main.c: 72: extern void interrupt_Init(void);
-[; ;main.c: 73: extern char sData;
+[; ;I2C.h: 17: int I2C_read(int ACK_NACK);
+[; ;I2C.h: 18: void I2C_BusSCan(void);
+[; ;MCP4131.h: 15: void MCP4131Write(uint8_t value);
+[; ;MCP4131.h: 16: void MCP4131P_loop(void);
+[; ;MCP23S08.h: 15: void MCP23S08Write(uint8_t data);
+[; ;MCP23S08.h: 16: void MCP23S08_Init(uint8_t portDirection);
+[; ;MCP23S08.h: 17: void MCP23S08_loop(void);
+[; ;mcc.h: 73: void SYSTEM_Initialize(void);
+[; ;mcc.h: 86: void OSCILLATOR_Initialize(void);
+[; ;main.c: 47: extern void EEPROM_25LC512_Write(uint8_t address, uint8_t data);
+[; ;main.c: 48: extern uint8_t EEPROM_25LC512_Read(uint8_t address);
+[; ;main.c: 49: extern void chipErase(void);
+[; ;main.c: 50: extern void rStatus_Reg(void);
+[; ;main.c: 51: extern void wStatus_Reg(void);
+[; ;main.c: 52: void EEPROM_25LC512_loop(void);
+[; ;main.c: 54: extern void MCP23008_Init(uint8_t portDirection);
+[; ;main.c: 55: extern void MCP23008_Write(uint8_t data);
+[; ;main.c: 56: extern void MCP23008_loop(void);
+[; ;main.c: 57: extern char MCP23008_read(void);
+[; ;main.c: 59: extern void MCP9801_Init(void);
+[; ;main.c: 60: extern double MCP9801_get_temp(void);
+[; ;main.c: 62: extern void interrupt_Init(void);
+[; ;main.c: 63: extern char sData;
 [v $root$_main `(v ~T0 @X0 0 e ]
-"75 main.c
+"65 main.c
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 75: void main(void) {
+[; ;main.c: 65: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 77: interrupt_Init();
-"77
+[; ;main.c: 67: interrupt_Init();
+"67
 [e ( _interrupt_Init ..  ]
-[; ;main.c: 78: SYSTEM_Initialize();
-"78
+[; ;main.c: 68: SYSTEM_Initialize();
+"68
 [e ( _SYSTEM_Initialize ..  ]
+[; ;main.c: 69: _delay((unsigned long)((10)*(16000000/4000.0)));
+"69
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 70: MCP23008_Init(0xFF);
+"70
+[e ( _MCP23008_Init (1 -> -> 255 `i `uc ]
+[; ;main.c: 71: MCP23008_Init(0xFF);
+"71
+[e ( _MCP23008_Init (1 -> -> 255 `i `uc ]
+[; ;main.c: 74: while (1) {
+"74
+[e :U 837 ]
+{
+[; ;main.c: 76: EUSART1_Write(MCP23008_read());
+"76
+[e ( _EUSART1_Write (1 ( _MCP23008_read ..  ]
+[; ;main.c: 77: _delay((unsigned long)((500)*(16000000/4000.0)));
+"77
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 78: if (PORTBbits.RB0) {
+"78
+[e $ ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 839  ]
+{
 [; ;main.c: 79: _delay((unsigned long)((10)*(16000000/4000.0)));
 "79
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 80: MCP23008_Init(0xFF);
+[; ;main.c: 80: if (!PORTBbits.RB0) {
 "80
-[e ( _MCP23008_Init (1 -> -> 255 `i `uc ]
-[; ;main.c: 81: MCP23008_Init(0xFF);
-"81
-[e ( _MCP23008_Init (1 -> -> 255 `i `uc ]
-[; ;main.c: 82: EUSART1_Write(MCP23008_read());
-"82
-[e ( _EUSART1_Write (1 ( _MCP23008_read ..  ]
-[; ;main.c: 84: while (1) {
-"84
-[e :U 837 ]
-{
-[; ;main.c: 87: if (PORTBbits.RB0) {
-"87
-[e $ ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 839  ]
-{
-[; ;main.c: 88: _delay((unsigned long)((10)*(16000000/4000.0)));
-"88
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 89: if (!PORTBbits.RB0) {
-"89
 [e $ ! ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 840  ]
 {
-[; ;main.c: 90: do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0);
-"90
+[; ;main.c: 81: do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0);
+"81
 [e :U 843 ]
 {
 [e = . . _LATBbits 0 5 -> ~ -> . . _LATBbits 0 5 `i `uc ]
 }
 [e :U 842 ]
-"91
+"82
 }
 [e :U 840 ]
-"92
+"83
 }
 [e :U 839 ]
-"93
+"84
 }
 [e :U 836 ]
-"84
+"74
 [e $U 837  ]
 [e :U 838 ]
-[; ;main.c: 91: }
-[; ;main.c: 92: }
-[; ;main.c: 93: }
-[; ;main.c: 95: }
-"95
+[; ;main.c: 82: }
+[; ;main.c: 83: }
+[; ;main.c: 84: }
+[; ;main.c: 86: }
+"86
 [e :UE 835 ]
 }

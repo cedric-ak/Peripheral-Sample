@@ -44,16 +44,6 @@
 #include "mcc_generated_files/mcc.h"
 #include <string.h>
 
-#define Input                  0xFF
-#define Output                 0x00
-
-extern void MCP4131Write(uint8_t value);
-extern void MCP4131P_loop(void);
-extern void MCP23S08Write(uint8_t data);
-extern void MCP23S08_Init(uint8_t portDirection);
-extern void MCP23S08_loop(void);
-
-
 extern void EEPROM_25LC512_Write(uint8_t address, uint8_t data);
 extern uint8_t EEPROM_25LC512_Read(uint8_t address);
 extern void chipErase(void);
@@ -79,11 +69,12 @@ void main(void) {
     __delay_ms(10);
     MCP23008_Init(Input);
     MCP23008_Init(Input);
-    EUSART1_Write(MCP23008_read());
+    //    I2C_BusSCan();
 
     while (true) {
 
-
+        EUSART1_Write(MCP23008_read());
+        __delay_ms(500);
         if (Button2_GetValue()) {
             __delay_ms(10);
             if (!Button2_GetValue()) {

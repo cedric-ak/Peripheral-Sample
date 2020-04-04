@@ -38,15 +38,13 @@ void MCP23008_Write(uint8_t data){
 }
 
 char MCP23008_read(void){
-    char dataRead;
     I2C_start();
     I2C_Write(MCP23008_WriteAddress);
     I2C_Write(MCP23008_GPIO);
     I2C_repeated_Start();
     I2C_Write(MCP23008_ReadAddress);
-    recieveEnable();
+    I2C_read(ACK);
     I2C_stop();
-    return SSP2BUF;
 }
 void MCP23008_loop(void) {
 MCP23008_Write(0x7);

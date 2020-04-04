@@ -11,8 +11,8 @@
 /*
  * 
  */
-void MCP4131Write(uint8_t value);
-void MCP4131P_loop(void);
+//void MCP4131Write(uint8_t value);
+//void MCP4131P_loop(void);
 
 void MCP4131Write(uint8_t value) {
     CS1_SetLow(); //select device

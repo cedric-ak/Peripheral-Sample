@@ -54,6 +54,8 @@
 #include "spi1.h"
 #include "eusart1.h"
 #include "../I2C.h"
+#include "../MCP4131.h"
+#include "../MCP23S08.h"
 
 
 
