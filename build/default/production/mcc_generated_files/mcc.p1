@@ -1,7 +1,10 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"23 mcc_generated_files/../MCP9801.h
+[u S835 `uc -> 2 `i `ui 1 ]
+[n S835 . MSB_LSB TempData ]
 "183 mcc_generated_files/pin_manager.h
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"86 mcc_generated_files/mcc.h
+"89 mcc_generated_files/mcc.h
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
 "117 mcc_generated_files/spi1.h
 [v _SPI1_Initialize `(v ~T0 @X0 0 ef ]
@@ -7048,8 +7051,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP23S08.h: 15: void MCP23S08Write(uint8_t data);
 [; ;MCP23S08.h: 16: void MCP23S08_Init(uint8_t portDirection);
 [; ;MCP23S08.h: 17: void MCP23S08_loop(void);
-[; ;mcc.h: 73: void SYSTEM_Initialize(void);
-[; ;mcc.h: 86: void OSCILLATOR_Initialize(void);
+"15 mcc_generated_files/../_25LC512.h
+[v _sData `uc ~T0 @X0 -> 10 `i e ]
+[; ;_25LC512.h: 15: char sData[10];
+[; ;_25LC512.h: 16: void EEPROM_25LC512_Write(uint8_t address, uint8_t data);
+[; ;_25LC512.h: 17: uint8_t EEPROM_25LC512_Read(uint8_t address);
+[; ;_25LC512.h: 18: void chipErase(void);
+[; ;_25LC512.h: 19: void rStatus_Reg(void);
+[; ;_25LC512.h: 20: void wStatus_Reg(void);
+[; ;_25LC512.h: 21: void EEPROM_25LC512_loop(void);
+[; ;MCP28003.h: 20: void MCP23008_Init(uint8_t portDirection);
+[; ;MCP28003.h: 21: void MCP23008_Write(uint8_t data);
+[; ;MCP28003.h: 22: void MCP23008_loop(void);
+[; ;MCP28003.h: 23: char MCP23008_read(void);
+[; ;MCP9801.h: 20: void MCP9801_Init(void);
+[; ;MCP9801.h: 21: double MCP9801_get_temp(void);
+"26 mcc_generated_files/../MCP9801.h
+[v _ADC `S835 ~T0 @X0 1 e ]
+[; ;MCP9801.h: 23: union{
+[; ;MCP9801.h: 24: uint8_t MSB_LSB[2];
+[; ;MCP9801.h: 25: uint16_t TempData;
+[; ;MCP9801.h: 26: }ADC;
+[; ;mcc.h: 76: void SYSTEM_Initialize(void);
+[; ;mcc.h: 89: void OSCILLATOR_Initialize(void);
 "50 mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
 "51
@@ -7075,7 +7099,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _I2C_Init (1 -> -> 100 `i `uc ]
 [; ;mcc.c: 57: }
 "57
-[e :UE 835 ]
+[e :UE 836 ]
 }
 "59
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
@@ -7102,5 +7126,5 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;mcc.c: 70: }
 "70
-[e :UE 836 ]
+[e :UE 837 ]
 }

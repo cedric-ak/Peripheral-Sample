@@ -10,19 +10,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define MCP9801_ADDRES_WRITE  0x9E
-#define MCP9801_ADDRES_READ   0x9F
-#define MCP98001_CONFIG_ADD   0x01
-#define MCP98001_TA_ADD       0x00   //ambiant Temperature address
-
-void MCP9801_Init(void);
-double MCP9801_get_temp(void);
-
-union{
-    uint8_t MSB_LSB[2];
-    uint16_t TempData;
-}ADC;
-
 void MCP9801_Init(void) {
     I2C_start();
     I2C_Write(MCP9801_ADDRES_WRITE);
@@ -42,7 +29,7 @@ double MCP9801_get_temp(void) {
     double temperature;
     I2C_start();
     I2C_Write(MCP9801_ADDRES_READ);
-    recieveEnable();
+//    recieveEnable();
     while (!SSP2STATbits.BF);
     ADC.MSB_LSB[0] = SSP2BUF;  //MSB Data
     __delay_ms(240);

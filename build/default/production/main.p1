@@ -1,18 +1,21 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"23 mcc_generated_files/../MCP9801.h
+[u S835 `uc -> 2 `i `ui 1 ]
+[n S835 . MSB_LSB TempData ]
 [p mainexit ]
-"62 main.c
+"47 main.c
 [v _interrupt_Init `(v ~T0 @X0 0 ef ]
-"73 mcc_generated_files/mcc.h
+"76 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 [v F7202 `(v ~T0 @X0 1 tf1`ul ]
 "164 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h
 [v __delay `JF7202 ~T0 @X0 0 e ]
 [p i __delay ]
-"54 main.c
+"20 mcc_generated_files/../MCP28003.h
 [v _MCP23008_Init `(v ~T0 @X0 0 ef1`uc ]
 "345 mcc_generated_files/eusart1.h
 [v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
-"57 main.c
+"23 mcc_generated_files/../MCP28003.h
 [v _MCP23008_read `(uc ~T0 @X0 0 ef ]
 "7214 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
 [s S359 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -7084,88 +7087,96 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP23S08.h: 15: void MCP23S08Write(uint8_t data);
 [; ;MCP23S08.h: 16: void MCP23S08_Init(uint8_t portDirection);
 [; ;MCP23S08.h: 17: void MCP23S08_loop(void);
-[; ;mcc.h: 73: void SYSTEM_Initialize(void);
-[; ;mcc.h: 86: void OSCILLATOR_Initialize(void);
-[; ;main.c: 47: extern void EEPROM_25LC512_Write(uint8_t address, uint8_t data);
-[; ;main.c: 48: extern uint8_t EEPROM_25LC512_Read(uint8_t address);
-[; ;main.c: 49: extern void chipErase(void);
-[; ;main.c: 50: extern void rStatus_Reg(void);
-[; ;main.c: 51: extern void wStatus_Reg(void);
-[; ;main.c: 52: void EEPROM_25LC512_loop(void);
-[; ;main.c: 54: extern void MCP23008_Init(uint8_t portDirection);
-[; ;main.c: 55: extern void MCP23008_Write(uint8_t data);
-[; ;main.c: 56: extern void MCP23008_loop(void);
-[; ;main.c: 57: extern char MCP23008_read(void);
-[; ;main.c: 59: extern void MCP9801_Init(void);
-[; ;main.c: 60: extern double MCP9801_get_temp(void);
-[; ;main.c: 62: extern void interrupt_Init(void);
-[; ;main.c: 63: extern char sData;
+"15 mcc_generated_files/../_25LC512.h
+[v _sData `uc ~T0 @X0 -> 10 `i e ]
+[; ;_25LC512.h: 15: char sData[10];
+[; ;_25LC512.h: 16: void EEPROM_25LC512_Write(uint8_t address, uint8_t data);
+[; ;_25LC512.h: 17: uint8_t EEPROM_25LC512_Read(uint8_t address);
+[; ;_25LC512.h: 18: void chipErase(void);
+[; ;_25LC512.h: 19: void rStatus_Reg(void);
+[; ;_25LC512.h: 20: void wStatus_Reg(void);
+[; ;_25LC512.h: 21: void EEPROM_25LC512_loop(void);
+[; ;MCP28003.h: 20: void MCP23008_Init(uint8_t portDirection);
+[; ;MCP28003.h: 21: void MCP23008_Write(uint8_t data);
+[; ;MCP28003.h: 22: void MCP23008_loop(void);
+[; ;MCP28003.h: 23: char MCP23008_read(void);
+[; ;MCP9801.h: 20: void MCP9801_Init(void);
+[; ;MCP9801.h: 21: double MCP9801_get_temp(void);
+"26 mcc_generated_files/../MCP9801.h
+[v _ADC `S835 ~T0 @X0 1 e ]
+[; ;MCP9801.h: 23: union{
+[; ;MCP9801.h: 24: uint8_t MSB_LSB[2];
+[; ;MCP9801.h: 25: uint16_t TempData;
+[; ;MCP9801.h: 26: }ADC;
+[; ;mcc.h: 76: void SYSTEM_Initialize(void);
+[; ;mcc.h: 89: void OSCILLATOR_Initialize(void);
+[; ;main.c: 47: extern void interrupt_Init(void);
 [v $root$_main `(v ~T0 @X0 0 e ]
-"65 main.c
+"49 main.c
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 65: void main(void) {
+[; ;main.c: 49: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 67: interrupt_Init();
-"67
+[; ;main.c: 51: interrupt_Init();
+"51
 [e ( _interrupt_Init ..  ]
-[; ;main.c: 68: SYSTEM_Initialize();
-"68
+[; ;main.c: 52: SYSTEM_Initialize();
+"52
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 69: _delay((unsigned long)((10)*(16000000/4000.0)));
-"69
+[; ;main.c: 53: _delay((unsigned long)((10)*(16000000/4000.0)));
+"53
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 70: MCP23008_Init(0xFF);
-"70
+[; ;main.c: 54: MCP23008_Init(0xFF);
+"54
 [e ( _MCP23008_Init (1 -> -> 255 `i `uc ]
-[; ;main.c: 71: MCP23008_Init(0xFF);
-"71
+[; ;main.c: 55: MCP23008_Init(0xFF);
+"55
 [e ( _MCP23008_Init (1 -> -> 255 `i `uc ]
-[; ;main.c: 74: while (1) {
-"74
-[e :U 837 ]
+[; ;main.c: 58: while (1) {
+"58
+[e :U 838 ]
 {
-[; ;main.c: 76: EUSART1_Write(MCP23008_read());
-"76
+[; ;main.c: 60: EUSART1_Write(MCP23008_read());
+"60
 [e ( _EUSART1_Write (1 ( _MCP23008_read ..  ]
-[; ;main.c: 77: _delay((unsigned long)((500)*(16000000/4000.0)));
-"77
+[; ;main.c: 61: _delay((unsigned long)((500)*(16000000/4000.0)));
+"61
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 78: if (PORTBbits.RB0) {
-"78
-[e $ ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 839  ]
+[; ;main.c: 62: if (PORTBbits.RB0) {
+"62
+[e $ ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 840  ]
 {
-[; ;main.c: 79: _delay((unsigned long)((10)*(16000000/4000.0)));
-"79
+[; ;main.c: 63: _delay((unsigned long)((10)*(16000000/4000.0)));
+"63
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 80: if (!PORTBbits.RB0) {
-"80
-[e $ ! ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 840  ]
+[; ;main.c: 64: if (!PORTBbits.RB0) {
+"64
+[e $ ! ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 841  ]
 {
-[; ;main.c: 81: do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0);
-"81
-[e :U 843 ]
+[; ;main.c: 65: do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0);
+"65
+[e :U 844 ]
 {
 [e = . . _LATBbits 0 5 -> ~ -> . . _LATBbits 0 5 `i `uc ]
 }
-[e :U 842 ]
-"82
+[e :U 843 ]
+"66
+}
+[e :U 841 ]
+"67
 }
 [e :U 840 ]
-"83
+"68
 }
+[e :U 837 ]
+"58
+[e $U 838  ]
 [e :U 839 ]
-"84
-}
-[e :U 836 ]
-"74
-[e $U 837  ]
-[e :U 838 ]
-[; ;main.c: 82: }
-[; ;main.c: 83: }
-[; ;main.c: 84: }
-[; ;main.c: 86: }
-"86
-[e :UE 835 ]
+[; ;main.c: 66: }
+[; ;main.c: 67: }
+[; ;main.c: 68: }
+[; ;main.c: 70: }
+"70
+[e :UE 836 ]
 }

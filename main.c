@@ -44,23 +44,7 @@
 #include "mcc_generated_files/mcc.h"
 #include <string.h>
 
-extern void EEPROM_25LC512_Write(uint8_t address, uint8_t data);
-extern uint8_t EEPROM_25LC512_Read(uint8_t address);
-extern void chipErase(void);
-extern void rStatus_Reg(void);
-extern void wStatus_Reg(void);
-void EEPROM_25LC512_loop(void);
-
-extern void MCP23008_Init(uint8_t portDirection);
-extern void MCP23008_Write(uint8_t data);
-extern void MCP23008_loop(void);
-extern char MCP23008_read(void);
-
-extern void MCP9801_Init(void);
-extern double MCP9801_get_temp(void);
-
 extern void interrupt_Init(void);
-extern char sData;
 
 void main(void) {
     // Initialize the device

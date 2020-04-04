@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.45 build -152302408 
-                                                                                               Sat Apr 04 14:09:46 2020
+                                                                                               Sat Apr 04 14:20:15 2020
 
 Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160504
      1                           	processor	18LF46J13
@@ -375,7 +375,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    361 ;;
    362 ;; *************** function _main *****************
    363 ;; Defined at:
-   364 ;;		line 65 in file "main.c"
+   364 ;;		line 49 in file "main.c"
    365 ;; Parameters:    Size  Location     Type
    366 ;;		None
    367 ;; Auto vars:     Size  Location     Type
@@ -417,15 +417,15 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    398  001008                     _main:
    399                           	opt stack 28
    400                           
-   401                           ;main.c: 67: interrupt_Init();
+   401                           ;main.c: 51: interrupt_Init();
    402                           
    403                           ;incstack = 0
    404  001008  EC3F  F009         	call	_interrupt_Init	;wreg free
    405                           
-   406                           ;main.c: 68: SYSTEM_Initialize();
+   406                           ;main.c: 52: SYSTEM_Initialize();
    407  00100C  EC18  F009         	call	_SYSTEM_Initialize	;wreg free
    408                           
-   409                           ;main.c: 69: _delay((unsigned long)((10)*(16000000/4000.0)));
+   409                           ;main.c: 53: _delay((unsigned long)((10)*(16000000/4000.0)));
    410  001010  0E34               	movlw	52
    411  001012  6E16               	movwf	??_main& (0+255),c
    412  001014  0EF2               	movlw	242
@@ -435,19 +435,19 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    416  00101A  2E16               	decfsz	??_main& (0+255),f,c
    417  00101C  D7FC               	bra	u737
    418                           
-   419                           ;main.c: 70: MCP23008_Init(0xFF);
+   419                           ;main.c: 54: MCP23008_Init(0xFF);
    420  00101E  0EFF               	movlw	255
    421  001020  ECFC  F008         	call	_MCP23008_Init
    422                           
-   423                           ;main.c: 71: MCP23008_Init(0xFF);
+   423                           ;main.c: 55: MCP23008_Init(0xFF);
    424  001024  0EFF               	movlw	255
    425  001026  ECFC  F008         	call	_MCP23008_Init
    426  00102A                     
-   427                           ;main.c: 76: EUSART1_Write(MCP23008_read());
+   427                           ;main.c: 60: EUSART1_Write(MCP23008_read());
    428  00102A  ECA9  F008         	call	_MCP23008_read	;wreg free
    429  00102E  EC30  F009         	call	_EUSART1_Write
    430                           
-   431                           ;main.c: 77: _delay((unsigned long)((500)*(16000000/4000.0)));
+   431                           ;main.c: 61: _delay((unsigned long)((500)*(16000000/4000.0)));
    432  001032  0E0B               	movlw	11
    433  001034  6E17               	movwf	(??_main+1)& (0+255),c
    434  001036  0E26               	movlw	38
@@ -461,11 +461,11 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    442  001044  2E17               	decfsz	(??_main+1)& (0+255),f,c
    443  001046  D7FA               	bra	u747
    444                           
-   445                           ;main.c: 78: if (PORTBbits.RB0) {
+   445                           ;main.c: 62: if (PORTBbits.RB0) {
    446  001048  A081               	btfss	3969,0,c	;volatile
-   447  00104A  D7EF               	goto	l237
+   447  00104A  D7EF               	goto	l245
    448                           
-   449                           ;main.c: 79: _delay((unsigned long)((10)*(16000000/4000.0)));
+   449                           ;main.c: 63: _delay((unsigned long)((10)*(16000000/4000.0)));
    450  00104C  0E34               	movlw	52
    451  00104E  6E16               	movwf	??_main& (0+255),c
    452  001050  0EF2               	movlw	242
@@ -475,11 +475,11 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    456  001056  2E16               	decfsz	??_main& (0+255),f,c
    457  001058  D7FC               	bra	u757
    458                           
-   459                           ;main.c: 80: if (!PORTBbits.RB0) {
+   459                           ;main.c: 64: if (!PORTBbits.RB0) {
    460  00105A  B081               	btfsc	3969,0,c	;volatile
-   461  00105C  D7E6               	goto	l237
+   461  00105C  D7E6               	goto	l245
    462                           
-   463                           ;main.c: 81: do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0);
+   463                           ;main.c: 65: do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0);
    464  00105E  AA8A               	btfss	3978,5,c	;volatile
    465  001060  D002               	goto	u720
    466  001062  0E01               	movlw	1
@@ -496,7 +496,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    477  001074  0BDF               	andlw	-33
    478  001076  1816               	xorwf	??_main,w,c
    479  001078  6E8A               	movwf	3978,c	;volatile
-   480  00107A  D7D7               	goto	l237
+   480  00107A  D7D7               	goto	l245
    481  00107C                     __end_of_main:
    482                           	opt stack 0
    483                           tblptru	equ	0xFF8
@@ -1145,7 +1145,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1086  000F3C  0E00               	movlw	0
   1087  000F3E  6E10               	movwf	___aldiv@sign,c
   1088  000F40  AE0E               	btfss	___aldiv@divisor+3,7,c
-  1089  000F42  D00A               	goto	l547
+  1089  000F42  D00A               	goto	l577
   1090  000F44  1E0E               	comf	___aldiv@divisor+3,f,c
   1091  000F46  1E0D               	comf	___aldiv@divisor+2,f,c
   1092  000F48  1E0C               	comf	___aldiv@divisor+1,f,c
@@ -1156,9 +1156,9 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1097  000F52  220E               	addwfc	___aldiv@divisor+3,f,c
   1098  000F54  0E01               	movlw	1
   1099  000F56  6E10               	movwf	___aldiv@sign,c
-  1100  000F58                     l547:
+  1100  000F58                     l577:
   1101  000F58  AE0A               	btfss	___aldiv@dividend+3,7,c
-  1102  000F5A  D00A               	goto	l548
+  1102  000F5A  D00A               	goto	l578
   1103  000F5C  1E0A               	comf	___aldiv@dividend+3,f,c
   1104  000F5E  1E09               	comf	___aldiv@dividend+2,f,c
   1105  000F60  1E08               	comf	___aldiv@dividend+1,f,c
@@ -1169,7 +1169,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1110  000F6A  220A               	addwfc	___aldiv@dividend+3,f,c
   1111  000F6C  0E01               	movlw	1
   1112  000F6E  1A10               	xorwf	___aldiv@sign,f,c
-  1113  000F70                     l548:
+  1113  000F70                     l578:
   1114  000F70  0E00               	movlw	0
   1115  000F72  6E11               	movwf	___aldiv@quotient,c
   1116  000F74  0E00               	movlw	0
@@ -1183,19 +1183,19 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1124  000F84  100D               	iorwf	___aldiv@divisor+2,w,c
   1125  000F86  100E               	iorwf	___aldiv@divisor+3,w,c
   1126  000F88  B4D8               	btfsc	status,2,c
-  1127  000F8A  D02A               	goto	l555
+  1127  000F8A  D02A               	goto	l585
   1128  000F8C  0E01               	movlw	1
   1129  000F8E  6E0F               	movwf	___aldiv@counter,c
-  1130  000F90  D006               	goto	l550
+  1130  000F90  D006               	goto	l580
   1131  000F92  90D8               	bcf	status,0,c
   1132  000F94  360B               	rlcf	___aldiv@divisor,f,c
   1133  000F96  360C               	rlcf	___aldiv@divisor+1,f,c
   1134  000F98  360D               	rlcf	___aldiv@divisor+2,f,c
   1135  000F9A  360E               	rlcf	___aldiv@divisor+3,f,c
   1136  000F9C  2A0F               	incf	___aldiv@counter,f,c
-  1137  000F9E                     l550:
+  1137  000F9E                     l580:
   1138  000F9E  AE0E               	btfss	___aldiv@divisor+3,7,c
-  1139  000FA0  D7F8               	goto	l551
+  1139  000FA0  D7F8               	goto	l581
   1140  000FA2                     u640:
   1141  000FA2  90D8               	bcf	status,0,c
   1142  000FA4  3611               	rlcf	___aldiv@quotient,f,c
@@ -1211,7 +1211,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1152  000FB8  500E               	movf	___aldiv@divisor+3,w,c
   1153  000FBA  580A               	subwfb	___aldiv@dividend+3,w,c
   1154  000FBC  A0D8               	btfss	status,0,c
-  1155  000FBE  D009               	goto	l554
+  1155  000FBE  D009               	goto	l584
   1156  000FC0  500B               	movf	___aldiv@divisor,w,c
   1157  000FC2  5E07               	subwf	___aldiv@dividend,f,c
   1158  000FC4  500C               	movf	___aldiv@divisor+1,w,c
@@ -1221,7 +1221,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1162  000FCC  500E               	movf	___aldiv@divisor+3,w,c
   1163  000FCE  5A0A               	subwfb	___aldiv@dividend+3,f,c
   1164  000FD0  8011               	bsf	___aldiv@quotient,0,c
-  1165  000FD2                     l554:
+  1165  000FD2                     l584:
   1166  000FD2  90D8               	bcf	status,0,c
   1167  000FD4  320E               	rrcf	___aldiv@divisor+3,f,c
   1168  000FD6  320D               	rrcf	___aldiv@divisor+2,f,c
@@ -1229,10 +1229,10 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1170  000FDA  320B               	rrcf	___aldiv@divisor,f,c
   1171  000FDC  2E0F               	decfsz	___aldiv@counter,f,c
   1172  000FDE  D7E1               	goto	u640
-  1173  000FE0                     l555:
+  1173  000FE0                     l585:
   1174  000FE0  5010               	movf	___aldiv@sign,w,c
   1175  000FE2  B4D8               	btfsc	status,2,c
-  1176  000FE4  D008               	goto	l556
+  1176  000FE4  D008               	goto	l586
   1177  000FE6  1E14               	comf	___aldiv@quotient+3,f,c
   1178  000FE8  1E13               	comf	___aldiv@quotient+2,f,c
   1179  000FEA  1E12               	comf	___aldiv@quotient+1,f,c
@@ -1241,7 +1241,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1182  000FF0  2212               	addwfc	___aldiv@quotient+1,f,c
   1183  000FF2  2213               	addwfc	___aldiv@quotient+2,f,c
   1184  000FF4  2214               	addwfc	___aldiv@quotient+3,f,c
-  1185  000FF6                     l556:
+  1185  000FF6                     l586:
   1186  000FF6  C011  F007         	movff	___aldiv@quotient,?___aldiv
   1187  000FFA  C012  F008         	movff	___aldiv@quotient+1,?___aldiv+1
   1188  000FFE  C013  F009         	movff	___aldiv@quotient+2,?___aldiv+2
@@ -1550,7 +1550,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1471                           
   1472 ;; *************** function _MCP23008_read *****************
   1473 ;; Defined at:
-  1474 ;;		line 40 in file "MCP23008_IO_expender.c"
+  1474 ;;		line 32 in file "MCP23008_IO_expender.c"
   1475 ;; Parameters:    Size  Location     Type
   1476 ;;		None
   1477 ;; Auto vars:     Size  Location     Type
@@ -1593,34 +1593,34 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1509  001152                     _MCP23008_read:
   1510                           	opt stack 28
   1511                           
-  1512                           ;MCP23008_IO_expender.c: 41: I2C_start();
+  1512                           ;MCP23008_IO_expender.c: 33: I2C_start();
   1513                           
   1514                           ;incstack = 0
   1515  001152  EC58  F009         	call	_I2C_start	;wreg free
   1516                           
-  1517                           ;MCP23008_IO_expender.c: 42: I2C_Write(0x40);
+  1517                           ;MCP23008_IO_expender.c: 34: I2C_Write(0x40);
   1518  001156  0E40               	movlw	64
   1519  001158  EC0B  F009         	call	_I2C_Write
   1520                           
-  1521                           ;MCP23008_IO_expender.c: 43: I2C_Write(0x09);
+  1521                           ;MCP23008_IO_expender.c: 35: I2C_Write(0x09);
   1522  00115C  0E09               	movlw	9
   1523  00115E  EC0B  F009         	call	_I2C_Write
   1524                           
-  1525                           ;MCP23008_IO_expender.c: 44: I2C_repeated_Start();
+  1525                           ;MCP23008_IO_expender.c: 36: I2C_repeated_Start();
   1526  001162  EC53  F009         	call	_I2C_repeated_Start	;wreg free
   1527                           
-  1528                           ;MCP23008_IO_expender.c: 45: I2C_Write(0x41);
+  1528                           ;MCP23008_IO_expender.c: 37: I2C_Write(0x41);
   1529  001166  0E41               	movlw	65
   1530  001168  EC0B  F009         	call	_I2C_Write
   1531                           
-  1532                           ;MCP23008_IO_expender.c: 46: I2C_read(0);
+  1532                           ;MCP23008_IO_expender.c: 38: I2C_read(0);
   1533  00116C  0E00               	movlw	0
   1534  00116E  6E02               	movwf	I2C_read@ACK_NACK+1,c
   1535  001170  0E00               	movlw	0
   1536  001172  6E01               	movwf	I2C_read@ACK_NACK,c
   1537  001174  EC24  F009         	call	_I2C_read	;wreg free
   1538                           
-  1539                           ;MCP23008_IO_expender.c: 47: I2C_stop();
+  1539                           ;MCP23008_IO_expender.c: 39: I2C_stop();
   1540  001178  EC5D  F009         	call	_I2C_stop	;wreg free
   1541  00117C  0012               	return		;funcret
   1542  00117E                     __end_of_MCP23008_read:
@@ -1682,7 +1682,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1593                           ;incstack = 0
   1594  0012A6  8271               	bsf	3953,1,c	;volatile
   1595  0012A8  B271               	btfsc	3953,1,c	;volatile
-  1596  0012AA  D7FE               	goto	l420
+  1596  0012AA  D7FE               	goto	l438
   1597                           
   1598                           ;I2C.c: 61: PIR3bits.SSP2IF = 0;
   1599  0012AC  9EA4               	bcf	4004,7,c	;volatile
@@ -1746,7 +1746,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1652                           ;incstack = 0
   1653  001248  8671               	bsf	3953,3,c	;volatile
   1654  00124A  A073               	btfss	3955,0,c	;volatile
-  1655  00124C  D7FE               	goto	l405
+  1655  00124C  D7FE               	goto	l423
   1656                           
   1657                           ;I2C.c: 47: SSP2CON2bits.ACKDT = ACK_NACK;
   1658  00124E  B001               	btfsc	I2C_read@ACK_NACK,0,c
@@ -1781,7 +1781,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1687                           
   1688 ;; *************** function _MCP23008_Init *****************
   1689 ;; Defined at:
-  1690 ;;		line 24 in file "MCP23008_IO_expender.c"
+  1690 ;;		line 16 in file "MCP23008_IO_expender.c"
   1691 ;; Parameters:    Size  Location     Type
   1692 ;;  portDirectio    1    wreg     unsigned char 
   1693 ;; Auto vars:     Size  Location     Type
@@ -1826,22 +1826,22 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1727                           ;MCP23008_Init@portDirection stored from wreg
   1728  0011F8  6E02               	movwf	MCP23008_Init@portDirection,c
   1729                           
-  1730                           ;MCP23008_IO_expender.c: 25: I2C_start();
+  1730                           ;MCP23008_IO_expender.c: 17: I2C_start();
   1731  0011FA  EC58  F009         	call	_I2C_start	;wreg free
   1732                           
-  1733                           ;MCP23008_IO_expender.c: 26: I2C_Write(0x40);
+  1733                           ;MCP23008_IO_expender.c: 18: I2C_Write(0x40);
   1734  0011FE  0E40               	movlw	64
   1735  001200  EC0B  F009         	call	_I2C_Write
   1736                           
-  1737                           ;MCP23008_IO_expender.c: 27: I2C_Write(0x00);
+  1737                           ;MCP23008_IO_expender.c: 19: I2C_Write(0x00);
   1738  001204  0E00               	movlw	0
   1739  001206  EC0B  F009         	call	_I2C_Write
   1740                           
-  1741                           ;MCP23008_IO_expender.c: 28: I2C_Write(portDirection);
+  1741                           ;MCP23008_IO_expender.c: 20: I2C_Write(portDirection);
   1742  00120A  5002               	movf	MCP23008_Init@portDirection,w,c
   1743  00120C  EC0B  F009         	call	_I2C_Write
   1744                           
-  1745                           ;MCP23008_IO_expender.c: 29: I2C_stop();
+  1745                           ;MCP23008_IO_expender.c: 21: I2C_stop();
   1746  001210  EC5D  F009         	call	_I2C_stop	;wreg free
   1747  001214  0012               	return		;funcret
   1748  001216                     __end_of_MCP23008_Init:
@@ -1908,7 +1908,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1804                           ;incstack = 0
   1805  0012B0  8071               	bsf	3953,0,c	;volatile
   1806  0012B2  B071               	btfsc	3953,0,c	;volatile
-  1807  0012B4  D7FE               	goto	l414
+  1807  0012B4  D7FE               	goto	l432
   1808                           
   1809                           ;I2C.c: 55: PIR3bits.SSP2IF = 0;
   1810  0012B6  9EA4               	bcf	4004,7,c	;volatile
@@ -1980,7 +1980,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1871                           ;I2C.c: 33: SSP2BUF = data;
   1872  001218  C001  FF75         	movff	I2C_Write@data,3957	;volatile
   1873  00121C  A073               	btfss	3955,0,c	;volatile
-  1874  00121E  D7FE               	goto	l395
+  1874  00121E  D7FE               	goto	l413
   1875  001220                     u90:
   1876                           
   1877                           ;I2C.c: 35: while (!PIR3bits.SSP2IF);
@@ -2064,7 +2064,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1950                           ;incstack = 0
   1951  0012BA  8471               	bsf	3953,2,c	;volatile
   1952  0012BC  B471               	btfsc	3953,2,c	;volatile
-  1953  0012BE  D7FE               	goto	l426
+  1953  0012BE  D7FE               	goto	l444
   1954                           
   1955                           ;I2C.c: 67: PIR3bits.SSP2IF = 0;
   1956  0012C0  9EA4               	bcf	4004,7,c	;volatile
@@ -2132,7 +2132,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2013                           
   2014                           ;eusart1.c: 138: while(!PIR1bits.TX1IF)
   2015  001262  A89E               	btfss	3998,4,c	;volatile
-  2016  001264  D7FE               	goto	l1310
+  2016  001264  D7FE               	goto	l1340
   2017  001266                     u170:
   2018                           
   2019                           ;eusart1.c: 140: }
@@ -2467,26 +2467,26 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.45 build -152302408 
-Symbol Table                                                                                   Sat Apr 04 14:09:46 2020
+Symbol Table                                                                                   Sat Apr 04 14:20:15 2020
 
                             __size_of_I2C_Write 001A                                              u90 1220  
                            ___wmul@multiplicand 0003                          __end_of_interrupt_Init 1288  
                                   __CFG_CP0$OFF 000000                              __size_of_I2C_start 000A  
-                                   __CFG_OSC$HS 000000                                             l420 12A8  
-                                           l405 124A                                             l237 102A  
-                                           l414 12B2                                             _ADC 0024  
-                                           l426 12BC                                             l550 0F9E  
-                                           l551 0F92                                             l554 0FD2  
-                                           l395 121C                                             l555 0FE0  
-                                           l547 0F58                                             l556 0FF6  
-                                           l548 0F70                                             u170 1266  
+                                   __CFG_OSC$HS 000000                                             l413 121C  
+                                           l245 102A                                             l423 124A  
+                                           _ADC 0024                                             l432 12B2  
+                                           l444 12BC                                             l438 12A8  
+                                           l580 0F9E                                             l581 0F92  
+                                           l584 0FD2                                             l585 0FE0  
+                                           l577 0F58                                             l586 0FF6  
+                                           l578 0F70                                             u170 1266  
                                            u640 0FA2                                             u720 1066  
                                            u726 1068                                             u737 1016  
                                            u747 103C                                             u685 1256  
                                            u757 1052                                             u686 1258  
                                            u767 11C4                                             wreg 000FE8  
                                     _TXSTA1bits 000FAD                                    __CFG_IESO$ON 000000  
-                                          l1310 1262                                            _LATA 000F89  
+                                          l1340 1262                                            _LATA 000F89  
                                           _LATB 000F8A                                            _LATC 000F8B  
                                           _LATD 000F8C                                            _LATE 000F8D  
                                  _EUSART1_Write 1260                                   __CFG_FCMEN$ON 000000  

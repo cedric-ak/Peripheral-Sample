@@ -9476,17 +9476,37 @@ void MCP23S08Write(uint8_t data);
 void MCP23S08_Init(uint8_t portDirection);
 void MCP23S08_loop(void);
 
-# 73 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
+# 15 "mcc_generated_files/../_25LC512.h"
+char sData[10];
+void EEPROM_25LC512_Write(uint8_t address, uint8_t data);
+uint8_t EEPROM_25LC512_Read(uint8_t address);
+void chipErase(void);
+void rStatus_Reg(void);
+void wStatus_Reg(void);
+void EEPROM_25LC512_loop(void);
 
-# 86
-void OSCILLATOR_Initialize(void);
-
-# 20 "MCP23008_IO_expender.c"
+# 20 "mcc_generated_files/../MCP28003.h"
 void MCP23008_Init(uint8_t portDirection);
 void MCP23008_Write(uint8_t data);
+void MCP23008_loop(void);
+char MCP23008_read(void);
 
+# 20 "mcc_generated_files/../MCP9801.h"
+void MCP9801_Init(void);
+double MCP9801_get_temp(void);
 
+union{
+uint8_t MSB_LSB[2];
+uint16_t TempData;
+}ADC;
+
+# 76 "mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+
+# 89
+void OSCILLATOR_Initialize(void);
+
+# 16 "MCP23008_IO_expender.c"
 void MCP23008_Init(uint8_t portDirection){
 I2C_start();
 I2C_Write(0x40);
@@ -9515,5 +9535,5 @@ I2C_stop();
 void MCP23008_loop(void) {
 MCP23008_Write(0x7);
 
-# 62
+# 54
 }

@@ -1,4 +1,7 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"23 mcc_generated_files/../MCP9801.h
+[u S835 `uc -> 2 `i `ui 1 ]
+[n S835 . MSB_LSB TempData ]
 "8573 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
 [s S408 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S408 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
@@ -7043,8 +7046,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP23S08.h: 15: void MCP23S08Write(uint8_t data);
 [; ;MCP23S08.h: 16: void MCP23S08_Init(uint8_t portDirection);
 [; ;MCP23S08.h: 17: void MCP23S08_loop(void);
-[; ;mcc.h: 73: void SYSTEM_Initialize(void);
-[; ;mcc.h: 86: void OSCILLATOR_Initialize(void);
+"15 mcc_generated_files/../_25LC512.h
+[v _sData `uc ~T0 @X0 -> 10 `i e ]
+[; ;_25LC512.h: 15: char sData[10];
+[; ;_25LC512.h: 16: void EEPROM_25LC512_Write(uint8_t address, uint8_t data);
+[; ;_25LC512.h: 17: uint8_t EEPROM_25LC512_Read(uint8_t address);
+[; ;_25LC512.h: 18: void chipErase(void);
+[; ;_25LC512.h: 19: void rStatus_Reg(void);
+[; ;_25LC512.h: 20: void wStatus_Reg(void);
+[; ;_25LC512.h: 21: void EEPROM_25LC512_loop(void);
+[; ;MCP28003.h: 20: void MCP23008_Init(uint8_t portDirection);
+[; ;MCP28003.h: 21: void MCP23008_Write(uint8_t data);
+[; ;MCP28003.h: 22: void MCP23008_loop(void);
+[; ;MCP28003.h: 23: char MCP23008_read(void);
+[; ;MCP9801.h: 20: void MCP9801_Init(void);
+[; ;MCP9801.h: 21: double MCP9801_get_temp(void);
+"26 mcc_generated_files/../MCP9801.h
+[v _ADC `S835 ~T0 @X0 1 e ]
+[; ;MCP9801.h: 23: union{
+[; ;MCP9801.h: 24: uint8_t MSB_LSB[2];
+[; ;MCP9801.h: 25: uint16_t TempData;
+[; ;MCP9801.h: 26: }ADC;
+[; ;mcc.h: 76: void SYSTEM_Initialize(void);
+[; ;mcc.h: 89: void OSCILLATOR_Initialize(void);
 "13 MCP23S08_IO_expender.c
 [v _MCP23S08_Init `(v ~T0 @X0 1 ef1`uc ]
 {
@@ -7054,11 +7078,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;MCP23S08_IO_expender.c: 14: do { LATCbits.LATC0 = 0; } while(0);
 "14
-[e :U 838 ]
+[e :U 839 ]
 {
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 837 ]
+[e :U 838 ]
 [; ;MCP23S08_IO_expender.c: 15: SPI1_Exchange8bit(0x40);
 "15
 [e ( _SPI1_Exchange8bit (1 -> -> 64 `i `uc ]
@@ -7073,14 +7097,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;MCP23S08_IO_expender.c: 19: do { LATCbits.LATC0 = 1; } while(0);
 "19
-[e :U 841 ]
+[e :U 842 ]
 {
 [e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 840 ]
+[e :U 841 ]
 [; ;MCP23S08_IO_expender.c: 20: }
 "20
-[e :UE 835 ]
+[e :UE 836 ]
 }
 "22
 [v _MCP23S08Write `(v ~T0 @X0 1 ef1`uc ]
@@ -7091,11 +7115,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;MCP23S08_IO_expender.c: 23: do { LATCbits.LATC0 = 0; } while(0);
 "23
-[e :U 845 ]
+[e :U 846 ]
 {
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 844 ]
+[e :U 845 ]
 [; ;MCP23S08_IO_expender.c: 24: SPI1_Exchange8bit(0x40);
 "24
 [e ( _SPI1_Exchange8bit (1 -> -> 64 `i `uc ]
@@ -7110,14 +7134,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;MCP23S08_IO_expender.c: 28: do { LATCbits.LATC0 = 1; } while(0);
 "28
-[e :U 848 ]
+[e :U 849 ]
 {
 [e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 847 ]
+[e :U 848 ]
 [; ;MCP23S08_IO_expender.c: 29: }
 "29
-[e :UE 842 ]
+[e :UE 843 ]
 }
 "32
 [v _MCP23S08_loop `(v ~T0 @X0 1 ef ]
@@ -7130,9 +7154,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [v _leftShif `i ~T0 @X0 1 a ]
 [e = _leftShif -> 0 `i ]
-[e $ < _leftShif -> 8 `i 850  ]
-[e $U 851  ]
-[e :U 850 ]
+[e $ < _leftShif -> 8 `i 851  ]
+[e $U 852  ]
+[e :U 851 ]
 {
 [; ;MCP23S08_IO_expender.c: 34: MCP23S08Write(0x01<<leftShif);
 "34
@@ -7144,8 +7168,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "33
 [e ++ _leftShif -> 1 `i ]
-[e $ < _leftShif -> 8 `i 850  ]
-[e :U 851 ]
+[e $ < _leftShif -> 8 `i 851  ]
+[e :U 852 ]
 "36
 }
 [; ;MCP23S08_IO_expender.c: 36: }_delay((unsigned long)((1000)*(16000000/4000.0)));
@@ -7155,9 +7179,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [v _rightShif `i ~T0 @X0 1 a ]
 [e = _rightShif -> 0 `i ]
-[e $ < _rightShif -> 8 `i 853  ]
-[e $U 854  ]
-[e :U 853 ]
+[e $ < _rightShif -> 8 `i 854  ]
+[e $U 855  ]
+[e :U 854 ]
 {
 [; ;MCP23S08_IO_expender.c: 39: MCP23S08Write(0x80 >> rightShif);
 "39
@@ -7169,13 +7193,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "38
 [e ++ _rightShif -> 1 `i ]
-[e $ < _rightShif -> 8 `i 853  ]
-[e :U 854 ]
+[e $ < _rightShif -> 8 `i 854  ]
+[e :U 855 ]
 "41
 }
 [; ;MCP23S08_IO_expender.c: 41: }_delay((unsigned long)((1000)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;MCP23S08_IO_expender.c: 42: }
 "42
-[e :UE 849 ]
+[e :UE 850 ]
 }

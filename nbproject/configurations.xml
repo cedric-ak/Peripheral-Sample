@@ -16,6 +16,9 @@
       <itemPath>I2C.h</itemPath>
       <itemPath>MCP4131.h</itemPath>
       <itemPath>MCP23S08.h</itemPath>
+      <itemPath>_25LC512.h</itemPath>
+      <itemPath>MCP28003.h</itemPath>
+      <itemPath>MCP9801.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

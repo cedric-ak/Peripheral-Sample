@@ -11,14 +11,6 @@
 /*
  * 
  */
-#define MCP23008_WriteAddress  0x40
-#define MCP23008_ReadAddress   0x41
-#define MCP23008_IODIR         0x00
-#define MCP23008_OLAT          0x0A
-#define MCP23008_GPIO          0x09
-
-void MCP23008_Init(uint8_t portDirection);
-void MCP23008_Write(uint8_t data);
 
 
 void MCP23008_Init(uint8_t portDirection){   //Simular to TRIS register in MCU

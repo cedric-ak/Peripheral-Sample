@@ -56,6 +56,9 @@
 #include "../I2C.h"
 #include "../MCP4131.h"
 #include "../MCP23S08.h"
+#include "../_25LC512.h"
+#include "../MCP28003.h"
+#include "../MCP9801.h"
 
 
 
