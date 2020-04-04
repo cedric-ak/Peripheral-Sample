@@ -3,20 +3,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [u S835 `uc -> 2 `i `ui 1 ]
 [n S835 . MSB_LSB TempData ]
 [p mainexit ]
-"47 main.c
+"3 main.c
 [v _interrupt_Init `(v ~T0 @X0 0 ef ]
-"76 mcc_generated_files/mcc.h
+"84 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"19 mcc_generated_files/../I2C.h
+[v _I2C_buffClear `(v ~T0 @X0 0 ef ]
+"19 mcc_generated_files/../_24AA512.h
+[v _EEPROM_24AA512_pageWrite `(uc ~T0 @X0 0 ef2`uc`i ]
 [v F7202 `(v ~T0 @X0 1 tf1`ul ]
 "164 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h
 [v __delay `JF7202 ~T0 @X0 0 e ]
 [p i __delay ]
-"20 mcc_generated_files/../MCP28003.h
-[v _MCP23008_Init `(v ~T0 @X0 0 ef1`uc ]
-"345 mcc_generated_files/eusart1.h
-[v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
-"23 mcc_generated_files/../MCP28003.h
-[v _MCP23008_read `(uc ~T0 @X0 0 ef ]
+"17 mcc_generated_files/../_24AA512.h
+[v _EEPROM_24AA512_Read `(uc ~T0 @X0 0 ef2`i`i ]
 "7214 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
 [s S359 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S359 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
@@ -6943,13 +6943,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stddef.h: 6: typedef int ptrdiff_t;
-[; ;spi1.h: 117: void SPI1_Initialize(void);
-[; ;spi1.h: 152: uint8_t SPI1_Exchange8bit(uint8_t data);
-[; ;spi1.h: 192: uint8_t SPI1_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
-[; ;spi1.h: 215: bool SPI1_IsBufferFull(void);
-[; ;spi1.h: 240: bool SPI1_HasWriteCollisionOccured(void);
-[; ;spi1.h: 264: void SPI1_ClearWriteCollisionStatus(void);
+[; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
+[; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
+[; ;string.h: 16: extern void * memset(void *, int, size_t);
+[; ;string.h: 36: extern char * strcat(char *, const char *);
+[; ;string.h: 37: extern char * strcpy(char *, const char *);
+[; ;string.h: 38: extern char * strncat(char *, const char *, size_t);
+[; ;string.h: 39: extern char * strncpy(char *, const char *, size_t);
+[; ;string.h: 40: extern char * strdup(const char *);
+[; ;string.h: 41: extern char * strtok(char *, const char *);
+[; ;string.h: 44: extern int memcmp(const void *, const void *, size_t);
+[; ;string.h: 45: extern int strcmp(const char *, const char *);
+[; ;string.h: 46: extern int stricmp(const char *, const char *);
+[; ;string.h: 47: extern int strncmp(const char *, const char *, size_t);
+[; ;string.h: 48: extern int strnicmp(const char *, const char *, size_t);
+[; ;string.h: 49: extern void * memchr(const void *, int, size_t);
+[; ;string.h: 50: extern size_t strcspn(const char *, const char *);
+[; ;string.h: 51: extern char * strpbrk(const char *, const char *);
+[; ;string.h: 52: extern size_t strspn(const char *, const char *);
+[; ;string.h: 53: extern char * strstr(const char *, const char *);
+[; ;string.h: 54: extern char * stristr(const char *, const char *);
+[; ;string.h: 55: extern char * strerror(int);
+[; ;string.h: 56: extern size_t strlen(const char *);
+[; ;string.h: 57: extern char * strchr(const char *, int);
+[; ;string.h: 58: extern char * strichr(const char *, int);
+[; ;string.h: 59: extern char * strrchr(const char *, int);
+[; ;string.h: 60: extern char * strrichr(const char *, int);
 [; ;stdlib.h: 7: typedef unsigned short wchar_t;
 [; ;stdlib.h: 15: typedef struct {
 [; ;stdlib.h: 16: int rem;
@@ -7000,32 +7019,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-[; ;string.h: 14: extern void * memcpy(void *, const void *, size_t);
-[; ;string.h: 15: extern void * memmove(void *, const void *, size_t);
-[; ;string.h: 16: extern void * memset(void *, int, size_t);
-[; ;string.h: 36: extern char * strcat(char *, const char *);
-[; ;string.h: 37: extern char * strcpy(char *, const char *);
-[; ;string.h: 38: extern char * strncat(char *, const char *, size_t);
-[; ;string.h: 39: extern char * strncpy(char *, const char *, size_t);
-[; ;string.h: 40: extern char * strdup(const char *);
-[; ;string.h: 41: extern char * strtok(char *, const char *);
-[; ;string.h: 44: extern int memcmp(const void *, const void *, size_t);
-[; ;string.h: 45: extern int strcmp(const char *, const char *);
-[; ;string.h: 46: extern int stricmp(const char *, const char *);
-[; ;string.h: 47: extern int strncmp(const char *, const char *, size_t);
-[; ;string.h: 48: extern int strnicmp(const char *, const char *, size_t);
-[; ;string.h: 49: extern void * memchr(const void *, int, size_t);
-[; ;string.h: 50: extern size_t strcspn(const char *, const char *);
-[; ;string.h: 51: extern char * strpbrk(const char *, const char *);
-[; ;string.h: 52: extern size_t strspn(const char *, const char *);
-[; ;string.h: 53: extern char * strstr(const char *, const char *);
-[; ;string.h: 54: extern char * stristr(const char *, const char *);
-[; ;string.h: 55: extern char * strerror(int);
-[; ;string.h: 56: extern size_t strlen(const char *);
-[; ;string.h: 57: extern char * strchr(const char *, int);
-[; ;string.h: 58: extern char * strichr(const char *, int);
-[; ;string.h: 59: extern char * strrchr(const char *, int);
-[; ;string.h: 60: extern char * strrichr(const char *, int);
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
 [; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
@@ -7055,6 +7048,39 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
 [; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
 [; ;stdio.h: 195: extern int printf(const char *, ...);
+[; ;math.h: 30: extern double fabs(double);
+[; ;math.h: 31: extern double floor(double);
+[; ;math.h: 32: extern double ceil(double);
+[; ;math.h: 33: extern double modf(double, double *);
+[; ;math.h: 34: extern double sqrt(double);
+[; ;math.h: 35: extern double atof(const char *);
+[; ;math.h: 36: extern double sin(double) ;
+[; ;math.h: 37: extern double cos(double) ;
+[; ;math.h: 38: extern double tan(double) ;
+[; ;math.h: 39: extern double asin(double) ;
+[; ;math.h: 40: extern double acos(double) ;
+[; ;math.h: 41: extern double atan(double);
+[; ;math.h: 42: extern double atan2(double, double) ;
+[; ;math.h: 43: extern double log(double);
+[; ;math.h: 44: extern double log10(double);
+[; ;math.h: 45: extern double pow(double, double) ;
+[; ;math.h: 46: extern double exp(double) ;
+[; ;math.h: 47: extern double sinh(double) ;
+[; ;math.h: 48: extern double cosh(double) ;
+[; ;math.h: 49: extern double tanh(double);
+[; ;math.h: 50: extern double eval_poly(double, const double *, int);
+[; ;math.h: 51: extern double frexp(double, int *);
+[; ;math.h: 52: extern double ldexp(double, int);
+[; ;math.h: 53: extern double fmod(double, double);
+[; ;math.h: 54: extern double trunc(double);
+[; ;math.h: 55: extern double round(double);
+[; ;stddef.h: 6: typedef int ptrdiff_t;
+[; ;spi1.h: 117: void SPI1_Initialize(void);
+[; ;spi1.h: 152: uint8_t SPI1_Exchange8bit(uint8_t data);
+[; ;spi1.h: 192: uint8_t SPI1_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+[; ;spi1.h: 215: bool SPI1_IsBufferFull(void);
+[; ;spi1.h: 240: bool SPI1_HasWriteCollisionOccured(void);
+[; ;spi1.h: 264: void SPI1_ClearWriteCollisionStatus(void);
 [; ;eusart1.h: 78: typedef union {
 [; ;eusart1.h: 79: struct {
 [; ;eusart1.h: 80: unsigned perr : 1;
@@ -7072,9 +7098,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart1.h: 325: uint8_t EUSART1_Read(void);
 [; ;eusart1.h: 345: void EUSART1_Write(uint8_t txData);
 [; ;eusart1.h: 346: void EUSART1_Write_Text(uint8_t *pbData, uint8_t iSize);
-[; ;eusart1.h: 367: void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
-[; ;eusart1.h: 385: void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
-[; ;eusart1.h: 403: void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
+[; ;eusart1.h: 347: void EUSART1_itoa(uint32_t data, int base);
+[; ;eusart1.h: 369: void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
+[; ;eusart1.h: 387: void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
+[; ;eusart1.h: 405: void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 [; ;I2C.h: 11: void I2C_Init(uint8_t frequency);
 [; ;I2C.h: 12: void I2C_Write(uint8_t data);
 [; ;I2C.h: 14: void I2C_stop(void);
@@ -7082,6 +7109,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;I2C.h: 16: void I2C_repeated_Start(void);
 [; ;I2C.h: 17: int I2C_read(int ACK_NACK);
 [; ;I2C.h: 18: void I2C_BusSCan(void);
+[; ;I2C.h: 19: void I2C_buffClear(void);
 [; ;MCP4131.h: 15: void MCP4131Write(uint8_t value);
 [; ;MCP4131.h: 16: void MCP4131P_loop(void);
 [; ;MCP23S08.h: 15: void MCP23S08Write(uint8_t data);
@@ -7108,75 +7136,81 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP9801.h: 24: uint8_t MSB_LSB[2];
 [; ;MCP9801.h: 25: uint16_t TempData;
 [; ;MCP9801.h: 26: }ADC;
-[; ;mcc.h: 76: void SYSTEM_Initialize(void);
-[; ;mcc.h: 89: void OSCILLATOR_Initialize(void);
-[; ;main.c: 47: extern void interrupt_Init(void);
+[; ;_24AA512.h: 17: uint8_t EEPROM_24AA512_Read(int addHigh, int addLow);
+[; ;_24AA512.h: 18: void EEPROM_24AA512_Write(int addHigh, int AddLow, int data);
+[; ;_24AA512.h: 19: uint8_t EEPROM_24AA512_pageWrite(uint8_t page,int data);
+[; ;mcc.h: 84: void SYSTEM_Initialize(void);
+[; ;mcc.h: 97: void OSCILLATOR_Initialize(void);
+[; ;main.c: 3: extern void interrupt_Init(void);
+"4 main.c
+[v _tem `uc ~T0 @X0 -> 10 `i e ]
+[; ;main.c: 4: char tem[10];
 [v $root$_main `(v ~T0 @X0 0 e ]
-"49 main.c
+"5
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 49: void main(void) {
+[; ;main.c: 5: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 51: interrupt_Init();
-"51
+[; ;main.c: 7: interrupt_Init();
+"7
 [e ( _interrupt_Init ..  ]
-[; ;main.c: 52: SYSTEM_Initialize();
-"52
+[; ;main.c: 8: SYSTEM_Initialize();
+"8
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 53: _delay((unsigned long)((10)*(16000000/4000.0)));
-"53
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 54: MCP23008_Init(0xFF);
-"54
-[e ( _MCP23008_Init (1 -> -> 255 `i `uc ]
-[; ;main.c: 55: MCP23008_Init(0xFF);
-"55
-[e ( _MCP23008_Init (1 -> -> 255 `i `uc ]
-[; ;main.c: 58: while (1) {
-"58
+[; ;main.c: 9: I2C_buffClear();
+"9
+[e ( _I2C_buffClear ..  ]
+[; ;main.c: 10: EEPROM_24AA512_pageWrite(3,0xA4);
+"10
+[e ( _EEPROM_24AA512_pageWrite (2 , -> -> 3 `i `uc -> 164 `i ]
+[; ;main.c: 11: _delay((unsigned long)((5)*(16000000/4000.0)));
+"11
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 12: EEPROM_24AA512_Read(0x01, 0x7E);
+"12
+[e ( _EEPROM_24AA512_Read (2 , -> 1 `i -> 126 `i ]
+[; ;main.c: 13: while (1) {
+"13
 [e :U 838 ]
 {
-[; ;main.c: 60: EUSART1_Write(MCP23008_read());
-"60
-[e ( _EUSART1_Write (1 ( _MCP23008_read ..  ]
-[; ;main.c: 61: _delay((unsigned long)((500)*(16000000/4000.0)));
-"61
+[; ;main.c: 15: _delay((unsigned long)((500)*(16000000/4000.0)));
+"15
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 62: if (PORTBbits.RB0) {
-"62
+[; ;main.c: 16: if (PORTBbits.RB0) {
+"16
 [e $ ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 840  ]
 {
-[; ;main.c: 63: _delay((unsigned long)((10)*(16000000/4000.0)));
-"63
+[; ;main.c: 17: _delay((unsigned long)((10)*(16000000/4000.0)));
+"17
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 64: if (!PORTBbits.RB0) {
-"64
+[; ;main.c: 18: if (!PORTBbits.RB0) {
+"18
 [e $ ! ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 841  ]
 {
-[; ;main.c: 65: do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0);
-"65
+[; ;main.c: 19: do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0);
+"19
 [e :U 844 ]
 {
 [e = . . _LATBbits 0 5 -> ~ -> . . _LATBbits 0 5 `i `uc ]
 }
 [e :U 843 ]
-"66
+"20
 }
 [e :U 841 ]
-"67
+"21
 }
 [e :U 840 ]
-"68
+"22
 }
 [e :U 837 ]
-"58
+"13
 [e $U 838  ]
 [e :U 839 ]
-[; ;main.c: 66: }
-[; ;main.c: 67: }
-[; ;main.c: 68: }
-[; ;main.c: 70: }
-"70
+[; ;main.c: 20: }
+[; ;main.c: 21: }
+[; ;main.c: 22: }
+[; ;main.c: 24: }
+"24
 [e :UE 836 ]
 }

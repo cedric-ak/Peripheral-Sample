@@ -152,6 +152,12 @@ void EUSART1_Write_Text(uint8_t *pbData, uint8_t iSize) {
     }
 }
 
+void EUSART1_itoa(uint32_t data, int base){
+    char buf[10];
+    itoa(buf, data, base);
+    EUSART1_Write_Text(buf, sizeof(buf));
+     EUSART1_Write_Text("\r",2);
+}
 
 void EUSART1_DefaultFramingErrorHandler(void){}
 

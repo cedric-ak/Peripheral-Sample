@@ -35,7 +35,7 @@ char MCP23008_read(void){
     I2C_Write(MCP23008_GPIO);
     I2C_repeated_Start();
     I2C_Write(MCP23008_ReadAddress);
-    I2C_read(ACK);
+    I2C_read(NACK);
     I2C_stop();
 }
 void MCP23008_loop(void) {

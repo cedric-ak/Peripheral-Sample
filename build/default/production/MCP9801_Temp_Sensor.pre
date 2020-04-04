@@ -9233,26 +9233,37 @@ typedef unsigned char bool;
 # 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
 typedef unsigned size_t;
 
-# 6 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stddef.h"
-typedef int ptrdiff_t;
+# 14 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\string.h"
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
 
-# 117 "mcc_generated_files/spi1.h"
-void SPI1_Initialize(void);
+# 36
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
 
-# 152
-uint8_t SPI1_Exchange8bit(uint8_t data);
 
-# 192
-uint8_t SPI1_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
-
-# 215
-bool SPI1_IsBufferFull(void);
-
-# 240
-bool SPI1_HasWriteCollisionOccured(void);
-
-# 264
-void SPI1_ClearWriteCollisionStatus(void);
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
 
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdlib.h"
 typedef unsigned short wchar_t;
@@ -9323,38 +9334,6 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 14 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\string.h"
-extern void * memcpy(void *, const void *, size_t);
-extern void * memmove(void *, const void *, size_t);
-extern void * memset(void *, int, size_t);
-
-# 36
-extern char * strcat(char *, const char *);
-extern char * strcpy(char *, const char *);
-extern char * strncat(char *, const char *, size_t);
-extern char * strncpy(char *, const char *, size_t);
-extern char * strdup(const char *);
-extern char * strtok(char *, const char *);
-
-
-extern int memcmp(const void *, const void *, size_t);
-extern int strcmp(const char *, const char *);
-extern int stricmp(const char *, const char *);
-extern int strncmp(const char *, const char *, size_t);
-extern int strnicmp(const char *, const char *, size_t);
-extern void * memchr(const void *, int, size_t);
-extern size_t strcspn(const char *, const char *);
-extern char * strpbrk(const char *, const char *);
-extern size_t strspn(const char *, const char *);
-extern char * strstr(const char *, const char *);
-extern char * stristr(const char *, const char *);
-extern char * strerror(int);
-extern size_t strlen(const char *);
-extern char * strchr(const char *, int);
-extern char * strichr(const char *, int);
-extern char * strrchr(const char *, int);
-extern char * strrichr(const char *, int);
-
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdarg.h"
 typedef void * va_list[1];
 
@@ -9415,6 +9394,55 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
+# 30 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\math.h"
+extern double fabs(double);
+extern double floor(double);
+extern double ceil(double);
+extern double modf(double, double *);
+extern double sqrt(double);
+extern double atof(const char *);
+extern double sin(double) ;
+extern double cos(double) ;
+extern double tan(double) ;
+extern double asin(double) ;
+extern double acos(double) ;
+extern double atan(double);
+extern double atan2(double, double) ;
+extern double log(double);
+extern double log10(double);
+extern double pow(double, double) ;
+extern double exp(double) ;
+extern double sinh(double) ;
+extern double cosh(double) ;
+extern double tanh(double);
+extern double eval_poly(double, const double *, int);
+extern double frexp(double, int *);
+extern double ldexp(double, int);
+extern double fmod(double, double);
+extern double trunc(double);
+extern double round(double);
+
+# 6 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stddef.h"
+typedef int ptrdiff_t;
+
+# 117 "mcc_generated_files/spi1.h"
+void SPI1_Initialize(void);
+
+# 152
+uint8_t SPI1_Exchange8bit(uint8_t data);
+
+# 192
+uint8_t SPI1_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+
+# 215
+bool SPI1_IsBufferFull(void);
+
+# 240
+bool SPI1_HasWriteCollisionOccured(void);
+
+# 264
+void SPI1_ClearWriteCollisionStatus(void);
+
 # 78 "mcc_generated_files/eusart1.h"
 typedef union {
 struct {
@@ -9447,14 +9475,15 @@ uint8_t EUSART1_Read(void);
 # 345
 void EUSART1_Write(uint8_t txData);
 void EUSART1_Write_Text(uint8_t *pbData, uint8_t iSize);
+void EUSART1_itoa(uint32_t data, int base);
 
-# 367
+# 369
 void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
 
-# 385
+# 387
 void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
 
-# 403
+# 405
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 
 # 11 "mcc_generated_files/../I2C.h"
@@ -9466,6 +9495,7 @@ void I2C_start(void);
 void I2C_repeated_Start(void);
 int I2C_read(int ACK_NACK);
 void I2C_BusSCan(void);
+void I2C_buffClear(void);
 
 # 15 "mcc_generated_files/../MCP4131.h"
 void MCP4131Write(uint8_t value);
@@ -9500,41 +9530,18 @@ uint8_t MSB_LSB[2];
 uint16_t TempData;
 }ADC;
 
-# 76 "mcc_generated_files/mcc.h"
+# 17 "mcc_generated_files/../_24AA512.h"
+uint8_t EEPROM_24AA512_Read(int addHigh, int addLow);
+void EEPROM_24AA512_Write(int addHigh, int AddLow, int data);
+uint8_t EEPROM_24AA512_pageWrite(uint8_t page,int data);
+
+# 84 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 89
+# 97
 void OSCILLATOR_Initialize(void);
 
-# 30 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\math.h"
-extern double fabs(double);
-extern double floor(double);
-extern double ceil(double);
-extern double modf(double, double *);
-extern double sqrt(double);
-extern double atof(const char *);
-extern double sin(double) ;
-extern double cos(double) ;
-extern double tan(double) ;
-extern double asin(double) ;
-extern double acos(double) ;
-extern double atan(double);
-extern double atan2(double, double) ;
-extern double log(double);
-extern double log10(double);
-extern double pow(double, double) ;
-extern double exp(double) ;
-extern double sinh(double) ;
-extern double cosh(double) ;
-extern double tanh(double);
-extern double eval_poly(double, const double *, int);
-extern double frexp(double, int *);
-extern double ldexp(double, int);
-extern double fmod(double, double);
-extern double trunc(double);
-extern double round(double);
-
-# 13 "MCP9801_Temp_Sensor.c"
+# 12 "MCP9801_Temp_Sensor.c"
 void MCP9801_Init(void) {
 I2C_start();
 I2C_Write(0x9E);

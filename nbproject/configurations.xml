@@ -19,6 +19,7 @@
       <itemPath>_25LC512.h</itemPath>
       <itemPath>MCP28003.h</itemPath>
       <itemPath>MCP9801.h</itemPath>
+      <itemPath>_24AA512.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

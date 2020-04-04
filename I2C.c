@@ -41,7 +41,6 @@ void I2C_Write(uint8_t data) {
 }
 
 int I2C_read(int ACK_NACK) {
-    
     SSP2CON2bits.RCEN = 1;
     while (!SSP2STATbits.BF);
     SSP2CON2bits.ACKDT = ACK_NACK;
@@ -77,4 +76,10 @@ void I2C_BusSCan(void) {
         }
         I2C_stop();
     }
+}
+
+void I2C_buffClear(void) {
+    I2C_start();
+    I2C_Write(0x00);
+    I2C_stop();
 }

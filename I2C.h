@@ -16,6 +16,7 @@ void I2C_start(void);
 void I2C_repeated_Start(void);
 int I2C_read(int ACK_NACK);
 void I2C_BusSCan(void);
+void I2C_buffClear(void);
 
 #ifdef	__cplusplus
 extern "C" {

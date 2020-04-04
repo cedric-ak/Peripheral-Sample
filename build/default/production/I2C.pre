@@ -9330,6 +9330,7 @@ void I2C_start(void);
 void I2C_repeated_Start(void);
 int I2C_read(int ACK_NACK);
 void I2C_BusSCan(void);
+void I2C_buffClear(void);
 
 # 18 "I2C.c"
 extern void EUSART1_Write(uint8_t txData);
@@ -9358,7 +9359,6 @@ return;
 }
 
 int I2C_read(int ACK_NACK) {
-
 SSP2CON2bits.RCEN = 1;
 while (!SSP2STATbits.BF);
 SSP2CON2bits.ACKDT = ACK_NACK;
@@ -9394,4 +9394,10 @@ address++;
 }
 I2C_stop();
 }
+}
+
+void I2C_buffClear(void) {
+I2C_start();
+I2C_Write(0x00);
+I2C_stop();
 }

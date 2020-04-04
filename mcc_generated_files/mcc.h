@@ -51,6 +51,10 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
 #include "spi1.h"
 #include "eusart1.h"
 #include "../I2C.h"
@@ -59,8 +63,12 @@
 #include "../_25LC512.h"
 #include "../MCP28003.h"
 #include "../MCP9801.h"
+#include "../_24AA512.h"
 
-
+#define DEC 10
+#define HEX 16
+#define BIN 2
+#define OCT 8
 
 /**
  * @Param
