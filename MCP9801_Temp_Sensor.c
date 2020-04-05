@@ -6,8 +6,6 @@
  */
 
 #include "mcc_generated_files/mcc.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 void MCP9801_Init(void) {
     I2C_start();

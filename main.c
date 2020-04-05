@@ -7,19 +7,18 @@ void main(void) {
     interrupt_Init();
     SYSTEM_Initialize();
     I2C_buffClear();
-    MCP9801_Init();
+    __delay_ms(10);
 
+    RTC_Init();
+    setTime(23, 58, 50);
+    setDate(28, Fri, Feb, 21);
+    setAlarm(MINUTES_ALARM, 59, 0, 0, 0);
     while (true) {
-        EUSART1_itoa(MCP9801_TempRead(), DEC);
-        __delay_ms(200);
-        if (Button2_GetValue()) {
-            __delay_ms(10);
-            if (!Button2_GetValue()) {
-                Led_Toggle();
-            }
-        }
-    }
 
+        EUSART1_itoa(Mon, DEC);
+        Led_Toggle();
+        __delay_ms(500);
+    }
 }
 
 

@@ -1,232 +1,15 @@
 
-# 1 "I2C.c"
+# 1 "RTC_PCF8523.c"
 
-# 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
-typedef unsigned size_t;
+# 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
+extern const char __xc8_OPTIM_SPEED;
 
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdarg.h"
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 43 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
-struct __prbuf
-{
-char * ptr;
-void (* func)(char);
-};
-
-# 29 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\errno.h"
-extern int errno;
-
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\conio.h"
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 23
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 88 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-
-# 180
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 28
-typedef signed short long int int24_t;
-
-# 36
-typedef signed long int int32_t;
-
-# 43
-typedef unsigned char uint8_t;
-
-# 49
-typedef unsigned int uint16_t;
-
-# 56
-typedef unsigned short long int uint24_t;
-
-# 63
-typedef unsigned long int uint32_t;
-
-# 71
-typedef signed char int_least8_t;
-
-# 78
-typedef signed int int_least16_t;
-
-# 90
-typedef signed short long int int_least24_t;
-
-# 98
-typedef signed long int int_least32_t;
-
-# 105
-typedef unsigned char uint_least8_t;
-
-# 111
-typedef unsigned int uint_least16_t;
-
-# 121
-typedef unsigned short long int uint_least24_t;
-
-# 128
-typedef unsigned long int uint_least32_t;
-
-# 137
-typedef signed char int_fast8_t;
-
-# 144
-typedef signed int int_fast16_t;
-
-# 156
-typedef signed short long int int_fast24_t;
-
-# 164
-typedef signed long int int_fast32_t;
-
-# 171
-typedef unsigned char uint_fast8_t;
-
-# 177
-typedef unsigned int uint_fast16_t;
-
-# 187
-typedef unsigned short long int uint_fast24_t;
-
-# 194
-typedef unsigned long int uint_fast32_t;
-
-# 200
-typedef int32_t intmax_t;
-
-
-
-
-typedef uint32_t uintmax_t;
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-
-# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdlib.h"
-typedef unsigned short wchar_t;
-
-# 15
-typedef struct {
-int rem;
-int quot;
-} div_t;
-typedef struct {
-unsigned rem;
-unsigned quot;
-} udiv_t;
-typedef struct {
-long quot;
-long rem;
-} ldiv_t;
-typedef struct {
-unsigned long quot;
-unsigned long rem;
-} uldiv_t;
-
-# 53
-extern double atof(const char *);
-extern double strtod(const char *, const char **);
-extern int atoi(const char *);
-extern unsigned xtoi(const char *);
-extern long atol(const char *);
-extern long strtol(const char *, char **, int);
-
-extern int rand(void);
-extern void srand(unsigned int);
-extern void * calloc(size_t, size_t);
-extern div_t div(int numer, int denom);
-extern udiv_t udiv(unsigned numer, unsigned denom);
-extern ldiv_t ldiv(long numer, long denom);
-extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-extern unsigned int _rotl(unsigned int value, unsigned int shift);
-extern unsigned int _rotr(unsigned int value, unsigned int shift);
-
-
-
-
-extern void * malloc(size_t);
-extern void free(void *);
-extern void * realloc(void *, size_t);
+extern double __fpnormalize(double);
 
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
-
-# 86 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdlib.h"
-extern int atexit(void (*)(void));
-extern char * getenv(const char *);
-extern char ** environ;
-extern int system(char *);
-extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-extern int abs(int);
-extern long labs(long);
-
-extern char * itoa(char * buf, int val, int base);
-extern char * utoa(char * buf, unsigned val, int base);
-
-
-
-
-extern char * ltoa(char * buf, long val, int base);
-extern char * ultoa(char * buf, unsigned long val, int base);
-
-extern char * ftoa(float f, int * status);
 
 # 50 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h"
 extern volatile unsigned char ADCTRIG @ 0xEB8;
@@ -9321,7 +9104,401 @@ extern volatile __bit nWRITE @ (((unsigned) &SSP1STAT)*8) + 2;
 
 extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
-# 11 "I2C.h"
+# 18 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h"
+__attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
+__attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
+
+
+# 42
+#pragma intrinsic(__nop)
+extern void __nop(void);
+
+# 135
+__attribute__((__unsupported__("The " "Read_b_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) unsigned char Read_b_eep(unsigned int badd);
+__attribute__((__unsupported__("The " "Busy_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) void Busy_eep(void);
+__attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) void Write_b_eep(unsigned int badd, unsigned char bdat);
+
+# 155
+unsigned char __t1rd16on(void);
+unsigned char __t3rd16on(void);
+
+
+# 163
+#pragma intrinsic(_delay)
+extern __nonreentrant void _delay(unsigned long);
+#pragma intrinsic(_delaywdt)
+extern __nonreentrant void _delaywdt(unsigned long);
+#pragma intrinsic(_delay3)
+extern __nonreentrant void _delay3(unsigned char);
+
+# 183 "mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+
+# 195
+void PIN_MANAGER_IOC(void);
+
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 28
+typedef signed short long int int24_t;
+
+# 36
+typedef signed long int int32_t;
+
+# 43
+typedef unsigned char uint8_t;
+
+# 49
+typedef unsigned int uint16_t;
+
+# 56
+typedef unsigned short long int uint24_t;
+
+# 63
+typedef unsigned long int uint32_t;
+
+# 71
+typedef signed char int_least8_t;
+
+# 78
+typedef signed int int_least16_t;
+
+# 90
+typedef signed short long int int_least24_t;
+
+# 98
+typedef signed long int int_least32_t;
+
+# 105
+typedef unsigned char uint_least8_t;
+
+# 111
+typedef unsigned int uint_least16_t;
+
+# 121
+typedef unsigned short long int uint_least24_t;
+
+# 128
+typedef unsigned long int uint_least32_t;
+
+# 137
+typedef signed char int_fast8_t;
+
+# 144
+typedef signed int int_fast16_t;
+
+# 156
+typedef signed short long int int_fast24_t;
+
+# 164
+typedef signed long int int_fast32_t;
+
+# 171
+typedef unsigned char uint_fast8_t;
+
+# 177
+typedef unsigned int uint_fast16_t;
+
+# 187
+typedef unsigned short long int uint_fast24_t;
+
+# 194
+typedef unsigned long int uint_fast32_t;
+
+# 200
+typedef int32_t intmax_t;
+
+
+
+
+typedef uint32_t uintmax_t;
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdbool.h"
+typedef unsigned char bool;
+
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
+typedef unsigned size_t;
+
+# 14 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\string.h"
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+
+# 36
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
+
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdlib.h"
+typedef unsigned short wchar_t;
+
+# 15
+typedef struct {
+int rem;
+int quot;
+} div_t;
+typedef struct {
+unsigned rem;
+unsigned quot;
+} udiv_t;
+typedef struct {
+long quot;
+long rem;
+} ldiv_t;
+typedef struct {
+unsigned long quot;
+unsigned long rem;
+} uldiv_t;
+
+# 53
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+
+# 86
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 29 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\errno.h"
+extern int errno;
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 30 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\math.h"
+extern double fabs(double);
+extern double floor(double);
+extern double ceil(double);
+extern double modf(double, double *);
+extern double sqrt(double);
+extern double atof(const char *);
+extern double sin(double) ;
+extern double cos(double) ;
+extern double tan(double) ;
+extern double asin(double) ;
+extern double acos(double) ;
+extern double atan(double);
+extern double atan2(double, double) ;
+extern double log(double);
+extern double log10(double);
+extern double pow(double, double) ;
+extern double exp(double) ;
+extern double sinh(double) ;
+extern double cosh(double) ;
+extern double tanh(double);
+extern double eval_poly(double, const double *, int);
+extern double frexp(double, int *);
+extern double ldexp(double, int);
+extern double fmod(double, double);
+extern double trunc(double);
+extern double round(double);
+
+# 43 "mcc_generated_files/../PCF8523.h"
+void RTC_Init(void);
+void setTime(uint8_t hour, uint8_t minute, uint8_t second);
+void setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year);
+void CountDown_Init(uint8_t time, uint8_t timeUnit);
+void setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay);
+uint8_t decimalToBCD(int DecValue);
+uint8_t BCDtoDecimal(int BCDvalue);
+
+enum day { Sun = 0, Mon = 1, Tue = 2, Wed = 3, Thu = 4, Fri = 5, Sat = 6};
+enum month {Jan =1, Feb =2, Mar =3, Apr =4, May =5, Jun =6, Jul =7, Aug =8, Sep =9, Oct =10, Nov =11, Dec =12};
+
+# 6 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stddef.h"
+typedef int ptrdiff_t;
+
+# 117 "mcc_generated_files/spi1.h"
+void SPI1_Initialize(void);
+
+# 152
+uint8_t SPI1_Exchange8bit(uint8_t data);
+
+# 192
+uint8_t SPI1_Exchange8bitBuffer(uint8_t *dataIn, uint8_t bufLen, uint8_t *dataOut);
+
+# 215
+bool SPI1_IsBufferFull(void);
+
+# 240
+bool SPI1_HasWriteCollisionOccured(void);
+
+# 264
+void SPI1_ClearWriteCollisionStatus(void);
+
+# 78 "mcc_generated_files/eusart1.h"
+typedef union {
+struct {
+unsigned perr : 1;
+unsigned ferr : 1;
+unsigned oerr : 1;
+unsigned reserved : 5;
+};
+uint8_t status;
+}eusart1_status_t;
+
+# 114
+void EUSART1_Initialize(void);
+
+# 162
+bool EUSART1_is_tx_ready(void);
+
+# 210
+bool EUSART1_is_rx_ready(void);
+
+# 257
+bool EUSART1_is_tx_done(void);
+
+# 305
+eusart1_status_t EUSART1_get_last_status(void);
+
+# 325
+uint8_t EUSART1_Read(void);
+
+# 345
+void EUSART1_Write(uint8_t txData);
+void EUSART1_Write_Text(uint8_t *pbData, uint8_t iSize);
+void EUSART1_itoa(uint32_t data, int base);
+
+# 369
+void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
+
+# 387
+void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
+
+# 405
+void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
+
+# 11 "mcc_generated_files/../I2C.h"
 void I2C_Init(uint8_t frequency);
 void I2C_Write(uint8_t data);
 
@@ -9332,71 +9509,142 @@ int I2C_read(int ACK_NACK);
 void I2C_BusSCan(void);
 void I2C_buffClear(void);
 
-# 18 "I2C.c"
-extern void EUSART1_Write(uint8_t txData);
+# 15 "mcc_generated_files/../MCP4131.h"
+void MCP4131Write(uint8_t value);
+void MCP4131P_loop(void);
 
-void I2C_Init(uint8_t F_clock) {
-TRISDbits.TRISD0 = 1;
-TRISDbits.TRISD1 = 1;
-SSP2CON1bits.WCOL = 0;
-SSP2CON1bits.SSPEN = 1;
-SSP2CON1bits.SSPM = 0x08;
-SSP2CON2bits.ACKDT = 0;
-SSP2CON2bits.ACKEN = 1;
-SSP2ADD = (16000000 / ((F_clock * 1000) * 4)) - 1;
-}
+# 15 "mcc_generated_files/../MCP23S08.h"
+void MCP23S08Write(uint8_t data);
+void MCP23S08_Init(uint8_t portDirection);
+void MCP23S08_loop(void);
 
-void I2C_Write(uint8_t data) {
-SSP2BUF = data;
-while (!SSP2STATbits.BF);
-while (!PIR3bits.SSP2IF);
-PIR3bits.SSP2IF = 0;
-if (SSP2CON2bits.ACKSTAT) {
-I2C_stop();
-return;
-}
-}
+# 15 "mcc_generated_files/../_25LC512.h"
+char sData[10];
+void EEPROM_25LC512_Write(uint8_t address, uint8_t data);
+uint8_t EEPROM_25LC512_Read(uint8_t address);
+void chipErase(void);
+void rStatus_Reg(void);
+void wStatus_Reg(void);
+void EEPROM_25LC512_loop(void);
 
-int I2C_read(int ACK_NACK) {
-SSP2CON2bits.RCEN = 1;
-while (!SSP2STATbits.BF);
-SSP2CON2bits.ACKDT = ACK_NACK;
-while (SSP2CON2bits.ACKEN);
+# 20 "mcc_generated_files/../MCP28003.h"
+void MCP23008_Init(uint8_t portDirection);
+void MCP23008_Write(uint8_t data);
+void MCP23008_loop(void);
+char MCP23008_read(void);
 
-}
+# 21 "mcc_generated_files/../MCP9801.h"
+void MCP9801_Init(void);
+uint8_t MCP9801_TempRead(void);
 
-void I2C_start(void) {
-SSP2CON2bits.SEN = 1;
-while (SSP2CON2bits.SEN);
-PIR3bits.SSP2IF = 0;
-}
+union{
+uint8_t MSB_LSB[2];
+uint16_t TempData;
+}ADC;
 
-void I2C_repeated_Start(void) {
-SSP2CON2bits.RSEN = 1;
-while (SSP2CON2bits.RSEN);
-PIR3bits.SSP2IF = 0;
-}
+# 17 "mcc_generated_files/../_24AA512.h"
+uint8_t EEPROM_24AA512_Read(int addHigh, int addLow);
+void EEPROM_24AA512_Write(int addHigh, int AddLow, int data);
+uint8_t EEPROM_24AA512_pageWrite(uint8_t page,int data);
 
-void I2C_stop(void) {
-SSP2CON2bits.PEN = 1;
-while (SSP2CON2bits.PEN);
-PIR3bits.SSP2IF = 0;
-}
+# 39 "mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
 
-void I2C_BusSCan(void) {
-for (int address = 0; address < 0xFF; address++) {
+# 52
+void OSCILLATOR_Initialize(void);
+
+# 4 "RTC_PCF8523.c"
+void RTC_Init(void) {
 I2C_start();
-I2C_Write(address);
-if (!SSP2CON2bits.ACKSTAT) {
-EUSART1_Write((address));
-address++;
+I2C_Write(0xD0);
+I2C_Write(0X00);
+I2C_Write(0x80);
+I2C_stop();
+
+
+I2C_start();
+I2C_Write(0xD0);
+I2C_Write(0x02);
+I2C_Write(0x80);
+I2C_stop();
+
+
+I2C_start();
+I2C_Write(0xD0);
+I2C_Write(0x0F);
+I2C_Write(0xF8);
+I2C_stop();
 }
+
+# 36
+void setTime(uint8_t hour, uint8_t minute, uint8_t second) {
+int Register[4] = {0x03, 0x04, 0x05};
+for (int timeReg = 0; timeReg < 3; timeReg++) {
+I2C_start();
+I2C_Write(0xD0);
+I2C_Write(Register[timeReg]);
+if (Register[timeReg] == 0x03) {
+I2C_Write(decimalToBCD(second)&0x7F);
+I2C_stop();
+} else if (Register[timeReg] == 0x04) {
+I2C_Write(decimalToBCD(minute)&0x7F);
+I2C_stop();
+} else if (Register[timeReg] == 0x05) {
+I2C_Write(decimalToBCD(hour)&0x7F);
 I2C_stop();
 }
 }
+}
 
-void I2C_buffClear(void) {
+void setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year) {
+int Register[5] = {0x06, 0x07, 0x08, 0x09};
+for (int timeReg = 0; timeReg < 4; timeReg++) {
 I2C_start();
+I2C_Write(0xD0);
+I2C_Write(Register[timeReg]);
+if (Register[timeReg] == 0x06) {
+I2C_Write(decimalToBCD(day)&0x7F);
+I2C_stop();
+} else if (Register[timeReg] == 0x07) {
+I2C_Write(decimalToBCD(weekday)&0x7F);
+I2C_stop();
+} else if (Register[timeReg] == 0x08) {
+I2C_Write(decimalToBCD(month)&0x7F);
+I2C_stop();
+} else if (Register[timeReg] == 0x09) {
+I2C_Write(decimalToBCD(year)&0x7F);
+I2C_stop();
+}
+}
+}
+
+void setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay) {
+
+I2C_start();
+I2C_Write(0xD0);
+I2C_Write(0X00);
+I2C_Write(0x80|0x02);
+I2C_stop();
+
+I2C_start();
+I2C_Write(0xD0);
+I2C_Write(alarmReg);
+I2C_Write((minute + hour + weekDay)&0x7F);
+I2C_stop();
+
+
+I2C_start();
+I2C_Write(0xD0);
+I2C_Write(0x01);
 I2C_Write(0x00);
 I2C_stop();
+}
+
+uint8_t decimalToBCD(int DecValue) {
+
+return (((DecValue / 10) << 4) | (DecValue % 10));
+}
+
+uint8_t BCDtoDecimal(int BCDvalue) {
+return (((BCDvalue >> 4)*10) + (BCDvalue & 0xF));
 }

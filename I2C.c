@@ -18,15 +18,14 @@
 extern void EUSART1_Write(uint8_t txData);
 
 void I2C_Init(uint8_t F_clock) {
-    TRISDbits.TRISD0 = 1; //SCL2 
-    TRISDbits.TRISD1 = 1; //SDA
-    SSP2CON1bits.WCOL = 0; //No collision
+    TRISDbits.TRISD0   = 1; //SCL2 
+    TRISDbits.TRISD1   = 1; //SDA
+    SSP2CON1bits.WCOL  = 0; //No collision
     SSP2CON1bits.SSPEN = 1; //Enables the serial port and configures the SDAx and SCLx pins as the serial port pins
-    SSP2CON1bits.SSPM = 0x08; //I2C Master mode enable 0x08;
+    SSP2CON1bits.SSPM  = 0x08; //I2C Master mode enable 0x08;
     SSP2CON2bits.ACKDT = 0; //Acknowledge enable
     SSP2CON2bits.ACKEN = 1; //Acknowledge Sequence Enable 
     SSP2ADD = (_XTAL_FREQ / ((F_clock * 1000) * 4)) - 1; //baud rate equation (I2C clock frenquency)
-
 }
 
 void I2C_Write(uint8_t data) {
@@ -71,8 +70,8 @@ void I2C_BusSCan(void) {
         I2C_start();
         I2C_Write(address);
         if (!SSP2CON2bits.ACKSTAT) {
-            EUSART1_Write((address & 0xFE)); //print out slave address found
-            address++;
+            EUSART1_Write((address)); //print out slave address found
+            address++;                //skip read address acknowledge
         }
         I2C_stop();
     }

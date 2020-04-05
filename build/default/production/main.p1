@@ -5,53 +5,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "3 main.c
 [v _interrupt_Init `(v ~T0 @X0 0 ef ]
-"84 mcc_generated_files/mcc.h
+"39 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "19 mcc_generated_files/../I2C.h
 [v _I2C_buffClear `(v ~T0 @X0 0 ef ]
-"21 mcc_generated_files/../MCP9801.h
-[v _MCP9801_Init `(v ~T0 @X0 0 ef ]
-"347 mcc_generated_files/eusart1.h
-[v _EUSART1_itoa `(v ~T0 @X0 0 ef2`ul`i ]
-"22 mcc_generated_files/../MCP9801.h
-[v _MCP9801_TempRead `(uc ~T0 @X0 0 ef ]
 [v F7202 `(v ~T0 @X0 1 tf1`ul ]
 "164 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h
 [v __delay `JF7202 ~T0 @X0 0 e ]
 [p i __delay ]
-"7214 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
-[s S359 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S359 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"7224
-[s S360 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S360 . AN12 AN10 AN8 AN9 PMA1 PMA0 KBI2 KBI3 ]
-"7234
-[s S361 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S361 . INT0 PMPBE CTED1 CTED2 KBI0 KBI1 PGC PGD ]
-"7244
-[s S362 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S362 . RP3 RTCC PMA3 PMA2 . RP9 RP10 ]
-"7253
-[s S363 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S363 . . PMBE REFO ]
-"7258
-[s S364 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S364 . . RP4 RP5 RP6 RP7 RP8 ]
-"7266
-[s S365 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S365 . C3IND C3INC C2INC C3INA ]
-"7272
-[s S366 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S366 . . CCP4 CCP5 CCP6 CCP7 ]
-"7279
-[s S367 :3 `uc 1 :1 `uc 1 ]
-[n S367 . . CCP2_PA2 ]
-"7213
-[u S358 `S359 1 `S360 1 `S361 1 `S362 1 `S363 1 `S364 1 `S365 1 `S366 1 `S367 1 ]
-[n S358 . . . . . . . . . . ]
-"7284
-[v _PORTBbits `VS358 ~T0 @X0 0 e@3969 ]
-"8461
+"43 mcc_generated_files/../PCF8523.h
+[v _RTC_Init `(v ~T0 @X0 0 ef ]
+"44
+[v _setTime `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"45
+[v _setDate `(v ~T0 @X0 0 ef4`uc`uc`uc`uc ]
+"14 main.c
+[c E7590 0 1 2 3 4 5 6 .. ]
+[n E7590 day Sun Mon Tue Wed Thu Fri Sat  ]
+[c E7598 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
+[n E7598 month Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec  ]
+"47 mcc_generated_files/../PCF8523.h
+[v _setAlarm `(v ~T0 @X0 0 ef5`uc`uc`uc`uc`uc ]
+"347 mcc_generated_files/eusart1.h
+[v _EUSART1_itoa `(v ~T0 @X0 0 ef2`ul`i ]
+"8461 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
 [s S405 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S405 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
 "8471
@@ -7076,6 +7053,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;math.h: 53: extern double fmod(double, double);
 [; ;math.h: 54: extern double trunc(double);
 [; ;math.h: 55: extern double round(double);
+[; ;PCF8523.h: 43: void RTC_Init(void);
+[; ;PCF8523.h: 44: void setTime(uint8_t hour, uint8_t minute, uint8_t second);
+[; ;PCF8523.h: 45: void setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year);
+[; ;PCF8523.h: 46: void CountDown_Init(uint8_t time, uint8_t timeUnit);
+[; ;PCF8523.h: 47: void setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay);
+[; ;PCF8523.h: 48: uint8_t decimalToBCD(int DecValue);
+[; ;PCF8523.h: 49: uint8_t BCDtoDecimal(int BCDvalue);
+[; ;PCF8523.h: 51: enum day { Sun = 0, Mon = 1, Tue = 2, Wed = 3, Thu = 4, Fri = 5, Sat = 6};
+[; ;PCF8523.h: 52: enum month {Jan =1, Feb =2, Mar =3, Apr =4, May =5, Jun =6, Jul =7, Aug =8, Sep =9, Oct =10, Nov =11, Dec =12};
 [; ;stddef.h: 6: typedef int ptrdiff_t;
 [; ;spi1.h: 117: void SPI1_Initialize(void);
 [; ;spi1.h: 152: uint8_t SPI1_Exchange8bit(uint8_t data);
@@ -7141,8 +7127,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;_24AA512.h: 17: uint8_t EEPROM_24AA512_Read(int addHigh, int addLow);
 [; ;_24AA512.h: 18: void EEPROM_24AA512_Write(int addHigh, int AddLow, int data);
 [; ;_24AA512.h: 19: uint8_t EEPROM_24AA512_pageWrite(uint8_t page,int data);
-[; ;mcc.h: 84: void SYSTEM_Initialize(void);
-[; ;mcc.h: 97: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 39: void SYSTEM_Initialize(void);
+[; ;mcc.h: 52: void OSCILLATOR_Initialize(void);
 [; ;main.c: 3: extern void interrupt_Init(void);
 [v $root$_main `(v ~T0 @X0 0 e ]
 "5 main.c
@@ -7160,53 +7146,46 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 9: I2C_buffClear();
 "9
 [e ( _I2C_buffClear ..  ]
-[; ;main.c: 10: MCP9801_Init();
+[; ;main.c: 10: _delay((unsigned long)((10)*(16000000/4000.0)));
 "10
-[e ( _MCP9801_Init ..  ]
-[; ;main.c: 12: while (1) {
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 12: RTC_Init();
 "12
+[e ( _RTC_Init ..  ]
+[; ;main.c: 13: setTime(23, 58, 50);
+"13
+[e ( _setTime (3 , , -> -> 23 `i `uc -> -> 58 `i `uc -> -> 50 `i `uc ]
+[; ;main.c: 14: setDate(28, Fri, Feb, 21);
+"14
+[e ( _setDate (4 , , , -> -> 28 `i `uc -> . `E7590 5 `uc -> . `E7598 1 `uc -> -> 21 `i `uc ]
+[; ;main.c: 15: setAlarm(0x0A, 59, 0, 0, 0);
+"15
+[e ( _setAlarm (4 , , , , -> -> 10 `i `uc -> -> 59 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 16: while (1) {
+"16
 [e :U 838 ]
 {
-[; ;main.c: 13: EUSART1_itoa(MCP9801_TempRead(), 10);
-"13
-[e ( _EUSART1_itoa (2 , -> ( _MCP9801_TempRead ..  `ul -> 10 `i ]
-[; ;main.c: 14: _delay((unsigned long)((200)*(16000000/4000.0)));
-"14
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 15: if (PORTBbits.RB0) {
-"15
-[e $ ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 840  ]
-{
-[; ;main.c: 16: _delay((unsigned long)((10)*(16000000/4000.0)));
-"16
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 17: if (!PORTBbits.RB0) {
-"17
-[e $ ! ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 841  ]
-{
-[; ;main.c: 18: do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0);
+[; ;main.c: 18: EUSART1_itoa(Mon, 10);
 "18
-[e :U 844 ]
+[e ( _EUSART1_itoa (2 , -> -> . `E7590 1 `l `ul -> 10 `i ]
+[; ;main.c: 19: do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0);
+"19
+[e :U 842 ]
 {
 [e = . . _LATBbits 0 5 -> ~ -> . . _LATBbits 0 5 `i `uc ]
 }
-[e :U 843 ]
-"19
-}
 [e :U 841 ]
+[; ;main.c: 20: _delay((unsigned long)((500)*(16000000/4000.0)));
 "20
-}
-[e :U 840 ]
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "21
 }
 [e :U 837 ]
-"12
+"16
 [e $U 838  ]
 [e :U 839 ]
-[; ;main.c: 19: }
-[; ;main.c: 20: }
 [; ;main.c: 21: }
-[; ;main.c: 23: }
-"23
+[; ;main.c: 22: }
+"22
 [e :UE 836 ]
 }

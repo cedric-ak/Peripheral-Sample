@@ -1,6 +1,7 @@
  build/default/production/MCP23S08_IO_expender.d  \
  build/default/production/MCP23S08_IO_expender.p1:  \
  MCP23S08_IO_expender.c  \
+mcc_generated_files/../PCF8523.h  \
 mcc_generated_files/mcc.h  \
 mcc_generated_files/../I2C.h  \
 mcc_generated_files/eusart1.h  \
