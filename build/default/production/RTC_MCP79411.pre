@@ -1,5 +1,5 @@
 
-# 1 "MCP23S08_IO_expender.c"
+# 1 "RTC_MCP79411.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9563,34 +9563,32 @@ void SYSTEM_Initialize(void);
 # 53
 void OSCILLATOR_Initialize(void);
 
-# 13 "MCP23S08_IO_expender.c"
-void MCP23S08_Init(uint8_t portDirection) {
-do { LATCbits.LATC0 = 0; } while(0);
-SPI1_Exchange8bit(0x40);
-SPI1_Exchange8bit(0x00);
-SPI1_Exchange8bit(portDirection);
-_delay((unsigned long)((2)*(16000000/4000.0)));
-do { LATCbits.LATC0 = 1; } while(0);
+# 10 "RTC_MCP79411.c"
+void MCP794x_setTime(uint8_t hour, uint8_t minute, uint8_t second) {
+I2C_start();
+I2C_Write(0xDE);
+I2C_Write(0x00);
+I2C_Write(decimalToBCD(second |0x80));
+I2C_Write(decimalToBCD(minute));
+I2C_Write(decimalToBCD(hour &0x1F));
+I2C_stop();
 }
 
-void MCP23S08Write(uint8_t data) {
-do { LATCbits.LATC0 = 0; } while(0);
-SPI1_Exchange8bit(0x40);
-SPI1_Exchange8bit(0x0A);
-SPI1_Exchange8bit(data);
-_delay((unsigned long)((2)*(16000000/4000.0)));
-do { LATCbits.LATC0 = 1; } while(0);
+void MCP794x_setDate(uint8_t date, uint8_t weekDay, uint8_t month, uint8_t year) {
+I2C_start();
+I2C_Write(0xDE);
+I2C_Write(0x03);
+I2C_Write(decimalToBCD(weekDay |0x28));
+I2C_Write(decimalToBCD(date));
+I2C_Write(decimalToBCD(month));
+I2C_Write(decimalToBCD(year));
+I2C_stop();
 }
 
-
-void MCP23S08_loop(void){
-for(int leftShif = 0; leftShif <8; leftShif++){
-MCP23S08Write(0x01<<leftShif);
-_delay((unsigned long)((500)*(16000000/4000.0)));
-}_delay((unsigned long)((1000)*(16000000/4000.0)));
-
-for(int rightShif = 0; rightShif <8; rightShif++){
-MCP23S08Write(0x80 >> rightShif);
-_delay((unsigned long)((500)*(16000000/4000.0)));
-}_delay((unsigned long)((1000)*(16000000/4000.0)));
+void MCP794x_writeRtcc(uint8_t Register, uint8_t value) {
+I2C_start();
+I2C_Write(0xDE);
+I2C_Write(Register);
+I2C_Write(value);
+I2C_stop();
 }

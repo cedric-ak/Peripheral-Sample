@@ -7036,16 +7036,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;math.h: 53: extern double fmod(double, double);
 [; ;math.h: 54: extern double trunc(double);
 [; ;math.h: 55: extern double round(double);
-[; ;PCF8523.h: 43: void RTC_Init(void);
-[; ;PCF8523.h: 44: void setTime(uint8_t hour, uint8_t minute, uint8_t second);
-[; ;PCF8523.h: 45: void setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year);
-[; ;PCF8523.h: 46: void countDown(uint8_t timeUnit, uint8_t time);
-[; ;PCF8523.h: 47: void setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay);
+[; ;PCF8523.h: 43: void PCF8523_RTC_Init(void);
+[; ;PCF8523.h: 44: void PCF8523_setTime(uint8_t hour, uint8_t minute, uint8_t second);
+[; ;PCF8523.h: 45: void PCF8523_setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year);
+[; ;PCF8523.h: 46: void PCF8523_countDown(uint8_t timeUnit, uint8_t time);
+[; ;PCF8523.h: 47: void PCF8523_setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay);
 [; ;PCF8523.h: 48: void PCF8523_write(uint8_t regAdd, uint8_t data);
-[; ;PCF8523.h: 49: int rtc_INTF_CLR(int interruptFlag);
+[; ;PCF8523.h: 49: int PCF8523_rtc_INTF_CLR(int interruptFlag);
 [; ;PCF8523.h: 50: uint8_t decimalToBCD(int DecValue);
 [; ;PCF8523.h: 51: uint8_t BCDtoDecimal(int BCDvalue);
-[; ;PCF8523.h: 52: uint8_t rtcRead(uint8_t address);
+[; ;PCF8523.h: 52: uint8_t PCF8523_rtcRead(uint8_t address);
 [; ;PCF8523.h: 54: enum days { Sun = 0, Mon = 1, Tue = 2, Wed = 3, Thu = 4, Fri = 5, Sat = 6};
 [; ;PCF8523.h: 55: enum months {Jan =1, Feb =2, Mar =3, Apr =4, May =5, Jun =6, Jul =7, Aug =8, Sep =9, Oct =10, Nov =11, Dec =12};
 [; ;PCF8523.h: 56: enum TMR_SCLK_FREQ {hours = 7, minutes = 3, seconds = 2};
@@ -7115,13 +7115,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;_24AA512.h: 17: uint8_t EEPROM_24AA512_Read(int addHigh, int addLow);
 [; ;_24AA512.h: 18: void EEPROM_24AA512_Write(int addHigh, int AddLow, int data);
 [; ;_24AA512.h: 19: uint8_t EEPROM_24AA512_pageWrite(uint8_t page,int data);
-[; ;mcc.h: 39: void SYSTEM_Initialize(void);
-[; ;mcc.h: 52: void OSCILLATOR_Initialize(void);
+[; ;MCP79411.h: 61: void MCP794x_setTime(uint8_t hour, uint8_t minute, uint8_t second) ;
+[; ;MCP79411.h: 62: void MCP794x_setDate(uint8_t date, uint8_t weekDay, uint8_t month, uint8_t year);
+[; ;MCP79411.h: 63: void MCP794x_writeRtcc(uint8_t Register, uint8_t value);
+[; ;mcc.h: 40: void SYSTEM_Initialize(void);
+[; ;mcc.h: 53: void OSCILLATOR_Initialize(void);
 "3 RTC_PCF8523.c
-[v _RTC_Init `(v ~T0 @X0 1 ef ]
+[v _PCF8523_RTC_Init `(v ~T0 @X0 1 ef ]
 {
-[; ;RTC_PCF8523.c: 3: void RTC_Init(void) {
-[e :U _RTC_Init ]
+[; ;RTC_PCF8523.c: 3: void PCF8523_RTC_Init(void) {
+[e :U _PCF8523_RTC_Init ]
 [f ]
 [; ;RTC_PCF8523.c: 11: PCF8523_write(0X00, 0x80);
 "11
@@ -7137,16 +7140,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 836 ]
 }
 "27
-[v _setTime `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+[v _PCF8523_setTime `(v ~T0 @X0 1 ef3`uc`uc`uc ]
 {
-[; ;RTC_PCF8523.c: 27: void setTime(uint8_t hour, uint8_t minute, uint8_t second) {
-[e :U _setTime ]
+[; ;RTC_PCF8523.c: 27: void PCF8523_setTime(uint8_t hour, uint8_t minute, uint8_t second) {
+[e :U _PCF8523_setTime ]
 [v _hour `uc ~T0 @X0 1 r1 ]
 [v _minute `uc ~T0 @X0 1 r2 ]
 [v _second `uc ~T0 @X0 1 r3 ]
 [f ]
-[v F7757 `i ~T0 @X0 -> 4 `i s ]
-[i F7757
+[v F7769 `i ~T0 @X0 -> 4 `i s ]
+[i F7769
 :U ..
 "28
 -> 3 `i
@@ -7156,7 +7159,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [v _Register `i ~T0 @X0 -> 4 `i a ]
 [; ;RTC_PCF8523.c: 28: int Register[4] = {0x03, 0x04, 0x05};
-[e = _Register F7757 ]
+[e = _Register F7769 ]
 [; ;RTC_PCF8523.c: 29: for (int timeReg = 0; timeReg < 3; timeReg++) {
 "29
 {
@@ -7205,17 +7208,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 837 ]
 }
 "39
-[v _setDate `(v ~T0 @X0 1 ef4`uc`uc`uc`uc ]
+[v _PCF8523_setDate `(v ~T0 @X0 1 ef4`uc`uc`uc`uc ]
 {
-[; ;RTC_PCF8523.c: 39: void setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year) {
-[e :U _setDate ]
+[; ;RTC_PCF8523.c: 39: void PCF8523_setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year) {
+[e :U _PCF8523_setDate ]
 [v _day `uc ~T0 @X0 1 r1 ]
 [v _weekday `uc ~T0 @X0 1 r2 ]
 [v _month `uc ~T0 @X0 1 r3 ]
 [v _year `uc ~T0 @X0 1 r4 ]
 [f ]
-[v F7764 `uc ~T0 @X0 -> 5 `i s ]
-[i F7764
+[v F7776 `uc ~T0 @X0 -> 5 `i s ]
+[i F7776
 :U ..
 "40
 -> -> 6 `i `uc
@@ -7226,7 +7229,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [v _Register `uc ~T0 @X0 -> 5 `i a ]
 [; ;RTC_PCF8523.c: 40: uint8_t Register[5] = {0x06, 0x07, 0x08, 0x09};
-[e = _Register F7764 ]
+[e = _Register F7776 ]
 [; ;RTC_PCF8523.c: 41: for (int timeReg = 0; timeReg < 4; timeReg++) {
 "41
 {
@@ -7295,10 +7298,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 846 ]
 }
 "55
-[v _setAlarm `(v ~T0 @X0 1 ef5`uc`uc`uc`uc`uc ]
+[v _PCF8523_setAlarm `(v ~T0 @X0 1 ef5`uc`uc`uc`uc`uc ]
 {
-[; ;RTC_PCF8523.c: 55: void setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay) {
-[e :U _setAlarm ]
+[; ;RTC_PCF8523.c: 55: void PCF8523_setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay) {
+[e :U _PCF8523_setAlarm ]
 [v _alarmReg `uc ~T0 @X0 1 r1 ]
 [v _minute `uc ~T0 @X0 1 r2 ]
 [v _hour `uc ~T0 @X0 1 r3 ]
@@ -7319,10 +7322,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 856 ]
 }
 "61
-[v _countDown `(v ~T0 @X0 1 ef2`uc`uc ]
+[v _PCF8523_countDown `(v ~T0 @X0 1 ef2`uc`uc ]
 {
-[; ;RTC_PCF8523.c: 61: void countDown(uint8_t timeUnit, uint8_t time) {
-[e :U _countDown ]
+[; ;RTC_PCF8523.c: 61: void PCF8523_countDown(uint8_t timeUnit, uint8_t time) {
+[e :U _PCF8523_countDown ]
 [v _timeUnit `uc ~T0 @X0 1 r1 ]
 [v _time `uc ~T0 @X0 1 r2 ]
 [f ]
@@ -7343,10 +7346,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 857 ]
 }
 "68
-[v _rtcRead `(uc ~T0 @X0 1 ef1`uc ]
+[v _PCF8523_rtcRead `(uc ~T0 @X0 1 ef1`uc ]
 {
-[; ;RTC_PCF8523.c: 68: uint8_t rtcRead(uint8_t address) {
-[e :U _rtcRead ]
+[; ;RTC_PCF8523.c: 68: uint8_t PCF8523_rtcRead(uint8_t address) {
+[e :U _PCF8523_rtcRead ]
 [v _address `uc ~T0 @X0 1 r1 ]
 [f ]
 [; ;RTC_PCF8523.c: 69: I2C_start();
@@ -7409,10 +7412,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 859 ]
 }
 "88
-[v _rtc_INTF_CLR `(i ~T0 @X0 1 ef1`i ]
+[v _PCF8523_rtc_INTF_CLR `(i ~T0 @X0 1 ef1`i ]
 {
-[; ;RTC_PCF8523.c: 88: int rtc_INTF_CLR(int interruptFlag) {
-[e :U _rtc_INTF_CLR ]
+[; ;RTC_PCF8523.c: 88: int PCF8523_rtc_INTF_CLR(int interruptFlag) {
+[e :U _PCF8523_rtc_INTF_CLR ]
 [v _interruptFlag `i ~T0 @X0 1 r1 ]
 [f ]
 [; ;RTC_PCF8523.c: 89: PCF8523_write(0x01, interruptFlag);

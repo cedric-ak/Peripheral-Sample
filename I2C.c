@@ -25,7 +25,7 @@ void I2C_Init(uint8_t F_clock) {
     SSP2CON1bits.SSPM  = 0x08; //I2C Master mode enable 0x08;
     SSP2CON2bits.ACKDT = 0; //Acknowledge enable
     SSP2CON2bits.ACKEN = 1; //Acknowledge Sequence Enable 
-    SSP2ADD = (_XTAL_FREQ / ((F_clock * 1000) * 4)) - 1; //baud rate equation (I2C clock frenquency)
+    SSP2ADD = (_XTAL_FREQ / ((F_clock * 1000) * 4)) - 1; //baud rate equation (I2C clock frequency)
 }
 
 void I2C_Write(uint8_t data) {

@@ -21,6 +21,7 @@
       <itemPath>MCP9801.h</itemPath>
       <itemPath>_24AA512.h</itemPath>
       <itemPath>PCF8523.h</itemPath>
+      <itemPath>MCP79411.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -49,6 +50,7 @@
       <itemPath>_24AA512_EEPROM.c</itemPath>
       <itemPath>RTC_PCF8523.c</itemPath>
       <itemPath>SSD1308_OLED.c</itemPath>
+      <itemPath>RTC_MCP79411.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

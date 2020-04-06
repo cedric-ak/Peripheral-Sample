@@ -1,6 +1,6 @@
- build/default/production/mcc_generated_files/mcc.d  \
- build/default/production/mcc_generated_files/mcc.p1:  \
- mcc_generated_files/mcc.c  \
+ build/default/production/RTC_MCP79411.d  \
+ build/default/production/RTC_MCP79411.p1:  \
+ RTC_MCP79411.c  \
 mcc_generated_files/../PCF8523.h  \
 mcc_generated_files/mcc.h  \
 mcc_generated_files/../I2C.h  \

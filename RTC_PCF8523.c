@@ -1,6 +1,6 @@
 #include "mcc_generated_files/mcc.h"
 
-void RTC_Init(void) {
+void PCF8523_RTC_Init(void) {
     /*
      * 12.5pf
      * RTC time circuits running
@@ -24,7 +24,7 @@ void RTC_Init(void) {
     PCF8523_write(TMR_CLKOUT_CTRL, 0xF8);
 }
 
-void setTime(uint8_t hour, uint8_t minute, uint8_t second) {
+void PCF8523_setTime(uint8_t hour, uint8_t minute, uint8_t second) {
     int Register[4] = {SECONDS, MINUTES, HOURS};
     for (int timeReg = 0; timeReg < 3; timeReg++) {
         if (Register[timeReg] == SECONDS)
@@ -36,7 +36,7 @@ void setTime(uint8_t hour, uint8_t minute, uint8_t second) {
     }
 }
 
-void setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year) {
+void PCF8523_setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year) {
     uint8_t Register[5] = {DAYS, WEEKDAYS, MONTHS, YEARS};
     for (int timeReg = 0; timeReg < 4; timeReg++) {
         switch (Register[timeReg]) {
@@ -52,20 +52,20 @@ void setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year) {
     }
 }
 
-void setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay) {
+void PCF8523_setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay) {
     PCF8523_write(CONTROL_1, 0x80 | 0x02); // Alarm interrupt enabled
     PCF8523_write(alarmReg, decimalToBCD(minute + hour + weekDay)&0x7F); //only one alarm can be enabled at the time. set unused alarm value to zero
     PCF8523_write(CONTROL_2, 0x00); //clear all alarm interrupt flag (this function disabled WTAIE, CTAIE, CTBIE), 
 }
 
-void countDown(uint8_t timeUnit, uint8_t time) {
+void PCF8523_countDown(uint8_t timeUnit, uint8_t time) {
     PCF8523_write(TMR_CLKOUT_CTRL, 0xFA); //enable timer A pulse interrupt
     PCF8523_write(CONTROL_2, 0x02);       //countdown timer A interrupt is enabled
     PCF8523_write(TMR_A_FREQ_CTRL, timeUnit);
     PCF8523_write(TMR_A_REG, time);       //max 255 in decimal
 }
 
-uint8_t rtcRead(uint8_t address) {
+uint8_t PCF8523_rtcRead(uint8_t address) {
     I2C_start();
     I2C_Write(SLAVE_ADDRESS);
     I2C_Write(address);
@@ -85,7 +85,7 @@ void PCF8523_write(uint8_t regAdd, uint8_t data) {
     I2C_stop();
 }
 
-int rtc_INTF_CLR(int interruptFlag) { //RTC interrupt flags clear   
+int PCF8523_rtc_INTF_CLR(int interruptFlag) { //RTC interrupt flags clear   
     PCF8523_write(CONTROL_2, interruptFlag); 
     __delay_ms(5);
     return;

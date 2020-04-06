@@ -40,16 +40,16 @@ extern "C" {
 #define TMR_B_FREQ_CTRL 0x12
 #define TMR_B_REG       0x13
 
-void RTC_Init(void);
-void setTime(uint8_t hour, uint8_t minute, uint8_t second);
-void setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year);
-void countDown(uint8_t timeUnit, uint8_t time);
-void setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay);
+void PCF8523_RTC_Init(void);
+void PCF8523_setTime(uint8_t hour, uint8_t minute, uint8_t second);
+void PCF8523_setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year);
+void PCF8523_countDown(uint8_t timeUnit, uint8_t time);
+void PCF8523_setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay);
 void PCF8523_write(uint8_t regAdd, uint8_t data);
-int rtc_INTF_CLR(int interruptFlag);
+int PCF8523_rtc_INTF_CLR(int interruptFlag);
 uint8_t decimalToBCD(int DecValue);
 uint8_t BCDtoDecimal(int BCDvalue);
-uint8_t rtcRead(uint8_t address);
+uint8_t PCF8523_rtcRead(uint8_t address);
 
 enum days { Sun = 0, Mon = 1, Tue = 2, Wed = 3, Thu = 4, Fri = 5, Sat = 6};
 enum months {Jan =1, Feb =2, Mar =3, Apr =4, May =5, Jun =6, Jul =7, Aug =8, Sep =9, Oct =10, Nov =11, Dec =12};

@@ -7026,16 +7026,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;math.h: 53: extern double fmod(double, double);
 [; ;math.h: 54: extern double trunc(double);
 [; ;math.h: 55: extern double round(double);
-[; ;PCF8523.h: 43: void RTC_Init(void);
-[; ;PCF8523.h: 44: void setTime(uint8_t hour, uint8_t minute, uint8_t second);
-[; ;PCF8523.h: 45: void setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year);
-[; ;PCF8523.h: 46: void countDown(uint8_t timeUnit, uint8_t time);
-[; ;PCF8523.h: 47: void setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay);
+[; ;PCF8523.h: 43: void PCF8523_RTC_Init(void);
+[; ;PCF8523.h: 44: void PCF8523_setTime(uint8_t hour, uint8_t minute, uint8_t second);
+[; ;PCF8523.h: 45: void PCF8523_setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year);
+[; ;PCF8523.h: 46: void PCF8523_countDown(uint8_t timeUnit, uint8_t time);
+[; ;PCF8523.h: 47: void PCF8523_setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay);
 [; ;PCF8523.h: 48: void PCF8523_write(uint8_t regAdd, uint8_t data);
-[; ;PCF8523.h: 49: int rtc_INTF_CLR(int interruptFlag);
+[; ;PCF8523.h: 49: int PCF8523_rtc_INTF_CLR(int interruptFlag);
 [; ;PCF8523.h: 50: uint8_t decimalToBCD(int DecValue);
 [; ;PCF8523.h: 51: uint8_t BCDtoDecimal(int BCDvalue);
-[; ;PCF8523.h: 52: uint8_t rtcRead(uint8_t address);
+[; ;PCF8523.h: 52: uint8_t PCF8523_rtcRead(uint8_t address);
 [; ;PCF8523.h: 54: enum days { Sun = 0, Mon = 1, Tue = 2, Wed = 3, Thu = 4, Fri = 5, Sat = 6};
 [; ;PCF8523.h: 55: enum months {Jan =1, Feb =2, Mar =3, Apr =4, May =5, Jun =6, Jul =7, Aug =8, Sep =9, Oct =10, Nov =11, Dec =12};
 [; ;PCF8523.h: 56: enum TMR_SCLK_FREQ {hours = 7, minutes = 3, seconds = 2};
@@ -7105,8 +7105,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;_24AA512.h: 17: uint8_t EEPROM_24AA512_Read(int addHigh, int addLow);
 [; ;_24AA512.h: 18: void EEPROM_24AA512_Write(int addHigh, int AddLow, int data);
 [; ;_24AA512.h: 19: uint8_t EEPROM_24AA512_pageWrite(uint8_t page,int data);
-[; ;mcc.h: 39: void SYSTEM_Initialize(void);
-[; ;mcc.h: 52: void OSCILLATOR_Initialize(void);
+[; ;MCP79411.h: 61: void MCP794x_setTime(uint8_t hour, uint8_t minute, uint8_t second) ;
+[; ;MCP79411.h: 62: void MCP794x_setDate(uint8_t date, uint8_t weekDay, uint8_t month, uint8_t year);
+[; ;MCP79411.h: 63: void MCP794x_writeRtcc(uint8_t Register, uint8_t value);
+[; ;mcc.h: 40: void SYSTEM_Initialize(void);
+[; ;mcc.h: 53: void OSCILLATOR_Initialize(void);
 "16 MCP23008_IO_expender.c
 [v _MCP23008_Init `(v ~T0 @X0 1 ef1`uc ]
 {
