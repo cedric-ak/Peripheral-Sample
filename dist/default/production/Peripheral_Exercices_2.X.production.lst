@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.45 build -152302408 
-                                                                                               Mon Apr 06 20:01:21 2020
+                                                                                               Mon Apr 06 20:13:24 2020
 
 Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160504
      1                           	processor	18LF46J13
@@ -775,7 +775,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    756                           
    757 ;; *************** function _setTime *****************
    758 ;; Defined at:
-   759 ;;		line 28 in file "RTC_PCF8523.c"
+   759 ;;		line 27 in file "RTC_PCF8523.c"
    760 ;; Parameters:    Size  Location     Type
    761 ;;  hour            1    wreg     unsigned char 
    762 ;;  minute          1   14[COMRAM] unsigned char 
@@ -823,7 +823,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    799                           ;setTime@hour stored from wreg
    800  000F3E  6E13               	movwf	setTime@hour,c
    801                           
-   802                           ;RTC_PCF8523.c: 29: int Register[4] = {0x03, 0x04, 0x05};
+   802                           ;RTC_PCF8523.c: 28: int Register[4] = {0x03, 0x04, 0x05};
    803  000F40  EE20  F03F         	lfsr	2,setTime@F7757
    804  000F44  EE10  F014         	lfsr	1,setTime@Register
    805  000F48  0E07               	movlw	7
@@ -832,7 +832,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    808  000F4E  06E8               	decf	wreg,f,c
    809  000F50  E2FC               	bc	u1281
    810                           
-   811                           ;RTC_PCF8523.c: 30: for (int timeReg = 0; timeReg < 3; timeReg++) {
+   811                           ;RTC_PCF8523.c: 29: for (int timeReg = 0; timeReg < 3; timeReg++) {
    812  000F52  0E00               	movlw	0
    813  000F54  6E1D               	movwf	setTime@timeReg+1,c
    814  000F56  0E00               	movlw	0
@@ -847,7 +847,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    823  000F68  0012               	return	
    824  000F6A                     l576:
    825                           
-   826                           ;RTC_PCF8523.c: 31: if (Register[timeReg] == 0x03)
+   826                           ;RTC_PCF8523.c: 30: if (Register[timeReg] == 0x03)
    827  000F6A  90D8               	bcf	status,0,c
    828  000F6C  341C               	rlcf	setTime@timeReg,w,c
    829  000F6E  6ED9               	movwf	fsr2l,c
@@ -863,7 +863,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    839  000F82  A4D8               	btfss	status,2,c
    840  000F84  D014               	goto	l578
    841                           
-   842                           ;RTC_PCF8523.c: 32: PCF8523_write(Register[timeReg], decimalToBCD(second)&0x7F);
+   842                           ;RTC_PCF8523.c: 31: PCF8523_write(Register[timeReg], decimalToBCD(second)&0x7F);
    843  000F86  C010  F009         	movff	setTime@second,decimalToBCD@DecValue
    844  000F8A  6A0A               	clrf	decimalToBCD@DecValue+1,c
    845  000F8C  EC8B  F00B         	call	_decimalToBCD	;wreg free
@@ -883,7 +883,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    859  000FAC  D043               	goto	l582
    860  000FAE                     l578:
    861                           
-   862                           ;RTC_PCF8523.c: 33: else if (Register[timeReg] == 0x04)
+   862                           ;RTC_PCF8523.c: 32: else if (Register[timeReg] == 0x04)
    863  000FAE  90D8               	bcf	status,0,c
    864  000FB0  341C               	rlcf	setTime@timeReg,w,c
    865  000FB2  6ED9               	movwf	fsr2l,c
@@ -899,7 +899,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    875  000FC6  A4D8               	btfss	status,2,c
    876  000FC8  D014               	goto	l580
    877                           
-   878                           ;RTC_PCF8523.c: 34: PCF8523_write(Register[timeReg], decimalToBCD(minute)&0x7F);
+   878                           ;RTC_PCF8523.c: 33: PCF8523_write(Register[timeReg], decimalToBCD(minute)&0x7F);
    879  000FCA  C00F  F009         	movff	setTime@minute,decimalToBCD@DecValue
    880  000FCE  6A0A               	clrf	decimalToBCD@DecValue+1,c
    881  000FD0  EC8B  F00B         	call	_decimalToBCD	;wreg free
@@ -919,7 +919,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    895  000FF0  D021               	goto	l582
    896  000FF2                     l580:
    897                           
-   898                           ;RTC_PCF8523.c: 35: else if (Register[timeReg] == 0x05)
+   898                           ;RTC_PCF8523.c: 34: else if (Register[timeReg] == 0x05)
    899  000FF2  90D8               	bcf	status,0,c
    900  000FF4  341C               	rlcf	setTime@timeReg,w,c
    901  000FF6  6ED9               	movwf	fsr2l,c
@@ -935,7 +935,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    911  00100A  A4D8               	btfss	status,2,c
    912  00100C  D013               	goto	l582
    913                           
-   914                           ;RTC_PCF8523.c: 36: PCF8523_write(Register[timeReg], decimalToBCD(hour)&0x7F);
+   914                           ;RTC_PCF8523.c: 35: PCF8523_write(Register[timeReg], decimalToBCD(hour)&0x7F);
    915  00100E  C013  F009         	movff	setTime@hour,decimalToBCD@DecValue
    916  001012  6A0A               	clrf	decimalToBCD@DecValue+1,c
    917  001014  EC8B  F00B         	call	_decimalToBCD	;wreg free
@@ -984,7 +984,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    960                           
    961 ;; *************** function _setDate *****************
    962 ;; Defined at:
-   963 ;;		line 40 in file "RTC_PCF8523.c"
+   963 ;;		line 39 in file "RTC_PCF8523.c"
    964 ;; Parameters:    Size  Location     Type
    965 ;;  day             1    wreg     unsigned char 
    966 ;;  weekday         1   14[COMRAM] unsigned char 
@@ -1033,7 +1033,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1004                           ;setDate@day stored from wreg
   1005  001044  6E17               	movwf	setDate@day,c
   1006                           
-  1007                           ;RTC_PCF8523.c: 41: uint8_t Register[5] = {0x06, 0x07, 0x08, 0x09};
+  1007                           ;RTC_PCF8523.c: 40: uint8_t Register[5] = {0x06, 0x07, 0x08, 0x09};
   1008  001046  EE20  F047         	lfsr	2,setDate@F7764
   1009  00104A  EE10  F012         	lfsr	1,setDate@Register
   1010  00104E  0E04               	movlw	4
@@ -1042,7 +1042,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1013  001054  06E8               	decf	wreg,f,c
   1014  001056  E2FC               	bc	u1341
   1015                           
-  1016                           ;RTC_PCF8523.c: 42: for (int timeReg = 0; timeReg < 4; timeReg++) {
+  1016                           ;RTC_PCF8523.c: 41: for (int timeReg = 0; timeReg < 4; timeReg++) {
   1017  001058  0E00               	movlw	0
   1018  00105A  6E19               	movwf	setDate@timeReg+1,c
   1019  00105C  0E00               	movlw	0
@@ -1071,7 +1071,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1042  00108C  50DF               	movf	indf2,w,c
   1043  00108E  EC09  F00C         	call	_PCF8523_write
   1044                           
-  1045                           ;RTC_PCF8523.c: 45: break;
+  1045                           ;RTC_PCF8523.c: 44: break;
   1046  001092  D046               	goto	l592
   1047  001094  C00F  F009         	movff	setDate@weekday,decimalToBCD@DecValue
   1048  001098  6A0A               	clrf	decimalToBCD@DecValue+1,c
@@ -1087,7 +1087,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1058  0010AE  50DF               	movf	indf2,w,c
   1059  0010B0  EC09  F00C         	call	_PCF8523_write
   1060                           
-  1061                           ;RTC_PCF8523.c: 47: break;
+  1061                           ;RTC_PCF8523.c: 46: break;
   1062  0010B4  D035               	goto	l592
   1063  0010B6  C010  F009         	movff	setDate@month,decimalToBCD@DecValue
   1064  0010BA  6A0A               	clrf	decimalToBCD@DecValue+1,c
@@ -1103,7 +1103,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1074  0010D0  50DF               	movf	indf2,w,c
   1075  0010D2  EC09  F00C         	call	_PCF8523_write
   1076                           
-  1077                           ;RTC_PCF8523.c: 49: break;
+  1077                           ;RTC_PCF8523.c: 48: break;
   1078  0010D6  D024               	goto	l592
   1079  0010D8  C011  F009         	movff	setDate@year,decimalToBCD@DecValue
   1080  0010DC  6A0A               	clrf	decimalToBCD@DecValue+1,c
@@ -1119,9 +1119,9 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1090  0010F2  50DF               	movf	indf2,w,c
   1091  0010F4  EC09  F00C         	call	_PCF8523_write
   1092                           
-  1093                           ;RTC_PCF8523.c: 52: }
+  1093                           ;RTC_PCF8523.c: 51: }
   1094                           
-  1095                           ;RTC_PCF8523.c: 51: break;
+  1095                           ;RTC_PCF8523.c: 50: break;
   1096  0010F8  D013               	goto	l592
   1097  0010FA                     l590:
   1098  0010FA  0E12               	movlw	low setDate@Register
@@ -1177,7 +1177,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1148                           
   1149 ;; *************** function _decimalToBCD *****************
   1150 ;; Defined at:
-  1151 ;;		line 95 in file "RTC_PCF8523.c"
+  1151 ;;		line 94 in file "RTC_PCF8523.c"
   1152 ;; Parameters:    Size  Location     Type
   1153 ;;  DecValue        2    8[COMRAM] int 
   1154 ;; Auto vars:     Size  Location     Type
@@ -1219,7 +1219,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1185  001716                     _decimalToBCD:
   1186                           	opt stack 28
   1187                           
-  1188                           ;RTC_PCF8523.c: 96: return (((DecValue / 10) << 4) | (DecValue % 10));
+  1188                           ;RTC_PCF8523.c: 95: return (((DecValue / 10) << 4) | (DecValue % 10));
   1189                           
   1190                           ;incstack = 0
   1191  001716  C009  F001         	movff	decimalToBCD@DecValue,___awmod@dividend
@@ -1520,7 +1520,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1476                           
   1477 ;; *************** function _rtc_INTF_CLR *****************
   1478 ;; Defined at:
-  1479 ;;		line 89 in file "RTC_PCF8523.c"
+  1479 ;;		line 88 in file "RTC_PCF8523.c"
   1480 ;; Parameters:    Size  Location     Type
   1481 ;;  interruptFla    2   14[COMRAM] int 
   1482 ;; Auto vars:     Size  Location     Type
@@ -1559,14 +1559,14 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1510  001830                     _rtc_INTF_CLR:
   1511                           	opt stack 27
   1512                           
-  1513                           ;RTC_PCF8523.c: 90: PCF8523_write(0x01, interruptFlag);
+  1513                           ;RTC_PCF8523.c: 89: PCF8523_write(0x01, interruptFlag);
   1514                           
   1515                           ;incstack = 0
   1516  001830  C00F  F00D         	movff	rtc_INTF_CLR@interruptFlag,PCF8523_write@data
   1517  001834  0E01               	movlw	1
   1518  001836  EC09  F00C         	call	_PCF8523_write
   1519                           
-  1520                           ;RTC_PCF8523.c: 91: _delay((unsigned long)((5)*(16000000/4000.0)));
+  1520                           ;RTC_PCF8523.c: 90: _delay((unsigned long)((5)*(16000000/4000.0)));
   1521  00183A  0E1A               	movlw	26
   1522  00183C  6E11               	movwf	??_rtc_INTF_CLR& (0+255),c
   1523  00183E  0EF8               	movlw	248
@@ -1598,7 +1598,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1549                           
   1550 ;; *************** function _rtcRead *****************
   1551 ;; Defined at:
-  1552 ;;		line 69 in file "RTC_PCF8523.c"
+  1552 ;;		line 68 in file "RTC_PCF8523.c"
   1553 ;; Parameters:    Size  Location     Type
   1554 ;;  address         1    wreg     unsigned char 
   1555 ;; Auto vars:     Size  Location     Type
@@ -1645,38 +1645,38 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1591                           ;rtcRead@address stored from wreg
   1592  0016DA  6E07               	movwf	rtcRead@address,c
   1593                           
-  1594                           ;RTC_PCF8523.c: 70: I2C_start();
+  1594                           ;RTC_PCF8523.c: 69: I2C_start();
   1595  0016DC  EC74  F00C         	call	_I2C_start	;wreg free
   1596                           
-  1597                           ;RTC_PCF8523.c: 71: I2C_Write(0xD0);
+  1597                           ;RTC_PCF8523.c: 70: I2C_Write(0xD0);
   1598  0016E0  0ED0               	movlw	208
   1599  0016E2  EC26  F00C         	call	_I2C_Write
   1600                           
-  1601                           ;RTC_PCF8523.c: 72: I2C_Write(address);
+  1601                           ;RTC_PCF8523.c: 71: I2C_Write(address);
   1602  0016E6  5007               	movf	rtcRead@address,w,c
   1603  0016E8  EC26  F00C         	call	_I2C_Write
   1604                           
-  1605                           ;RTC_PCF8523.c: 73: I2C_stop();
+  1605                           ;RTC_PCF8523.c: 72: I2C_stop();
   1606  0016EC  EC79  F00C         	call	_I2C_stop	;wreg free
   1607                           
-  1608                           ;RTC_PCF8523.c: 74: I2C_start();
+  1608                           ;RTC_PCF8523.c: 73: I2C_start();
   1609  0016F0  EC74  F00C         	call	_I2C_start	;wreg free
   1610                           
-  1611                           ;RTC_PCF8523.c: 75: I2C_Write(0xD0|0x01);
+  1611                           ;RTC_PCF8523.c: 74: I2C_Write(0xD0|0x01);
   1612  0016F4  0ED1               	movlw	209
   1613  0016F6  EC26  F00C         	call	_I2C_Write
   1614                           
-  1615                           ;RTC_PCF8523.c: 76: I2C_read(1);
+  1615                           ;RTC_PCF8523.c: 75: I2C_read(1);
   1616  0016FA  0E00               	movlw	0
   1617  0016FC  6E02               	movwf	I2C_read@ACK_NACK+1,c
   1618  0016FE  0E01               	movlw	1
   1619  001700  6E01               	movwf	I2C_read@ACK_NACK,c
   1620  001702  EC3F  F00C         	call	_I2C_read	;wreg free
   1621                           
-  1622                           ;RTC_PCF8523.c: 77: I2C_stop();
+  1622                           ;RTC_PCF8523.c: 76: I2C_stop();
   1623  001706  EC79  F00C         	call	_I2C_stop	;wreg free
   1624                           
-  1625                           ;RTC_PCF8523.c: 78: return BCDtoDecimal(SSP2BUF);
+  1625                           ;RTC_PCF8523.c: 77: return BCDtoDecimal(SSP2BUF);
   1626  00170A  CF75 F001          	movff	3957,BCDtoDecimal@BCDvalue	;volatile
   1627  00170E  6A02               	clrf	BCDtoDecimal@BCDvalue+1,c
   1628  001710  ECD2  F00B         	call	_BCDtoDecimal	;wreg free
@@ -1784,7 +1784,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1725                           
   1726 ;; *************** function _BCDtoDecimal *****************
   1727 ;; Defined at:
-  1728 ;;		line 99 in file "RTC_PCF8523.c"
+  1728 ;;		line 98 in file "RTC_PCF8523.c"
   1729 ;; Parameters:    Size  Location     Type
   1730 ;;  BCDvalue        2    0[COMRAM] int 
   1731 ;; Auto vars:     Size  Location     Type
@@ -1822,7 +1822,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1758  0017A4                     _BCDtoDecimal:
   1759                           	opt stack 29
   1760                           
-  1761                           ;RTC_PCF8523.c: 100: return (((BCDvalue >> 4)*10) + (BCDvalue & 0xF));
+  1761                           ;RTC_PCF8523.c: 99: return (((BCDvalue >> 4)*10) + (BCDvalue & 0xF));
   1762                           
   1763                           ;incstack = 0
   1764  0017A4  C001  F003         	movff	BCDtoDecimal@BCDvalue,??_BCDtoDecimal
@@ -1940,7 +1940,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1871                           
   1872 ;; *************** function _countDown *****************
   1873 ;; Defined at:
-  1874 ;;		line 62 in file "RTC_PCF8523.c"
+  1874 ;;		line 61 in file "RTC_PCF8523.c"
   1875 ;; Parameters:    Size  Location     Type
   1876 ;;  timeUnit        1    wreg     unsigned char 
   1877 ;;  time            1   14[COMRAM] unsigned char 
@@ -1984,24 +1984,24 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1910                           ;countDown@timeUnit stored from wreg
   1911  00174E  6E10               	movwf	countDown@timeUnit,c
   1912                           
-  1913                           ;RTC_PCF8523.c: 63: PCF8523_write(0x0F, 0xFA);
+  1913                           ;RTC_PCF8523.c: 62: PCF8523_write(0x0F, 0xFA);
   1914  001750  0EFA               	movlw	250
   1915  001752  6E0D               	movwf	PCF8523_write@data,c
   1916  001754  0E0F               	movlw	15
   1917  001756  EC09  F00C         	call	_PCF8523_write
   1918                           
-  1919                           ;RTC_PCF8523.c: 64: PCF8523_write(0x01, 0x02);
+  1919                           ;RTC_PCF8523.c: 63: PCF8523_write(0x01, 0x02);
   1920  00175A  0E02               	movlw	2
   1921  00175C  6E0D               	movwf	PCF8523_write@data,c
   1922  00175E  0E01               	movlw	1
   1923  001760  EC09  F00C         	call	_PCF8523_write
   1924                           
-  1925                           ;RTC_PCF8523.c: 65: PCF8523_write(0x10, timeUnit);
+  1925                           ;RTC_PCF8523.c: 64: PCF8523_write(0x10, timeUnit);
   1926  001764  C010  F00D         	movff	countDown@timeUnit,PCF8523_write@data
   1927  001768  0E10               	movlw	16
   1928  00176A  EC09  F00C         	call	_PCF8523_write
   1929                           
-  1930                           ;RTC_PCF8523.c: 66: PCF8523_write(0x11, time);
+  1930                           ;RTC_PCF8523.c: 65: PCF8523_write(0x11, time);
   1931  00176E  C00F  F00D         	movff	countDown@time,PCF8523_write@data
   1932  001772  0E11               	movlw	17
   1933  001774  EC09  F00C         	call	_PCF8523_write
@@ -3117,7 +3117,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2988                           
   2989 ;; *************** function _RTC_Init *****************
   2990 ;; Defined at:
-  2991 ;;		line 4 in file "RTC_PCF8523.c"
+  2991 ;;		line 3 in file "RTC_PCF8523.c"
   2992 ;; Parameters:    Size  Location     Type
   2993 ;;		None
   2994 ;; Auto vars:     Size  Location     Type
@@ -3156,7 +3156,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   3022  0017F2                     _RTC_Init:
   3023                           	opt stack 27
   3024                           
-  3025                           ;RTC_PCF8523.c: 12: PCF8523_write(0X00, 0x80);
+  3025                           ;RTC_PCF8523.c: 11: PCF8523_write(0X00, 0x80);
   3026                           
   3027                           ;incstack = 0
   3028  0017F2  0E80               	movlw	128
@@ -3164,13 +3164,13 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   3030  0017F6  0E00               	movlw	0
   3031  0017F8  EC09  F00C         	call	_PCF8523_write
   3032                           
-  3033                           ;RTC_PCF8523.c: 19: PCF8523_write(0x02, 0x80);
+  3033                           ;RTC_PCF8523.c: 18: PCF8523_write(0x02, 0x80);
   3034  0017FC  0E80               	movlw	128
   3035  0017FE  6E0D               	movwf	PCF8523_write@data,c
   3036  001800  0E02               	movlw	2
   3037  001802  EC09  F00C         	call	_PCF8523_write
   3038                           
-  3039                           ;RTC_PCF8523.c: 25: PCF8523_write(0x0F, 0xF8);
+  3039                           ;RTC_PCF8523.c: 24: PCF8523_write(0x0F, 0xF8);
   3040  001806  0EF8               	movlw	248
   3041  001808  6E0D               	movwf	PCF8523_write@data,c
   3042  00180A  0E0F               	movlw	15
@@ -3201,7 +3201,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   3067                           
   3068 ;; *************** function _PCF8523_write *****************
   3069 ;; Defined at:
-  3070 ;;		line 81 in file "RTC_PCF8523.c"
+  3070 ;;		line 80 in file "RTC_PCF8523.c"
   3071 ;; Parameters:    Size  Location     Type
   3072 ;;  regAdd          1    wreg     unsigned char 
   3073 ;;  data            1   12[COMRAM] unsigned char 
@@ -3252,22 +3252,22 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   3113                           ;PCF8523_write@regAdd stored from wreg
   3114  001812  6E0E               	movwf	PCF8523_write@regAdd,c
   3115                           
-  3116                           ;RTC_PCF8523.c: 82: I2C_start();
+  3116                           ;RTC_PCF8523.c: 81: I2C_start();
   3117  001814  EC74  F00C         	call	_I2C_start	;wreg free
   3118                           
-  3119                           ;RTC_PCF8523.c: 83: I2C_Write(0xD0);
+  3119                           ;RTC_PCF8523.c: 82: I2C_Write(0xD0);
   3120  001818  0ED0               	movlw	208
   3121  00181A  EC26  F00C         	call	_I2C_Write
   3122                           
-  3123                           ;RTC_PCF8523.c: 84: I2C_Write(regAdd);
+  3123                           ;RTC_PCF8523.c: 83: I2C_Write(regAdd);
   3124  00181E  500E               	movf	PCF8523_write@regAdd,w,c
   3125  001820  EC26  F00C         	call	_I2C_Write
   3126                           
-  3127                           ;RTC_PCF8523.c: 85: I2C_Write(data);
+  3127                           ;RTC_PCF8523.c: 84: I2C_Write(data);
   3128  001824  500D               	movf	PCF8523_write@data,w,c
   3129  001826  EC26  F00C         	call	_I2C_Write
   3130                           
-  3131                           ;RTC_PCF8523.c: 86: I2C_stop();
+  3131                           ;RTC_PCF8523.c: 85: I2C_stop();
   3132  00182A  EC79  F00C         	call	_I2C_stop	;wreg free
   3133  00182E  0012               	return		;funcret
   3134  001830                     __end_of_PCF8523_write:
@@ -4806,7 +4806,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.45 build -152302408 
-Symbol Table                                                                                   Mon Apr 06 20:01:21 2020
+Symbol Table                                                                                   Mon Apr 06 20:13:24 2020
 
                               EUSART1_itoa@base 001D                                EUSART1_itoa@data 0019  
                             __size_of_I2C_Write 001A                            __end_of_decimalToBCD 174E  

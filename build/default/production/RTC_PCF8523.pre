@@ -9558,16 +9558,16 @@ void SYSTEM_Initialize(void);
 # 52
 void OSCILLATOR_Initialize(void);
 
-# 4 "RTC_PCF8523.c"
+# 3 "RTC_PCF8523.c"
 void RTC_Init(void) {
 
-# 12
+# 11
 PCF8523_write(0X00, 0x80);
 
-# 19
+# 18
 PCF8523_write(0x02, 0x80);
 
-# 25
+# 24
 PCF8523_write(0x0F, 0xF8);
 }
 

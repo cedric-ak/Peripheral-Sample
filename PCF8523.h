@@ -12,7 +12,7 @@
 extern "C" {
 #endif
 
-#define SLAVE_ADDRESS   0xD0
+#define SLAVE_ADDRESS   0xD0   //device write address
 
     /*Control register*/
 #define CONTROL_1       0X00
@@ -53,7 +53,7 @@ uint8_t rtcRead(uint8_t address);
 
 enum days { Sun = 0, Mon = 1, Tue = 2, Wed = 3, Thu = 4, Fri = 5, Sat = 6};
 enum months {Jan =1, Feb =2, Mar =3, Apr =4, May =5, Jun =6, Jul =7, Aug =8, Sep =9, Oct =10, Nov =11, Dec =12};
-enum TMR_SCLK_FREQ {hours = 7, minutes = 3, seconds = 2}; //count down time unit registers
+enum TMR_SCLK_FREQ {hours = 7, minutes = 3, seconds = 2}; //count down time unit source clock frequency
 enum interrupt_Flag {WTAF = 4, CTAF = 2, CTBF = 0};       //watchdog timer, count down timer A, count down timer B
 
 #ifdef	__cplusplus

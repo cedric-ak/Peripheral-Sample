@@ -1,9 +1,8 @@
 #include "mcc_generated_files/mcc.h"
-//#include "PCF8523.h"
 
 void RTC_Init(void) {
     /*
-     * 12.5pf,RTC time circuits running
+     * 12.5pf
      * RTC time circuits running
      * 24 hour mode is selected
      * second and Alarm interrupt disabled
@@ -87,7 +86,7 @@ void PCF8523_write(uint8_t regAdd, uint8_t data) {
 }
 
 int rtc_INTF_CLR(int interruptFlag) { //RTC interrupt flags clear   
-    PCF8523_write(CONTROL_2, interruptFlag); //clear interrupt flag
+    PCF8523_write(CONTROL_2, interruptFlag); 
     __delay_ms(5);
     return;
 }
