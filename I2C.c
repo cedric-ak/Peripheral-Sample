@@ -42,27 +42,27 @@ void I2C_Write(uint8_t data) {
 int I2C_read(int ACK_NACK) {
     SSP2CON2bits.RCEN = 1;
     while (!SSP2STATbits.BF);
-    SSP2CON2bits.ACKDT = ACK_NACK;
+    SSP2CON2bits.ACKDT = ACK_NACK;   //ACK = 0, NACK = 1
     while (SSP2CON2bits.ACKEN);
     //return SSP2BUF;
 }
 
 void I2C_start(void) {
-    SSP2CON2bits.SEN = 1; //Initiate a start condition
+    SSP2CON2bits.SEN = 1;     //Initiate a start condition
     while (SSP2CON2bits.SEN); //wait start bit to clear
-    PIR3bits.SSP2IF = 0; //clear interrupt flag  
+    PIR3bits.SSP2IF = 0;      //clear interrupt flag  
 }
 
 void I2C_repeated_Start(void) {
-    SSP2CON2bits.RSEN = 1; //Initiate a repeated start condition
+    SSP2CON2bits.RSEN = 1;     //Initiate a repeated start condition
     while (SSP2CON2bits.RSEN); //wait for repeated start condition to complete
     PIR3bits.SSP2IF = 0;
 }
 
 void I2C_stop(void) {
-    SSP2CON2bits.PEN = 1; //Initiate a stop condition
+    SSP2CON2bits.PEN = 1;     //Initiate a stop condition
     while (SSP2CON2bits.PEN); //wait for stop instruction to complete
-    PIR3bits.SSP2IF = 0; //clear interrupt flag  
+    PIR3bits.SSP2IF = 0;      //clear interrupt flag  
 }
 
 void I2C_BusSCan(void) {
@@ -70,8 +70,8 @@ void I2C_BusSCan(void) {
         I2C_start();
         I2C_Write(address);
         if (!SSP2CON2bits.ACKSTAT) {
-            EUSART1_Write((address)); //print out slave address found
-            address++;                //skip read address acknowledge
+            EUSART1_Write((address)); //print out slave address found on the bus
+            address++;                //skip read address
         }
         I2C_stop();
     }

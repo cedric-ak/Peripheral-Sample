@@ -9426,13 +9426,18 @@ extern double round(double);
 void RTC_Init(void);
 void setTime(uint8_t hour, uint8_t minute, uint8_t second);
 void setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year);
-void CountDown_Init(uint8_t time, uint8_t timeUnit);
+void countDown(uint8_t timeUnit, uint8_t time);
 void setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay);
+void PCF8523_write(uint8_t regAdd, uint8_t data);
+int rtc_INTF_CLR(int interruptFlag);
 uint8_t decimalToBCD(int DecValue);
 uint8_t BCDtoDecimal(int BCDvalue);
+uint8_t rtcRead(uint8_t address);
 
-enum day { Sun = 0, Mon = 1, Tue = 2, Wed = 3, Thu = 4, Fri = 5, Sat = 6};
-enum month {Jan =1, Feb =2, Mar =3, Apr =4, May =5, Jun =6, Jul =7, Aug =8, Sep =9, Oct =10, Nov =11, Dec =12};
+enum days { Sun = 0, Mon = 1, Tue = 2, Wed = 3, Thu = 4, Fri = 5, Sat = 6};
+enum months {Jan =1, Feb =2, Mar =3, Apr =4, May =5, Jun =6, Jul =7, Aug =8, Sep =9, Oct =10, Nov =11, Dec =12};
+enum TMR_SCLK_FREQ {hours = 7, minutes = 3, seconds = 2};
+enum interrupt_Flag {WTAF = 4, CTAF = 2, CTBF = 0};
 
 # 6 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stddef.h"
 typedef int ptrdiff_t;
@@ -9564,14 +9569,16 @@ I2C_buffClear();
 _delay((unsigned long)((10)*(16000000/4000.0)));
 
 RTC_Init();
-setTime(23, 58, 50);
-setDate(28, Fri, Feb, 21);
-setAlarm(0x0A, 59, 0, 0, 0);
-while (1) {
+setTime(12, 54, 45);
+setDate(25, Fri, Sep, 23);
 
-EUSART1_itoa(Mon, 10);
+countDown(seconds, 10);
+while (1) {
+if (!PORTBbits.RB0) {
 do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0);
-_delay((unsigned long)((500)*(16000000/4000.0)));
+rtc_INTF_CLR(CTAF);
+EUSART1_itoa(rtcRead(0x03), 10);
+}
 }
 }
 

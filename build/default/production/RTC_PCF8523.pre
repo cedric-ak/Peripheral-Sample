@@ -9426,13 +9426,18 @@ extern double round(double);
 void RTC_Init(void);
 void setTime(uint8_t hour, uint8_t minute, uint8_t second);
 void setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year);
-void CountDown_Init(uint8_t time, uint8_t timeUnit);
+void countDown(uint8_t timeUnit, uint8_t time);
 void setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay);
+void PCF8523_write(uint8_t regAdd, uint8_t data);
+int rtc_INTF_CLR(int interruptFlag);
 uint8_t decimalToBCD(int DecValue);
 uint8_t BCDtoDecimal(int BCDvalue);
+uint8_t rtcRead(uint8_t address);
 
-enum day { Sun = 0, Mon = 1, Tue = 2, Wed = 3, Thu = 4, Fri = 5, Sat = 6};
-enum month {Jan =1, Feb =2, Mar =3, Apr =4, May =5, Jun =6, Jul =7, Aug =8, Sep =9, Oct =10, Nov =11, Dec =12};
+enum days { Sun = 0, Mon = 1, Tue = 2, Wed = 3, Thu = 4, Fri = 5, Sat = 6};
+enum months {Jan =1, Feb =2, Mar =3, Apr =4, May =5, Jun =6, Jul =7, Aug =8, Sep =9, Oct =10, Nov =11, Dec =12};
+enum TMR_SCLK_FREQ {hours = 7, minutes = 3, seconds = 2};
+enum interrupt_Flag {WTAF = 4, CTAF = 2, CTBF = 0};
 
 # 6 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stddef.h"
 typedef int ptrdiff_t;
@@ -9555,93 +9560,85 @@ void OSCILLATOR_Initialize(void);
 
 # 4 "RTC_PCF8523.c"
 void RTC_Init(void) {
-I2C_start();
-I2C_Write(0xD0);
-I2C_Write(0X00);
-I2C_Write(0x80);
-I2C_stop();
 
+# 12
+PCF8523_write(0X00, 0x80);
 
-I2C_start();
-I2C_Write(0xD0);
-I2C_Write(0x02);
-I2C_Write(0x80);
-I2C_stop();
+# 19
+PCF8523_write(0x02, 0x80);
 
-
-I2C_start();
-I2C_Write(0xD0);
-I2C_Write(0x0F);
-I2C_Write(0xF8);
-I2C_stop();
+# 25
+PCF8523_write(0x0F, 0xF8);
 }
 
-# 36
 void setTime(uint8_t hour, uint8_t minute, uint8_t second) {
 int Register[4] = {0x03, 0x04, 0x05};
 for (int timeReg = 0; timeReg < 3; timeReg++) {
-I2C_start();
-I2C_Write(0xD0);
-I2C_Write(Register[timeReg]);
-if (Register[timeReg] == 0x03) {
-I2C_Write(decimalToBCD(second)&0x7F);
-I2C_stop();
-} else if (Register[timeReg] == 0x04) {
-I2C_Write(decimalToBCD(minute)&0x7F);
-I2C_stop();
-} else if (Register[timeReg] == 0x05) {
-I2C_Write(decimalToBCD(hour)&0x7F);
-I2C_stop();
-}
+if (Register[timeReg] == 0x03)
+PCF8523_write(Register[timeReg], decimalToBCD(second)&0x7F);
+else if (Register[timeReg] == 0x04)
+PCF8523_write(Register[timeReg], decimalToBCD(minute)&0x7F);
+else if (Register[timeReg] == 0x05)
+PCF8523_write(Register[timeReg], decimalToBCD(hour)&0x7F);
 }
 }
 
 void setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year) {
-int Register[5] = {0x06, 0x07, 0x08, 0x09};
+uint8_t Register[5] = {0x06, 0x07, 0x08, 0x09};
 for (int timeReg = 0; timeReg < 4; timeReg++) {
-I2C_start();
-I2C_Write(0xD0);
-I2C_Write(Register[timeReg]);
-if (Register[timeReg] == 0x06) {
-I2C_Write(decimalToBCD(day)&0x7F);
-I2C_stop();
-} else if (Register[timeReg] == 0x07) {
-I2C_Write(decimalToBCD(weekday)&0x7F);
-I2C_stop();
-} else if (Register[timeReg] == 0x08) {
-I2C_Write(decimalToBCD(month)&0x7F);
-I2C_stop();
-} else if (Register[timeReg] == 0x09) {
-I2C_Write(decimalToBCD(year)&0x7F);
-I2C_stop();
+switch (Register[timeReg]) {
+case 0x06:PCF8523_write(Register[timeReg], decimalToBCD(day)&0x7F);
+break;
+case 0x07:PCF8523_write(Register[timeReg], decimalToBCD(weekday)&0x7F);
+break;
+case 0x08:PCF8523_write(Register[timeReg], decimalToBCD(month)&0x7F);
+break;
+case 0x09:PCF8523_write(Register[timeReg], decimalToBCD(year)&0x7F);
+break;
 }
 }
 }
 
 void setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay) {
+PCF8523_write(0X00, 0x80 | 0x02);
+PCF8523_write(alarmReg, decimalToBCD(minute + hour + weekDay)&0x7F);
+PCF8523_write(0x01, 0x00);
+}
 
+void countDown(uint8_t timeUnit, uint8_t time) {
+PCF8523_write(0x0F, 0xFA);
+PCF8523_write(0x01, 0x02);
+PCF8523_write(0x10, timeUnit);
+PCF8523_write(0x11, time);
+}
+
+uint8_t rtcRead(uint8_t address) {
 I2C_start();
 I2C_Write(0xD0);
-I2C_Write(0X00);
-I2C_Write(0x80|0x02);
+I2C_Write(address);
 I2C_stop();
-
 I2C_start();
-I2C_Write(0xD0);
-I2C_Write(alarmReg);
-I2C_Write((minute + hour + weekDay)&0x7F);
+I2C_Write(0xD0|0x01);
+I2C_read(1);
 I2C_stop();
+return BCDtoDecimal(SSP2BUF);
+}
 
-
+void PCF8523_write(uint8_t regAdd, uint8_t data) {
 I2C_start();
 I2C_Write(0xD0);
-I2C_Write(0x01);
-I2C_Write(0x00);
+I2C_Write(regAdd);
+I2C_Write(data);
 I2C_stop();
 }
 
-uint8_t decimalToBCD(int DecValue) {
+int rtc_INTF_CLR(int interruptFlag) {
+PCF8523_write(0x01, interruptFlag);
+_delay((unsigned long)((5)*(16000000/4000.0)));
+return;
+}
 
+uint8_t decimalToBCD(int DecValue) {
 return (((DecValue / 10) << 4) | (DecValue % 10));
 }
 

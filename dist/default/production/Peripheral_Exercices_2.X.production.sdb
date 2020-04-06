@@ -4,7 +4,7 @@
 [d chip 18LF46J13 ]
 [d frameptr 4065 ]
 "14 F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
-[e E7590 day `uc
+[e E7597 days `uc
 Sun 0
 Mon 1
 Tue 2
@@ -13,7 +13,7 @@ Thu 4
 Fri 5
 Sat 6
 ]
-[e E7598 month `uc
+[e E7605 months `uc
 Jan 1
 Feb 2
 Mar 3
@@ -26,6 +26,18 @@ Sep 9
 Oct 10
 Nov 11
 Dec 12
+]
+"16
+[e E7618 TMR_SCLK_FREQ `uc
+hours 7
+minutes 3
+seconds 2
+]
+"20
+[e E7622 interrupt_Flag `uc
+WTAF 4
+CTAF 2
+CTBF 0
 ]
 "13 F:\WORK\Personal\Peripheral_Exercices_2.X\_25LC512_EEPROM.c
 [v _EEPROM_25LC512_Write EEPROM_25LC512_Write `(v  1 e 1 0 ]
@@ -115,25 +127,25 @@ Dec 12
 [v _interrupt_Init interrupt_Init `(v  1 e 1 0 ]
 "5 F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"69 F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+"68 F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
-"135
+"127
 [v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
-"145
+"135
 [v _EUSART1_Write_Text EUSART1_Write_Text `(v  1 e 1 0 ]
-"155
+"145
 [v _EUSART1_itoa EUSART1_itoa `(v  1 e 1 0 ]
-"162
+"152
 [v _EUSART1_DefaultFramingErrorHandler EUSART1_DefaultFramingErrorHandler `(v  1 e 1 0 ]
-"164
+"155
 [v _EUSART1_DefaultOverrunErrorHandler EUSART1_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
-"172
+"163
 [v _EUSART1_DefaultErrorHandler EUSART1_DefaultErrorHandler `(v  1 e 1 0 ]
-"175
+"166
 [v _EUSART1_SetFramingErrorHandler EUSART1_SetFramingErrorHandler `(v  1 e 1 0 ]
-"179
+"170
 [v _EUSART1_SetOverrunErrorHandler EUSART1_SetOverrunErrorHandler `(v  1 e 1 0 ]
-"183
+"174
 [v _EUSART1_SetErrorHandler EUSART1_SetErrorHandler `(v  1 e 1 0 ]
 "50 F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -153,14 +165,22 @@ Dec 12
 [v _MCP4131Write MCP4131Write `(v  1 e 1 0 ]
 "4 F:\WORK\Personal\Peripheral_Exercices_2.X\RTC_PCF8523.c
 [v _RTC_Init RTC_Init `(v  1 e 1 0 ]
-"36
+"28
 [v _setTime setTime `(v  1 e 1 0 ]
-"55
+"40
 [v _setDate setDate `(v  1 e 1 0 ]
-"77
-[v _setAlarm setAlarm `(v  1 e 1 0 ]
-"99
+"62
+[v _countDown countDown `(v  1 e 1 0 ]
+"69
+[v _rtcRead rtcRead `(uc  1 e 1 0 ]
+"81
+[v _PCF8523_write PCF8523_write `(v  1 e 1 0 ]
+"89
+[v _rtc_INTF_CLR rtc_INTF_CLR `(i  1 e 2 0 ]
+"95
 [v _decimalToBCD decimalToBCD `(uc  1 e 1 0 ]
+"99
+[v _BCDtoDecimal BCDtoDecimal `(uc  1 e 1 0 ]
 "3258 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
 [v _REFOCON REFOCON `VEuc  1 e 1 @3901 ]
 "3450
@@ -173,7 +193,7 @@ Dec 12
 [v _ANCON0 ANCON0 `VEuc  1 e 1 @3912 ]
 "3831
 [v _ANCON1 ANCON1 `VEuc  1 e 1 @3913 ]
-[s S1343 . 1 `uc 1 SEN 1 0 :1:0 
+[s S1429 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -183,14 +203,14 @@ Dec 12
 `uc 1 GCEN 1 0 :1:7 
 ]
 "5268
-[s S1352 . 1 `uc 1 . 1 0 :1:0 
+[s S1438 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK1 1 0 :1:1 
 `uc 1 ADMSK2 1 0 :1:2 
 `uc 1 ADMSK3 1 0 :1:3 
 `uc 1 ADMSK4 1 0 :1:4 
 `uc 1 ADMSK5 1 0 :1:5 
 ]
-[s S1359 . 1 `uc 1 SEN2 1 0 :1:0 
+[s S1445 . 1 `uc 1 SEN2 1 0 :1:0 
 `uc 1 ADMSK12 1 0 :1:1 
 `uc 1 ADMSK22 1 0 :1:2 
 `uc 1 ADMSK32 1 0 :1:3 
@@ -199,15 +219,15 @@ Dec 12
 `uc 1 ACKSTAT2 1 0 :1:6 
 `uc 1 GCEN2 1 0 :1:7 
 ]
-[s S1368 . 1 `uc 1 . 1 0 :1:0 
+[s S1454 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RSEN2 1 0 :1:1 
 `uc 1 PEN2 1 0 :1:2 
 `uc 1 RCEN2 1 0 :1:3 
 `uc 1 ADMSK42 1 0 :1:4 
 `uc 1 ADMSK52 1 0 :1:5 
 ]
-[u S1375 . 1 `S1343 1 . 1 0 `S1352 1 . 1 0 `S1359 1 . 1 0 `S1368 1 . 1 0 ]
-[v _SSP2CON2bits SSP2CON2bits `VES1375  1 e 1 @3953 ]
+[u S1461 . 1 `S1429 1 . 1 0 `S1438 1 . 1 0 `S1445 1 . 1 0 `S1454 1 . 1 0 ]
+[v _SSP2CON2bits SSP2CON2bits `VES1461  1 e 1 @3953 ]
 [s S24 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
@@ -220,7 +240,7 @@ Dec 12
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[s S1309 . 1 `uc 1 SSPM02 1 0 :1:0 
+[s S1395 . 1 `uc 1 SSPM02 1 0 :1:0 
 `uc 1 SSPM12 1 0 :1:1 
 `uc 1 SSPM22 1 0 :1:2 
 `uc 1 SSPM32 1 0 :1:3 
@@ -229,8 +249,8 @@ Dec 12
 `uc 1 SSPOV2 1 0 :1:6 
 `uc 1 WCOL2 1 0 :1:7 
 ]
-[u S1318 . 1 `S24 1 . 1 0 `S30 1 . 1 0 `S1309 1 . 1 0 ]
-[v _SSP2CON1bits SSP2CON1bits `VES1318  1 e 1 @3954 ]
+[u S1404 . 1 `S24 1 . 1 0 `S30 1 . 1 0 `S1395 1 . 1 0 ]
+[v _SSP2CON1bits SSP2CON1bits `VES1404  1 e 1 @3954 ]
 [s S70 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_NOT_W 1 0 :1:2 
 ]
@@ -247,7 +267,7 @@ Dec 12
 `uc 1 CKE 1 0 :1:6 
 `uc 1 SMP 1 0 :1:7 
 ]
-[s S1430 . 1 `uc 1 BF2 1 0 :1:0 
+[s S1516 . 1 `uc 1 BF2 1 0 :1:0 
 `uc 1 UA2 1 0 :1:1 
 `uc 1 I2C_READ2 1 0 :1:2 
 `uc 1 I2C_START2 1 0 :1:3 
@@ -256,58 +276,58 @@ Dec 12
 `uc 1 CKE2 1 0 :1:6 
 `uc 1 SMP2 1 0 :1:7 
 ]
-[s S1439 . 1 `uc 1 . 1 0 :2:0 
+[s S1525 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE2 1 0 :1:2 
 `uc 1 S2 1 0 :1:3 
 `uc 1 P2 1 0 :1:4 
 `uc 1 DATA_ADDRESS2 1 0 :1:5 
 ]
-[s S1445 . 1 `uc 1 . 1 0 :2:0 
+[s S1531 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW2 1 0 :1:2 
 `uc 1 START2 1 0 :1:3 
 `uc 1 STOP2 1 0 :1:4 
 `uc 1 D_A2 1 0 :1:5 
 ]
-[s S1451 . 1 `uc 1 . 1 0 :5:0 
+[s S1537 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 D_NOT_A2 1 0 :1:5 
 ]
-[s S1454 . 1 `uc 1 . 1 0 :2:0 
+[s S1540 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W2 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_nA2 1 0 :1:5 
 ]
-[s S1459 . 1 `uc 1 . 1 0 :2:0 
+[s S1545 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_NOT_W2 1 0 :1:2 
 ]
-[s S1462 . 1 `uc 1 . 1 0 :2:0 
+[s S1548 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_nW2 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 I2C_DAT2 1 0 :1:5 
 ]
-[s S1467 . 1 `uc 1 . 1 0 :2:0 
+[s S1553 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_W2 1 0 :1:2 
 ]
-[s S1470 . 1 `uc 1 . 1 0 :5:0 
+[s S1556 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_A2 1 0 :1:5 
 ]
-[s S1473 . 1 `uc 1 . 1 0 :2:0 
+[s S1559 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW2 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA2 1 0 :1:5 
 ]
-[s S1478 . 1 `uc 1 . 1 0 :2:0 
+[s S1564 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_WRITE2 1 0 :1:2 
 ]
-[s S1481 . 1 `uc 1 . 1 0 :5:0 
+[s S1567 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_ADDRESS2 1 0 :1:5 
 ]
-[s S1484 . 1 `uc 1 . 1 0 :2:0 
+[s S1570 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE2 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS2 1 0 :1:5 
 ]
-[u S1489 . 1 `S70 1 . 1 0 `S73 1 . 1 0 `S76 1 . 1 0 `S1430 1 . 1 0 `S1439 1 . 1 0 `S1445 1 . 1 0 `S1451 1 . 1 0 `S1454 1 . 1 0 `S1459 1 . 1 0 `S1462 1 . 1 0 `S1467 1 . 1 0 `S1470 1 . 1 0 `S1473 1 . 1 0 `S1478 1 . 1 0 `S1481 1 . 1 0 `S1484 1 . 1 0 ]
-[v _SSP2STATbits SSP2STATbits `VES1489  1 e 1 @3955 ]
+[u S1575 . 1 `S70 1 . 1 0 `S73 1 . 1 0 `S76 1 . 1 0 `S1516 1 . 1 0 `S1525 1 . 1 0 `S1531 1 . 1 0 `S1537 1 . 1 0 `S1540 1 . 1 0 `S1545 1 . 1 0 `S1548 1 . 1 0 `S1553 1 . 1 0 `S1556 1 . 1 0 `S1559 1 . 1 0 `S1564 1 . 1 0 `S1567 1 . 1 0 `S1570 1 . 1 0 ]
+[v _SSP2STATbits SSP2STATbits `VES1575  1 e 1 @3955 ]
 "5825
 [v _SSP2ADD SSP2ADD `VEuc  1 e 1 @3956 ]
 "5957
@@ -316,7 +336,7 @@ Dec 12
 [v _BAUDCON1 BAUDCON1 `VEuc  1 e 1 @3966 ]
 "6896
 [v _SPBRGH1 SPBRGH1 `VEuc  1 e 1 @3967 ]
-[s S994 . 1 `uc 1 RB0 1 0 :1:0 
+[s S809 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -326,7 +346,7 @@ Dec 12
 `uc 1 RB7 1 0 :1:7 
 ]
 "7284
-[s S1003 . 1 `uc 1 AN12 1 0 :1:0 
+[s S818 . 1 `uc 1 AN12 1 0 :1:0 
 `uc 1 AN10 1 0 :1:1 
 `uc 1 AN8 1 0 :1:2 
 `uc 1 AN9 1 0 :1:3 
@@ -335,7 +355,7 @@ Dec 12
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S1012 . 1 `uc 1 INT0 1 0 :1:0 
+[s S827 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 PMPBE 1 0 :1:1 
 `uc 1 CTED1 1 0 :1:2 
 `uc 1 CTED2 1 0 :1:3 
@@ -344,7 +364,7 @@ Dec 12
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S1021 . 1 `uc 1 RP3 1 0 :1:0 
+[s S836 . 1 `uc 1 RP3 1 0 :1:0 
 `uc 1 RTCC 1 0 :1:1 
 `uc 1 PMA3 1 0 :1:2 
 `uc 1 PMA2 1 0 :1:3 
@@ -352,40 +372,40 @@ Dec 12
 `uc 1 RP9 1 0 :1:6 
 `uc 1 RP10 1 0 :1:7 
 ]
-[s S1029 . 1 `uc 1 . 1 0 :1:0 
+[s S844 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 PMBE 1 0 :1:1 
 `uc 1 REFO 1 0 :1:2 
 ]
-[s S1033 . 1 `uc 1 . 1 0 :1:0 
+[s S848 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RP4 1 0 :1:1 
 `uc 1 RP5 1 0 :1:2 
 `uc 1 RP6 1 0 :1:3 
 `uc 1 RP7 1 0 :1:4 
 `uc 1 RP8 1 0 :1:5 
 ]
-[s S1040 . 1 `uc 1 C3IND 1 0 :1:0 
+[s S855 . 1 `uc 1 C3IND 1 0 :1:0 
 `uc 1 C3INC 1 0 :1:1 
 `uc 1 C2INC 1 0 :1:2 
 `uc 1 C3INA 1 0 :1:3 
 ]
-[s S1045 . 1 `uc 1 . 1 0 :4:0 
+[s S860 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 CCP4 1 0 :1:4 
 `uc 1 CCP5 1 0 :1:5 
 `uc 1 CCP6 1 0 :1:6 
 `uc 1 CCP7 1 0 :1:7 
 ]
-[s S1051 . 1 `uc 1 . 1 0 :3:0 
+[s S866 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S1054 . 1 `S994 1 . 1 0 `S1003 1 . 1 0 `S1012 1 . 1 0 `S1021 1 . 1 0 `S1029 1 . 1 0 `S1033 1 . 1 0 `S1040 1 . 1 0 `S1045 1 . 1 0 `S1051 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES1054  1 e 1 @3969 ]
+[u S869 . 1 `S809 1 . 1 0 `S818 1 . 1 0 `S827 1 . 1 0 `S836 1 . 1 0 `S844 1 . 1 0 `S848 1 . 1 0 `S855 1 . 1 0 `S860 1 . 1 0 `S866 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES869  1 e 1 @3969 ]
 "8251
 [v _OSCCON2 OSCCON2 `VEuc  1 e 1 @3975 ]
 "8353
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
 "8455
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
-[s S809 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S940 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -395,7 +415,7 @@ Dec 12
 `uc 1 LATB7 1 0 :1:7 
 ]
 "8482
-[s S818 . 1 `uc 1 LB0 1 0 :1:0 
+[s S949 . 1 `uc 1 LB0 1 0 :1:0 
 `uc 1 LB1 1 0 :1:1 
 `uc 1 LB2 1 0 :1:2 
 `uc 1 LB3 1 0 :1:3 
@@ -404,11 +424,11 @@ Dec 12
 `uc 1 LB6 1 0 :1:6 
 `uc 1 LB7 1 0 :1:7 
 ]
-[u S827 . 1 `S809 1 . 1 0 `S818 1 . 1 0 ]
-[v _LATBbits LATBbits `VES827  1 e 1 @3978 ]
+[u S958 . 1 `S940 1 . 1 0 `S949 1 . 1 0 ]
+[v _LATBbits LATBbits `VES958  1 e 1 @3978 ]
 "8567
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
-[s S869 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S1023 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -418,7 +438,7 @@ Dec 12
 `uc 1 LATC7 1 0 :1:7 
 ]
 "8594
-[s S878 . 1 `uc 1 LC0 1 0 :1:0 
+[s S1032 . 1 `uc 1 LC0 1 0 :1:0 
 `uc 1 LC1 1 0 :1:1 
 `uc 1 LC2 1 0 :1:2 
 `uc 1 LC3 1 0 :1:3 
@@ -427,8 +447,8 @@ Dec 12
 `uc 1 LC6 1 0 :1:6 
 `uc 1 LC7 1 0 :1:7 
 ]
-[u S887 . 1 `S869 1 . 1 0 `S878 1 . 1 0 ]
-[v _LATCbits LATCbits `VES887  1 e 1 @3979 ]
+[u S1041 . 1 `S1023 1 . 1 0 `S1032 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1041  1 e 1 @3979 ]
 "8679
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
 "8791
@@ -441,7 +461,7 @@ Dec 12
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
 "9268
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S1277 . 1 `uc 1 TRISD0 1 0 :1:0 
+[s S1363 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -451,8 +471,8 @@ Dec 12
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "9285
-[u S1286 . 1 `S1277 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES1286  1 e 1 @3989 ]
+[u S1372 . 1 `S1363 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES1372  1 e 1 @3989 ]
 "9330
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
 [s S652 . 1 `uc 1 TRISE0 1 0 :1:0 
@@ -487,7 +507,7 @@ Dec 12
 ]
 [u S322 . 1 `S305 1 . 1 0 `S314 1 . 1 0 `S319 1 . 1 0 ]
 [v _PIR1bits PIR1bits `VES322  1 e 1 @3998 ]
-[s S1175 . 1 `uc 1 RTCCIE 1 0 :1:0 
+[s S1261 . 1 `uc 1 RTCCIE 1 0 :1:0 
 `uc 1 TMR3GIE 1 0 :1:1 
 `uc 1 CTMUIE 1 0 :1:2 
 `uc 1 TMR4IE 1 0 :1:3 
@@ -497,20 +517,20 @@ Dec 12
 `uc 1 SSP2IE 1 0 :1:7 
 ]
 "10444
-[s S1184 . 1 `uc 1 RXB0IE 1 0 :1:0 
+[s S1270 . 1 `uc 1 RXB0IE 1 0 :1:0 
 `uc 1 RXB1IE 1 0 :1:1 
 `uc 1 TXB0IE 1 0 :1:2 
 `uc 1 TXB1IE 1 0 :1:3 
 `uc 1 TXB2IE 1 0 :1:4 
 ]
-[s S1190 . 1 `uc 1 . 1 0 :1:0 
+[s S1276 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RXBNIE 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 TXBNIE 1 0 :1:4 
 ]
-[u S1195 . 1 `S1175 1 . 1 0 `S1184 1 . 1 0 `S1190 1 . 1 0 ]
-[v _PIE3bits PIE3bits `VES1195  1 e 1 @4003 ]
-[s S1220 . 1 `uc 1 RTCCIF 1 0 :1:0 
+[u S1281 . 1 `S1261 1 . 1 0 `S1270 1 . 1 0 `S1276 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES1281  1 e 1 @4003 ]
+[s S1306 . 1 `uc 1 RTCCIF 1 0 :1:0 
 `uc 1 TMR3GIF 1 0 :1:1 
 `uc 1 CTMUIF 1 0 :1:2 
 `uc 1 TMR4IF 1 0 :1:3 
@@ -520,13 +540,13 @@ Dec 12
 `uc 1 SSP2IF 1 0 :1:7 
 ]
 "10547
-[s S1229 . 1 `uc 1 . 1 0 :1:0 
+[s S1315 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RXBNIF 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 TXBNIF 1 0 :1:4 
 ]
-[u S1234 . 1 `S1220 1 . 1 0 `S1229 1 . 1 0 ]
-[v _PIR3bits PIR3bits `VES1234  1 e 1 @4004 ]
+[u S1320 . 1 `S1306 1 . 1 0 `S1315 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES1320  1 e 1 @4004 ]
 "10932
 [v _RCSTA1 RCSTA1 `VEuc  1 e 1 @4012 ]
 [s S407 . 1 `uc 1 RX9D 1 0 :1:0 
@@ -758,46 +778,46 @@ Dec 12
 "5 F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"22
+"24
 } 0
-"36 F:\WORK\Personal\Peripheral_Exercices_2.X\RTC_PCF8523.c
+"28 F:\WORK\Personal\Peripheral_Exercices_2.X\RTC_PCF8523.c
 [v _setTime setTime `(v  1 e 1 0 ]
 {
 [v setTime@hour hour `uc  1 a 1 wreg ]
-"38
-[v setTime@timeReg timeReg `i  1 a 2 25 ]
-"37
-[v setTime@Register Register `[4]i  1 a 8 16 ]
-"36
+"30
+[v setTime@timeReg timeReg `i  1 a 2 27 ]
+"29
+[v setTime@Register Register `[4]i  1 a 8 19 ]
+"28
 [v setTime@hour hour `uc  1 a 1 wreg ]
-[v setTime@minute minute `uc  1 p 1 12 ]
-[v setTime@second second `uc  1 p 1 13 ]
-[v setTime@F7742 F7742 `[4]i  1 s 8 F7742 ]
-[v setTime@hour hour `uc  1 a 1 24 ]
-"53
+[v setTime@minute minute `uc  1 p 1 14 ]
+[v setTime@second second `uc  1 p 1 15 ]
+[v setTime@F7757 F7757 `[4]i  1 s 8 F7757 ]
+[v setTime@hour hour `uc  1 a 1 18 ]
+"38
 } 0
-"55
+"40
 [v _setDate setDate `(v  1 e 1 0 ]
 {
 [v setDate@day day `uc  1 a 1 wreg ]
-"57
-[v setDate@timeReg timeReg `i  1 a 2 28 ]
-"56
-[v setDate@Register Register `[5]i  1 a 10 17 ]
-"55
+"42
+[v setDate@timeReg timeReg `i  1 a 2 23 ]
+"41
+[v setDate@Register Register `[5]uc  1 a 5 17 ]
+"40
 [v setDate@day day `uc  1 a 1 wreg ]
-[v setDate@weekday weekday `uc  1 p 1 12 ]
-[v setDate@month month `uc  1 p 1 13 ]
-[v setDate@year year `uc  1 p 1 14 ]
-[v setDate@F7749 F7749 `[5]i  1 s 10 F7749 ]
-[v setDate@day day `uc  1 a 1 27 ]
-"75
+[v setDate@weekday weekday `uc  1 p 1 14 ]
+[v setDate@month month `uc  1 p 1 15 ]
+[v setDate@year year `uc  1 p 1 16 ]
+[v setDate@F7764 F7764 `[5]uc  1 s 5 F7764 ]
+[v setDate@day day `uc  1 a 1 22 ]
+"54
 } 0
-"99
+"95
 [v _decimalToBCD decimalToBCD `(uc  1 e 1 0 ]
 {
 [v decimalToBCD@DecValue DecValue `i  1 p 2 8 ]
-"102
+"97
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -823,23 +843,45 @@ Dec 12
 [v ___awdiv@divisor divisor `i  1 p 2 2 ]
 "42
 } 0
-"77 F:\WORK\Personal\Peripheral_Exercices_2.X\RTC_PCF8523.c
-[v _setAlarm setAlarm `(v  1 e 1 0 ]
+"89 F:\WORK\Personal\Peripheral_Exercices_2.X\RTC_PCF8523.c
+[v _rtc_INTF_CLR rtc_INTF_CLR `(i  1 e 2 0 ]
 {
-[v setAlarm@alarmReg alarmReg `uc  1 a 1 wreg ]
-[v setAlarm@alarmReg alarmReg `uc  1 a 1 wreg ]
-[v setAlarm@minute minute `uc  1 p 1 1 ]
-[v setAlarm@hour hour `uc  1 p 1 2 ]
-[v setAlarm@day day `uc  1 p 1 3 ]
-[v setAlarm@weekDay weekDay `uc  1 p 1 4 ]
+[v rtc_INTF_CLR@interruptFlag interruptFlag `i  1 p 2 14 ]
+"93
+} 0
+"69
+[v _rtcRead rtcRead `(uc  1 e 1 0 ]
+{
+[v rtcRead@address address `uc  1 a 1 wreg ]
+[v rtcRead@address address `uc  1 a 1 wreg ]
+[v rtcRead@address address `uc  1 a 1 6 ]
 "79
-[v setAlarm@alarmReg alarmReg `uc  1 a 1 5 ]
-"97
+} 0
+"42 F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
+[v _I2C_read I2C_read `(i  1 e 2 0 ]
+{
+[v I2C_read@ACK_NACK ACK_NACK `i  1 p 2 0 ]
+"48
+} 0
+"99 F:\WORK\Personal\Peripheral_Exercices_2.X\RTC_PCF8523.c
+[v _BCDtoDecimal BCDtoDecimal `(uc  1 e 1 0 ]
+{
+[v BCDtoDecimal@BCDvalue BCDvalue `i  1 p 2 0 ]
+"101
 } 0
 "15 F:\WORK\Personal\Peripheral_Exercices_2.X\Interrupt.c
 [v _interrupt_Init interrupt_Init `(v  1 e 1 0 ]
 {
 "20
+} 0
+"62 F:\WORK\Personal\Peripheral_Exercices_2.X\RTC_PCF8523.c
+[v _countDown countDown `(v  1 e 1 0 ]
+{
+[v countDown@timeUnit timeUnit `uc  1 a 1 wreg ]
+[v countDown@timeUnit timeUnit `uc  1 a 1 wreg ]
+[v countDown@time time `uc  1 p 1 14 ]
+[v countDown@timeUnit timeUnit `uc  1 a 1 15 ]
+"67
 } 0
 "50 F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -892,33 +934,42 @@ Dec 12
 [v ___aldiv@divisor divisor `l  1 p 4 10 ]
 "42
 } 0
-"69 F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+"68 F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
 {
-"95
+"93
 } 0
-"179
+"170
 [v _EUSART1_SetOverrunErrorHandler EUSART1_SetOverrunErrorHandler `(v  1 e 1 0 ]
 {
 [v EUSART1_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
-"181
+"172
 } 0
-"175
+"166
 [v _EUSART1_SetFramingErrorHandler EUSART1_SetFramingErrorHandler `(v  1 e 1 0 ]
 {
 [v EUSART1_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
-"177
+"168
 } 0
-"183
+"174
 [v _EUSART1_SetErrorHandler EUSART1_SetErrorHandler `(v  1 e 1 0 ]
 {
 [v EUSART1_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
-"185
+"176
 } 0
 "4 F:\WORK\Personal\Peripheral_Exercices_2.X\RTC_PCF8523.c
 [v _RTC_Init RTC_Init `(v  1 e 1 0 ]
 {
-"24
+"26
+} 0
+"81
+[v _PCF8523_write PCF8523_write `(v  1 e 1 0 ]
+{
+[v PCF8523_write@regAdd regAdd `uc  1 a 1 wreg ]
+[v PCF8523_write@regAdd regAdd `uc  1 a 1 wreg ]
+[v PCF8523_write@data data `uc  1 p 1 12 ]
+[v PCF8523_write@regAdd regAdd `uc  1 a 1 13 ]
+"87
 } 0
 "80 F:\WORK\Personal\Peripheral_Exercices_2.X\I2C.c
 [v _I2C_buffClear I2C_buffClear `(v  1 e 1 0 ]
@@ -943,15 +994,15 @@ Dec 12
 {
 "66
 } 0
-"155 F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+"145 F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
 [v _EUSART1_itoa EUSART1_itoa `(v  1 e 1 0 ]
 {
-"156
+"146
 [v EUSART1_itoa@buf buf `[10]uc  1 a 10 30 ]
-"155
+"145
 [v EUSART1_itoa@data data `ul  1 p 4 24 ]
 [v EUSART1_itoa@base base `i  1 p 2 28 ]
-"160
+"150
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\itoa.c
 [v _itoa itoa `(*.39uc  1 e 2 0 ]
@@ -999,13 +1050,13 @@ Dec 12
 [v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "31
 } 0
-"145 F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
+"135 F:\WORK\Personal\Peripheral_Exercices_2.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Write_Text EUSART1_Write_Text `(v  1 e 1 0 ]
 {
-"146
+"136
 [v EUSART1_Write_Text@iSizeQueued iSizeQueued `uc  1 a 1 5 ]
-"145
+"135
 [v EUSART1_Write_Text@pbData pbData `*.35uc  1 p 2 0 ]
 [v EUSART1_Write_Text@iSize iSize `uc  1 p 1 2 ]
-"153
+"143
 } 0

@@ -1,103 +1,98 @@
 #include "mcc_generated_files/mcc.h"
-#include "PCF8523.h"
+//#include "PCF8523.h"
 
 void RTC_Init(void) {
-    I2C_start();
-    I2C_Write(SLAVE_ADDRESS);
-    I2C_Write(CONTROL_1);
-    I2C_Write(0x80); //12.5pf,RTC time circuits running,RTC time circuits running,24 hour mode is selected, second and Alarm interrupt disabled,no correction interrupt generated
-    I2C_stop();
+    /*
+     * 12.5pf,RTC time circuits running
+     * RTC time circuits running
+     * 24 hour mode is selected
+     * second and Alarm interrupt disabled
+     * no correction interrupt generated
+     */
+    PCF8523_write(CONTROL_1, 0x80);
 
-    /*power management register*/
-    I2C_start();
-    I2C_Write(SLAVE_ADDRESS);
-    I2C_Write(CONTROL_3);
-    I2C_Write(0x80); //battery switch-over function is enabled in standard mode,battery low detection function is enabled, clear all power management interrupt flags
-    I2C_stop();
-    
-     /*Clockout register*/   
-    I2C_start();
-    I2C_Write(SLAVE_ADDRESS);
-    I2C_Write(TMR_CLKOUT_CTRL);
-    I2C_Write(0xF8); //clockout disabled, timer A is disabled,timer B is disabled
-    I2C_stop();
-}
-#ifdef cntDown
-void CountDown_Init(uint8_t time, uint8_t timeUnit) { 
+    /*power management register
+     * battery switch-over function is enabled in standard mode
+     * battery low detection function is enabled
+     * clear all power management interrupt flags
+     */
+    PCF8523_write(CONTROL_3, 0x80);
 
-    I2C_start();
-    I2C_Write(SLAVE_ADDRESS);
-    I2C_Write(CONTROL_2);
-    I2C_Write(0x02); //enable time A interrupt count down and clear all interrupt flags
-    I2C_stop();
+    /*Clockout register
+     * clockout disabled
+     * timer A and B disabled
+     */
+    PCF8523_write(TMR_CLKOUT_CTRL, 0xF8);
 }
-#endif
 
 void setTime(uint8_t hour, uint8_t minute, uint8_t second) {
     int Register[4] = {SECONDS, MINUTES, HOURS};
     for (int timeReg = 0; timeReg < 3; timeReg++) {
-        I2C_start();
-        I2C_Write(SLAVE_ADDRESS);
-        I2C_Write(Register[timeReg]);
-        if (Register[timeReg] == SECONDS) {
-            I2C_Write(decimalToBCD(second)&0x7F); //update seconds
-            I2C_stop();
-        } else if (Register[timeReg] == MINUTES) {
-            I2C_Write(decimalToBCD(minute)&0x7F); //update minute
-            I2C_stop();
-        } else if (Register[timeReg] == HOURS) {
-            I2C_Write(decimalToBCD(hour)&0x7F); //update hour
-            I2C_stop();
-        }
+        if (Register[timeReg] == SECONDS)
+            PCF8523_write(Register[timeReg], decimalToBCD(second)&0x7F);
+        else if (Register[timeReg] == MINUTES)
+            PCF8523_write(Register[timeReg], decimalToBCD(minute)&0x7F);
+        else if (Register[timeReg] == HOURS)
+            PCF8523_write(Register[timeReg], decimalToBCD(hour)&0x7F);
     }
 }
 
 void setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year) {
-    int Register[5] = {DAYS, WEEKDAYS, MONTHS, YEARS};
+    uint8_t Register[5] = {DAYS, WEEKDAYS, MONTHS, YEARS};
     for (int timeReg = 0; timeReg < 4; timeReg++) {
-        I2C_start();
-        I2C_Write(SLAVE_ADDRESS);
-        I2C_Write(Register[timeReg]);
-        if (Register[timeReg] == DAYS) {
-            I2C_Write(decimalToBCD(day)&0x7F); // set seconds
-            I2C_stop();
-        } else if (Register[timeReg] == WEEKDAYS) {
-            I2C_Write(decimalToBCD(weekday)&0x7F); // set seconds
-            I2C_stop();
-        } else if (Register[timeReg] == MONTHS) {
-            I2C_Write(decimalToBCD(month)&0x7F); // set seconds
-            I2C_stop();
-        } else if (Register[timeReg] == YEARS) {
-            I2C_Write(decimalToBCD(year)&0x7F); // set seconds
-            I2C_stop();
+        switch (Register[timeReg]) {
+            case DAYS:PCF8523_write(Register[timeReg], decimalToBCD(day)&0x7F);
+                break;
+            case WEEKDAYS:PCF8523_write(Register[timeReg], decimalToBCD(weekday)&0x7F);
+                break;
+            case MONTHS:PCF8523_write(Register[timeReg], decimalToBCD(month)&0x7F);
+                break;
+            case YEARS:PCF8523_write(Register[timeReg], decimalToBCD(year)&0x7F);
+                break;
         }
     }
 }
 
 void setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay) {
-    /*enable alarm interrupt*/
+    PCF8523_write(CONTROL_1, 0x80 | 0x02); // Alarm interrupt enabled
+    PCF8523_write(alarmReg, decimalToBCD(minute + hour + weekDay)&0x7F); //only one alarm can be enabled at the time. set unused alarm value to zero
+    PCF8523_write(CONTROL_2, 0x00); //clear all alarm interrupt flag (this function disabled WTAIE, CTAIE, CTBIE), 
+}
+
+void countDown(uint8_t timeUnit, uint8_t time) {
+    PCF8523_write(TMR_CLKOUT_CTRL, 0xFA); //enable timer A pulse interrupt
+    PCF8523_write(CONTROL_2, 0x02);       //countdown timer A interrupt is enabled
+    PCF8523_write(TMR_A_FREQ_CTRL, timeUnit);
+    PCF8523_write(TMR_A_REG, time);       //max 255 in decimal
+}
+
+uint8_t rtcRead(uint8_t address) {
     I2C_start();
     I2C_Write(SLAVE_ADDRESS);
-    I2C_Write(CONTROL_1);
-    I2C_Write(0x80|0x02); // Alarm interrupt enabled
+    I2C_Write(address);
     I2C_stop();
-    
     I2C_start();
-    I2C_Write(SLAVE_ADDRESS);
-    I2C_Write(alarmReg);
-    I2C_Write((minute + hour + weekDay)&0x7F);   //only one alarm can be enabled at the time. set unused alarm value to zero
+    I2C_Write(SLAVE_ADDRESS|0x01);  //read command
+    I2C_read(NACK);
     I2C_stop();
-    
-    /*clear alarm flag*/
+    return BCDtoDecimal(SSP2BUF);   //return time/date in decimal
+}
+
+void PCF8523_write(uint8_t regAdd, uint8_t data) {
     I2C_start();
     I2C_Write(SLAVE_ADDRESS);
-    I2C_Write(CONTROL_2);
-    I2C_Write(0x00); //clear all interrupt flags
+    I2C_Write(regAdd);
+    I2C_Write(data);
     I2C_stop();
 }
 
-uint8_t decimalToBCD(int DecValue) {
+int rtc_INTF_CLR(int interruptFlag) { //RTC interrupt flags clear   
+    PCF8523_write(CONTROL_2, interruptFlag); //clear interrupt flag
+    __delay_ms(5);
+    return;
+}
 
+uint8_t decimalToBCD(int DecValue) {
     return (((DecValue / 10) << 4) | (DecValue % 10));
 }
 

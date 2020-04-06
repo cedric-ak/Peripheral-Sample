@@ -27,7 +27,7 @@ extern "C" {
 #define MONTHS          0x08
 #define YEARS           0x09
     /*Alarm Registers*/
-#define MINUTES_ALARM   0x0A
+#define MINUTE_ALARM    0x0A
 #define HOUR_ALARM      0x0B
 #define DAY_ALARM       0x0C
 #define WEEKDAY_ALARM   0x0D
@@ -43,16 +43,18 @@ extern "C" {
 void RTC_Init(void);
 void setTime(uint8_t hour, uint8_t minute, uint8_t second);
 void setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year);
-void CountDown_Init(uint8_t time, uint8_t timeUnit);
+void countDown(uint8_t timeUnit, uint8_t time);
 void setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay);
+void PCF8523_write(uint8_t regAdd, uint8_t data);
+int rtc_INTF_CLR(int interruptFlag);
 uint8_t decimalToBCD(int DecValue);
 uint8_t BCDtoDecimal(int BCDvalue);
+uint8_t rtcRead(uint8_t address);
 
-enum day { Sun = 0, Mon = 1, Tue = 2, Wed = 3, Thu = 4, Fri = 5, Sat = 6};
-enum month {Jan =1, Feb =2, Mar =3, Apr =4, May =5, Jun =6, Jul =7, Aug =8, Sep =9, Oct =10, Nov =11, Dec =12};
-
-
-
+enum days { Sun = 0, Mon = 1, Tue = 2, Wed = 3, Thu = 4, Fri = 5, Sat = 6};
+enum months {Jan =1, Feb =2, Mar =3, Apr =4, May =5, Jun =6, Jul =7, Aug =8, Sep =9, Oct =10, Nov =11, Dec =12};
+enum TMR_SCLK_FREQ {hours = 7, minutes = 3, seconds = 2}; //count down time unit registers
+enum interrupt_Flag {WTAF = 4, CTAF = 2, CTBF = 0};       //watchdog timer, count down timer A, count down timer B
 
 #ifdef	__cplusplus
 }

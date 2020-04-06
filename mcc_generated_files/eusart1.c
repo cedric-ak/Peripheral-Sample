@@ -19,7 +19,7 @@
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.00
         MPLAB 	          :  MPLAB X 5.10
-*/
+ */
 
 /*
     (c) 2018 Microchip Technology Inc. and its subsidiaries. 
@@ -42,11 +42,11 @@
     CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
     OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
     SOFTWARE.
-*/
+ */
 
 /**
   Section: Included Files
-*/
+ */
 #include "eusart1.h"
 
 volatile eusart1_status_t eusart1RxLastError;
@@ -54,7 +54,7 @@ uint8_t TxData[256];
 
 /**
   Section: EUSART1 APIs
-*/
+ */
 void (*EUSART1_FramingErrorHandler)(void);
 void (*EUSART1_OverrunErrorHandler)(void);
 void (*EUSART1_ErrorHandler)(void);
@@ -65,9 +65,7 @@ void EUSART1_DefaultErrorHandler(void);
 
 void EUSART1_Write_Text(uint8_t *pbData, uint8_t iSize);
 
-
-void EUSART1_Initialize(void)
-{
+void EUSART1_Initialize(void) {
     // Set the EUSART1 module to the options selected in the user interface.
 
     // ABDOVF no_overflow; TXCKP async_inverted_sync_risingedge; BRG16 16bit_generator; WUE disabled; ABDEN disabled; RXDTP not_inverted; 
@@ -94,52 +92,44 @@ void EUSART1_Initialize(void)
 
 }
 
-bool EUSART1_is_tx_ready(void)
-{
-    return (bool)(PIR1bits.TX1IF && TXSTA1bits.TXEN);
+bool EUSART1_is_tx_ready(void) {
+    return (bool) (PIR1bits.TX1IF && TXSTA1bits.TXEN);
 }
 
-bool EUSART1_is_rx_ready(void)
-{
+bool EUSART1_is_rx_ready(void) {
     return PIR1bits.RC1IF;
 }
 
-bool EUSART1_is_tx_done(void)
-{
+bool EUSART1_is_tx_done(void) {
     return TXSTA1bits.TRMT;
 }
 
-eusart1_status_t EUSART1_get_last_status(void){
+eusart1_status_t EUSART1_get_last_status(void) {
     return eusart1RxLastError;
 }
 
-uint8_t EUSART1_Read(void)
-{
-    while(!PIR1bits.RC1IF)
-    {
+uint8_t EUSART1_Read(void) {
+    while (!PIR1bits.RC1IF) {
     }
 
     eusart1RxLastError.status = 0;
-    
-    if(1 == RCSTA1bits.OERR)
-    {
+
+    if (1 == RCSTA1bits.OERR) {
         // EUSART1 error - restart
 
-        RCSTA1bits.CREN = 0; 
-        RCSTA1bits.CREN = 1; 
+        RCSTA1bits.CREN = 0;
+        RCSTA1bits.CREN = 1;
     }
 
     return RCREG1;
 }
 
-void EUSART1_Write(uint8_t txData)
-{
-    
-    while(!PIR1bits.TX1IF)
-    {
+void EUSART1_Write(uint8_t txData) {
+
+    while (!PIR1bits.TX1IF) {
     }
     while (!TXSTA1bits.TRMT);
-    TXREG1 = txData;    // Write the data byte to the USART.
+    TXREG1 = txData; // Write the data byte to the USART.
 }
 
 void EUSART1_Write_Text(uint8_t *pbData, uint8_t iSize) {
@@ -152,16 +142,17 @@ void EUSART1_Write_Text(uint8_t *pbData, uint8_t iSize) {
     }
 }
 
-void EUSART1_itoa(uint32_t data, int base){
+void EUSART1_itoa(uint32_t data, int base) { //convert and print integer to character in base decimal, binary or hex (DEC, BIN, HEX)
     char buf[10];
     itoa(buf, data, base);
-    EUSART1_Write_Text(buf, sizeof(buf));
-     EUSART1_Write_Text("\r",2);
+    EUSART1_Write_Text(buf, sizeof (buf));
+    EUSART1_Write_Text("\r", 2);   
 }
 
-void EUSART1_DefaultFramingErrorHandler(void){}
+void EUSART1_DefaultFramingErrorHandler(void) {
+}
 
-void EUSART1_DefaultOverrunErrorHandler(void){
+void EUSART1_DefaultOverrunErrorHandler(void) {
     // EUSART1 error - restart
 
     RCSTA1bits.CREN = 0;
@@ -169,22 +160,22 @@ void EUSART1_DefaultOverrunErrorHandler(void){
 
 }
 
-void EUSART1_DefaultErrorHandler(void){
+void EUSART1_DefaultErrorHandler(void) {
 }
 
-void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void)){
+void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void)) {
     EUSART1_FramingErrorHandler = interruptHandler;
 }
 
-void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void)){
+void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void)) {
     EUSART1_OverrunErrorHandler = interruptHandler;
 }
 
-void EUSART1_SetErrorHandler(void (* interruptHandler)(void)){
+void EUSART1_SetErrorHandler(void (* interruptHandler)(void)) {
     EUSART1_ErrorHandler = interruptHandler;
 }
 
 
 /**
   End of File
-*/
+ */

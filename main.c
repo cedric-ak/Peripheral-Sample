@@ -10,14 +10,16 @@ void main(void) {
     __delay_ms(10);
 
     RTC_Init();
-    setTime(23, 58, 50);
-    setDate(28, Fri, Feb, 21);
-    setAlarm(MINUTES_ALARM, 59, 0, 0, 0);
-    while (true) {
-
-        EUSART1_itoa(Mon, DEC);
-        Led_Toggle();
-        __delay_ms(500);
+    setTime(12, 54, 45);
+    setDate(25, Fri, Sep, 23);
+    //    setAlarm(MINUTE_ALARM, 55, 0, 0, 0);
+    countDown(seconds, 10);
+    while (true) { 
+        if (!Button2_PORT) {
+            Led_Toggle();
+            rtc_INTF_CLR(CTAF);
+            EUSART1_itoa(rtcRead(SECONDS), DEC);
+        }
     }
 }
 

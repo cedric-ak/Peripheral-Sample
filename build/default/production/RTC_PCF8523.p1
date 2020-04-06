@@ -2,14 +2,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 "24 mcc_generated_files/../MCP9801.h
 [u S835 `uc -> 2 `i `ui 1 ]
 [n S835 . MSB_LSB TempData ]
+"48 mcc_generated_files/../PCF8523.h
+[v _PCF8523_write `(v ~T0 @X0 0 ef2`uc`uc ]
+"50
+[v _decimalToBCD `(uc ~T0 @X0 0 ef1`i ]
 "15 mcc_generated_files/../I2C.h
 [v _I2C_start `(v ~T0 @X0 0 ef ]
 "12
 [v _I2C_Write `(v ~T0 @X0 0 ef1`uc ]
 "14
 [v _I2C_stop `(v ~T0 @X0 0 ef ]
-"48 mcc_generated_files/../PCF8523.h
-[v _decimalToBCD `(uc ~T0 @X0 0 ef1`i ]
+"17
+[v _I2C_read `(i ~T0 @X0 0 ef1`i ]
+"51 mcc_generated_files/../PCF8523.h
+[v _BCDtoDecimal `(uc ~T0 @X0 0 ef1`i ]
+"5957 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
+[v _SSP2BUF `Vuc ~T0 @X0 0 e@3957 ]
+[v F7202 `(v ~T0 @X0 1 tf1`ul ]
+"164 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h
+[v __delay `JF7202 ~T0 @X0 0 e ]
+[p i __delay ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7027,12 +7039,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;PCF8523.h: 43: void RTC_Init(void);
 [; ;PCF8523.h: 44: void setTime(uint8_t hour, uint8_t minute, uint8_t second);
 [; ;PCF8523.h: 45: void setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year);
-[; ;PCF8523.h: 46: void CountDown_Init(uint8_t time, uint8_t timeUnit);
+[; ;PCF8523.h: 46: void countDown(uint8_t timeUnit, uint8_t time);
 [; ;PCF8523.h: 47: void setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay);
-[; ;PCF8523.h: 48: uint8_t decimalToBCD(int DecValue);
-[; ;PCF8523.h: 49: uint8_t BCDtoDecimal(int BCDvalue);
-[; ;PCF8523.h: 51: enum day { Sun = 0, Mon = 1, Tue = 2, Wed = 3, Thu = 4, Fri = 5, Sat = 6};
-[; ;PCF8523.h: 52: enum month {Jan =1, Feb =2, Mar =3, Apr =4, May =5, Jun =6, Jul =7, Aug =8, Sep =9, Oct =10, Nov =11, Dec =12};
+[; ;PCF8523.h: 48: void PCF8523_write(uint8_t regAdd, uint8_t data);
+[; ;PCF8523.h: 49: int rtc_INTF_CLR(int interruptFlag);
+[; ;PCF8523.h: 50: uint8_t decimalToBCD(int DecValue);
+[; ;PCF8523.h: 51: uint8_t BCDtoDecimal(int BCDvalue);
+[; ;PCF8523.h: 52: uint8_t rtcRead(uint8_t address);
+[; ;PCF8523.h: 54: enum days { Sun = 0, Mon = 1, Tue = 2, Wed = 3, Thu = 4, Fri = 5, Sat = 6};
+[; ;PCF8523.h: 55: enum months {Jan =1, Feb =2, Mar =3, Apr =4, May =5, Jun =6, Jul =7, Aug =8, Sep =9, Oct =10, Nov =11, Dec =12};
+[; ;PCF8523.h: 56: enum TMR_SCLK_FREQ {hours = 7, minutes = 3, seconds = 2};
+[; ;PCF8523.h: 57: enum interrupt_Flag {WTAF = 4, CTAF = 2, CTBF = 0};
 [; ;stddef.h: 6: typedef int ptrdiff_t;
 [; ;spi1.h: 117: void SPI1_Initialize(void);
 [; ;spi1.h: 152: uint8_t SPI1_Exchange8bit(uint8_t data);
@@ -7106,78 +7123,42 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTC_PCF8523.c: 4: void RTC_Init(void) {
 [e :U _RTC_Init ]
 [f ]
-[; ;RTC_PCF8523.c: 5: I2C_start();
-"5
-[e ( _I2C_start ..  ]
-[; ;RTC_PCF8523.c: 6: I2C_Write(0xD0);
-"6
-[e ( _I2C_Write (1 -> -> 208 `i `uc ]
-[; ;RTC_PCF8523.c: 7: I2C_Write(0X00);
-"7
-[e ( _I2C_Write (1 -> -> 0 `i `uc ]
-[; ;RTC_PCF8523.c: 8: I2C_Write(0x80);
-"8
-[e ( _I2C_Write (1 -> -> 128 `i `uc ]
-[; ;RTC_PCF8523.c: 9: I2C_stop();
-"9
-[e ( _I2C_stop ..  ]
-[; ;RTC_PCF8523.c: 12: I2C_start();
+[; ;RTC_PCF8523.c: 12: PCF8523_write(0X00, 0x80);
 "12
-[e ( _I2C_start ..  ]
-[; ;RTC_PCF8523.c: 13: I2C_Write(0xD0);
-"13
-[e ( _I2C_Write (1 -> -> 208 `i `uc ]
-[; ;RTC_PCF8523.c: 14: I2C_Write(0x02);
-"14
-[e ( _I2C_Write (1 -> -> 2 `i `uc ]
-[; ;RTC_PCF8523.c: 15: I2C_Write(0x80);
-"15
-[e ( _I2C_Write (1 -> -> 128 `i `uc ]
-[; ;RTC_PCF8523.c: 16: I2C_stop();
-"16
-[e ( _I2C_stop ..  ]
-[; ;RTC_PCF8523.c: 19: I2C_start();
+[e ( _PCF8523_write (2 , -> -> 0 `i `uc -> -> 128 `i `uc ]
+[; ;RTC_PCF8523.c: 19: PCF8523_write(0x02, 0x80);
 "19
-[e ( _I2C_start ..  ]
-[; ;RTC_PCF8523.c: 20: I2C_Write(0xD0);
-"20
-[e ( _I2C_Write (1 -> -> 208 `i `uc ]
-[; ;RTC_PCF8523.c: 21: I2C_Write(0x0F);
-"21
-[e ( _I2C_Write (1 -> -> 15 `i `uc ]
-[; ;RTC_PCF8523.c: 22: I2C_Write(0xF8);
-"22
-[e ( _I2C_Write (1 -> -> 248 `i `uc ]
-[; ;RTC_PCF8523.c: 23: I2C_stop();
-"23
-[e ( _I2C_stop ..  ]
-[; ;RTC_PCF8523.c: 24: }
-"24
+[e ( _PCF8523_write (2 , -> -> 2 `i `uc -> -> 128 `i `uc ]
+[; ;RTC_PCF8523.c: 25: PCF8523_write(0x0F, 0xF8);
+"25
+[e ( _PCF8523_write (2 , -> -> 15 `i `uc -> -> 248 `i `uc ]
+[; ;RTC_PCF8523.c: 26: }
+"26
 [e :UE 836 ]
 }
-"36
+"28
 [v _setTime `(v ~T0 @X0 1 ef3`uc`uc`uc ]
 {
-[; ;RTC_PCF8523.c: 36: void setTime(uint8_t hour, uint8_t minute, uint8_t second) {
+[; ;RTC_PCF8523.c: 28: void setTime(uint8_t hour, uint8_t minute, uint8_t second) {
 [e :U _setTime ]
 [v _hour `uc ~T0 @X0 1 r1 ]
 [v _minute `uc ~T0 @X0 1 r2 ]
 [v _second `uc ~T0 @X0 1 r3 ]
 [f ]
-[v F7742 `i ~T0 @X0 -> 4 `i s ]
-[i F7742
+[v F7757 `i ~T0 @X0 -> 4 `i s ]
+[i F7757
 :U ..
-"37
+"29
 -> 3 `i
 -> 4 `i
 -> 5 `i
 ..
 ]
 [v _Register `i ~T0 @X0 -> 4 `i a ]
-[; ;RTC_PCF8523.c: 37: int Register[4] = {0x03, 0x04, 0x05};
-[e = _Register F7742 ]
-[; ;RTC_PCF8523.c: 38: for (int timeReg = 0; timeReg < 3; timeReg++) {
-"38
+[; ;RTC_PCF8523.c: 29: int Register[4] = {0x03, 0x04, 0x05};
+[e = _Register F7757 ]
+[; ;RTC_PCF8523.c: 30: for (int timeReg = 0; timeReg < 3; timeReg++) {
+"30
 {
 [v _timeReg `i ~T0 @X0 1 a ]
 [e = _timeReg -> 0 `i ]
@@ -7185,95 +7166,69 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 839  ]
 [e :U 838 ]
 {
-[; ;RTC_PCF8523.c: 39: I2C_start();
-"39
-[e ( _I2C_start ..  ]
-[; ;RTC_PCF8523.c: 40: I2C_Write(0xD0);
-"40
-[e ( _I2C_Write (1 -> -> 208 `i `uc ]
-[; ;RTC_PCF8523.c: 41: I2C_Write(Register[timeReg]);
-"41
-[e ( _I2C_Write (1 -> *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux `uc ]
-[; ;RTC_PCF8523.c: 42: if (Register[timeReg] == 0x03) {
-"42
+[; ;RTC_PCF8523.c: 31: if (Register[timeReg] == 0x03)
+"31
 [e $ ! == *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> 3 `i 841  ]
-{
-[; ;RTC_PCF8523.c: 43: I2C_Write(decimalToBCD(second)&0x7F);
-"43
-[e ( _I2C_Write (1 -> & -> ( _decimalToBCD (1 -> _second `i `i -> 127 `i `uc ]
-[; ;RTC_PCF8523.c: 44: I2C_stop();
-"44
-[e ( _I2C_stop ..  ]
-"45
-}
-[; ;RTC_PCF8523.c: 45: } else if (Register[timeReg] == 0x04) {
+[; ;RTC_PCF8523.c: 32: PCF8523_write(Register[timeReg], decimalToBCD(second)&0x7F);
+"32
+[e ( _PCF8523_write (2 , -> *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux `uc -> & -> ( _decimalToBCD (1 -> _second `i `i -> 127 `i `uc ]
 [e $U 842  ]
+"33
 [e :U 841 ]
+[; ;RTC_PCF8523.c: 33: else if (Register[timeReg] == 0x04)
 [e $ ! == *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> 4 `i 843  ]
-{
-[; ;RTC_PCF8523.c: 46: I2C_Write(decimalToBCD(minute)&0x7F);
-"46
-[e ( _I2C_Write (1 -> & -> ( _decimalToBCD (1 -> _minute `i `i -> 127 `i `uc ]
-[; ;RTC_PCF8523.c: 47: I2C_stop();
-"47
-[e ( _I2C_stop ..  ]
-"48
-}
-[; ;RTC_PCF8523.c: 48: } else if (Register[timeReg] == 0x05) {
+[; ;RTC_PCF8523.c: 34: PCF8523_write(Register[timeReg], decimalToBCD(minute)&0x7F);
+"34
+[e ( _PCF8523_write (2 , -> *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux `uc -> & -> ( _decimalToBCD (1 -> _minute `i `i -> 127 `i `uc ]
 [e $U 844  ]
+"35
 [e :U 843 ]
+[; ;RTC_PCF8523.c: 35: else if (Register[timeReg] == 0x05)
 [e $ ! == *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> 5 `i 845  ]
-{
-[; ;RTC_PCF8523.c: 49: I2C_Write(decimalToBCD(hour)&0x7F);
-"49
-[e ( _I2C_Write (1 -> & -> ( _decimalToBCD (1 -> _hour `i `i -> 127 `i `uc ]
-[; ;RTC_PCF8523.c: 50: I2C_stop();
-"50
-[e ( _I2C_stop ..  ]
-"51
-}
+[; ;RTC_PCF8523.c: 36: PCF8523_write(Register[timeReg], decimalToBCD(hour)&0x7F);
+"36
+[e ( _PCF8523_write (2 , -> *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux `uc -> & -> ( _decimalToBCD (1 -> _hour `i `i -> 127 `i `uc ]
 [e :U 845 ]
-"52
+"37
 [e :U 844 ]
 [e :U 842 ]
 }
-"38
+"30
 [e ++ _timeReg -> 1 `i ]
 [e $ < _timeReg -> 3 `i 838  ]
 [e :U 839 ]
-"52
+"37
 }
-[; ;RTC_PCF8523.c: 51: }
-[; ;RTC_PCF8523.c: 52: }
-[; ;RTC_PCF8523.c: 53: }
-"53
+[; ;RTC_PCF8523.c: 37: }
+[; ;RTC_PCF8523.c: 38: }
+"38
 [e :UE 837 ]
 }
-"55
+"40
 [v _setDate `(v ~T0 @X0 1 ef4`uc`uc`uc`uc ]
 {
-[; ;RTC_PCF8523.c: 55: void setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year) {
+[; ;RTC_PCF8523.c: 40: void setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year) {
 [e :U _setDate ]
 [v _day `uc ~T0 @X0 1 r1 ]
 [v _weekday `uc ~T0 @X0 1 r2 ]
 [v _month `uc ~T0 @X0 1 r3 ]
 [v _year `uc ~T0 @X0 1 r4 ]
 [f ]
-[v F7749 `i ~T0 @X0 -> 5 `i s ]
-[i F7749
+[v F7764 `uc ~T0 @X0 -> 5 `i s ]
+[i F7764
 :U ..
-"56
--> 6 `i
--> 7 `i
--> 8 `i
--> 9 `i
+"41
+-> -> 6 `i `uc
+-> -> 7 `i `uc
+-> -> 8 `i `uc
+-> -> 9 `i `uc
 ..
 ]
-[v _Register `i ~T0 @X0 -> 5 `i a ]
-[; ;RTC_PCF8523.c: 56: int Register[5] = {0x06, 0x07, 0x08, 0x09};
-[e = _Register F7749 ]
-[; ;RTC_PCF8523.c: 57: for (int timeReg = 0; timeReg < 4; timeReg++) {
-"57
+[v _Register `uc ~T0 @X0 -> 5 `i a ]
+[; ;RTC_PCF8523.c: 41: uint8_t Register[5] = {0x06, 0x07, 0x08, 0x09};
+[e = _Register F7764 ]
+[; ;RTC_PCF8523.c: 42: for (int timeReg = 0; timeReg < 4; timeReg++) {
+"42
 {
 [v _timeReg `i ~T0 @X0 1 a ]
 [e = _timeReg -> 0 `i ]
@@ -7281,88 +7236,68 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 848  ]
 [e :U 847 ]
 {
-[; ;RTC_PCF8523.c: 58: I2C_start();
-"58
-[e ( _I2C_start ..  ]
-[; ;RTC_PCF8523.c: 59: I2C_Write(0xD0);
-"59
-[e ( _I2C_Write (1 -> -> 208 `i `uc ]
-[; ;RTC_PCF8523.c: 60: I2C_Write(Register[timeReg]);
-"60
-[e ( _I2C_Write (1 -> *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux `uc ]
-[; ;RTC_PCF8523.c: 61: if (Register[timeReg] == 0x06) {
-"61
-[e $ ! == *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> 6 `i 850  ]
-{
-[; ;RTC_PCF8523.c: 62: I2C_Write(decimalToBCD(day)&0x7F);
-"62
-[e ( _I2C_Write (1 -> & -> ( _decimalToBCD (1 -> _day `i `i -> 127 `i `uc ]
-[; ;RTC_PCF8523.c: 63: I2C_stop();
-"63
-[e ( _I2C_stop ..  ]
-"64
-}
-[; ;RTC_PCF8523.c: 64: } else if (Register[timeReg] == 0x07) {
+[; ;RTC_PCF8523.c: 43: switch (Register[timeReg]) {
+"43
 [e $U 851  ]
-[e :U 850 ]
-[e $ ! == *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> 7 `i 852  ]
 {
-[; ;RTC_PCF8523.c: 65: I2C_Write(decimalToBCD(weekday)&0x7F);
-"65
-[e ( _I2C_Write (1 -> & -> ( _decimalToBCD (1 -> _weekday `i `i -> 127 `i `uc ]
-[; ;RTC_PCF8523.c: 66: I2C_stop();
-"66
-[e ( _I2C_stop ..  ]
-"67
-}
-[; ;RTC_PCF8523.c: 67: } else if (Register[timeReg] == 0x08) {
-[e $U 853  ]
+[; ;RTC_PCF8523.c: 44: case 0x06:PCF8523_write(Register[timeReg], decimalToBCD(day)&0x7F);
+"44
 [e :U 852 ]
-[e $ ! == *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> 8 `i 854  ]
-{
-[; ;RTC_PCF8523.c: 68: I2C_Write(decimalToBCD(month)&0x7F);
-"68
-[e ( _I2C_Write (1 -> & -> ( _decimalToBCD (1 -> _month `i `i -> 127 `i `uc ]
-[; ;RTC_PCF8523.c: 69: I2C_stop();
-"69
-[e ( _I2C_stop ..  ]
-"70
-}
-[; ;RTC_PCF8523.c: 70: } else if (Register[timeReg] == 0x09) {
-[e $U 855  ]
-[e :U 854 ]
-[e $ ! == *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> 9 `i 856  ]
-{
-[; ;RTC_PCF8523.c: 71: I2C_Write(decimalToBCD(year)&0x7F);
-"71
-[e ( _I2C_Write (1 -> & -> ( _decimalToBCD (1 -> _year `i `i -> 127 `i `uc ]
-[; ;RTC_PCF8523.c: 72: I2C_stop();
-"72
-[e ( _I2C_stop ..  ]
-"73
-}
-[e :U 856 ]
-"74
-[e :U 855 ]
+[e ( _PCF8523_write (2 , *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> & -> ( _decimalToBCD (1 -> _day `i `i -> 127 `i `uc ]
+[; ;RTC_PCF8523.c: 45: break;
+"45
+[e $U 850  ]
+[; ;RTC_PCF8523.c: 46: case 0x07:PCF8523_write(Register[timeReg], decimalToBCD(weekday)&0x7F);
+"46
 [e :U 853 ]
-[e :U 851 ]
+[e ( _PCF8523_write (2 , *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> & -> ( _decimalToBCD (1 -> _weekday `i `i -> 127 `i `uc ]
+[; ;RTC_PCF8523.c: 47: break;
+"47
+[e $U 850  ]
+[; ;RTC_PCF8523.c: 48: case 0x08:PCF8523_write(Register[timeReg], decimalToBCD(month)&0x7F);
+"48
+[e :U 854 ]
+[e ( _PCF8523_write (2 , *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> & -> ( _decimalToBCD (1 -> _month `i `i -> 127 `i `uc ]
+[; ;RTC_PCF8523.c: 49: break;
+"49
+[e $U 850  ]
+[; ;RTC_PCF8523.c: 50: case 0x09:PCF8523_write(Register[timeReg], decimalToBCD(year)&0x7F);
+"50
+[e :U 855 ]
+[e ( _PCF8523_write (2 , *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> & -> ( _decimalToBCD (1 -> _year `i `i -> 127 `i `uc ]
+[; ;RTC_PCF8523.c: 51: break;
+"51
+[e $U 850  ]
+"52
 }
-"57
+[; ;RTC_PCF8523.c: 52: }
+[e $U 850  ]
+"43
+[e :U 851 ]
+[e [\ *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux , $ -> -> 6 `i `uc 852
+ , $ -> -> 7 `i `uc 853
+ , $ -> -> 8 `i `uc 854
+ , $ -> -> 9 `i `uc 855
+ 850 ]
+"52
+[e :U 850 ]
+"53
+}
+"42
 [e ++ _timeReg -> 1 `i ]
 [e $ < _timeReg -> 4 `i 847  ]
 [e :U 848 ]
-"74
+"53
 }
-[; ;RTC_PCF8523.c: 73: }
-[; ;RTC_PCF8523.c: 74: }
-[; ;RTC_PCF8523.c: 75: }
-"75
+[; ;RTC_PCF8523.c: 53: }
+[; ;RTC_PCF8523.c: 54: }
+"54
 [e :UE 846 ]
 }
-"77
+"56
 [v _setAlarm `(v ~T0 @X0 1 ef5`uc`uc`uc`uc`uc ]
 {
-[; ;RTC_PCF8523.c: 77: void setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay) {
+[; ;RTC_PCF8523.c: 56: void setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay) {
 [e :U _setAlarm ]
 [v _alarmReg `uc ~T0 @X0 1 r1 ]
 [v _minute `uc ~T0 @X0 1 r2 ]
@@ -7370,82 +7305,156 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _day `uc ~T0 @X0 1 r4 ]
 [v _weekDay `uc ~T0 @X0 1 r5 ]
 [f ]
-[; ;RTC_PCF8523.c: 79: I2C_start();
-"79
-[e ( _I2C_start ..  ]
-[; ;RTC_PCF8523.c: 80: I2C_Write(0xD0);
-"80
-[e ( _I2C_Write (1 -> -> 208 `i `uc ]
-[; ;RTC_PCF8523.c: 81: I2C_Write(0X00);
-"81
-[e ( _I2C_Write (1 -> -> 0 `i `uc ]
-[; ;RTC_PCF8523.c: 82: I2C_Write(0x80|0x02);
-"82
-[e ( _I2C_Write (1 -> | -> 128 `i -> 2 `i `uc ]
-[; ;RTC_PCF8523.c: 83: I2C_stop();
-"83
-[e ( _I2C_stop ..  ]
-[; ;RTC_PCF8523.c: 85: I2C_start();
-"85
-[e ( _I2C_start ..  ]
-[; ;RTC_PCF8523.c: 86: I2C_Write(0xD0);
-"86
-[e ( _I2C_Write (1 -> -> 208 `i `uc ]
-[; ;RTC_PCF8523.c: 87: I2C_Write(alarmReg);
-"87
-[e ( _I2C_Write (1 _alarmReg ]
-[; ;RTC_PCF8523.c: 88: I2C_Write((minute + hour + weekDay)&0x7F);
-"88
-[e ( _I2C_Write (1 -> & + + -> _minute `i -> _hour `i -> _weekDay `i -> 127 `i `uc ]
-[; ;RTC_PCF8523.c: 89: I2C_stop();
-"89
-[e ( _I2C_stop ..  ]
-[; ;RTC_PCF8523.c: 92: I2C_start();
-"92
-[e ( _I2C_start ..  ]
-[; ;RTC_PCF8523.c: 93: I2C_Write(0xD0);
-"93
-[e ( _I2C_Write (1 -> -> 208 `i `uc ]
-[; ;RTC_PCF8523.c: 94: I2C_Write(0x01);
-"94
-[e ( _I2C_Write (1 -> -> 1 `i `uc ]
-[; ;RTC_PCF8523.c: 95: I2C_Write(0x00);
-"95
-[e ( _I2C_Write (1 -> -> 0 `i `uc ]
-[; ;RTC_PCF8523.c: 96: I2C_stop();
-"96
-[e ( _I2C_stop ..  ]
-[; ;RTC_PCF8523.c: 97: }
-"97
+[; ;RTC_PCF8523.c: 57: PCF8523_write(0X00, 0x80 | 0x02);
+"57
+[e ( _PCF8523_write (2 , -> -> 0 `i `uc -> | -> 128 `i -> 2 `i `uc ]
+[; ;RTC_PCF8523.c: 58: PCF8523_write(alarmReg, decimalToBCD(minute + hour + weekDay)&0x7F);
+"58
+[e ( _PCF8523_write (2 , _alarmReg -> & -> ( _decimalToBCD (1 + + -> _minute `i -> _hour `i -> _weekDay `i `i -> 127 `i `uc ]
+[; ;RTC_PCF8523.c: 59: PCF8523_write(0x01, 0x00);
+"59
+[e ( _PCF8523_write (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+[; ;RTC_PCF8523.c: 60: }
+"60
+[e :UE 856 ]
+}
+"62
+[v _countDown `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[; ;RTC_PCF8523.c: 62: void countDown(uint8_t timeUnit, uint8_t time) {
+[e :U _countDown ]
+[v _timeUnit `uc ~T0 @X0 1 r1 ]
+[v _time `uc ~T0 @X0 1 r2 ]
+[f ]
+[; ;RTC_PCF8523.c: 63: PCF8523_write(0x0F, 0xFA);
+"63
+[e ( _PCF8523_write (2 , -> -> 15 `i `uc -> -> 250 `i `uc ]
+[; ;RTC_PCF8523.c: 64: PCF8523_write(0x01, 0x02);
+"64
+[e ( _PCF8523_write (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+[; ;RTC_PCF8523.c: 65: PCF8523_write(0x10, timeUnit);
+"65
+[e ( _PCF8523_write (2 , -> -> 16 `i `uc _timeUnit ]
+[; ;RTC_PCF8523.c: 66: PCF8523_write(0x11, time);
+"66
+[e ( _PCF8523_write (2 , -> -> 17 `i `uc _time ]
+[; ;RTC_PCF8523.c: 67: }
+"67
 [e :UE 857 ]
 }
-"99
+"69
+[v _rtcRead `(uc ~T0 @X0 1 ef1`uc ]
+{
+[; ;RTC_PCF8523.c: 69: uint8_t rtcRead(uint8_t address) {
+[e :U _rtcRead ]
+[v _address `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;RTC_PCF8523.c: 70: I2C_start();
+"70
+[e ( _I2C_start ..  ]
+[; ;RTC_PCF8523.c: 71: I2C_Write(0xD0);
+"71
+[e ( _I2C_Write (1 -> -> 208 `i `uc ]
+[; ;RTC_PCF8523.c: 72: I2C_Write(address);
+"72
+[e ( _I2C_Write (1 _address ]
+[; ;RTC_PCF8523.c: 73: I2C_stop();
+"73
+[e ( _I2C_stop ..  ]
+[; ;RTC_PCF8523.c: 74: I2C_start();
+"74
+[e ( _I2C_start ..  ]
+[; ;RTC_PCF8523.c: 75: I2C_Write(0xD0|0x01);
+"75
+[e ( _I2C_Write (1 -> | -> 208 `i -> 1 `i `uc ]
+[; ;RTC_PCF8523.c: 76: I2C_read(1);
+"76
+[e ( _I2C_read (1 -> 1 `i ]
+[; ;RTC_PCF8523.c: 77: I2C_stop();
+"77
+[e ( _I2C_stop ..  ]
+[; ;RTC_PCF8523.c: 78: return BCDtoDecimal(SSP2BUF);
+"78
+[e ) ( _BCDtoDecimal (1 -> _SSP2BUF `i ]
+[e $UE 858  ]
+[; ;RTC_PCF8523.c: 79: }
+"79
+[e :UE 858 ]
+}
+"81
+[v _PCF8523_write `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[; ;RTC_PCF8523.c: 81: void PCF8523_write(uint8_t regAdd, uint8_t data) {
+[e :U _PCF8523_write ]
+[v _regAdd `uc ~T0 @X0 1 r1 ]
+[v _data `uc ~T0 @X0 1 r2 ]
+[f ]
+[; ;RTC_PCF8523.c: 82: I2C_start();
+"82
+[e ( _I2C_start ..  ]
+[; ;RTC_PCF8523.c: 83: I2C_Write(0xD0);
+"83
+[e ( _I2C_Write (1 -> -> 208 `i `uc ]
+[; ;RTC_PCF8523.c: 84: I2C_Write(regAdd);
+"84
+[e ( _I2C_Write (1 _regAdd ]
+[; ;RTC_PCF8523.c: 85: I2C_Write(data);
+"85
+[e ( _I2C_Write (1 _data ]
+[; ;RTC_PCF8523.c: 86: I2C_stop();
+"86
+[e ( _I2C_stop ..  ]
+[; ;RTC_PCF8523.c: 87: }
+"87
+[e :UE 859 ]
+}
+"89
+[v _rtc_INTF_CLR `(i ~T0 @X0 1 ef1`i ]
+{
+[; ;RTC_PCF8523.c: 89: int rtc_INTF_CLR(int interruptFlag) {
+[e :U _rtc_INTF_CLR ]
+[v _interruptFlag `i ~T0 @X0 1 r1 ]
+[f ]
+[; ;RTC_PCF8523.c: 90: PCF8523_write(0x01, interruptFlag);
+"90
+[e ( _PCF8523_write (2 , -> -> 1 `i `uc -> _interruptFlag `uc ]
+[; ;RTC_PCF8523.c: 91: _delay((unsigned long)((5)*(16000000/4000.0)));
+"91
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;RTC_PCF8523.c: 92: return;
+"92
+[e $UE 860  ]
+[; ;RTC_PCF8523.c: 93: }
+"93
+[e :UE 860 ]
+}
+"95
 [v _decimalToBCD `(uc ~T0 @X0 1 ef1`i ]
 {
-[; ;RTC_PCF8523.c: 99: uint8_t decimalToBCD(int DecValue) {
+[; ;RTC_PCF8523.c: 95: uint8_t decimalToBCD(int DecValue) {
 [e :U _decimalToBCD ]
 [v _DecValue `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;RTC_PCF8523.c: 101: return (((DecValue / 10) << 4) | (DecValue % 10));
-"101
+[; ;RTC_PCF8523.c: 96: return (((DecValue / 10) << 4) | (DecValue % 10));
+"96
 [e ) -> | << / _DecValue -> 10 `i -> 4 `i % _DecValue -> 10 `i `uc ]
-[e $UE 858  ]
-[; ;RTC_PCF8523.c: 102: }
-"102
-[e :UE 858 ]
+[e $UE 861  ]
+[; ;RTC_PCF8523.c: 97: }
+"97
+[e :UE 861 ]
 }
-"104
+"99
 [v _BCDtoDecimal `(uc ~T0 @X0 1 ef1`i ]
 {
-[; ;RTC_PCF8523.c: 104: uint8_t BCDtoDecimal(int BCDvalue) {
+[; ;RTC_PCF8523.c: 99: uint8_t BCDtoDecimal(int BCDvalue) {
 [e :U _BCDtoDecimal ]
 [v _BCDvalue `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;RTC_PCF8523.c: 105: return (((BCDvalue >> 4)*10) + (BCDvalue & 0xF));
-"105
+[; ;RTC_PCF8523.c: 100: return (((BCDvalue >> 4)*10) + (BCDvalue & 0xF));
+"100
 [e ) -> + * >> _BCDvalue -> 4 `i -> 10 `i & _BCDvalue -> 15 `i `uc ]
-[e $UE 859  ]
-[; ;RTC_PCF8523.c: 106: }
-"106
-[e :UE 859 ]
+[e $UE 862  ]
+[; ;RTC_PCF8523.c: 101: }
+"101
+[e :UE 862 ]
 }
