@@ -7111,10 +7111,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP9801.h: 27: }ADC;
 [; ;_24AA512.h: 17: uint8_t EEPROM_24AA512_Read(int addHigh, int addLow);
 [; ;_24AA512.h: 18: void EEPROM_24AA512_Write(int addHigh, int AddLow, int data);
-[; ;_24AA512.h: 19: uint8_t EEPROM_24AA512_pageWrite(uint8_t page,int data);
+[; ;_24AA512.h: 19: uint8_t EEPROM_24AA512_pageWrite(uint8_t page,uint16_t data);
+[; ;_24AA512.h: 20: uint8_t EEPROM_24AA512_pageRead(uint8_t page);
 [; ;MCP79411.h: 61: void MCP794x_setTime(uint8_t hour, uint8_t minute, uint8_t second) ;
 [; ;MCP79411.h: 62: void MCP794x_setDate(uint8_t date, uint8_t weekDay, uint8_t month, uint8_t year);
 [; ;MCP79411.h: 63: void MCP794x_writeRtcc(uint8_t Register, uint8_t value);
+[; ;MCP79411.h: 64: void MCP794x_setAlarm(uint8_t alarmMask, uint8_t time);
+[; ;MCP79411.h: 65: uint8_t MCP794x_INTF_CLR(void);
+[; ;MCP79411.h: 66: uint8_t MCP7941x_read(uint8_t Register);
+[; ;MCP79411.h: 67: void MCP794x_writeEEPROM(uint8_t Register, uint8_t data);
+[; ;MCP79411.h: 68: uint8_t MCP794x_readEEPROM(uint8_t Register);
+[; ;MCP79411.h: 69: void MCP794x_getID(void);
+[; ;MCP79411.h: 71: enum ALARM_MASK {second = 0x00, minute = 0x10, hour = 0x20, dayWk = 0x30, date = 0x40, SMHDD = 0x70};
 [; ;mcc.h: 40: void SYSTEM_Initialize(void);
 [; ;mcc.h: 53: void OSCILLATOR_Initialize(void);
 "13 MCP23S08_IO_expender.c

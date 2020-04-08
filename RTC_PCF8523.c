@@ -65,7 +65,7 @@ void PCF8523_countDown(uint8_t timeUnit, uint8_t time) {
     PCF8523_write(TMR_A_REG, time);       //max 255 in decimal
 }
 
-uint8_t PCF8523_rtcRead(uint8_t address) {
+uint8_t PCF8523_rtcRead(uint8_t address) {      //this function reads time/date (pass the address of desired variable to read) 
     I2C_start();
     I2C_Write(SLAVE_ADDRESS);
     I2C_Write(address);

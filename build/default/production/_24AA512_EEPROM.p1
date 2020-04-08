@@ -14,6 +14,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _I2C_read `(i ~T0 @X0 0 ef1`i ]
 "45 C:\Program Files (x86)\Microchip\xc8\v1.45\include\math.h
 [v _pow `(d ~T0 @X0 0 ef2`d`d ]
+"345 mcc_generated_files/eusart1.h
+[v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
+"5957 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
+[v _SSP2BUF `Vuc ~T0 @X0 0 e@3957 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7106,10 +7110,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP9801.h: 27: }ADC;
 [; ;_24AA512.h: 17: uint8_t EEPROM_24AA512_Read(int addHigh, int addLow);
 [; ;_24AA512.h: 18: void EEPROM_24AA512_Write(int addHigh, int AddLow, int data);
-[; ;_24AA512.h: 19: uint8_t EEPROM_24AA512_pageWrite(uint8_t page,int data);
+[; ;_24AA512.h: 19: uint8_t EEPROM_24AA512_pageWrite(uint8_t page,uint16_t data);
+[; ;_24AA512.h: 20: uint8_t EEPROM_24AA512_pageRead(uint8_t page);
 [; ;MCP79411.h: 61: void MCP794x_setTime(uint8_t hour, uint8_t minute, uint8_t second) ;
 [; ;MCP79411.h: 62: void MCP794x_setDate(uint8_t date, uint8_t weekDay, uint8_t month, uint8_t year);
 [; ;MCP79411.h: 63: void MCP794x_writeRtcc(uint8_t Register, uint8_t value);
+[; ;MCP79411.h: 64: void MCP794x_setAlarm(uint8_t alarmMask, uint8_t time);
+[; ;MCP79411.h: 65: uint8_t MCP794x_INTF_CLR(void);
+[; ;MCP79411.h: 66: uint8_t MCP7941x_read(uint8_t Register);
+[; ;MCP79411.h: 67: void MCP794x_writeEEPROM(uint8_t Register, uint8_t data);
+[; ;MCP79411.h: 68: uint8_t MCP794x_readEEPROM(uint8_t Register);
+[; ;MCP79411.h: 69: void MCP794x_getID(void);
+[; ;MCP79411.h: 71: enum ALARM_MASK {second = 0x00, minute = 0x10, hour = 0x20, dayWk = 0x30, date = 0x40, SMHDD = 0x70};
 [; ;mcc.h: 40: void SYSTEM_Initialize(void);
 [; ;mcc.h: 53: void OSCILLATOR_Initialize(void);
 "12 _24AA512_EEPROM.c
@@ -7160,6 +7172,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;_24AA512_EEPROM.c: 24: I2C_Write(addHigh);
 "24
 [e ( _I2C_Write (1 -> _addHigh `uc ]
+[; ;_24AA512_EEPROM.c: 25: I2C_Write(addLow);
+"25
+[e ( _I2C_Write (1 -> _addLow `uc ]
 [; ;_24AA512_EEPROM.c: 26: I2C_repeated_Start();
 "26
 [e ( _I2C_repeated_Start ..  ]
@@ -7177,12 +7192,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 837 ]
 }
 "32
-[v _EEPROM_24AA512_pageWrite `(uc ~T0 @X0 1 ef2`uc`i ]
+[v _EEPROM_24AA512_pageWrite `(uc ~T0 @X0 1 ef2`uc`ui ]
 {
-[; ;_24AA512_EEPROM.c: 32: uint8_t EEPROM_24AA512_pageWrite(uint8_t page, int data) {
+[; ;_24AA512_EEPROM.c: 32: uint8_t EEPROM_24AA512_pageWrite(uint8_t page, uint16_t data) {
 [e :U _EEPROM_24AA512_pageWrite ]
 [v _page `uc ~T0 @X0 1 r1 ]
-[v _data `i ~T0 @X0 1 r2 ]
+[v _data `ui ~T0 @X0 1 r2 ]
 [f ]
 "33
 [v _address `ui ~T0 @X0 1 a ]
@@ -7200,7 +7215,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;_24AA512_EEPROM.c: 37: I2C_Write((address - (address >> 8)*256));
 "37
 [e ( _I2C_Write (1 -> - _address * >> _address -> 8 `i -> -> 256 `i `ui `uc ]
-[; ;_24AA512_EEPROM.c: 38: for(int index = 0; index <128; index++){
+[; ;_24AA512_EEPROM.c: 38: for (int index = 0; index < 128; index++) {
 "38
 {
 [v _index `i ~T0 @X0 1 a ]
@@ -7227,4 +7242,67 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;_24AA512_EEPROM.c: 42: }
 "42
 [e :UE 838 ]
+}
+"44
+[v _EEPROM_24AA512_pageRead `(uc ~T0 @X0 1 ef1`uc ]
+{
+[; ;_24AA512_EEPROM.c: 44: uint8_t EEPROM_24AA512_pageRead(uint8_t page) {
+[e :U _EEPROM_24AA512_pageRead ]
+[v _page `uc ~T0 @X0 1 r1 ]
+[f ]
+"45
+[v _address `ui ~T0 @X0 1 a ]
+[; ;_24AA512_EEPROM.c: 45: uint16_t address = (page * pow(2, 7) - pow(2, 7));
+[e = _address -> - * -> _page `d ( _pow (2 , -> -> 2 `i `d -> -> 7 `i `d ( _pow (2 , -> -> 2 `i `d -> -> 7 `i `d `ui ]
+[; ;_24AA512_EEPROM.c: 46: I2C_start();
+"46
+[e ( _I2C_start ..  ]
+[; ;_24AA512_EEPROM.c: 47: I2C_Write(0xA0);
+"47
+[e ( _I2C_Write (1 -> -> 160 `i `uc ]
+[; ;_24AA512_EEPROM.c: 48: I2C_Write(address >> 8);
+"48
+[e ( _I2C_Write (1 -> >> _address -> 8 `i `uc ]
+[; ;_24AA512_EEPROM.c: 49: I2C_Write((address - (address >> 8)*256));
+"49
+[e ( _I2C_Write (1 -> - _address * >> _address -> 8 `i -> -> 256 `i `ui `uc ]
+[; ;_24AA512_EEPROM.c: 50: I2C_repeated_Start();
+"50
+[e ( _I2C_repeated_Start ..  ]
+[; ;_24AA512_EEPROM.c: 51: I2C_Write(0xA0 | 0x01);
+"51
+[e ( _I2C_Write (1 -> | -> 160 `i -> 1 `i `uc ]
+[; ;_24AA512_EEPROM.c: 52: for (int index = 0; index < 128; index++) {
+"52
+{
+[v _index `i ~T0 @X0 1 a ]
+[e = _index -> 0 `i ]
+[e $ < _index -> 128 `i 843  ]
+[e $U 844  ]
+[e :U 843 ]
+{
+[; ;_24AA512_EEPROM.c: 53: I2C_read(0);
+"53
+[e ( _I2C_read (1 -> 0 `i ]
+[; ;_24AA512_EEPROM.c: 54: EUSART1_Write(SSP2BUF);
+"54
+[e ( _EUSART1_Write (1 _SSP2BUF ]
+"55
+}
+"52
+[e ++ _index -> 1 `i ]
+[e $ < _index -> 128 `i 843  ]
+[e :U 844 ]
+"55
+}
+[; ;_24AA512_EEPROM.c: 55: }
+[; ;_24AA512_EEPROM.c: 56: I2C_read(1);
+"56
+[e ( _I2C_read (1 -> 1 `i ]
+[; ;_24AA512_EEPROM.c: 57: I2C_stop();
+"57
+[e ( _I2C_stop ..  ]
+[; ;_24AA512_EEPROM.c: 58: }
+"58
+[e :UE 842 ]
 }

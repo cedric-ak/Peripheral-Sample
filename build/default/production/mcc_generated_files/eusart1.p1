@@ -7362,7 +7362,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart1.c: 148: EUSART1_Write_Text(buf, sizeof (buf));
 "148
 [e ( _EUSART1_Write_Text (2 , &U _buf -> -> # _buf `ui `uc ]
-[; ;eusart1.c: 149: EUSART1_Write_Text("\r", 2);
+[; ;eusart1.c: 149: EUSART1_Write_Text(" ", 2);
 "149
 [e ( _EUSART1_Write_Text (2 , -> :s 1C `*uc -> -> 2 `i `uc ]
 [; ;eusart1.c: 150: }
@@ -7450,5 +7450,5 @@ Version 3.2 HI-TECH Software Intermediate Code
 "176
 [e :UE 867 ]
 }
-[a 1C 13 0 ]
+[a 1C 32 0 ]
 

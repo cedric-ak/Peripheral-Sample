@@ -43,6 +43,7 @@ int I2C_read(int ACK_NACK) {
     SSP2CON2bits.RCEN = 1;
     while (!SSP2STATbits.BF);
     SSP2CON2bits.ACKDT = ACK_NACK;   //ACK = 0, NACK = 1
+    SSP2CON2bits.ACKEN = 1; //Acknowledge Sequence Enable 
     while (SSP2CON2bits.ACKEN);
     //return SSP2BUF;
 }

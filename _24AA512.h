@@ -16,7 +16,8 @@ extern "C" {
 
 uint8_t EEPROM_24AA512_Read(int addHigh, int addLow);
 void EEPROM_24AA512_Write(int addHigh, int AddLow, int data);
-uint8_t EEPROM_24AA512_pageWrite(uint8_t page,int data);
+uint8_t EEPROM_24AA512_pageWrite(uint8_t page,uint16_t data);
+uint8_t EEPROM_24AA512_pageRead(uint8_t page);
 
 
 

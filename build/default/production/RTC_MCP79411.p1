@@ -10,6 +10,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _decimalToBCD `(uc ~T0 @X0 0 ef1`i ]
 "14 mcc_generated_files/../I2C.h
 [v _I2C_stop `(v ~T0 @X0 0 ef ]
+"43 RTC_MCP79411.c
+[c E7776 0 16 32 48 64 112 .. ]
+[n E7776 ALARM_MASK second minute hour dayWk date SMHDD  ]
+"16 mcc_generated_files/../I2C.h
+[v _I2C_repeated_Start `(v ~T0 @X0 0 ef ]
+"17
+[v _I2C_read `(i ~T0 @X0 0 ef1`i ]
+"5957 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
+[v _SSP2BUF `Vuc ~T0 @X0 0 e@3957 ]
+"346 mcc_generated_files/eusart1.h
+[v _EUSART1_Write_Text `(v ~T0 @X0 0 ef2`*uc`uc ]
+"347
+[v _EUSART1_itoa `(v ~T0 @X0 0 ef2`ul`i ]
+"66 mcc_generated_files/../MCP79411.h
+[v _MCP7941x_read `(uc ~T0 @X0 0 ef1`uc ]
+[v F7202 `(v ~T0 @X0 1 tf1`ul ]
+"164 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h
+[v __delay `JF7202 ~T0 @X0 0 e ]
+[p i __delay ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7102,10 +7121,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP9801.h: 27: }ADC;
 [; ;_24AA512.h: 17: uint8_t EEPROM_24AA512_Read(int addHigh, int addLow);
 [; ;_24AA512.h: 18: void EEPROM_24AA512_Write(int addHigh, int AddLow, int data);
-[; ;_24AA512.h: 19: uint8_t EEPROM_24AA512_pageWrite(uint8_t page,int data);
+[; ;_24AA512.h: 19: uint8_t EEPROM_24AA512_pageWrite(uint8_t page,uint16_t data);
+[; ;_24AA512.h: 20: uint8_t EEPROM_24AA512_pageRead(uint8_t page);
 [; ;MCP79411.h: 61: void MCP794x_setTime(uint8_t hour, uint8_t minute, uint8_t second) ;
 [; ;MCP79411.h: 62: void MCP794x_setDate(uint8_t date, uint8_t weekDay, uint8_t month, uint8_t year);
 [; ;MCP79411.h: 63: void MCP794x_writeRtcc(uint8_t Register, uint8_t value);
+[; ;MCP79411.h: 64: void MCP794x_setAlarm(uint8_t alarmMask, uint8_t time);
+[; ;MCP79411.h: 65: uint8_t MCP794x_INTF_CLR(void);
+[; ;MCP79411.h: 66: uint8_t MCP7941x_read(uint8_t Register);
+[; ;MCP79411.h: 67: void MCP794x_writeEEPROM(uint8_t Register, uint8_t data);
+[; ;MCP79411.h: 68: uint8_t MCP794x_readEEPROM(uint8_t Register);
+[; ;MCP79411.h: 69: void MCP794x_getID(void);
+[; ;MCP79411.h: 71: enum ALARM_MASK {second = 0x00, minute = 0x10, hour = 0x20, dayWk = 0x30, date = 0x40, SMHDD = 0x70};
 [; ;mcc.h: 40: void SYSTEM_Initialize(void);
 [; ;mcc.h: 53: void OSCILLATOR_Initialize(void);
 "10 RTC_MCP79411.c
@@ -7126,13 +7153,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTC_MCP79411.c: 13: I2C_Write(0x00);
 "13
 [e ( _I2C_Write (1 -> -> 0 `i `uc ]
-[; ;RTC_MCP79411.c: 14: I2C_Write(decimalToBCD(second |0x80));
+[; ;RTC_MCP79411.c: 14: I2C_Write(decimalToBCD(second | 0x80));
 "14
 [e ( _I2C_Write (1 ( _decimalToBCD (1 | -> _second `i -> 128 `i ]
 [; ;RTC_MCP79411.c: 15: I2C_Write(decimalToBCD(minute));
 "15
 [e ( _I2C_Write (1 ( _decimalToBCD (1 -> _minute `i ]
-[; ;RTC_MCP79411.c: 16: I2C_Write(decimalToBCD(hour &0x1F));
+[; ;RTC_MCP79411.c: 16: I2C_Write(decimalToBCD(hour & 0x1F));
 "16
 [e ( _I2C_Write (1 ( _decimalToBCD (1 & -> _hour `i -> 31 `i ]
 [; ;RTC_MCP79411.c: 17: I2C_stop();
@@ -7161,7 +7188,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTC_MCP79411.c: 23: I2C_Write(0x03);
 "23
 [e ( _I2C_Write (1 -> -> 3 `i `uc ]
-[; ;RTC_MCP79411.c: 24: I2C_Write(decimalToBCD(weekDay |0x28));
+[; ;RTC_MCP79411.c: 24: I2C_Write(decimalToBCD(weekDay | 0x28));
 "24
 [e ( _I2C_Write (1 ( _decimalToBCD (1 | -> _weekDay `i -> 40 `i ]
 [; ;RTC_MCP79411.c: 25: I2C_Write(decimalToBCD(date));
@@ -7207,3 +7234,287 @@ Version 3.2 HI-TECH Software Intermediate Code
 "37
 [e :UE 838 ]
 }
+"39
+[v _MCP794x_setAlarm `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[; ;RTC_MCP79411.c: 39: void MCP794x_setAlarm(uint8_t alarmMask, uint8_t time) {
+[e :U _MCP794x_setAlarm ]
+[v _alarmMask `uc ~T0 @X0 1 r1 ]
+[v _time `uc ~T0 @X0 1 r2 ]
+[f ]
+[; ;RTC_MCP79411.c: 40: MCP794x_writeRtcc(0x0D, 0x00);
+"40
+[e ( _MCP794x_writeRtcc (2 , -> -> 13 `i `uc -> -> 0 `i `uc ]
+[; ;RTC_MCP79411.c: 41: MCP794x_writeRtcc(0x0D, alarmMask);
+"41
+[e ( _MCP794x_writeRtcc (2 , -> -> 13 `i `uc _alarmMask ]
+[; ;RTC_MCP79411.c: 43: switch (alarmMask) {
+"43
+[e $U 841  ]
+{
+[; ;RTC_MCP79411.c: 44: case second:MCP794x_writeRtcc(0x0A, decimalToBCD(time));
+"44
+[e :U 842 ]
+[e ( _MCP794x_writeRtcc (2 , -> -> 10 `i `uc ( _decimalToBCD (1 -> _time `i ]
+[; ;RTC_MCP79411.c: 45: break;
+"45
+[e $U 840  ]
+[; ;RTC_MCP79411.c: 46: case minute:MCP794x_writeRtcc(0x0B, decimalToBCD(time));
+"46
+[e :U 843 ]
+[e ( _MCP794x_writeRtcc (2 , -> -> 11 `i `uc ( _decimalToBCD (1 -> _time `i ]
+[; ;RTC_MCP79411.c: 47: break;
+"47
+[e $U 840  ]
+[; ;RTC_MCP79411.c: 48: case hour:MCP794x_writeRtcc(0x0C, (decimalToBCD(time)) & 0xBF);
+"48
+[e :U 844 ]
+[e ( _MCP794x_writeRtcc (2 , -> -> 12 `i `uc -> & -> ( _decimalToBCD (1 -> _time `i `i -> 191 `i `uc ]
+[; ;RTC_MCP79411.c: 49: break;
+"49
+[e $U 840  ]
+[; ;RTC_MCP79411.c: 50: case dayWk:MCP794x_writeRtcc(0x0D, (decimalToBCD(time)) >> 6);
+"50
+[e :U 845 ]
+[e ( _MCP794x_writeRtcc (2 , -> -> 13 `i `uc -> >> -> ( _decimalToBCD (1 -> _time `i `i -> 6 `i `uc ]
+[; ;RTC_MCP79411.c: 51: break;
+"51
+[e $U 840  ]
+[; ;RTC_MCP79411.c: 52: case date:MCP794x_writeRtcc(0x0E, decimalToBCD(time));
+"52
+[e :U 846 ]
+[e ( _MCP794x_writeRtcc (2 , -> -> 14 `i `uc ( _decimalToBCD (1 -> _time `i ]
+[; ;RTC_MCP79411.c: 53: break;
+"53
+[e $U 840  ]
+[; ;RTC_MCP79411.c: 54: case SMHDD:
+"54
+[e :U 847 ]
+[; ;RTC_MCP79411.c: 55: MCP794x_writeRtcc(0x0A, decimalToBCD(time));
+"55
+[e ( _MCP794x_writeRtcc (2 , -> -> 10 `i `uc ( _decimalToBCD (1 -> _time `i ]
+[; ;RTC_MCP79411.c: 56: MCP794x_writeRtcc(0x0B, decimalToBCD(time));
+"56
+[e ( _MCP794x_writeRtcc (2 , -> -> 11 `i `uc ( _decimalToBCD (1 -> _time `i ]
+[; ;RTC_MCP79411.c: 57: MCP794x_writeRtcc(0x0C, (decimalToBCD(time)) & 0xBF);
+"57
+[e ( _MCP794x_writeRtcc (2 , -> -> 12 `i `uc -> & -> ( _decimalToBCD (1 -> _time `i `i -> 191 `i `uc ]
+[; ;RTC_MCP79411.c: 58: MCP794x_writeRtcc(0x0D, (decimalToBCD(time)) >> 6);
+"58
+[e ( _MCP794x_writeRtcc (2 , -> -> 13 `i `uc -> >> -> ( _decimalToBCD (1 -> _time `i `i -> 6 `i `uc ]
+[; ;RTC_MCP79411.c: 59: MCP794x_writeRtcc(0x0E, decimalToBCD(time));
+"59
+[e ( _MCP794x_writeRtcc (2 , -> -> 14 `i `uc ( _decimalToBCD (1 -> _time `i ]
+[; ;RTC_MCP79411.c: 60: MCP794x_writeRtcc(0x0F, decimalToBCD(time));
+"60
+[e ( _MCP794x_writeRtcc (2 , -> -> 15 `i `uc ( _decimalToBCD (1 -> _time `i ]
+[; ;RTC_MCP79411.c: 61: break;
+"61
+[e $U 840  ]
+"62
+}
+[; ;RTC_MCP79411.c: 62: }
+[e $U 840  ]
+"43
+[e :U 841 ]
+[e [\ _alarmMask , $ -> . `E7776 0 `uc 842
+ , $ -> . `E7776 1 `uc 843
+ , $ -> . `E7776 2 `uc 844
+ , $ -> . `E7776 3 `uc 845
+ , $ -> . `E7776 4 `uc 846
+ , $ -> . `E7776 5 `uc 847
+ 840 ]
+"62
+[e :U 840 ]
+[; ;RTC_MCP79411.c: 63: MCP794x_writeRtcc(0x07, 0x10);
+"63
+[e ( _MCP794x_writeRtcc (2 , -> -> 7 `i `uc -> -> 16 `i `uc ]
+[; ;RTC_MCP79411.c: 64: }
+"64
+[e :UE 839 ]
+}
+"66
+[v _MCP794x_writeEEPROM `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[; ;RTC_MCP79411.c: 66: void MCP794x_writeEEPROM(uint8_t Register, uint8_t data) {
+[e :U _MCP794x_writeEEPROM ]
+[v _Register `uc ~T0 @X0 1 r1 ]
+[v _data `uc ~T0 @X0 1 r2 ]
+[f ]
+[; ;RTC_MCP79411.c: 67: I2C_start();
+"67
+[e ( _I2C_start ..  ]
+[; ;RTC_MCP79411.c: 68: I2C_Write(0xAE);
+"68
+[e ( _I2C_Write (1 -> -> 174 `i `uc ]
+[; ;RTC_MCP79411.c: 69: I2C_Write(Register);
+"69
+[e ( _I2C_Write (1 _Register ]
+[; ;RTC_MCP79411.c: 70: I2C_Write(data);
+"70
+[e ( _I2C_Write (1 _data ]
+[; ;RTC_MCP79411.c: 71: I2C_stop();
+"71
+[e ( _I2C_stop ..  ]
+[; ;RTC_MCP79411.c: 72: }
+"72
+[e :UE 848 ]
+}
+"74
+[v _MCP794x_readEEPROM `(uc ~T0 @X0 1 ef1`uc ]
+{
+[; ;RTC_MCP79411.c: 74: uint8_t MCP794x_readEEPROM(uint8_t Register) {
+[e :U _MCP794x_readEEPROM ]
+[v _Register `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;RTC_MCP79411.c: 75: I2C_start();
+"75
+[e ( _I2C_start ..  ]
+[; ;RTC_MCP79411.c: 76: I2C_Write(0xAE);
+"76
+[e ( _I2C_Write (1 -> -> 174 `i `uc ]
+[; ;RTC_MCP79411.c: 77: I2C_Write(Register);
+"77
+[e ( _I2C_Write (1 _Register ]
+[; ;RTC_MCP79411.c: 78: I2C_repeated_Start();
+"78
+[e ( _I2C_repeated_Start ..  ]
+[; ;RTC_MCP79411.c: 79: I2C_Write(0xAE | 0x01);
+"79
+[e ( _I2C_Write (1 -> | -> 174 `i -> 1 `i `uc ]
+[; ;RTC_MCP79411.c: 80: I2C_read(1);
+"80
+[e ( _I2C_read (1 -> 1 `i ]
+[; ;RTC_MCP79411.c: 81: I2C_stop();
+"81
+[e ( _I2C_stop ..  ]
+[; ;RTC_MCP79411.c: 82: return SSP2BUF;
+"82
+[e ) _SSP2BUF ]
+[e $UE 849  ]
+[; ;RTC_MCP79411.c: 83: }
+"83
+[e :UE 849 ]
+}
+"85
+[v _MCP794x_getID `(v ~T0 @X0 1 ef ]
+{
+[; ;RTC_MCP79411.c: 85: void MCP794x_getID(void) {
+[e :U _MCP794x_getID ]
+[f ]
+"86
+[v _UID `uc ~T0 @X0 -> 8 `i a ]
+[; ;RTC_MCP79411.c: 86: uint8_t UID[8];
+[; ;RTC_MCP79411.c: 87: I2C_start();
+"87
+[e ( _I2C_start ..  ]
+[; ;RTC_MCP79411.c: 88: I2C_Write(0xAE);
+"88
+[e ( _I2C_Write (1 -> -> 174 `i `uc ]
+[; ;RTC_MCP79411.c: 89: I2C_Write(0xf0);
+"89
+[e ( _I2C_Write (1 -> -> 240 `i `uc ]
+[; ;RTC_MCP79411.c: 90: I2C_repeated_Start();
+"90
+[e ( _I2C_repeated_Start ..  ]
+[; ;RTC_MCP79411.c: 91: I2C_Write(0xAE | 0x01);
+"91
+[e ( _I2C_Write (1 -> | -> 174 `i -> 1 `i `uc ]
+[; ;RTC_MCP79411.c: 92: for (int index = 0; index < 8; index++) {
+"92
+{
+[v _index `i ~T0 @X0 1 a ]
+[e = _index -> 0 `i ]
+[e $ < _index -> 8 `i 851  ]
+[e $U 852  ]
+[e :U 851 ]
+{
+[; ;RTC_MCP79411.c: 93: I2C_read(0);
+"93
+[e ( _I2C_read (1 -> 0 `i ]
+[; ;RTC_MCP79411.c: 94: UID[index] = SSP2BUF;
+"94
+[e = *U + &U _UID * -> -> _index `ui `ux -> -> # *U &U _UID `ui `ux _SSP2BUF ]
+[; ;RTC_MCP79411.c: 95: if(UID[index] < 16)
+"95
+[e $ ! < -> *U + &U _UID * -> -> _index `ui `ux -> -> # *U &U _UID `ui `ux `i -> 16 `i 854  ]
+[; ;RTC_MCP79411.c: 96: EUSART1_Write_Text("0",2);
+"96
+[e ( _EUSART1_Write_Text (2 , -> :s 1C `*uc -> -> 2 `i `uc ]
+[e :U 854 ]
+[; ;RTC_MCP79411.c: 97: EUSART1_itoa(UID[index],16);
+"97
+[e ( _EUSART1_itoa (2 , -> *U + &U _UID * -> -> _index `ui `ux -> -> # *U &U _UID `ui `ux `ul -> 16 `i ]
+"98
+}
+"92
+[e ++ _index -> 1 `i ]
+[e $ < _index -> 8 `i 851  ]
+[e :U 852 ]
+"98
+}
+[; ;RTC_MCP79411.c: 98: }
+[; ;RTC_MCP79411.c: 99: EUSART1_Write_Text("\r", 2);
+"99
+[e ( _EUSART1_Write_Text (2 , -> :s 2C `*uc -> -> 2 `i `uc ]
+[; ;RTC_MCP79411.c: 100: I2C_read(1);
+"100
+[e ( _I2C_read (1 -> 1 `i ]
+[; ;RTC_MCP79411.c: 101: I2C_stop();
+"101
+[e ( _I2C_stop ..  ]
+[; ;RTC_MCP79411.c: 102: }
+"102
+[e :UE 850 ]
+}
+"104
+[v _MCP794x_INTF_CLR `(uc ~T0 @X0 1 ef ]
+{
+[; ;RTC_MCP79411.c: 104: uint8_t MCP794x_INTF_CLR(void) {
+[e :U _MCP794x_INTF_CLR ]
+[f ]
+[; ;RTC_MCP79411.c: 105: MCP794x_writeRtcc(0x0D, MCP7941x_read(0x0D)& 0xF5);
+"105
+[e ( _MCP794x_writeRtcc (2 , -> -> 13 `i `uc -> & -> ( _MCP7941x_read (1 -> -> 13 `i `uc `i -> 245 `i `uc ]
+[; ;RTC_MCP79411.c: 106: _delay((unsigned long)((10)*(16000000/4000.0)));
+"106
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;RTC_MCP79411.c: 107: }
+"107
+[e :UE 855 ]
+}
+"109
+[v _MCP7941x_read `(uc ~T0 @X0 1 ef1`uc ]
+{
+[; ;RTC_MCP79411.c: 109: uint8_t MCP7941x_read(uint8_t Register) {
+[e :U _MCP7941x_read ]
+[v _Register `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;RTC_MCP79411.c: 110: I2C_start();
+"110
+[e ( _I2C_start ..  ]
+[; ;RTC_MCP79411.c: 111: I2C_Write(0xDE);
+"111
+[e ( _I2C_Write (1 -> -> 222 `i `uc ]
+[; ;RTC_MCP79411.c: 112: I2C_Write(Register);
+"112
+[e ( _I2C_Write (1 _Register ]
+[; ;RTC_MCP79411.c: 113: I2C_repeated_Start();
+"113
+[e ( _I2C_repeated_Start ..  ]
+[; ;RTC_MCP79411.c: 114: I2C_Write(0xDE | 0x01);
+"114
+[e ( _I2C_Write (1 -> | -> 222 `i -> 1 `i `uc ]
+[; ;RTC_MCP79411.c: 115: I2C_read(1);
+"115
+[e ( _I2C_read (1 -> 1 `i ]
+[; ;RTC_MCP79411.c: 116: return SSP2BUF;
+"116
+[e ) _SSP2BUF ]
+[e $UE 856  ]
+[; ;RTC_MCP79411.c: 118: }
+"118
+[e :UE 856 ]
+}
+[a 1C 48 0 ]
+[a 2C 13 0 ]

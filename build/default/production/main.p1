@@ -22,6 +22,58 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n E7597 days Sun Mon Tue Wed Thu Fri Sat  ]
 [c E7605 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
 [n E7605 months Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec  ]
+"64 mcc_generated_files/../MCP79411.h
+[v _MCP794x_setAlarm `(v ~T0 @X0 0 ef2`uc`uc ]
+"14 main.c
+[c E7776 0 16 32 48 64 112 .. ]
+[n E7776 ALARM_MASK second minute hour dayWk date SMHDD  ]
+"345 mcc_generated_files/eusart1.h
+[v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
+"68 mcc_generated_files/../MCP79411.h
+[v _MCP794x_readEEPROM `(uc ~T0 @X0 0 ef1`uc ]
+"7214 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
+[s S359 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S359 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"7224
+[s S360 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S360 . AN12 AN10 AN8 AN9 PMA1 PMA0 KBI2 KBI3 ]
+"7234
+[s S361 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S361 . INT0 PMPBE CTED1 CTED2 KBI0 KBI1 PGC PGD ]
+"7244
+[s S362 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S362 . RP3 RTCC PMA3 PMA2 . RP9 RP10 ]
+"7253
+[s S363 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S363 . . PMBE REFO ]
+"7258
+[s S364 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S364 . . RP4 RP5 RP6 RP7 RP8 ]
+"7266
+[s S365 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S365 . C3IND C3INC C2INC C3INA ]
+"7272
+[s S366 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S366 . . CCP4 CCP5 CCP6 CCP7 ]
+"7279
+[s S367 :3 `uc 1 :1 `uc 1 ]
+[n S367 . . CCP2_PA2 ]
+"7213
+[u S358 `S359 1 `S360 1 `S361 1 `S362 1 `S363 1 `S364 1 `S365 1 `S366 1 `S367 1 ]
+[n S358 . . . . . . . . . . ]
+"7284
+[v _PORTBbits `VS358 ~T0 @X0 0 e@3969 ]
+"8461
+[s S405 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S405 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"8471
+[s S406 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S406 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
+"8460
+[u S404 `S405 1 `S406 1 ]
+[n S404 . . . ]
+"8482
+[v _LATBbits `VS404 ~T0 @X0 0 e@3978 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7114,10 +7166,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP9801.h: 27: }ADC;
 [; ;_24AA512.h: 17: uint8_t EEPROM_24AA512_Read(int addHigh, int addLow);
 [; ;_24AA512.h: 18: void EEPROM_24AA512_Write(int addHigh, int AddLow, int data);
-[; ;_24AA512.h: 19: uint8_t EEPROM_24AA512_pageWrite(uint8_t page,int data);
+[; ;_24AA512.h: 19: uint8_t EEPROM_24AA512_pageWrite(uint8_t page,uint16_t data);
+[; ;_24AA512.h: 20: uint8_t EEPROM_24AA512_pageRead(uint8_t page);
 [; ;MCP79411.h: 61: void MCP794x_setTime(uint8_t hour, uint8_t minute, uint8_t second) ;
 [; ;MCP79411.h: 62: void MCP794x_setDate(uint8_t date, uint8_t weekDay, uint8_t month, uint8_t year);
 [; ;MCP79411.h: 63: void MCP794x_writeRtcc(uint8_t Register, uint8_t value);
+[; ;MCP79411.h: 64: void MCP794x_setAlarm(uint8_t alarmMask, uint8_t time);
+[; ;MCP79411.h: 65: uint8_t MCP794x_INTF_CLR(void);
+[; ;MCP79411.h: 66: uint8_t MCP7941x_read(uint8_t Register);
+[; ;MCP79411.h: 67: void MCP794x_writeEEPROM(uint8_t Register, uint8_t data);
+[; ;MCP79411.h: 68: uint8_t MCP794x_readEEPROM(uint8_t Register);
+[; ;MCP79411.h: 69: void MCP794x_getID(void);
+[; ;MCP79411.h: 71: enum ALARM_MASK {second = 0x00, minute = 0x10, hour = 0x20, dayWk = 0x30, date = 0x40, SMHDD = 0x70};
 [; ;mcc.h: 40: void SYSTEM_Initialize(void);
 [; ;mcc.h: 53: void OSCILLATOR_Initialize(void);
 [; ;main.c: 3: extern void interrupt_Init(void);
@@ -7140,24 +7200,63 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 10: _delay((unsigned long)((10)*(16000000/4000.0)));
 "10
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 12: MCP794x_setTime(13,52,1);
+[; ;main.c: 12: MCP794x_setTime(22,59,7);
 "12
-[e ( _MCP794x_setTime (3 , , -> -> 13 `i `uc -> -> 52 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 13: MCP794x_setDate(18,Fri,Nov,21);
+[e ( _MCP794x_setTime (3 , , -> -> 22 `i `uc -> -> 59 `i `uc -> -> 7 `i `uc ]
+[; ;main.c: 13: MCP794x_setDate(25,Fri,Dec,20);
 "13
-[e ( _MCP794x_setDate (4 , , , -> -> 18 `i `uc -> . `E7597 5 `uc -> . `E7605 10 `uc -> -> 21 `i `uc ]
-[; ;main.c: 14: while (1) {
+[e ( _MCP794x_setDate (4 , , , -> -> 25 `i `uc -> . `E7597 5 `uc -> . `E7605 11 `uc -> -> 20 `i `uc ]
+[; ;main.c: 14: MCP794x_setAlarm(hour, 23);
 "14
-[e :U 838 ]
+[e ( _MCP794x_setAlarm (2 , -> . `E7776 2 `uc -> -> 23 `i `uc ]
+[; ;main.c: 17: for(int index = 0; index <128; index++){
+"17
 {
-"20
-}
-[e :U 837 ]
-"14
+[v _index `i ~T0 @X0 1 a ]
+[e = _index -> 0 `i ]
+[e $ < _index -> 128 `i 837  ]
 [e $U 838  ]
-[e :U 839 ]
-[; ;main.c: 20: }
-[; ;main.c: 21: }
+[e :U 837 ]
+{
+[; ;main.c: 20: EUSART1_Write(MCP794x_readEEPROM(index));
+"20
+[e ( _EUSART1_Write (1 ( _MCP794x_readEEPROM (1 -> _index `uc ]
 "21
+}
+"17
+[e ++ _index -> 1 `i ]
+[e $ < _index -> 128 `i 837  ]
+[e :U 838 ]
+"21
+}
+[; ;main.c: 21: }
+[; ;main.c: 22: while (1) {
+"22
+[e :U 841 ]
+{
+[; ;main.c: 23: if (!PORTBbits.RB0) {
+"23
+[e $ ! ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 843  ]
+{
+[; ;main.c: 24: do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0);
+"24
+[e :U 846 ]
+{
+[e = . . _LATBbits 0 5 -> ~ -> . . _LATBbits 0 5 `i `uc ]
+}
+[e :U 845 ]
+"26
+}
+[e :U 843 ]
+"27
+}
+[e :U 840 ]
+"22
+[e $U 841  ]
+[e :U 842 ]
+[; ;main.c: 26: }
+[; ;main.c: 27: }
+[; ;main.c: 28: }
+"28
 [e :UE 836 ]
 }
