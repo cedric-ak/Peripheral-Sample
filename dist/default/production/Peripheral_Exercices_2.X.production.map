@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.45\dat\en_msgs.txt -cs \
   -h+dist/default/production\Peripheral_Exercices_2.X.production.sym \
   --cmf=dist/default/production\Peripheral_Exercices_2.X.production.cmf -z \
-  -Q18LF46J13 -oC:\Users\CEDRIC\AppData\Local\Temp\sa0c.2 \
+  -Q18LF46J13 -oC:\Users\CEDRIC\AppData\Local\Temp\s25c.2 \
   -Mdist/default/production/Peripheral_Exercices_2.X.production.map -E1 \
   -ver=XC8 -ASTACK=0200h-0eafh -pstack=STACK -ACODE=00h-0FFF7h \
   -ACONST=00h-0FFF7h -ASMALLCONST=0F00h-0FFFhx240,0FF00h-0FFF7h \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\CEDRIC\AppData\Local\Temp\sa0c.obj \
+  C:\Users\CEDRIC\AppData\Local\Temp\s25c.obj \
   dist/default/production\Peripheral_Exercices_2.X.production.obj 
 
 Object code version is 3.11
@@ -38,81 +38,72 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\CEDRIC\AppData\Local\Temp\sa0c.obj
+C:\Users\CEDRIC\AppData\Local\Temp\s25c.obj
                 init                                  0        0        4        0       0
                 config                             FFF8     FFF8        8     FFF8       0
 dist/default/production\Peripheral_Exercices_2.X.production.obj
                 smallconst                          F00      F00       42      780       0
-                text27                             15CE     15CE       10      7A1       0
-                text26                             1636     1636        A      AFD       0
-                text25                             1574     1574       1A      7A1       0
-                text24                             162C     162C        A      AFD       0
-                text23                             15BE     15BE       10      7A1       0
-                text22                             15A6     15A6       18      7A1       0
-                text21                             1622     1622        A      AFD       0
-                text20                             14D6     14D6       30      7A1       0
-                text19                             1556     1556       1E      7A1       0
-                text18                             11DC     11DC       84      7A1       0
-                text17                             1260     1260       70      7A1       0
-                text16                             149E     149E       38      7A1       0
-                text15                              F42      F42      140      7A1       0
-                text14                             12D0     12D0       5A      7A1       0
-                text13                             137E     137E       54      7A1       0
-                text12                             1618     1618        A      AFD       0
-                text11                             160E     160E        A      AFD       0
-                text10                             1604     1604        A      AFD       0
-                text9                              1460     1460       3E      7A1       0
-                text8                              1082     1082       CC      7A1       0
-                text7                              1530     1530       26      7A1       0
-                text6                              132A     132A       54      7A1       0
-                text5                              1506     1506       2A      7A1       0
-                text4                              141C     141C       44      7A1       0
-                text3                              15DE     15DE        E      7A1       0
-                text2                              158E     158E       18      7A1       0
-                text1                              15FA     15FA        A      AFD       0
-                text0                              114E     114E       8E      7A1       0
-                cstackCOMRAM                          1        1       18        1       1
+                text21                             1462     1462        A      A09       0
+                text20                             13CA     13CA       1A      7A1       0
+                text19                             1458     1458        A      A09       0
+                text18                             1412     1412       10      A09       0
+                text17                             1336     1336       2A      7A1       0
+                text16                              F42      F42       D0      7A1       0
+                text15                             144E     144E        A      A09       0
+                text14                             1444     1444        A      A09       0
+                text13                             143A     143A        A      A09       0
+                text12                             12A2     12A2       3E      7A1       0
+                text11                             1012     1012       CC      7A1       0
+                text10                             1360     1360       26      7A1       0
+                text9                              11CC     11CC       54      7A1       0
+                text8                              130C     130C       2A      7A1       0
+                text7                              1220     1220       44      7A1       0
+                text6                              1422     1422        E      A09       0
+                text5                              13E4     13E4       18      7A1       0
+                text4                              1386     1386       24      7A1       0
+                text3                              12E0     12E0       2C      7A1       0
+                text2                              10DE     10DE       84      7A1       0
+                text1                              1430     1430        A      A09       0
+                text0                              1264     1264       3E      7A1       0
+                cstackCOMRAM                         20       20       17        1       1
                 bssBANK1                            100      100      100      100       1
-                dataCOMRAM                           2E       2E        D        1       1
-                bssCOMRAM                            19       19       15        1       1
-                cinit                              13D2     13D2       4A      7A1       0
-                idataCOMRAM                        15EC     15EC        D      7A1       0
+                dataBANK0                            60       60       20       60       1
+                dataCOMRAM                           37       37       15        1       1
+                bssCOMRAM                             1        1       1F        1       1
+                cinit                              1162     1162       6A      7A1       0
+                idataBANK0                         13AA     13AA       20      7A1       0
+                idataCOMRAM                        13FC     13FC       15      7A1       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 init                                  0        0        4         0
-                text27                             15CE     15CE       10         0
-                text26                             1636     1636        A         0
-                text25                             1574     1574       1A         0
-                text24                             162C     162C        A         0
-                text23                             15BE     15BE       10         0
-                text22                             15A6     15A6       18         0
-                text21                             1622     1622        A         0
-                text20                             14D6     14D6       30         0
-                text19                             1556     1556       1E         0
-                text18                             11DC     11DC       84         0
-                text17                             1260     1260       70         0
-                text16                             149E     149E       38         0
-                text15                              F42      F42      140         0
-                text14                             12D0     12D0       5A         0
-                text13                             137E     137E       54         0
-                text12                             1618     1618        A         0
-                text11                             160E     160E        A         0
-                text10                             1604     1604        A         0
-                text9                              1460     1460       3E         0
-                text8                              1082     1082       CC         0
-                text7                              1530     1530       26         0
-                text6                              132A     132A       54         0
-                text5                              1506     1506       2A         0
-                text4                              141C     141C       44         0
-                text3                              15DE     15DE        E         0
-                text2                              158E     158E       18         0
-                text1                              15FA     15FA        A         0
-                text0                              114E     114E       8E         0
-                cinit                              13D2     13D2       4A         0
-                idataCOMRAM                        15EC     15EC        D         0
+                text21                             1462     1462        A         0
+                text20                             13CA     13CA       1A         0
+                text19                             1458     1458        A         0
+                text18                             1412     1412       10         0
+                text17                             1336     1336       2A         0
+                text16                              F42      F42       D0         0
+                text15                             144E     144E        A         0
+                text14                             1444     1444        A         0
+                text13                             143A     143A        A         0
+                text12                             12A2     12A2       3E         0
+                text11                             1012     1012       CC         0
+                text10                             1360     1360       26         0
+                text9                              11CC     11CC       54         0
+                text8                              130C     130C       2A         0
+                text7                              1220     1220       44         0
+                text6                              1422     1422        E         0
+                text5                              13E4     13E4       18         0
+                text4                              1386     1386       24         0
+                text3                              12E0     12E0       2C         0
+                text2                              10DE     10DE       84         0
+                text1                              1430     1430        A         0
+                text0                              1264     1264       3E         0
+                cinit                              1162     1162       6A         0
+                idataBANK0                         13AA     13AA       20         0
+                idataCOMRAM                        13FC     13FC       15         0
 
         CLASS   CONST          
 
@@ -122,9 +113,9 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                cstackCOMRAM                          1        1       18         1
-                dataCOMRAM                           2E       2E        D         1
-                bssCOMRAM                            19       19       15         1
+                cstackCOMRAM                         20       20       17         1
+                dataCOMRAM                           37       37       15         1
+                bssCOMRAM                             1        1       1F         1
 
         CLASS   ABS1           
 
@@ -133,6 +124,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   RAM            
 
         CLASS   BANK0          
+                dataBANK0                            60       60       20         1
 
         CLASS   BANK1          
                 bssBANK1                            100      100      100         1
@@ -177,18 +169,19 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                cstackCOMRAM                   000001  00003A  00003B         1       1  COMRAM  
+                bssCOMRAM                      000001  00004B  00004C         1       1  COMRAM  
+                dataBANK0                      000060  000020  000080        60       1  BANK0   
                 bssBANK1                       000100  000100  000200       100       1  BANK1   
                 smallconst                     000F00  000042  000F42       780       0  SMALLCON
-                text15                         000F42  0006B7  0015F9       7A1       0  CODE    
-                text1                          0015FA  000046  001640       AFD       0  CODE    
+                text16                         000F42  0004CF  001411       7A1       0  CODE    
+                text18                         001412  00005A  00146C       A09       0  CODE    
                 config                         00FFF8  000008  010000      FFF8       0  CONFIG  
 
 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            00060-000FF              A0
+        BANK0            00080-000FF              80
         BANK10           00A00-00AFF             100
         BANK11           00B00-00BFF             100
         BANK12           00C00-00CFF             100
@@ -202,96 +195,76 @@ UNUSED ADDRESS RANGES
         BANK7            00700-007FF             100
         BANK8            00800-008FF             100
         BANK9            00900-009FF             100
-        BIGRAM           0003B-000FF              C5
+        BIGRAM           0004C-0005F              14
+                         00080-000FF              80
                          00200-00EAF             CB0
         CODE             00004-00EFF             EFC
-                         015F9-015F9               1
-                         01640-0FFF7            E9B8
-        COMRAM           0003B-0005F              25
+                         01411-01411               1
+                         0146C-0FFF7            EB8C
+        COMRAM           0004C-0005F              14
         CONST            00004-00EFF             EFC
-                         015F9-015F9               1
-                         01640-0FFF7            E9B8
-        MEDIUMCONST      015F9-015F9               1
-                         01640-0FFF7            E9B8
-        RAM              00060-000FF              A0
+                         01411-01411               1
+                         0146C-0FFF7            EB8C
+        MEDIUMCONST      01411-01411               1
+                         0146C-0FFF7            EB8C
+        RAM              00080-000FF              80
                          00200-00EAF             100
         SFR              00EB0-00FFF              60
-        SMALLCONST       015F9-015F9               1
-                         01640-0FFF7             100
+        SMALLCONST       01411-01411               1
+                         0146C-0FFF7             100
         STACK            00200-00EAF             CB0
 
                                   Symbol Table
 
-?___aldiv                                       cstackCOMRAM  00007
-?___awdiv                                       cstackCOMRAM  00001
-?___awmod                                       cstackCOMRAM  00001
-?___wmul                                        cstackCOMRAM  00001
-EUSART1_SetErrorHandler@interruptHandler        cstackCOMRAM  00001
-EUSART1_SetFramingErrorHandler@interruptHandler cstackCOMRAM  00001
-EUSART1_SetOverrunErrorHandler@interruptHandler cstackCOMRAM  00001
-EUSART1_Write@txData                            cstackCOMRAM  00001
-I2C_Init@F_clock                                cstackCOMRAM  00015
-I2C_Write@data                                  cstackCOMRAM  00001
-I2C_read@ACK_NACK                               cstackCOMRAM  00001
-MCP794x_readEEPROM@Register                     cstackCOMRAM  00003
-MCP794x_setAlarm@alarmMask                      cstackCOMRAM  00012
-MCP794x_setAlarm@time                           cstackCOMRAM  0000F
-MCP794x_setDate@date                            cstackCOMRAM  00012
-MCP794x_setDate@month                           cstackCOMRAM  0000E
-MCP794x_setDate@weekDay                         cstackCOMRAM  0000D
-MCP794x_setDate@year                            cstackCOMRAM  0000F
-MCP794x_setTime@hour                            cstackCOMRAM  00011
-MCP794x_setTime@minute                          cstackCOMRAM  0000D
-MCP794x_setTime@second                          cstackCOMRAM  0000E
-MCP794x_writeRtcc@Register                      cstackCOMRAM  0000E
-MCP794x_writeRtcc@value                         cstackCOMRAM  0000D
-PCF8523_setDate@F7799                           dataCOMRAM    00036
-PCF8523_setTime@F7792                           dataCOMRAM    0002E
-_ADC                                            bssCOMRAM     00025
+?___aldiv                                       cstackCOMRAM  00026
+?___wmul                                        cstackCOMRAM  00020
+EUSART1_SetErrorHandler@interruptHandler        cstackCOMRAM  00020
+EUSART1_SetFramingErrorHandler@interruptHandler cstackCOMRAM  00020
+EUSART1_SetOverrunErrorHandler@interruptHandler cstackCOMRAM  00020
+I2C_Init@F_clock                                cstackCOMRAM  00034
+I2C_Write@data                                  cstackCOMRAM  00020
+PCF8523_setDate@F7823                           dataCOMRAM    00047
+PCF8523_setTime@F7816                           dataCOMRAM    00037
+SSD1306_writeCMD@controlReg                     cstackCOMRAM  00022
+SSD1306_writeCMD@dataByte                       cstackCOMRAM  00021
+_ADC                                            bssCOMRAM     00017
 _ANCON0                                         (abs)         00F48
 _ANCON1                                         (abs)         00F49
 _BAUDCON1                                       (abs)         00F7E
 _EUSART1_DefaultErrorHandler                    (abs)         00000
 _EUSART1_DefaultFramingErrorHandler             (abs)         00000
 _EUSART1_DefaultOverrunErrorHandler             (abs)         00000
-_EUSART1_ErrorHandler                           bssCOMRAM     00027
-_EUSART1_FramingErrorHandler                    bssCOMRAM     0002B
-_EUSART1_Initialize                             text9         01460
-_EUSART1_OverrunErrorHandler                    bssCOMRAM     00029
-_EUSART1_SetErrorHandler                        text12        01618
-_EUSART1_SetFramingErrorHandler                 text11        0160E
-_EUSART1_SetOverrunErrorHandler                 text10        01604
-_EUSART1_Write                                  text27        015CE
-_I2C_Init                                       text6         0132A
-_I2C_Write                                      text25        01574
-_I2C_buffClear                                  text23        015BE
-_I2C_read                                       text22        015A6
-_I2C_repeated_Start                             text21        01622
-_I2C_start                                      text24        0162C
-_I2C_stop                                       text26        01636
+_EUSART1_ErrorHandler                           bssCOMRAM     00019
+_EUSART1_FramingErrorHandler                    bssCOMRAM     0001D
+_EUSART1_Initialize                             text12        012A2
+_EUSART1_OverrunErrorHandler                    bssCOMRAM     0001B
+_EUSART1_SetErrorHandler                        text15        0144E
+_EUSART1_SetFramingErrorHandler                 text14        01444
+_EUSART1_SetOverrunErrorHandler                 text13        0143A
+_I2C_Init                                       text9         011CC
+_I2C_Write                                      text20        013CA
+_I2C_buffClear                                  text18        01412
+_I2C_start                                      text19        01458
+_I2C_stop                                       text21        01462
 _INTCON2bits                                    (abs)         00FF1
 _INTCONbits                                     (abs)         00FF2
 _LATA                                           (abs)         00F89
 _LATB                                           (abs)         00F8A
-_LATBbits                                       (abs)         00F8A
 _LATC                                           (abs)         00F8B
 _LATCbits                                       (abs)         00F8B
 _LATD                                           (abs)         00F8C
 _LATE                                           (abs)         00F8D
-_MCP794x_readEEPROM                             text20        014D6
-_MCP794x_setAlarm                               text15        00F42
-_MCP794x_setDate                                text14        012D0
-_MCP794x_setTime                                text13        0137E
-_MCP794x_writeRtcc                              text19        01556
+_LATEbits                                       (abs)         00F8D
+_MAX31_ADC                                      bssCOMRAM     0000F
 _ODCON1                                         (abs)         00F42
 _ODCON2                                         (abs)         00F41
 _ODCON3                                         (abs)         00F40
 _OSCCON                                         (abs)         00FD3
 _OSCCON2                                        (abs)         00F87
-_OSCILLATOR_Initialize                          text5         01506
+_OSCILLATOR_Initialize                          text8         0130C
 _OSCTUNE                                        (abs)         00F9B
 _PIE3bits                                       (abs)         00FA3
-_PIN_MANAGER_Initialize                         text4         0141C
+_PIN_MANAGER_Initialize                         text7         01220
 _PIR1bits                                       (abs)         00F9E
 _PIR3bits                                       (abs)         00FA4
 _PORTBbits                                      (abs)         00F81
@@ -301,7 +274,9 @@ _RCSTA1bits                                     (abs)         00FAC
 _REFOCON                                        (abs)         00F3D
 _SPBRG1                                         (abs)         00FB0
 _SPBRGH1                                        (abs)         00F7F
-_SPI1_Initialize                                text3         015DE
+_SPI1_Initialize                                text6         01422
+_SSD1306_Init                                   text16        00F42
+_SSD1306_writeCMD                               text17        01336
 _SSP1ADD                                        (abs)         00FC8
 _SSP1BUF                                        (abs)         00FC9
 _SSP1CON1                                       (abs)         00FC6
@@ -313,10 +288,11 @@ _SSP2BUF                                        (abs)         00F75
 _SSP2CON1bits                                   (abs)         00F72
 _SSP2CON2bits                                   (abs)         00F71
 _SSP2STATbits                                   (abs)         00F73
-_SYSTEM_Initialize                              text2         0158E
+_SYSTEM_Initialize                              text5         013E4
 _TRISA                                          (abs)         00F92
 _TRISB                                          (abs)         00F93
 _TRISC                                          (abs)         00F94
+_TRISCbits                                      (abs)         00F94
 _TRISD                                          (abs)         00F95
 _TRISDbits                                      (abs)         00F95
 _TRISE                                          (abs)         00F96
@@ -380,11 +356,13 @@ __Hconfig                                       config        10000
 __Hconst                                        const         00000
 __HcstackCOMRAM                                 cstackCOMRAM  00000
 __Hdata                                         data          00000
+__HdataBANK0                                    dataBANK0     00000
 __HdataCOMRAM                                   dataCOMRAM    00000
 __Hfarbss                                       farbss        00000
 __Hfardata                                      fardata       00000
 __Hibigdata                                     ibigdata      00000
 __Hidata                                        idata         00000
+__HidataBANK0                                   idataBANK0    00000
 __HidataCOMRAM                                  idataCOMRAM   00000
 __Hidloc                                        idloc         00000
 __Hifardata                                     ifardata      00000
@@ -434,12 +412,6 @@ __Htext19                                       text19        00000
 __Htext2                                        text2         00000
 __Htext20                                       text20        00000
 __Htext21                                       text21        00000
-__Htext22                                       text22        00000
-__Htext23                                       text23        00000
-__Htext24                                       text24        00000
-__Htext25                                       text25        00000
-__Htext26                                       text26        00000
-__Htext27                                       text27        00000
 __Htext3                                        text3         00000
 __Htext4                                        text4         00000
 __Htext5                                        text5         00000
@@ -477,11 +449,13 @@ __Lconfig                                       config        0FFF8
 __Lconst                                        const         00000
 __LcstackCOMRAM                                 cstackCOMRAM  00000
 __Ldata                                         data          00000
+__LdataBANK0                                    dataBANK0     00000
 __LdataCOMRAM                                   dataCOMRAM    00000
 __Lfarbss                                       farbss        00000
 __Lfardata                                      fardata       00000
 __Libigdata                                     ibigdata      00000
 __Lidata                                        idata         00000
+__LidataBANK0                                   idataBANK0    00000
 __LidataCOMRAM                                  idataCOMRAM   00000
 __Lidloc                                        idloc         00000
 __Lifardata                                     ifardata      00000
@@ -531,12 +505,6 @@ __Ltext19                                       text19        00000
 __Ltext2                                        text2         00000
 __Ltext20                                       text20        00000
 __Ltext21                                       text21        00000
-__Ltext22                                       text22        00000
-__Ltext23                                       text23        00000
-__Ltext24                                       text24        00000
-__Ltext25                                       text25        00000
-__Ltext26                                       text26        00000
-__Ltext27                                       text27        00000
 __Ltext3                                        text3         00000
 __Ltext4                                        text4         00000
 __Ltext5                                        text5         00000
@@ -547,149 +515,134 @@ __Ltext9                                        text9         00000
 __S0                                            (abs)         10000
 __S1                                            (abs)         00200
 __S2                                            (abs)         00000
-___aldiv                                        text8         01082
-___aldiv@counter                                cstackCOMRAM  0000F
-___aldiv@dividend                               cstackCOMRAM  00007
-___aldiv@divisor                                cstackCOMRAM  0000B
-___aldiv@quotient                               cstackCOMRAM  00011
-___aldiv@sign                                   cstackCOMRAM  00010
-___awdiv                                        text18        011DC
-___awdiv@counter                                cstackCOMRAM  00005
-___awdiv@dividend                               cstackCOMRAM  00001
-___awdiv@divisor                                cstackCOMRAM  00003
-___awdiv@quotient                               cstackCOMRAM  00007
-___awdiv@sign                                   cstackCOMRAM  00006
-___awmod                                        text17        01260
-___awmod@counter                                cstackCOMRAM  00005
-___awmod@dividend                               cstackCOMRAM  00001
-___awmod@divisor                                cstackCOMRAM  00003
-___awmod@sign                                   cstackCOMRAM  00006
+___aldiv                                        text11        01012
+___aldiv@counter                                cstackCOMRAM  0002E
+___aldiv@dividend                               cstackCOMRAM  00026
+___aldiv@divisor                                cstackCOMRAM  0002A
+___aldiv@quotient                               cstackCOMRAM  00030
+___aldiv@sign                                   cstackCOMRAM  0002F
 ___inthi_sp                                     stack         00000
 ___intlo_sp                                     stack         00000
 ___param_bank                                   (abs)         00000
 ___rparam_used                                  (abs)         00001
 ___sp                                           stack         00000
-___wmul                                         text7         01530
-___wmul@multiplicand                            cstackCOMRAM  00003
-___wmul@multiplier                              cstackCOMRAM  00001
-___wmul@product                                 cstackCOMRAM  00005
+___wmul                                         text10        01360
+___wmul@multiplicand                            cstackCOMRAM  00022
+___wmul@multiplier                              cstackCOMRAM  00020
+___wmul@product                                 cstackCOMRAM  00024
 __accesstop                                     (abs)         00060
 __activetblptr                                  (abs)         00002
-__end_of_EUSART1_Initialize                     text9         0149E
-__end_of_EUSART1_SetErrorHandler                text12        01622
-__end_of_EUSART1_SetFramingErrorHandler         text11        01618
-__end_of_EUSART1_SetOverrunErrorHandler         text10        0160E
-__end_of_EUSART1_Write                          text27        015DE
-__end_of_I2C_Init                               text6         0137E
-__end_of_I2C_Write                              text25        0158E
-__end_of_I2C_buffClear                          text23        015CE
-__end_of_I2C_read                               text22        015BE
-__end_of_I2C_repeated_Start                     text21        0162C
-__end_of_I2C_start                              text24        01636
-__end_of_I2C_stop                               text26        01640
-__end_of_MCP794x_readEEPROM                     text20        01506
-__end_of_MCP794x_setAlarm                       text15        01082
-__end_of_MCP794x_setDate                        text14        0132A
-__end_of_MCP794x_setTime                        text13        013D2
-__end_of_MCP794x_writeRtcc                      text19        01574
-__end_of_OSCILLATOR_Initialize                  text5         01530
-__end_of_PIN_MANAGER_Initialize                 text4         01460
-__end_of_SPI1_Initialize                        text3         015EC
-__end_of_SYSTEM_Initialize                      text2         015A6
-__end_of___aldiv                                text8         0114E
-__end_of___awdiv                                text18        01260
-__end_of___awmod                                text17        012D0
-__end_of___wmul                                 text7         01556
-__end_of__initialization                        cinit         01412
-__end_of_decimalToBCD                           text16        014D6
-__end_of_interrupt_Init                         text1         01604
-__end_of_main                                   text0         011DC
+__end_of_EUSART1_Initialize                     text12        012E0
+__end_of_EUSART1_SetErrorHandler                text15        01458
+__end_of_EUSART1_SetFramingErrorHandler         text14        0144E
+__end_of_EUSART1_SetOverrunErrorHandler         text13        01444
+__end_of_I2C_Init                               text9         01220
+__end_of_I2C_Write                              text20        013E4
+__end_of_I2C_buffClear                          text18        01422
+__end_of_I2C_start                              text19        01462
+__end_of_I2C_stop                               text21        0146C
+__end_of_OSCILLATOR_Initialize                  text8         01336
+__end_of_PIN_MANAGER_Initialize                 text7         01264
+__end_of_SPI1_Initialize                        text6         01430
+__end_of_SSD1306_Init                           text16        01012
+__end_of_SSD1306_writeCMD                       text17        01360
+__end_of_SYSTEM_Initialize                      text5         013FC
+__end_of___aldiv                                text11        010DE
+__end_of___wmul                                 text10        01386
+__end_of__initialization                        cinit         011C2
+__end_of_displaySetCursor                       text2         01162
+__end_of_displayWrite                           text4         013AA
+__end_of_interrupt_Init                         text1         0143A
+__end_of_main                                   text0         012A2
+__end_of_memset                                 text3         0130C
 __end_ofexp@coeff                               smallconst    00F1F
 __end_oflog@coeff                               smallconst    00F3A
-__initialization                                cinit         013D2
+__initialization                                cinit         01162
 __mediumconst                                   mediumconst   00000
 __pbssBANK1                                     bssBANK1      00100
-__pbssCOMRAM                                    bssCOMRAM     00019
-__pcinit                                        cinit         013D2
-__pcstackCOMRAM                                 cstackCOMRAM  00001
-__pdataCOMRAM                                   dataCOMRAM    0002E
-__pidataCOMRAM                                  idataCOMRAM   015EC
+__pbssCOMRAM                                    bssCOMRAM     00001
+__pcinit                                        cinit         01162
+__pcstackCOMRAM                                 cstackCOMRAM  00020
+__pdataBANK0                                    dataBANK0     00060
+__pdataCOMRAM                                   dataCOMRAM    00037
+__pidataBANK0                                   idataBANK0    013AA
+__pidataCOMRAM                                  idataCOMRAM   013FC
 __psmallconst                                   smallconst    00F00
-__ptext0                                        text0         0114E
-__ptext1                                        text1         015FA
-__ptext10                                       text10        01604
-__ptext11                                       text11        0160E
-__ptext12                                       text12        01618
-__ptext13                                       text13        0137E
-__ptext14                                       text14        012D0
-__ptext15                                       text15        00F42
-__ptext16                                       text16        0149E
-__ptext17                                       text17        01260
-__ptext18                                       text18        011DC
-__ptext19                                       text19        01556
-__ptext2                                        text2         0158E
-__ptext20                                       text20        014D6
-__ptext21                                       text21        01622
-__ptext22                                       text22        015A6
-__ptext23                                       text23        015BE
-__ptext24                                       text24        0162C
-__ptext25                                       text25        01574
-__ptext26                                       text26        01636
-__ptext27                                       text27        015CE
-__ptext3                                        text3         015DE
-__ptext4                                        text4         0141C
-__ptext5                                        text5         01506
-__ptext6                                        text6         0132A
-__ptext7                                        text7         01530
-__ptext8                                        text8         01082
-__ptext9                                        text9         01460
+__ptext0                                        text0         01264
+__ptext1                                        text1         01430
+__ptext10                                       text10        01360
+__ptext11                                       text11        01012
+__ptext12                                       text12        012A2
+__ptext13                                       text13        0143A
+__ptext14                                       text14        01444
+__ptext15                                       text15        0144E
+__ptext16                                       text16        00F42
+__ptext17                                       text17        01336
+__ptext18                                       text18        01412
+__ptext19                                       text19        01458
+__ptext2                                        text2         010DE
+__ptext20                                       text20        013CA
+__ptext21                                       text21        01462
+__ptext3                                        text3         012E0
+__ptext4                                        text4         01386
+__ptext5                                        text5         013E4
+__ptext6                                        text6         01422
+__ptext7                                        text7         01220
+__ptext8                                        text8         0130C
+__ptext9                                        text9         011CC
 __ramtop                                        ramtop        00F00
 __size_of_EUSART1_Initialize                    (abs)         00000
 __size_of_EUSART1_SetErrorHandler               (abs)         00000
 __size_of_EUSART1_SetFramingErrorHandler        (abs)         00000
 __size_of_EUSART1_SetOverrunErrorHandler        (abs)         00000
-__size_of_EUSART1_Write                         (abs)         00000
 __size_of_I2C_Init                              (abs)         00000
 __size_of_I2C_Write                             (abs)         00000
 __size_of_I2C_buffClear                         (abs)         00000
-__size_of_I2C_read                              (abs)         00000
-__size_of_I2C_repeated_Start                    (abs)         00000
 __size_of_I2C_start                             (abs)         00000
 __size_of_I2C_stop                              (abs)         00000
-__size_of_MCP794x_readEEPROM                    (abs)         00000
-__size_of_MCP794x_setAlarm                      (abs)         00000
-__size_of_MCP794x_setDate                       (abs)         00000
-__size_of_MCP794x_setTime                       (abs)         00000
-__size_of_MCP794x_writeRtcc                     (abs)         00000
 __size_of_OSCILLATOR_Initialize                 (abs)         00000
 __size_of_PIN_MANAGER_Initialize                (abs)         00000
 __size_of_SPI1_Initialize                       (abs)         00000
+__size_of_SSD1306_Init                          (abs)         00000
+__size_of_SSD1306_writeCMD                      (abs)         00000
 __size_of_SYSTEM_Initialize                     (abs)         00000
 __size_of___aldiv                               (abs)         00000
-__size_of___awdiv                               (abs)         00000
-__size_of___awmod                               (abs)         00000
 __size_of___wmul                                (abs)         00000
-__size_of_decimalToBCD                          (abs)         00000
+__size_of_displaySetCursor                      (abs)         00000
+__size_of_displayWrite                          (abs)         00000
 __size_of_interrupt_Init                        (abs)         00000
 __size_of_main                                  (abs)         00000
+__size_of_memset                                (abs)         00000
 __smallconst                                    smallconst    00F00
-_decimalToBCD                                   text16        0149E
-_errno                                          bssCOMRAM     00023
-_eusart1RxLastError                             bssCOMRAM     0002D
-_interrupt_Init                                 text1         015FA
-_main                                           text0         0114E
-_sData                                          bssCOMRAM     00019
-decimalToBCD@DecValue                           cstackCOMRAM  00009
-end_of_initialization                           cinit         01412
+_bfSize                                         bssCOMRAM     0000B
+_buffer                                         bssCOMRAM     00015
+_columm                                         dataBANK0     00060
+_displaySetCursor                               text2         010DE
+_displayWrite                                   text4         01386
+_errno                                          bssCOMRAM     00013
+_eusart1RxLastError                             bssCOMRAM     0001F
+_interrupt_Init                                 text1         01430
+_main                                           text0         01264
+_memset                                         text3         012E0
+_page                                           dataCOMRAM    0003F
+_sData                                          bssCOMRAM     00001
+displaySetCursor@size                           cstackCOMRAM  00028
+displayWrite@address                            cstackCOMRAM  00022
+displayWrite@x                                  cstackCOMRAM  00024
+displayWrite@y                                  cstackCOMRAM  00021
+end_of_initialization                           cinit         011C2
 intlevel0                                       text          00000
 intlevel1                                       text          00000
 intlevel2                                       text          00000
 intlevel3                                       text          00000
-main@index                                      cstackCOMRAM  00017
+memset@c                                        cstackCOMRAM  00022
+memset@n                                        cstackCOMRAM  00024
+memset@p                                        cstackCOMRAM  00026
+memset@p1                                       cstackCOMRAM  00020
 stackhi                                         (abs)         00EAF
 stacklo                                         (abs)         00200
 start                                           init          00000
-start_initialization                            cinit         013D2
+start_initialization                            cinit         01162
 
 
 FUNCTION INFORMATION:
@@ -700,30 +653,27 @@ FUNCTION INFORMATION:
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  index           2   22[COMRAM] int 
+		None
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, status,2, status,0, prodl, prodh, cstack
+		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        3 bytes
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
  Hardware stack levels required when called:    4
  This function calls:
-		_EUSART1_Write
 		_I2C_buffClear
-		_MCP794x_readEEPROM
-		_MCP794x_setAlarm
-		_MCP794x_setDate
-		_MCP794x_setTime
+		_SSD1306_Init
 		_SYSTEM_Initialize
+		_displaySetCursor
 		_interrupt_Init
  This function is called by:
 		Startup code after reset
@@ -756,6 +706,107 @@ Total ram usage:        0 bytes
 		Nothing
  This function is called by:
 		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _displaySetCursor *****************
+ Defined at:
+		line 74 in file "SSD1306_OLED.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  size            2    8[COMRAM] unsigned int 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_I2C_Write
+		_I2C_start
+		_I2C_stop
+		_displayWrite
+		_memset
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _memset *****************
+ Defined at:
+		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\memset.c"
+ Parameters:    Size  Location     Type
+  p1              2    0[COMRAM] PTR void 
+		 -> NULL(0), 
+  c               2    2[COMRAM] int 
+  n               2    4[COMRAM] unsigned int 
+ Auto vars:     Size  Location     Type
+  p               2    6[COMRAM] PTR unsigned char 
+		 -> NULL(0), 
+ Return value:  Size  Location     Type
+                  2    0[COMRAM] PTR void 
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         8       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        8 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_displaySetCursor
+ This function uses a non-reentrant model
+
+
+ *************** function _displayWrite *****************
+ Defined at:
+		line 88 in file "SSD1306_OLED.c"
+ Parameters:    Size  Location     Type
+  x               1    wreg     unsigned char 
+  y               1    1[COMRAM] unsigned char 
+  address         2    2[COMRAM] int 
+ Auto vars:     Size  Location     Type
+  x               1    4[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		_I2C_Write
+		_I2C_start
+		_I2C_stop
+ This function is called by:
+		_displaySetCursor
  This function uses a non-reentrant model
 
 
@@ -1095,344 +1146,66 @@ Total ram usage:        2 bytes
  This function uses a non-reentrant model
 
 
- *************** function _MCP794x_setTime *****************
+ *************** function _SSD1306_Init *****************
  Defined at:
-		line 10 in file "RTC_MCP79411.c"
+		line 11 in file "SSD1306_OLED.c"
  Parameters:    Size  Location     Type
-  hour            1    wreg     unsigned char 
-  minute          1   12[COMRAM] unsigned char 
-  second          1   13[COMRAM] unsigned char 
- Auto vars:     Size  Location     Type
-  hour            1   16[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        5 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		_I2C_Write
-		_I2C_start
-		_I2C_stop
-		_decimalToBCD
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _MCP794x_setDate *****************
- Defined at:
-		line 20 in file "RTC_MCP79411.c"
- Parameters:    Size  Location     Type
-  date            1    wreg     unsigned char 
-  weekDay         1   12[COMRAM] unsigned char 
-  month           1   13[COMRAM] unsigned char 
-  year            1   14[COMRAM] unsigned char 
- Auto vars:     Size  Location     Type
-  date            1   17[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        6 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		_I2C_Write
-		_I2C_start
-		_I2C_stop
-		_decimalToBCD
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _MCP794x_setAlarm *****************
- Defined at:
-		line 39 in file "RTC_MCP79411.c"
- Parameters:    Size  Location     Type
-  alarmMask       1    wreg     unsigned char 
-  time            1   14[COMRAM] unsigned char 
- Auto vars:     Size  Location     Type
-  alarmMask       1   17[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        4 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    3
- This function calls:
-		_MCP794x_writeRtcc
-		_decimalToBCD
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _decimalToBCD *****************
- Defined at:
-		line 94 in file "RTC_PCF8523.c"
- Parameters:    Size  Location     Type
-  DecValue        2    8[COMRAM] int 
+		None
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, status,2, status,0, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        4 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    1
- This function calls:
-		___awdiv
-		___awmod
- This function is called by:
-		_MCP794x_setTime
-		_MCP794x_setDate
-		_MCP794x_setAlarm
-		_PCF8523_setTime
-		_PCF8523_setDate
-		_PCF8523_setAlarm
- This function uses a non-reentrant model
-
-
- *************** function ___awmod *****************
- Defined at:
-		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c"
- Parameters:    Size  Location     Type
-  dividend        2    0[COMRAM] int 
-  divisor         2    2[COMRAM] int 
- Auto vars:     Size  Location     Type
-  sign            1    5[COMRAM] unsigned char 
-  counter         1    4[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-                  2    0[COMRAM] int 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        6 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_decimalToBCD
- This function uses a non-reentrant model
-
-
- *************** function ___awdiv *****************
- Defined at:
-		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c"
- Parameters:    Size  Location     Type
-  dividend        2    0[COMRAM] int 
-  divisor         2    2[COMRAM] int 
- Auto vars:     Size  Location     Type
-  quotient        2    6[COMRAM] int 
-  sign            1    5[COMRAM] unsigned char 
-  counter         1    4[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-                  2    0[COMRAM] int 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         8       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        8 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_decimalToBCD
- This function uses a non-reentrant model
-
-
- *************** function _MCP794x_writeRtcc *****************
- Defined at:
-		line 31 in file "RTC_MCP79411.c"
- Parameters:    Size  Location     Type
-  Register        1    wreg     unsigned char 
-  value           1   12[COMRAM] unsigned char 
- Auto vars:     Size  Location     Type
-  Register        1   13[COMRAM] unsigned char 
- Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, status,2, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		_I2C_Write
-		_I2C_start
-		_I2C_stop
- This function is called by:
-		_MCP794x_setAlarm
-		_MCP794x_INTF_CLR
- This function uses a non-reentrant model
-
-
- *************** function _MCP794x_readEEPROM *****************
- Defined at:
-		line 74 in file "RTC_MCP79411.c"
- Parameters:    Size  Location     Type
-  Register        1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  Register        1    2[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, status,2, cstack
+		wreg, status,2, status,0, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        1 bytes
  Hardware stack levels used:    1
- Hardware stack levels required when called:    2
+ Hardware stack levels required when called:    3
  This function calls:
-		_I2C_Write
-		_I2C_read
-		_I2C_repeated_Start
-		_I2C_start
-		_I2C_stop
+		_SSD1306_writeCMD
  This function is called by:
 		_main
  This function uses a non-reentrant model
 
 
- *************** function _I2C_repeated_Start *****************
+ *************** function _SSD1306_writeCMD *****************
  Defined at:
-		line 57 in file "I2C.c"
+		line 62 in file "SSD1306_OLED.c"
  Parameters:    Size  Location     Type
-		None
+  controlReg      1    wreg     unsigned char 
+  dataByte        1    1[COMRAM] unsigned char 
  Auto vars:     Size  Location     Type
-		None
+  controlReg      1    2[COMRAM] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		None
+		wreg, status,2, status,0, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_MCP794x_readEEPROM
-		_MCP23008_read
-		_MCP9801_TempRead
-		_EEPROM_24AA512_Read
-		_EEPROM_24AA512_pageRead
-		_MCP794x_getID
-		_MCP7941x_read
- This function uses a non-reentrant model
-
-
- *************** function _I2C_read *****************
- Defined at:
-		line 42 in file "I2C.c"
- Parameters:    Size  Location     Type
-  ACK_NACK        2    0[COMRAM] int 
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  2    0[COMRAM] int 
- Registers used:
-		None
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        2 bytes
  Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
  This function calls:
-		Nothing
+		_I2C_Write
+		_I2C_start
+		_I2C_stop
  This function is called by:
-		_MCP794x_readEEPROM
-		_MCP23008_read
-		_MCP9801_TempRead
-		_EEPROM_24AA512_Read
-		_EEPROM_24AA512_pageRead
-		_PCF8523_rtcRead
-		_MCP794x_getID
-		_MCP7941x_read
+		_SSD1306_Init
  This function uses a non-reentrant model
 
 
@@ -1494,10 +1267,9 @@ Total ram usage:        0 bytes
 		Nothing
  This function is called by:
 		_I2C_buffClear
-		_MCP794x_setTime
-		_MCP794x_setDate
-		_MCP794x_writeRtcc
-		_MCP794x_readEEPROM
+		_SSD1306_writeCMD
+		_displaySetCursor
+		_displayWrite
 		_I2C_BusSCan
 		_MCP23008_Init
 		_MCP23008_Write
@@ -1510,7 +1282,11 @@ Total ram usage:        0 bytes
 		_EEPROM_24AA512_pageRead
 		_PCF8523_rtcRead
 		_PCF8523_write
+		_MCP794x_setTime
+		_MCP794x_setDate
+		_MCP794x_writeRtcc
 		_MCP794x_writeEEPROM
+		_MCP794x_readEEPROM
 		_MCP794x_getID
 		_MCP7941x_read
  This function uses a non-reentrant model
@@ -1543,10 +1319,9 @@ Total ram usage:        1 bytes
 		_I2C_stop
  This function is called by:
 		_I2C_buffClear
-		_MCP794x_setTime
-		_MCP794x_setDate
-		_MCP794x_writeRtcc
-		_MCP794x_readEEPROM
+		_SSD1306_writeCMD
+		_displaySetCursor
+		_displayWrite
 		_I2C_BusSCan
 		_MCP23008_Init
 		_MCP23008_Write
@@ -1559,7 +1334,11 @@ Total ram usage:        1 bytes
 		_EEPROM_24AA512_pageRead
 		_PCF8523_rtcRead
 		_PCF8523_write
+		_MCP794x_setTime
+		_MCP794x_setDate
+		_MCP794x_writeRtcc
 		_MCP794x_writeEEPROM
+		_MCP794x_readEEPROM
 		_MCP794x_getID
 		_MCP7941x_read
  This function uses a non-reentrant model
@@ -1592,10 +1371,9 @@ Total ram usage:        0 bytes
  This function is called by:
 		_I2C_Write
 		_I2C_buffClear
-		_MCP794x_setTime
-		_MCP794x_setDate
-		_MCP794x_writeRtcc
-		_MCP794x_readEEPROM
+		_SSD1306_writeCMD
+		_displaySetCursor
+		_displayWrite
 		_I2C_BusSCan
 		_MCP23008_Init
 		_MCP23008_Write
@@ -1608,39 +1386,12 @@ Total ram usage:        0 bytes
 		_EEPROM_24AA512_pageRead
 		_PCF8523_rtcRead
 		_PCF8523_write
+		_MCP794x_setTime
+		_MCP794x_setDate
+		_MCP794x_writeRtcc
 		_MCP794x_writeEEPROM
+		_MCP794x_readEEPROM
 		_MCP794x_getID
- This function uses a non-reentrant model
-
-
- *************** function _EUSART1_Write *****************
- Defined at:
-		line 127 in file "mcc_generated_files/eusart1.c"
- Parameters:    Size  Location     Type
-  txData          1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  txData          1    0[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_main
-		_I2C_BusSCan
-		_EEPROM_24AA512_pageRead
  This function uses a non-reentrant model
 
 
@@ -1648,90 +1399,76 @@ Total ram usage:        1 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
+SSD1306_OLED.c
+		_SSD1306_writeCMD		CODE           	1336	0000	43
+		_displayWrite  		CODE           	1386	0000	37
+		_displaySetCursor		CODE           	10DE	0000	133
+		_SSD1306_Init  		CODE           	0F42	0000	209
+
+SSD1306_OLED.c estimated size: 422
+
 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
-		___wmul        		CODE           	1530	0000	39
+		___wmul        		CODE           	1360	0000	39
 
 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c estimated size: 39
 
-RTC_MCP79411.c
-		_MCP794x_readEEPROM		CODE           	14D6	0000	49
-		_MCP794x_setDate		CODE           	12D0	0000	91
-		_MCP794x_setTime		CODE           	137E	0000	85
-		_MCP794x_setAlarm		CODE           	0F42	0000	321
-		_MCP794x_writeRtcc		CODE           	1556	0000	31
-
-RTC_MCP79411.c estimated size: 577
-
 I2C.c
-		_I2C_stop      		CODE           	1636	0000	11
-		_I2C_read      		CODE           	15A6	0000	25
-		_I2C_repeated_Start		CODE           	1622	0000	11
-		_I2C_buffClear 		CODE           	15BE	0000	17
-		_I2C_Write     		CODE           	1574	0000	27
-		_I2C_start     		CODE           	162C	0000	11
-		_I2C_Init      		CODE           	132A	0000	85
+		_I2C_stop      		CODE           	1462	0000	11
+		_I2C_buffClear 		CODE           	1412	0000	17
+		_I2C_Write     		CODE           	13CA	0000	27
+		_I2C_start     		CODE           	1458	0000	11
+		_I2C_Init      		CODE           	11CC	0000	85
 
-I2C.c estimated size: 187
+I2C.c estimated size: 151
 
 mcc_generated_files/pin_manager.c
-		_PIN_MANAGER_Initialize		CODE           	141C	0000	69
+		_PIN_MANAGER_Initialize		CODE           	1220	0000	69
 
 mcc_generated_files/pin_manager.c estimated size: 69
 
 mcc_generated_files/spi1.c
-		_SPI1_Initialize		CODE           	15DE	0000	15
+		_SPI1_Initialize		CODE           	1422	0000	15
 
 mcc_generated_files/spi1.c estimated size: 15
 
-C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-		___awmod       		CODE           	1260	0000	113
-
-C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c estimated size: 113
-
-RTC_PCF8523.c
-		_decimalToBCD  		CODE           	149E	0000	57
-
-RTC_PCF8523.c estimated size: 57
-
 shared
 		exp@coeff      		SMALLCONST     	0000	0000	0
-		__initialization		CODE           	13D2	0000	65
+		__initialization		CODE           	1162	0000	97
 		log@coeff      		SMALLCONST     	0000	0000	0
 
-shared estimated size: 65
+shared estimated size: 97
 
 Interrupt.c
-		_interrupt_Init		CODE           	15FA	0000	11
+		_interrupt_Init		CODE           	1430	0000	11
 
 Interrupt.c estimated size: 11
 
 mcc_generated_files/eusart1.c
-		_EUSART1_Initialize		CODE           	1460	0000	63
-		_EUSART1_SetFramingErrorHandler		CODE           	160E	0000	11
-		_EUSART1_SetOverrunErrorHandler		CODE           	1604	0000	11
-		_EUSART1_SetErrorHandler		CODE           	1618	0000	11
-		_EUSART1_Write 		CODE           	15CE	0000	17
+		_EUSART1_Initialize		CODE           	12A2	0000	63
+		_EUSART1_SetFramingErrorHandler		CODE           	1444	0000	11
+		_EUSART1_SetOverrunErrorHandler		CODE           	143A	0000	11
+		_EUSART1_SetErrorHandler		CODE           	144E	0000	11
 
-mcc_generated_files/eusart1.c estimated size: 113
+mcc_generated_files/eusart1.c estimated size: 96
 
 mcc_generated_files/mcc.c
-		_OSCILLATOR_Initialize		CODE           	1506	0000	43
-		_SYSTEM_Initialize		CODE           	158E	0000	25
+		_OSCILLATOR_Initialize		CODE           	130C	0000	43
+		_SYSTEM_Initialize		CODE           	13E4	0000	25
 
 mcc_generated_files/mcc.c estimated size: 68
 
-C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-		___awdiv       		CODE           	11DC	0000	133
-
-C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c estimated size: 133
-
 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
-		___aldiv       		CODE           	1082	0000	205
+		___aldiv       		CODE           	1012	0000	205
 
 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c estimated size: 205
 
 main.c
-		_main          		CODE           	114E	0000	143
+		_main          		CODE           	1264	0000	63
 
-main.c estimated size: 143
+main.c estimated size: 63
+
+C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\memset.c
+		_memset        		CODE           	12E0	0000	45
+
+C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\memset.c estimated size: 45
 

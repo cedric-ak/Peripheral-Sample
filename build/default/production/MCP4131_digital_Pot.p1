@@ -2,6 +2,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "24 mcc_generated_files/../MCP9801.h
 [u S835 `uc -> 2 `i `ui 1 ]
 [n S835 . MSB_LSB TempData ]
+"17 mcc_generated_files/../MAX31855K.h
+[u S836 `uc -> 4 `i `ul 1 ]
+[n S836 . MAX31855 rawDate ]
 "8573 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
 [s S408 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S408 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
@@ -6870,8 +6873,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-[; ;pin_manager.h: 183: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 195: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 200: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 212: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -7123,8 +7126,87 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP79411.h: 68: uint8_t MCP794x_readEEPROM(uint8_t Register);
 [; ;MCP79411.h: 69: void MCP794x_getID(void);
 [; ;MCP79411.h: 71: enum ALARM_MASK {second = 0x00, minute = 0x10, hour = 0x20, dayWk = 0x30, date = 0x40, SMHDD = 0x70};
-[; ;mcc.h: 40: void SYSTEM_Initialize(void);
-[; ;mcc.h: 53: void OSCILLATOR_Initialize(void);
+[; ;MAX31855K.h: 15: uint32_t MAX31855_Read(void);
+"20 mcc_generated_files/../MAX31855K.h
+[v _MAX31_ADC `S836 ~T0 @X0 1 e ]
+[; ;MAX31855K.h: 17: union {
+[; ;MAX31855K.h: 18: char MAX31855[4];
+[; ;MAX31855K.h: 19: uint32_t rawDate;
+[; ;MAX31855K.h: 20: }MAX31_ADC;
+[; ;SSD1306.h: 73: void SSD1306_Init(void);
+[; ;SSD1306.h: 74: void SSD1306_writeCMD(uint8_t controlReg, uint8_t dataByte);
+[; ;SSD1306.h: 75: void displayClear(void);
+[; ;SSD1306.h: 76: void displaySetCursor(void);
+[; ;SSD1306.h: 77: void displayWrite(uint8_t x, uint8_t y, int address);
+[v F7803 `uc ~T0 @X0 -> 16 `i t ]
+"80 mcc_generated_files/../SSD1306.h
+[v _columm `F7803 ~T0 @X0 -> 2 `i e ]
+[i _columm
+:U ..
+:U ..
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+-> -> 3 `i `uc
+-> -> 4 `i `uc
+-> -> 5 `i `uc
+-> -> 6 `i `uc
+-> -> 7 `i `uc
+-> -> 8 `i `uc
+-> -> 9 `i `uc
+-> -> 10 `i `uc
+-> -> 11 `i `uc
+-> -> 12 `i `uc
+-> -> 13 `i `uc
+-> -> 14 `i `uc
+-> -> 15 `i `uc
+..
+:U ..
+"81
+-> -> 16 `i `uc
+-> -> 17 `i `uc
+-> -> 18 `i `uc
+-> -> 19 `i `uc
+-> -> 20 `i `uc
+-> -> 21 `i `uc
+-> -> 22 `i `uc
+-> -> 23 `i `uc
+-> -> 24 `i `uc
+-> -> 25 `i `uc
+-> -> 26 `i `uc
+-> -> 27 `i `uc
+-> -> 28 `i `uc
+-> -> 29 `i `uc
+-> -> 30 `i `uc
+-> -> 31 `i `uc
+..
+..
+]
+[; ;SSD1306.h: 80: uint8_t columm[2][16] ={{0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F},
+[; ;SSD1306.h: 81: {0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F}};
+"83
+[v _page `uc ~T0 @X0 -> 8 `i e ]
+[i _page
+:U ..
+-> -> 176 `i `uc
+-> -> 177 `i `uc
+-> -> 178 `i `uc
+-> -> 179 `i `uc
+-> -> 180 `i `uc
+-> -> 181 `i `uc
+-> -> 182 `i `uc
+-> -> 183 `i `uc
+..
+]
+[; ;SSD1306.h: 83: uint8_t page[8]= {0xb0, 0xb1, 0xb2, 0xb3, 0xb4, 0xb5, 0xb6, 0xb7};
+"85
+[v _buffer `*ui ~T0 @X0 1 e ]
+[; ;SSD1306.h: 85: uint16_t *buffer;
+"86
+[v _bfSize `ul ~T0 @X0 1 e ]
+[; ;SSD1306.h: 86: uint32_t bfSize;
+[; ;mcc.h: 42: void SYSTEM_Initialize(void);
+[; ;mcc.h: 55: void OSCILLATOR_Initialize(void);
 "17 MCP4131_digital_Pot.c
 [v _MCP4131Write `(v ~T0 @X0 1 ef1`uc ]
 {
@@ -7134,11 +7216,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;MCP4131_digital_Pot.c: 18: do { LATCbits.LATC0 = 0; } while(0);
 "18
-[e :U 839 ]
+[e :U 840 ]
 {
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 838 ]
+[e :U 839 ]
 [; ;MCP4131_digital_Pot.c: 19: SPI1_Exchange8bit(0x00);
 "19
 [e ( _SPI1_Exchange8bit (1 -> -> 0 `i `uc ]
@@ -7147,14 +7229,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _SPI1_Exchange8bit (1 _value ]
 [; ;MCP4131_digital_Pot.c: 21: do { LATCbits.LATC0 = 1; } while(0);
 "21
-[e :U 842 ]
+[e :U 843 ]
 {
 [e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 841 ]
+[e :U 842 ]
 [; ;MCP4131_digital_Pot.c: 22: }
 "22
-[e :UE 836 ]
+[e :UE 837 ]
 }
 "24
 [v _MCP4131P_loop `(v ~T0 @X0 1 ef ]
@@ -7167,9 +7249,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [v _SetWiper `i ~T0 @X0 1 a ]
 [e = _SetWiper -> 0 `i ]
-[e $ < _SetWiper -> 128 `i 844  ]
-[e $U 845  ]
-[e :U 844 ]
+[e $ < _SetWiper -> 128 `i 845  ]
+[e $U 846  ]
+[e :U 845 ]
 {
 [; ;MCP4131_digital_Pot.c: 26: MCP4131Write(SetWiper);
 "26
@@ -7181,8 +7263,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "25
 [e ++ _SetWiper -> 1 `i ]
-[e $ < _SetWiper -> 128 `i 844  ]
-[e :U 845 ]
+[e $ < _SetWiper -> 128 `i 845  ]
+[e :U 846 ]
 "28
 }
 [; ;MCP4131_digital_Pot.c: 28: }_delay((unsigned long)((1000)*(16000000/4000.0)));
@@ -7192,9 +7274,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [v _SetWiper `i ~T0 @X0 1 a ]
 [e = _SetWiper -> 128 `i ]
-[e $ > _SetWiper -> 0 `i 847  ]
-[e $U 848  ]
-[e :U 847 ]
+[e $ > _SetWiper -> 0 `i 848  ]
+[e $U 849  ]
+[e :U 848 ]
 {
 [; ;MCP4131_digital_Pot.c: 30: MCP4131Write(SetWiper);
 "30
@@ -7203,8 +7285,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "29
 [e -- _SetWiper -> 1 `i ]
-[e $ > _SetWiper -> 0 `i 847  ]
-[e :U 848 ]
+[e $ > _SetWiper -> 0 `i 848  ]
+[e :U 849 ]
 "31
 }
 [; ;MCP4131_digital_Pot.c: 31: }
@@ -7213,5 +7295,5 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;MCP4131_digital_Pot.c: 33: }
 "33
-[e :UE 843 ]
+[e :UE 844 ]
 }

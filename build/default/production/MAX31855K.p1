@@ -5,20 +5,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 "17 mcc_generated_files/../MAX31855K.h
 [u S836 `uc -> 4 `i `ul 1 ]
 [n S836 . MAX31855 rawDate ]
-"15 mcc_generated_files/../I2C.h
-[v _I2C_start `(v ~T0 @X0 0 ef ]
-"12
-[v _I2C_Write `(v ~T0 @X0 0 ef1`uc ]
-"14
-[v _I2C_stop `(v ~T0 @X0 0 ef ]
-"16
-[v _I2C_repeated_Start `(v ~T0 @X0 0 ef ]
-"17
-[v _I2C_read `(i ~T0 @X0 0 ef1`i ]
-"5957 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
-[v _SSP2BUF `Vuc ~T0 @X0 0 e@3957 ]
-"45 C:\Program Files (x86)\Microchip\xc8\v1.45\include\math.h
-[v _pow `(d ~T0 @X0 0 ef2`d`d ]
+"8573 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
+[s S408 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S408 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"8583
+[s S409 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S409 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
+"8572
+[u S407 `S408 1 `S409 1 ]
+[n S407 . . . ]
+"8594
+[v _LATCbits `VS407 ~T0 @X0 0 e@3979 ]
+[v F7202 `(v ~T0 @X0 1 tf1`ul ]
+"164 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h
+[v __delay `JF7202 ~T0 @X0 0 e ]
+[p i __delay ]
+"152 mcc_generated_files/spi1.h
+[v _SPI1_Exchange8bit `(uc ~T0 @X0 0 ef1`uc ]
+"347 mcc_generated_files/eusart1.h
+[v _EUSART1_itoa `(v ~T0 @X0 0 ef2`ul`i ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7204,72 +7209,51 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SSD1306.h: 86: uint32_t bfSize;
 [; ;mcc.h: 42: void SYSTEM_Initialize(void);
 [; ;mcc.h: 55: void OSCILLATOR_Initialize(void);
-"10 MCP9801_Temp_Sensor.c
-[v _MCP9801_Init `(v ~T0 @X0 1 ef ]
+"10 MAX31855K.c
+[v _MAX31855_Read `(ul ~T0 @X0 1 ef ]
 {
-[; ;MCP9801_Temp_Sensor.c: 10: void MCP9801_Init(void) {
-[e :U _MCP9801_Init ]
+[; ;MAX31855K.c: 10: uint32_t MAX31855_Read(void) {
+[e :U _MAX31855_Read ]
 [f ]
-[; ;MCP9801_Temp_Sensor.c: 11: I2C_start();
 "11
-[e ( _I2C_start ..  ]
-[; ;MCP9801_Temp_Sensor.c: 12: I2C_Write(0x90);
+[v _dataRead `uc ~T0 @X0 -> 5 `i a ]
+[; ;MAX31855K.c: 11: uint8_t dataRead[5];
+[; ;MAX31855K.c: 12: do { LATCbits.LATC0 = 0; } while(0);
 "12
-[e ( _I2C_Write (1 -> -> 144 `i `uc ]
-[; ;MCP9801_Temp_Sensor.c: 13: I2C_Write(0x01);
-"13
-[e ( _I2C_Write (1 -> -> 1 `i `uc ]
-[; ;MCP9801_Temp_Sensor.c: 14: I2C_Write(0x60);
-"14
-[e ( _I2C_Write (1 -> -> 96 `i `uc ]
-[; ;MCP9801_Temp_Sensor.c: 15: I2C_stop();
-"15
-[e ( _I2C_stop ..  ]
-[; ;MCP9801_Temp_Sensor.c: 16: }
-"16
-[e :UE 837 ]
-}
-"19
-[v _MCP9801_TempRead `(uc ~T0 @X0 1 ef ]
+[e :U 840 ]
 {
-[; ;MCP9801_Temp_Sensor.c: 19: uint8_t MCP9801_TempRead(void){
-[e :U _MCP9801_TempRead ]
-[f ]
-[; ;MCP9801_Temp_Sensor.c: 20: I2C_start();
-"20
-[e ( _I2C_start ..  ]
-[; ;MCP9801_Temp_Sensor.c: 21: I2C_Write(0x90);
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+}
+[e :U 839 ]
+[; ;MAX31855K.c: 13: _delay((unsigned long)((2)*(16000000/4000.0)));
+"13
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;MAX31855K.c: 14: MAX31_ADC.MAX31855[3] = SPI1_Exchange8bit(0xff);
+"14
+[e = *U + &U . _MAX31_ADC 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _MAX31_ADC 0 `ui `ux ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+[; ;MAX31855K.c: 15: MAX31_ADC.MAX31855[2] = SPI1_Exchange8bit(0xff);
+"15
+[e = *U + &U . _MAX31_ADC 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _MAX31_ADC 0 `ui `ux ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+[; ;MAX31855K.c: 16: MAX31_ADC.MAX31855[1] = SPI1_Exchange8bit(0xff);
+"16
+[e = *U + &U . _MAX31_ADC 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _MAX31_ADC 0 `ui `ux ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+[; ;MAX31855K.c: 17: MAX31_ADC.MAX31855[0] = SPI1_Exchange8bit(0xff);
+"17
+[e = *U + &U . _MAX31_ADC 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _MAX31_ADC 0 `ui `ux ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
+[; ;MAX31855K.c: 18: _delay((unsigned long)((2)*(16000000/4000.0)));
+"18
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;MAX31855K.c: 21: do { LATCbits.LATC0 = 1; } while(0);
 "21
-[e ( _I2C_Write (1 -> -> 144 `i `uc ]
-[; ;MCP9801_Temp_Sensor.c: 22: I2C_Write(0x00);
+[e :U 843 ]
+{
+[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
+}
+[e :U 842 ]
+[; ;MAX31855K.c: 22: EUSART1_itoa((MAX31_ADC.rawDate), 16);
 "22
-[e ( _I2C_Write (1 -> -> 0 `i `uc ]
-[; ;MCP9801_Temp_Sensor.c: 23: I2C_repeated_Start();
+[e ( _EUSART1_itoa (2 , . _MAX31_ADC 1 -> 16 `i ]
+[; ;MAX31855K.c: 23: }
 "23
-[e ( _I2C_repeated_Start ..  ]
-[; ;MCP9801_Temp_Sensor.c: 24: I2C_Write(0x90 |0x01);
-"24
-[e ( _I2C_Write (1 -> | -> 144 `i -> 1 `i `uc ]
-[; ;MCP9801_Temp_Sensor.c: 25: I2C_read(0);
-"25
-[e ( _I2C_read (1 -> 0 `i ]
-[; ;MCP9801_Temp_Sensor.c: 26: ADC.MSB_LSB[1] = SSP2BUF;
-"26
-[e = *U + &U . _ADC 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _ADC 0 `ui `ux _SSP2BUF ]
-[; ;MCP9801_Temp_Sensor.c: 27: I2C_read(1);
-"27
-[e ( _I2C_read (1 -> 1 `i ]
-[; ;MCP9801_Temp_Sensor.c: 28: ADC.MSB_LSB[0] = SSP2BUF;
-"28
-[e = *U + &U . _ADC 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _ADC 0 `ui `ux _SSP2BUF ]
-[; ;MCP9801_Temp_Sensor.c: 29: I2C_stop();
-"29
-[e ( _I2C_stop ..  ]
-[; ;MCP9801_Temp_Sensor.c: 30: return (ADC.TempData * pow(2, -4)*0.0625);
-"30
-[e ) -> * * -> . _ADC 1 `d ( _pow (2 , -> -> 2 `i `d -> -U -> 4 `i `d .0.0625 `uc ]
-[e $UE 838  ]
-[; ;MCP9801_Temp_Sensor.c: 31: }
-"31
-[e :UE 838 ]
+[e :UE 837 ]
 }

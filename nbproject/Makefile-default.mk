@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/spi1.c mcc_generated_files/eusart1.c mcc_generated_files/device_config.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c MCP4131_digital_Pot.c MCP23S08_IO_expender.c _25LC512_EEPROM.c Interrupt.c I2C.c MCP23008_IO_expender.c MCP9801_Temp_Sensor.c _24AA512_EEPROM.c RTC_PCF8523.c SSD1308_OLED.c RTC_MCP79411.c
+SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/spi1.c mcc_generated_files/eusart1.c mcc_generated_files/device_config.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c MCP4131_digital_Pot.c MCP23S08_IO_expender.c _25LC512_EEPROM.c Interrupt.c I2C.c MCP23008_IO_expender.c MCP9801_Temp_Sensor.c _24AA512_EEPROM.c RTC_PCF8523.c RTC_MCP79411.c MAX31855K.c SSD1306_OLED.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/spi1.p1 ${OBJECTDIR}/mcc_generated_files/eusart1.p1 ${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/MCP4131_digital_Pot.p1 ${OBJECTDIR}/MCP23S08_IO_expender.p1 ${OBJECTDIR}/_25LC512_EEPROM.p1 ${OBJECTDIR}/Interrupt.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/MCP23008_IO_expender.p1 ${OBJECTDIR}/MCP9801_Temp_Sensor.p1 ${OBJECTDIR}/_24AA512_EEPROM.p1 ${OBJECTDIR}/RTC_PCF8523.p1 ${OBJECTDIR}/SSD1308_OLED.p1 ${OBJECTDIR}/RTC_MCP79411.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/spi1.p1.d ${OBJECTDIR}/mcc_generated_files/eusart1.p1.d ${OBJECTDIR}/mcc_generated_files/device_config.p1.d ${OBJECTDIR}/mcc_generated_files/mcc.p1.d ${OBJECTDIR}/mcc_generated_files/pin_manager.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/MCP4131_digital_Pot.p1.d ${OBJECTDIR}/MCP23S08_IO_expender.p1.d ${OBJECTDIR}/_25LC512_EEPROM.p1.d ${OBJECTDIR}/Interrupt.p1.d ${OBJECTDIR}/I2C.p1.d ${OBJECTDIR}/MCP23008_IO_expender.p1.d ${OBJECTDIR}/MCP9801_Temp_Sensor.p1.d ${OBJECTDIR}/_24AA512_EEPROM.p1.d ${OBJECTDIR}/RTC_PCF8523.p1.d ${OBJECTDIR}/SSD1308_OLED.p1.d ${OBJECTDIR}/RTC_MCP79411.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/spi1.p1 ${OBJECTDIR}/mcc_generated_files/eusart1.p1 ${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/MCP4131_digital_Pot.p1 ${OBJECTDIR}/MCP23S08_IO_expender.p1 ${OBJECTDIR}/_25LC512_EEPROM.p1 ${OBJECTDIR}/Interrupt.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/MCP23008_IO_expender.p1 ${OBJECTDIR}/MCP9801_Temp_Sensor.p1 ${OBJECTDIR}/_24AA512_EEPROM.p1 ${OBJECTDIR}/RTC_PCF8523.p1 ${OBJECTDIR}/RTC_MCP79411.p1 ${OBJECTDIR}/MAX31855K.p1 ${OBJECTDIR}/SSD1306_OLED.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/spi1.p1.d ${OBJECTDIR}/mcc_generated_files/eusart1.p1.d ${OBJECTDIR}/mcc_generated_files/device_config.p1.d ${OBJECTDIR}/mcc_generated_files/mcc.p1.d ${OBJECTDIR}/mcc_generated_files/pin_manager.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/MCP4131_digital_Pot.p1.d ${OBJECTDIR}/MCP23S08_IO_expender.p1.d ${OBJECTDIR}/_25LC512_EEPROM.p1.d ${OBJECTDIR}/Interrupt.p1.d ${OBJECTDIR}/I2C.p1.d ${OBJECTDIR}/MCP23008_IO_expender.p1.d ${OBJECTDIR}/MCP9801_Temp_Sensor.p1.d ${OBJECTDIR}/_24AA512_EEPROM.p1.d ${OBJECTDIR}/RTC_PCF8523.p1.d ${OBJECTDIR}/RTC_MCP79411.p1.d ${OBJECTDIR}/MAX31855K.p1.d ${OBJECTDIR}/SSD1306_OLED.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/mcc_generated_files/spi1.p1 ${OBJECTDIR}/mcc_generated_files/eusart1.p1 ${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/MCP4131_digital_Pot.p1 ${OBJECTDIR}/MCP23S08_IO_expender.p1 ${OBJECTDIR}/_25LC512_EEPROM.p1 ${OBJECTDIR}/Interrupt.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/MCP23008_IO_expender.p1 ${OBJECTDIR}/MCP9801_Temp_Sensor.p1 ${OBJECTDIR}/_24AA512_EEPROM.p1 ${OBJECTDIR}/RTC_PCF8523.p1 ${OBJECTDIR}/SSD1308_OLED.p1 ${OBJECTDIR}/RTC_MCP79411.p1
+OBJECTFILES=${OBJECTDIR}/mcc_generated_files/spi1.p1 ${OBJECTDIR}/mcc_generated_files/eusart1.p1 ${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/MCP4131_digital_Pot.p1 ${OBJECTDIR}/MCP23S08_IO_expender.p1 ${OBJECTDIR}/_25LC512_EEPROM.p1 ${OBJECTDIR}/Interrupt.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/MCP23008_IO_expender.p1 ${OBJECTDIR}/MCP9801_Temp_Sensor.p1 ${OBJECTDIR}/_24AA512_EEPROM.p1 ${OBJECTDIR}/RTC_PCF8523.p1 ${OBJECTDIR}/RTC_MCP79411.p1 ${OBJECTDIR}/MAX31855K.p1 ${OBJECTDIR}/SSD1306_OLED.p1
 
 # Source Files
-SOURCEFILES=mcc_generated_files/spi1.c mcc_generated_files/eusart1.c mcc_generated_files/device_config.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c MCP4131_digital_Pot.c MCP23S08_IO_expender.c _25LC512_EEPROM.c Interrupt.c I2C.c MCP23008_IO_expender.c MCP9801_Temp_Sensor.c _24AA512_EEPROM.c RTC_PCF8523.c SSD1308_OLED.c RTC_MCP79411.c
+SOURCEFILES=mcc_generated_files/spi1.c mcc_generated_files/eusart1.c mcc_generated_files/device_config.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c main.c MCP4131_digital_Pot.c MCP23S08_IO_expender.c _25LC512_EEPROM.c Interrupt.c I2C.c MCP23008_IO_expender.c MCP9801_Temp_Sensor.c _24AA512_EEPROM.c RTC_PCF8523.c RTC_MCP79411.c MAX31855K.c SSD1306_OLED.c
 
 
 CFLAGS=
@@ -213,14 +213,6 @@ ${OBJECTDIR}/RTC_PCF8523.p1: RTC_PCF8523.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/RTC_PCF8523.d ${OBJECTDIR}/RTC_PCF8523.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/RTC_PCF8523.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/SSD1308_OLED.p1: SSD1308_OLED.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/SSD1308_OLED.p1.d 
-	@${RM} ${OBJECTDIR}/SSD1308_OLED.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1  --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"     -o${OBJECTDIR}/SSD1308_OLED.p1 SSD1308_OLED.c 
-	@-${MV} ${OBJECTDIR}/SSD1308_OLED.d ${OBJECTDIR}/SSD1308_OLED.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/SSD1308_OLED.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/RTC_MCP79411.p1: RTC_MCP79411.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/RTC_MCP79411.p1.d 
@@ -228,6 +220,22 @@ ${OBJECTDIR}/RTC_MCP79411.p1: RTC_MCP79411.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1  --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"     -o${OBJECTDIR}/RTC_MCP79411.p1 RTC_MCP79411.c 
 	@-${MV} ${OBJECTDIR}/RTC_MCP79411.d ${OBJECTDIR}/RTC_MCP79411.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/RTC_MCP79411.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/MAX31855K.p1: MAX31855K.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/MAX31855K.p1.d 
+	@${RM} ${OBJECTDIR}/MAX31855K.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1  --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"     -o${OBJECTDIR}/MAX31855K.p1 MAX31855K.c 
+	@-${MV} ${OBJECTDIR}/MAX31855K.d ${OBJECTDIR}/MAX31855K.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/MAX31855K.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/SSD1306_OLED.p1: SSD1306_OLED.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/SSD1306_OLED.p1.d 
+	@${RM} ${OBJECTDIR}/SSD1306_OLED.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1  --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"     -o${OBJECTDIR}/SSD1306_OLED.p1 SSD1306_OLED.c 
+	@-${MV} ${OBJECTDIR}/SSD1306_OLED.d ${OBJECTDIR}/SSD1306_OLED.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/SSD1306_OLED.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/mcc_generated_files/spi1.p1: mcc_generated_files/spi1.c  nbproject/Makefile-${CND_CONF}.mk
@@ -350,14 +358,6 @@ ${OBJECTDIR}/RTC_PCF8523.p1: RTC_PCF8523.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/RTC_PCF8523.d ${OBJECTDIR}/RTC_PCF8523.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/RTC_PCF8523.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/SSD1308_OLED.p1: SSD1308_OLED.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/SSD1308_OLED.p1.d 
-	@${RM} ${OBJECTDIR}/SSD1308_OLED.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"     -o${OBJECTDIR}/SSD1308_OLED.p1 SSD1308_OLED.c 
-	@-${MV} ${OBJECTDIR}/SSD1308_OLED.d ${OBJECTDIR}/SSD1308_OLED.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/SSD1308_OLED.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/RTC_MCP79411.p1: RTC_MCP79411.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/RTC_MCP79411.p1.d 
@@ -365,6 +365,22 @@ ${OBJECTDIR}/RTC_MCP79411.p1: RTC_MCP79411.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"     -o${OBJECTDIR}/RTC_MCP79411.p1 RTC_MCP79411.c 
 	@-${MV} ${OBJECTDIR}/RTC_MCP79411.d ${OBJECTDIR}/RTC_MCP79411.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/RTC_MCP79411.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/MAX31855K.p1: MAX31855K.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/MAX31855K.p1.d 
+	@${RM} ${OBJECTDIR}/MAX31855K.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"     -o${OBJECTDIR}/MAX31855K.p1 MAX31855K.c 
+	@-${MV} ${OBJECTDIR}/MAX31855K.d ${OBJECTDIR}/MAX31855K.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/MAX31855K.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/SSD1306_OLED.p1: SSD1306_OLED.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/SSD1306_OLED.p1.d 
+	@${RM} ${OBJECTDIR}/SSD1306_OLED.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"     -o${OBJECTDIR}/SSD1306_OLED.p1 SSD1306_OLED.c 
+	@-${MV} ${OBJECTDIR}/SSD1306_OLED.d ${OBJECTDIR}/SSD1306_OLED.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/SSD1306_OLED.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

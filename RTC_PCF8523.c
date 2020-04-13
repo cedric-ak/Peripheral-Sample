@@ -58,6 +58,13 @@ void PCF8523_setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t da
     PCF8523_write(CONTROL_2, 0x00); //clear all alarm interrupt flag (this function disabled WTAIE, CTAIE, CTBIE), 
 }
 
+/**********************************************************
+**Name:     PCF8523_countDown
+**Function: RTC Initialize count down of timer A
+**Input:    time unit(hours, minutes, seconds), time in decimal format
+**Output:   none
+**note:     time variable maximum 255
+**********************************************************/
 void PCF8523_countDown(uint8_t timeUnit, uint8_t time) {
     PCF8523_write(TMR_CLKOUT_CTRL, 0xFA); //enable timer A pulse interrupt
     PCF8523_write(CONTROL_2, 0x02);       //countdown timer A interrupt is enabled

@@ -6,24 +6,36 @@
  */
 
 #include "mcc_generated_files/mcc.h"
-
+/**********************************************************
+ **Name:     MCP7941x set time
+ **Function: Initialize and set current MCP7941x time 
+ **Input:    hour, minutes, second 
+ **Output:   none
+ **Note:     time is set in decimal 24hr format (HH:MM:SS)
+ **********************************************************/
 void MCP794x_setTime(uint8_t hour, uint8_t minute, uint8_t second) {
     I2C_start();
-    I2C_Write(MCP7941x_RTCC_ADDRESS); //write command
-    I2C_Write(RTCSEC); //address to start with sequential write
-    I2C_Write(decimalToBCD(second | 0x80)); //Oscillator enabled
+    I2C_Write(MCP7941x_RTCC_ADDRESS);        //write command
+    I2C_Write(RTCSEC);                       //address to start with sequential write
+    I2C_Write(decimalToBCD(second | 0x80));  //Oscillator enabled
     I2C_Write(decimalToBCD(minute));
-    I2C_Write(decimalToBCD(hour & 0x1F)); //24-hour format
+    I2C_Write(decimalToBCD(hour & 0x1F));    //24-hour format
     I2C_stop();
 }
 
+/**********************************************************
+ **Name:     MCP7941x set Date
+ **Function: Initialize and set current MCP7941x date
+ **Input:    date, day of the week, month, year (DD/DW/MM/YY)
+ **Output:   none 
+ **********************************************************/
 void MCP794x_setDate(uint8_t date, uint8_t weekDay, uint8_t month, uint8_t year) {
     I2C_start();
-    I2C_Write(MCP7941x_RTCC_ADDRESS); //write command
-    I2C_Write(RTCWKDAY); //address to start with sequential write
-    I2C_Write(decimalToBCD(weekDay | 0x28)); //Oscillator is enabled and running,Primary power has not been lost,VBAT input is enabled
+    I2C_Write(MCP7941x_RTCC_ADDRESS);           //write command
+    I2C_Write(RTCWKDAY);                        //address to start with sequential write
+    I2C_Write(decimalToBCD(weekDay | 0x28));    //Oscillator is enabled and running,Primary power has not been lost,VBAT input is enabled
     I2C_Write(decimalToBCD(date));
-    I2C_Write(decimalToBCD(month)); //set as not leap year
+    I2C_Write(decimalToBCD(month));             //set as not leap year
     I2C_Write(decimalToBCD(year));
     I2C_stop();
 }
@@ -36,10 +48,17 @@ void MCP794x_writeRtcc(uint8_t Register, uint8_t value) {
     I2C_stop();
 }
 
+/**********************************************************
+ **Name:     MCP7941x set Alarm
+ **Function: Initialize and set current MCP7941x alarm register
+ **Input:    alarm mask(second, minute, hour, dayWk, date,  SMHDD), time variable 
+ **Output:   none
+ **Note:     alarm in hour is set in decimal 24hr format 
+ **********************************************************/
 void MCP794x_setAlarm(uint8_t alarmMask, uint8_t time) {
-    MCP794x_writeRtcc(ALM0WKDAY, 0x00); //Asserted output state of MFP is a logic low level. falling edge interrupt, 
-    MCP794x_writeRtcc(ALM0WKDAY, alarmMask); //chose alarm mask 
-    //  MCP794x_INTF_CLR(); //clear interrupt flag       //this line causing bugs
+    MCP794x_writeRtcc(ALM0WKDAY, 0x00);         //Asserted output state of MFP is a logic low level. falling edge interrupt, 
+    MCP794x_writeRtcc(ALM0WKDAY, alarmMask);    //chose alarm mask 
+    //  MCP794x_INTF_CLR();                     //clear interrupt flag   --->//this line causing bugs
     switch (alarmMask) {
         case second:MCP794x_writeRtcc(ALM0SEC, decimalToBCD(time));
             break;
@@ -63,6 +82,12 @@ void MCP794x_setAlarm(uint8_t alarmMask, uint8_t time) {
     MCP794x_writeRtcc(CONTROL, 0x10); //enable alarm 0 module 
 }
 
+/**********************************************************
+ **Name:     MCP7941x write EEPROM
+ **Function: write data to EEPROM
+ **Input:    EEPROM address location and data to be written 8bit
+ **Output:   none
+ **********************************************************/
 void MCP794x_writeEEPROM(uint8_t Register, uint8_t data) {
     I2C_start();
     I2C_Write(MCP7941x_EEPROM_ADD);
@@ -71,6 +96,12 @@ void MCP794x_writeEEPROM(uint8_t Register, uint8_t data) {
     I2C_stop();
 }
 
+/**********************************************************
+ **Name:     MCP7941x read EEPROM 
+ **Function: read EEPROM data
+ **Input:    EEPROM read address location 
+ **Output:   none
+ **********************************************************/
 uint8_t MCP794x_readEEPROM(uint8_t Register) {
     I2C_start();
     I2C_Write(MCP7941x_EEPROM_ADD);
@@ -82,6 +113,12 @@ uint8_t MCP794x_readEEPROM(uint8_t Register) {
     return SSP2BUF;
 }
 
+/**********************************************************
+ **Name:     MCP7941x get ID
+ **Function: reads and print MCP7941x unique ID
+ **Input:    none
+ **Output:   none
+ **********************************************************/
 void MCP794x_getID(void) {
     uint8_t UID[8];
     I2C_start();
@@ -92,13 +129,13 @@ void MCP794x_getID(void) {
     for (int index = 0; index < 8; index++) {
         I2C_read(ACK);
         UID[index] = SSP2BUF;
-        if(UID[index] < 16)
-            EUSART1_Write_Text("0",2);
-        EUSART1_itoa(UID[index],HEX);
+        if (UID[index] < 16)
+            EUSART1_Write_Text("0", 2);
+        EUSART1_itoa(UID[index], HEX);
     }
-    EUSART1_Write_Text("\r", 2); 
+    EUSART1_Write_Text("\r", 2);
     I2C_read(NACK);
-    I2C_stop(); 
+    I2C_stop();
 }
 
 uint8_t MCP794x_INTF_CLR(void) {
@@ -106,6 +143,12 @@ uint8_t MCP794x_INTF_CLR(void) {
     __delay_ms(10);
 }
 
+/**********************************************************
+**Name:     MCP7941x read 
+**Function: read MCP7941x RTCC time/date and registers 
+**Input:    desired register to read
+**Output:   none
+**********************************************************/
 uint8_t MCP7941x_read(uint8_t Register) {
     I2C_start();
     I2C_Write(MCP7941x_RTCC_ADDRESS);
@@ -114,5 +157,4 @@ uint8_t MCP7941x_read(uint8_t Register) {
     I2C_Write(MCP7941x_RTCC_ADDRESS | 0x01); //read command
     I2C_read(NACK);
     return SSP2BUF;
-
 }

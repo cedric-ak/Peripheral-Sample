@@ -170,6 +170,23 @@
 #define RC7_SetDigitalInput()    do { TRISCbits.TRISC7 = 1; } while(0)
 #define RC7_SetDigitalOutput()   do { TRISCbits.TRISC7 = 0; } while(0)
 
+// get/set SSD1306_RESET aliases
+#define SSD1306_RESET_TRIS                 TRISEbits.TRISE2
+#define SSD1306_RESET_LAT                  LATEbits.LATE2
+#define SSD1306_RESET_PORT                 PORTEbits.RE2
+#define SSD1306_RESET_WPU                  WPUEbits.WPUE2
+#define SSD1306_RESET_ANS                  ANCON0bits.PCFG7
+#define SSD1306_RESET_SetHigh()            do { LATEbits.LATE2 = 1; } while(0)
+#define SSD1306_RESET_SetLow()             do { LATEbits.LATE2 = 0; } while(0)
+#define SSD1306_RESET_Toggle()             do { LATEbits.LATE2 = ~LATEbits.LATE2; } while(0)
+#define SSD1306_RESET_GetValue()           PORTEbits.RE2
+#define SSD1306_RESET_SetDigitalInput()    do { TRISEbits.TRISE2 = 1; } while(0)
+#define SSD1306_RESET_SetDigitalOutput()   do { TRISEbits.TRISE2 = 0; } while(0)
+#define SSD1306_RESET_SetPullup()          do { WPUEbits.WPUE2 = 1; } while(0)
+#define SSD1306_RESET_ResetPullup()        do { WPUEbits.WPUE2 = 0; } while(0)
+#define SSD1306_RESET_SetAnalogMode()      do { ANCON0bits.PCFG7 = 1; } while(0)
+#define SSD1306_RESET_SetDigitalMode()     do { ANCON0bits.PCFG7 = 0; } while(0)
+
 /**
    @Param
     none

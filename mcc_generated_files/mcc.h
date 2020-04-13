@@ -20,6 +20,8 @@
 #include "../MCP9801.h"
 #include "../_24AA512.h"
 #include "../MCP79411.h"
+#include "../MAX31855K.h"
+#include "../SSD1306.h"
 
 #define DEC 10
 #define HEX 16

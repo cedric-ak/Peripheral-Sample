@@ -1,5 +1,5 @@
 
-# 1 "MCP23008_IO_expender.c"
+# 1 "SSD1306_OLED.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9596,34 +9596,77 @@ void SYSTEM_Initialize(void);
 # 55
 void OSCILLATOR_Initialize(void);
 
-# 16 "MCP23008_IO_expender.c"
-void MCP23008_Init(uint8_t portDirection){
+# 11 "SSD1306_OLED.c"
+void SSD1306_Init(void) {
+
+do { LATEbits.LATE2 = 1; } while(0);
+_delay((unsigned long)((1)*(16000000/4000.0)));
+do { LATEbits.LATE2 = 0; } while(0);
+_delay((unsigned long)((10)*(16000000/4000.0)));
+do { LATEbits.LATE2 = 1; } while(0);
+
+SSD1306_writeCMD(0xAE, 0xAE);
+
+SSD1306_writeCMD(0xA8,63);
+
+# 27
+SSD1306_writeCMD(0xD3, 0x00);
+SSD1306_writeCMD(0x20, 0x00);
+SSD1306_writeCMD(0x40, 0x40);
+SSD1306_writeCMD(0xA0, 0xA0);
+SSD1306_writeCMD(0xC0, 0xC0);
+
+
+SSD1306_writeCMD(0xDA, 0x12);
+SSD1306_writeCMD(0x81, 0x7F);
+
+# 41
+SSD1306_writeCMD(0xD9,0xD9);
+SSD1306_writeCMD(0xDB, 0x40);
+SSD1306_writeCMD(0xA4, 0xA4);
+SSD1306_writeCMD(0xA6, 0xA6);
+SSD1306_writeCMD(0xD5, 0x80);
+SSD1306_writeCMD(0x8D, 0x14);
+SSD1306_writeCMD(0x2E,0x2E);
+SSD1306_writeCMD(0xAF, 0xAF);
+
+
+
+
+}
+
+# 62
+void SSD1306_writeCMD(uint8_t controlReg, uint8_t dataByte) {
 I2C_start();
-I2C_Write(0x40);
-I2C_Write(0x00);
-I2C_Write(portDirection);
+I2C_Write(0x7A);
+I2C_Write(controlReg);
+dataByte == 0xFF ? I2C_stop() :I2C_Write(dataByte);
 I2C_stop();
 }
 
-void MCP23008_Write(uint8_t data){
-I2C_start();
-I2C_Write(0x40);
-I2C_Write(0x0A);
-I2C_Write(data);
-I2C_stop();
+void displayClear(void){
+
 }
 
-char MCP23008_read(void){
+void displaySetCursor(void){
+displayWrite(7,7,0x22);
+displayWrite(1,1,0x21);
+
 I2C_start();
-I2C_Write(0x40);
-I2C_Write(0x09);
-I2C_repeated_Start();
+I2C_Write(0x7A);
 I2C_Write(0x41);
-I2C_read(1);
+memset(buffer, 0xfd,16);
+for(uint16_t size=0; size <1; size++){
+I2C_Write(buffer[size]);
+}
 I2C_stop();
 }
-void MCP23008_loop(void) {
-MCP23008_Write(0x7);
 
-# 54
+void displayWrite(uint8_t x, uint8_t y, int address){
+I2C_start();
+I2C_Write(0x7A);
+I2C_Write(address);
+I2C_Write(x);
+I2C_Write(y);
+I2C_stop();
 }

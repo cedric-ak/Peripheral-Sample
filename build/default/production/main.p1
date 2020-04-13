@@ -2,78 +2,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 "24 mcc_generated_files/../MCP9801.h
 [u S835 `uc -> 2 `i `ui 1 ]
 [n S835 . MSB_LSB TempData ]
+"17 mcc_generated_files/../MAX31855K.h
+[u S836 `uc -> 4 `i `ul 1 ]
+[n S836 . MAX31855 rawDate ]
 [p mainexit ]
 "3 main.c
 [v _interrupt_Init `(v ~T0 @X0 0 ef ]
-"40 mcc_generated_files/mcc.h
+"42 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"9212 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
+[s S430 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S430 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"9211
+[u S429 `S430 1 ]
+[n S429 . . ]
+"9223
+[v _TRISCbits `VS429 ~T0 @X0 0 e@3988 ]
 "19 mcc_generated_files/../I2C.h
 [v _I2C_buffClear `(v ~T0 @X0 0 ef ]
 [v F7202 `(v ~T0 @X0 1 tf1`ul ]
 "164 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h
 [v __delay `JF7202 ~T0 @X0 0 e ]
 [p i __delay ]
-"61 mcc_generated_files/../MCP79411.h
-[v _MCP794x_setTime `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"62
-[v _MCP794x_setDate `(v ~T0 @X0 0 ef4`uc`uc`uc`uc ]
-"13 main.c
-[c E7597 0 1 2 3 4 5 6 .. ]
-[n E7597 days Sun Mon Tue Wed Thu Fri Sat  ]
-[c E7605 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
-[n E7605 months Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec  ]
-"64 mcc_generated_files/../MCP79411.h
-[v _MCP794x_setAlarm `(v ~T0 @X0 0 ef2`uc`uc ]
-"14 main.c
-[c E7776 0 16 32 48 64 112 .. ]
-[n E7776 ALARM_MASK second minute hour dayWk date SMHDD  ]
-"345 mcc_generated_files/eusart1.h
-[v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
-"68 mcc_generated_files/../MCP79411.h
-[v _MCP794x_readEEPROM `(uc ~T0 @X0 0 ef1`uc ]
-"7214 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
-[s S359 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S359 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"7224
-[s S360 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S360 . AN12 AN10 AN8 AN9 PMA1 PMA0 KBI2 KBI3 ]
-"7234
-[s S361 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S361 . INT0 PMPBE CTED1 CTED2 KBI0 KBI1 PGC PGD ]
-"7244
-[s S362 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S362 . RP3 RTCC PMA3 PMA2 . RP9 RP10 ]
-"7253
-[s S363 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S363 . . PMBE REFO ]
-"7258
-[s S364 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S364 . . RP4 RP5 RP6 RP7 RP8 ]
-"7266
-[s S365 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S365 . C3IND C3INC C2INC C3INA ]
-"7272
-[s S366 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S366 . . CCP4 CCP5 CCP6 CCP7 ]
-"7279
-[s S367 :3 `uc 1 :1 `uc 1 ]
-[n S367 . . CCP2_PA2 ]
-"7213
-[u S358 `S359 1 `S360 1 `S361 1 `S362 1 `S363 1 `S364 1 `S365 1 `S366 1 `S367 1 ]
-[n S358 . . . . . . . . . . ]
-"7284
-[v _PORTBbits `VS358 ~T0 @X0 0 e@3969 ]
-"8461
-[s S405 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S405 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
-"8471
-[s S406 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S406 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
-"8460
-[u S404 `S405 1 `S406 1 ]
-[n S404 . . . ]
-"8482
-[v _LATBbits `VS404 ~T0 @X0 0 e@3978 ]
+"73 mcc_generated_files/../SSD1306.h
+[v _SSD1306_Init `(v ~T0 @X0 0 ef ]
+"76
+[v _displaySetCursor `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -6925,8 +6879,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-[; ;pin_manager.h: 183: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 195: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 200: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 212: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -7178,8 +7132,87 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP79411.h: 68: uint8_t MCP794x_readEEPROM(uint8_t Register);
 [; ;MCP79411.h: 69: void MCP794x_getID(void);
 [; ;MCP79411.h: 71: enum ALARM_MASK {second = 0x00, minute = 0x10, hour = 0x20, dayWk = 0x30, date = 0x40, SMHDD = 0x70};
-[; ;mcc.h: 40: void SYSTEM_Initialize(void);
-[; ;mcc.h: 53: void OSCILLATOR_Initialize(void);
+[; ;MAX31855K.h: 15: uint32_t MAX31855_Read(void);
+"20 mcc_generated_files/../MAX31855K.h
+[v _MAX31_ADC `S836 ~T0 @X0 1 e ]
+[; ;MAX31855K.h: 17: union {
+[; ;MAX31855K.h: 18: char MAX31855[4];
+[; ;MAX31855K.h: 19: uint32_t rawDate;
+[; ;MAX31855K.h: 20: }MAX31_ADC;
+[; ;SSD1306.h: 73: void SSD1306_Init(void);
+[; ;SSD1306.h: 74: void SSD1306_writeCMD(uint8_t controlReg, uint8_t dataByte);
+[; ;SSD1306.h: 75: void displayClear(void);
+[; ;SSD1306.h: 76: void displaySetCursor(void);
+[; ;SSD1306.h: 77: void displayWrite(uint8_t x, uint8_t y, int address);
+[v F7803 `uc ~T0 @X0 -> 16 `i t ]
+"80 mcc_generated_files/../SSD1306.h
+[v _columm `F7803 ~T0 @X0 -> 2 `i e ]
+[i _columm
+:U ..
+:U ..
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+-> -> 3 `i `uc
+-> -> 4 `i `uc
+-> -> 5 `i `uc
+-> -> 6 `i `uc
+-> -> 7 `i `uc
+-> -> 8 `i `uc
+-> -> 9 `i `uc
+-> -> 10 `i `uc
+-> -> 11 `i `uc
+-> -> 12 `i `uc
+-> -> 13 `i `uc
+-> -> 14 `i `uc
+-> -> 15 `i `uc
+..
+:U ..
+"81
+-> -> 16 `i `uc
+-> -> 17 `i `uc
+-> -> 18 `i `uc
+-> -> 19 `i `uc
+-> -> 20 `i `uc
+-> -> 21 `i `uc
+-> -> 22 `i `uc
+-> -> 23 `i `uc
+-> -> 24 `i `uc
+-> -> 25 `i `uc
+-> -> 26 `i `uc
+-> -> 27 `i `uc
+-> -> 28 `i `uc
+-> -> 29 `i `uc
+-> -> 30 `i `uc
+-> -> 31 `i `uc
+..
+..
+]
+[; ;SSD1306.h: 80: uint8_t columm[2][16] ={{0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F},
+[; ;SSD1306.h: 81: {0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F}};
+"83
+[v _page `uc ~T0 @X0 -> 8 `i e ]
+[i _page
+:U ..
+-> -> 176 `i `uc
+-> -> 177 `i `uc
+-> -> 178 `i `uc
+-> -> 179 `i `uc
+-> -> 180 `i `uc
+-> -> 181 `i `uc
+-> -> 182 `i `uc
+-> -> 183 `i `uc
+..
+]
+[; ;SSD1306.h: 83: uint8_t page[8]= {0xb0, 0xb1, 0xb2, 0xb3, 0xb4, 0xb5, 0xb6, 0xb7};
+"85
+[v _buffer `*ui ~T0 @X0 1 e ]
+[; ;SSD1306.h: 85: uint16_t *buffer;
+"86
+[v _bfSize `ul ~T0 @X0 1 e ]
+[; ;SSD1306.h: 86: uint32_t bfSize;
+[; ;mcc.h: 42: void SYSTEM_Initialize(void);
+[; ;mcc.h: 55: void OSCILLATOR_Initialize(void);
 [; ;main.c: 3: extern void interrupt_Init(void);
 [v $root$_main `(v ~T0 @X0 0 e ]
 "5 main.c
@@ -7194,69 +7227,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 8: SYSTEM_Initialize();
 "8
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 9: I2C_buffClear();
+[; ;main.c: 9: do { TRISCbits.TRISC0 = 0; } while(0);
 "9
-[e ( _I2C_buffClear ..  ]
-[; ;main.c: 10: _delay((unsigned long)((10)*(16000000/4000.0)));
-"10
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 12: MCP794x_setTime(22,59,7);
-"12
-[e ( _MCP794x_setTime (3 , , -> -> 22 `i `uc -> -> 59 `i `uc -> -> 7 `i `uc ]
-[; ;main.c: 13: MCP794x_setDate(25,Fri,Dec,20);
-"13
-[e ( _MCP794x_setDate (4 , , , -> -> 25 `i `uc -> . `E7597 5 `uc -> . `E7605 11 `uc -> -> 20 `i `uc ]
-[; ;main.c: 14: MCP794x_setAlarm(hour, 23);
-"14
-[e ( _MCP794x_setAlarm (2 , -> . `E7776 2 `uc -> -> 23 `i `uc ]
-[; ;main.c: 17: for(int index = 0; index <128; index++){
-"17
-{
-[v _index `i ~T0 @X0 1 a ]
-[e = _index -> 0 `i ]
-[e $ < _index -> 128 `i 837  ]
-[e $U 838  ]
-[e :U 837 ]
-{
-[; ;main.c: 20: EUSART1_Write(MCP794x_readEEPROM(index));
-"20
-[e ( _EUSART1_Write (1 ( _MCP794x_readEEPROM (1 -> _index `uc ]
-"21
-}
-"17
-[e ++ _index -> 1 `i ]
-[e $ < _index -> 128 `i 837  ]
-[e :U 838 ]
-"21
-}
-[; ;main.c: 21: }
-[; ;main.c: 22: while (1) {
-"22
-[e :U 841 ]
-{
-[; ;main.c: 23: if (!PORTBbits.RB0) {
-"23
-[e $ ! ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 843  ]
-{
-[; ;main.c: 24: do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0);
-"24
-[e :U 846 ]
-{
-[e = . . _LATBbits 0 5 -> ~ -> . . _LATBbits 0 5 `i `uc ]
-}
-[e :U 845 ]
-"26
-}
-[e :U 843 ]
-"27
-}
 [e :U 840 ]
-"22
-[e $U 841  ]
+{
+[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
+}
+[e :U 839 ]
+[; ;main.c: 11: I2C_buffClear();
+"11
+[e ( _I2C_buffClear ..  ]
+[; ;main.c: 12: _delay((unsigned long)((10)*(16000000/4000.0)));
+"12
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 14: SSD1306_Init();
+"14
+[e ( _SSD1306_Init ..  ]
+[; ;main.c: 15: _delay((unsigned long)((2000)*(16000000/4000.0)));
+"15
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 16: displaySetCursor();
+"16
+[e ( _displaySetCursor ..  ]
+[; ;main.c: 17: while (1) {
+"17
 [e :U 842 ]
-[; ;main.c: 26: }
-[; ;main.c: 27: }
-[; ;main.c: 28: }
-"28
-[e :UE 836 ]
+{
+"24
+}
+[e :U 841 ]
+"17
+[e $U 842  ]
+[e :U 843 ]
+[; ;main.c: 24: }
+[; ;main.c: 25: }
+"25
+[e :UE 837 ]
 }

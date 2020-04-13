@@ -2,6 +2,36 @@ Version 3.2 HI-TECH Software Intermediate Code
 "24 mcc_generated_files/../MCP9801.h
 [u S835 `uc -> 2 `i `ui 1 ]
 [n S835 . MSB_LSB TempData ]
+"17 mcc_generated_files/../MAX31855K.h
+[u S836 `uc -> 4 `i `ul 1 ]
+[n S836 . MAX31855 rawDate ]
+"8797 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
+[s S414 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S414 . LATE0 LATE1 LATE2 ]
+"8802
+[s S415 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S415 . LE0 LE1 LE2 ]
+"8796
+[u S413 `S414 1 `S415 1 ]
+[n S413 . . . ]
+"8808
+[v _LATEbits `VS413 ~T0 @X0 0 e@3981 ]
+[v F7202 `(v ~T0 @X0 1 tf1`ul ]
+"164 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h
+[v __delay `JF7202 ~T0 @X0 0 e ]
+[p i __delay ]
+"74 mcc_generated_files/../SSD1306.h
+[v _SSD1306_writeCMD `(v ~T0 @X0 0 ef2`uc`uc ]
+"15 mcc_generated_files/../I2C.h
+[v _I2C_start `(v ~T0 @X0 0 ef ]
+"12
+[v _I2C_Write `(v ~T0 @X0 0 ef1`uc ]
+"14
+[v _I2C_stop `(v ~T0 @X0 0 ef ]
+"77 mcc_generated_files/../SSD1306.h
+[v _displayWrite `(v ~T0 @X0 0 ef3`uc`uc`i ]
+"16 C:\Program Files (x86)\Microchip\xc8\v1.45\include\string.h
+[v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -6853,8 +6883,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-[; ;pin_manager.h: 183: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 195: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 200: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 212: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -7106,5 +7136,292 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP79411.h: 68: uint8_t MCP794x_readEEPROM(uint8_t Register);
 [; ;MCP79411.h: 69: void MCP794x_getID(void);
 [; ;MCP79411.h: 71: enum ALARM_MASK {second = 0x00, minute = 0x10, hour = 0x20, dayWk = 0x30, date = 0x40, SMHDD = 0x70};
-[; ;mcc.h: 40: void SYSTEM_Initialize(void);
-[; ;mcc.h: 53: void OSCILLATOR_Initialize(void);
+[; ;MAX31855K.h: 15: uint32_t MAX31855_Read(void);
+"20 mcc_generated_files/../MAX31855K.h
+[v _MAX31_ADC `S836 ~T0 @X0 1 e ]
+[; ;MAX31855K.h: 17: union {
+[; ;MAX31855K.h: 18: char MAX31855[4];
+[; ;MAX31855K.h: 19: uint32_t rawDate;
+[; ;MAX31855K.h: 20: }MAX31_ADC;
+[; ;SSD1306.h: 73: void SSD1306_Init(void);
+[; ;SSD1306.h: 74: void SSD1306_writeCMD(uint8_t controlReg, uint8_t dataByte);
+[; ;SSD1306.h: 75: void displayClear(void);
+[; ;SSD1306.h: 76: void displaySetCursor(void);
+[; ;SSD1306.h: 77: void displayWrite(uint8_t x, uint8_t y, int address);
+[v F7803 `uc ~T0 @X0 -> 16 `i t ]
+"80 mcc_generated_files/../SSD1306.h
+[v _columm `F7803 ~T0 @X0 -> 2 `i e ]
+[i _columm
+:U ..
+:U ..
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+-> -> 3 `i `uc
+-> -> 4 `i `uc
+-> -> 5 `i `uc
+-> -> 6 `i `uc
+-> -> 7 `i `uc
+-> -> 8 `i `uc
+-> -> 9 `i `uc
+-> -> 10 `i `uc
+-> -> 11 `i `uc
+-> -> 12 `i `uc
+-> -> 13 `i `uc
+-> -> 14 `i `uc
+-> -> 15 `i `uc
+..
+:U ..
+"81
+-> -> 16 `i `uc
+-> -> 17 `i `uc
+-> -> 18 `i `uc
+-> -> 19 `i `uc
+-> -> 20 `i `uc
+-> -> 21 `i `uc
+-> -> 22 `i `uc
+-> -> 23 `i `uc
+-> -> 24 `i `uc
+-> -> 25 `i `uc
+-> -> 26 `i `uc
+-> -> 27 `i `uc
+-> -> 28 `i `uc
+-> -> 29 `i `uc
+-> -> 30 `i `uc
+-> -> 31 `i `uc
+..
+..
+]
+[; ;SSD1306.h: 80: uint8_t columm[2][16] ={{0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F},
+[; ;SSD1306.h: 81: {0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F}};
+"83
+[v _page `uc ~T0 @X0 -> 8 `i e ]
+[i _page
+:U ..
+-> -> 176 `i `uc
+-> -> 177 `i `uc
+-> -> 178 `i `uc
+-> -> 179 `i `uc
+-> -> 180 `i `uc
+-> -> 181 `i `uc
+-> -> 182 `i `uc
+-> -> 183 `i `uc
+..
+]
+[; ;SSD1306.h: 83: uint8_t page[8]= {0xb0, 0xb1, 0xb2, 0xb3, 0xb4, 0xb5, 0xb6, 0xb7};
+"85
+[v _buffer `*ui ~T0 @X0 1 e ]
+[; ;SSD1306.h: 85: uint16_t *buffer;
+"86
+[v _bfSize `ul ~T0 @X0 1 e ]
+[; ;SSD1306.h: 86: uint32_t bfSize;
+[; ;mcc.h: 42: void SYSTEM_Initialize(void);
+[; ;mcc.h: 55: void OSCILLATOR_Initialize(void);
+"11 SSD1306_OLED.c
+[v _SSD1306_Init `(v ~T0 @X0 1 ef ]
+{
+[; ;SSD1306_OLED.c: 11: void SSD1306_Init(void) {
+[e :U _SSD1306_Init ]
+[f ]
+[; ;SSD1306_OLED.c: 13: do { LATEbits.LATE2 = 1; } while(0);
+"13
+[e :U 840 ]
+{
+[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
+}
+[e :U 839 ]
+[; ;SSD1306_OLED.c: 14: _delay((unsigned long)((1)*(16000000/4000.0)));
+"14
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;SSD1306_OLED.c: 15: do { LATEbits.LATE2 = 0; } while(0);
+"15
+[e :U 843 ]
+{
+[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
+}
+[e :U 842 ]
+[; ;SSD1306_OLED.c: 16: _delay((unsigned long)((10)*(16000000/4000.0)));
+"16
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;SSD1306_OLED.c: 17: do { LATEbits.LATE2 = 1; } while(0);
+"17
+[e :U 846 ]
+{
+[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
+}
+[e :U 845 ]
+[; ;SSD1306_OLED.c: 19: SSD1306_writeCMD(0xAE, 0xAE);
+"19
+[e ( _SSD1306_writeCMD (2 , -> -> 174 `i `uc -> -> 174 `i `uc ]
+[; ;SSD1306_OLED.c: 21: SSD1306_writeCMD(0xA8,63);
+"21
+[e ( _SSD1306_writeCMD (2 , -> -> 168 `i `uc -> -> 63 `i `uc ]
+[; ;SSD1306_OLED.c: 27: SSD1306_writeCMD(0xD3, 0x00);
+"27
+[e ( _SSD1306_writeCMD (2 , -> -> 211 `i `uc -> -> 0 `i `uc ]
+[; ;SSD1306_OLED.c: 28: SSD1306_writeCMD(0x20, 0x00);
+"28
+[e ( _SSD1306_writeCMD (2 , -> -> 32 `i `uc -> -> 0 `i `uc ]
+[; ;SSD1306_OLED.c: 29: SSD1306_writeCMD(0x40, 0x40);
+"29
+[e ( _SSD1306_writeCMD (2 , -> -> 64 `i `uc -> -> 64 `i `uc ]
+[; ;SSD1306_OLED.c: 30: SSD1306_writeCMD(0xA0, 0xA0);
+"30
+[e ( _SSD1306_writeCMD (2 , -> -> 160 `i `uc -> -> 160 `i `uc ]
+[; ;SSD1306_OLED.c: 31: SSD1306_writeCMD(0xC0, 0xC0);
+"31
+[e ( _SSD1306_writeCMD (2 , -> -> 192 `i `uc -> -> 192 `i `uc ]
+[; ;SSD1306_OLED.c: 34: SSD1306_writeCMD(0xDA, 0x12);
+"34
+[e ( _SSD1306_writeCMD (2 , -> -> 218 `i `uc -> -> 18 `i `uc ]
+[; ;SSD1306_OLED.c: 35: SSD1306_writeCMD(0x81, 0x7F);
+"35
+[e ( _SSD1306_writeCMD (2 , -> -> 129 `i `uc -> -> 127 `i `uc ]
+[; ;SSD1306_OLED.c: 41: SSD1306_writeCMD(0xD9,0xD9);
+"41
+[e ( _SSD1306_writeCMD (2 , -> -> 217 `i `uc -> -> 217 `i `uc ]
+[; ;SSD1306_OLED.c: 42: SSD1306_writeCMD(0xDB, 0x40);
+"42
+[e ( _SSD1306_writeCMD (2 , -> -> 219 `i `uc -> -> 64 `i `uc ]
+[; ;SSD1306_OLED.c: 43: SSD1306_writeCMD(0xA4, 0xA4);
+"43
+[e ( _SSD1306_writeCMD (2 , -> -> 164 `i `uc -> -> 164 `i `uc ]
+[; ;SSD1306_OLED.c: 44: SSD1306_writeCMD(0xA6, 0xA6);
+"44
+[e ( _SSD1306_writeCMD (2 , -> -> 166 `i `uc -> -> 166 `i `uc ]
+[; ;SSD1306_OLED.c: 45: SSD1306_writeCMD(0xD5, 0x80);
+"45
+[e ( _SSD1306_writeCMD (2 , -> -> 213 `i `uc -> -> 128 `i `uc ]
+[; ;SSD1306_OLED.c: 46: SSD1306_writeCMD(0x8D, 0x14);
+"46
+[e ( _SSD1306_writeCMD (2 , -> -> 141 `i `uc -> -> 20 `i `uc ]
+[; ;SSD1306_OLED.c: 47: SSD1306_writeCMD(0x2E,0x2E);
+"47
+[e ( _SSD1306_writeCMD (2 , -> -> 46 `i `uc -> -> 46 `i `uc ]
+[; ;SSD1306_OLED.c: 48: SSD1306_writeCMD(0xAF, 0xAF);
+"48
+[e ( _SSD1306_writeCMD (2 , -> -> 175 `i `uc -> -> 175 `i `uc ]
+[; ;SSD1306_OLED.c: 53: }
+"53
+[e :UE 837 ]
+}
+"62
+[v _SSD1306_writeCMD `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[; ;SSD1306_OLED.c: 62: void SSD1306_writeCMD(uint8_t controlReg, uint8_t dataByte) {
+[e :U _SSD1306_writeCMD ]
+[v _controlReg `uc ~T0 @X0 1 r1 ]
+[v _dataByte `uc ~T0 @X0 1 r2 ]
+[f ]
+[; ;SSD1306_OLED.c: 63: I2C_start();
+"63
+[e ( _I2C_start ..  ]
+[; ;SSD1306_OLED.c: 64: I2C_Write(0x7A);
+"64
+[e ( _I2C_Write (1 -> -> 122 `i `uc ]
+[; ;SSD1306_OLED.c: 65: I2C_Write(controlReg);
+"65
+[e ( _I2C_Write (1 _controlReg ]
+[; ;SSD1306_OLED.c: 66: dataByte == 0xFF ? I2C_stop() :I2C_Write(dataByte);
+"66
+[e ? == -> _dataByte `i -> 255 `i : ( _I2C_stop ..  ( _I2C_Write (1 _dataByte ]
+[; ;SSD1306_OLED.c: 67: I2C_stop();
+"67
+[e ( _I2C_stop ..  ]
+[; ;SSD1306_OLED.c: 68: }
+"68
+[e :UE 847 ]
+}
+"70
+[v _displayClear `(v ~T0 @X0 1 ef ]
+{
+[; ;SSD1306_OLED.c: 70: void displayClear(void){
+[e :U _displayClear ]
+[f ]
+[; ;SSD1306_OLED.c: 72: }
+"72
+[e :UE 848 ]
+}
+"74
+[v _displaySetCursor `(v ~T0 @X0 1 ef ]
+{
+[; ;SSD1306_OLED.c: 74: void displaySetCursor(void){
+[e :U _displaySetCursor ]
+[f ]
+[; ;SSD1306_OLED.c: 75: displayWrite(7,7,0x22);
+"75
+[e ( _displayWrite (3 , , -> -> 7 `i `uc -> -> 7 `i `uc -> 34 `i ]
+[; ;SSD1306_OLED.c: 76: displayWrite(1,1,0x21);
+"76
+[e ( _displayWrite (3 , , -> -> 1 `i `uc -> -> 1 `i `uc -> 33 `i ]
+[; ;SSD1306_OLED.c: 78: I2C_start();
+"78
+[e ( _I2C_start ..  ]
+[; ;SSD1306_OLED.c: 79: I2C_Write(0x7A);
+"79
+[e ( _I2C_Write (1 -> -> 122 `i `uc ]
+[; ;SSD1306_OLED.c: 80: I2C_Write(0x41);
+"80
+[e ( _I2C_Write (1 -> -> 65 `i `uc ]
+[; ;SSD1306_OLED.c: 81: memset(buffer, 0xfd,16);
+"81
+[e ( _memset (3 , , -> _buffer `*v -> 253 `i -> -> 16 `i `ui ]
+[; ;SSD1306_OLED.c: 82: for(uint16_t size=0; size <1; size++){
+"82
+{
+[v _size `ui ~T0 @X0 1 a ]
+[e = _size -> -> 0 `i `ui ]
+[e $ < _size -> -> 1 `i `ui 850  ]
+[e $U 851  ]
+[e :U 850 ]
+{
+[; ;SSD1306_OLED.c: 83: I2C_Write(buffer[size]);
+"83
+[e ( _I2C_Write (1 -> *U + _buffer * -> _size `ux -> -> # *U _buffer `ui `ux `uc ]
+"84
+}
+"82
+[e ++ _size -> -> 1 `i `ui ]
+[e $ < _size -> -> 1 `i `ui 850  ]
+[e :U 851 ]
+"84
+}
+[; ;SSD1306_OLED.c: 84: }
+[; ;SSD1306_OLED.c: 85: I2C_stop();
+"85
+[e ( _I2C_stop ..  ]
+[; ;SSD1306_OLED.c: 86: }
+"86
+[e :UE 849 ]
+}
+"88
+[v _displayWrite `(v ~T0 @X0 1 ef3`uc`uc`i ]
+{
+[; ;SSD1306_OLED.c: 88: void displayWrite(uint8_t x, uint8_t y, int address){
+[e :U _displayWrite ]
+[v _x `uc ~T0 @X0 1 r1 ]
+[v _y `uc ~T0 @X0 1 r2 ]
+[v _address `i ~T0 @X0 1 r3 ]
+[f ]
+[; ;SSD1306_OLED.c: 89: I2C_start();
+"89
+[e ( _I2C_start ..  ]
+[; ;SSD1306_OLED.c: 90: I2C_Write(0x7A);
+"90
+[e ( _I2C_Write (1 -> -> 122 `i `uc ]
+[; ;SSD1306_OLED.c: 91: I2C_Write(address);
+"91
+[e ( _I2C_Write (1 -> _address `uc ]
+[; ;SSD1306_OLED.c: 92: I2C_Write(x);
+"92
+[e ( _I2C_Write (1 _x ]
+[; ;SSD1306_OLED.c: 93: I2C_Write(y);
+"93
+[e ( _I2C_Write (1 _y ]
+[; ;SSD1306_OLED.c: 94: I2C_stop();
+"94
+[e ( _I2C_stop ..  ]
+[; ;SSD1306_OLED.c: 95: }
+"95
+[e :UE 853 ]
+}

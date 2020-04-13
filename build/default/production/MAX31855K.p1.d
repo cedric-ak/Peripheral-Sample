@@ -1,9 +1,10 @@
- build/default/production/SSD1308_OLED.d  \
- build/default/production/SSD1308_OLED.p1:  \
- SSD1308_OLED.c  \
+ build/default/production/MAX31855K.d  \
+ build/default/production/MAX31855K.p1:  \
+ MAX31855K.c  \
 mcc_generated_files/../PCF8523.h  \
 mcc_generated_files/mcc.h  \
 mcc_generated_files/../I2C.h  \
+mcc_generated_files/../MAX31855K.h  \
 mcc_generated_files/eusart1.h  \
 mcc_generated_files/../MCP79411.h  \
 mcc_generated_files/device_config.h  \
@@ -14,4 +15,5 @@ mcc_generated_files/spi1.h  \
 mcc_generated_files/../MCP4131.h  \
 mcc_generated_files/../_25LC512.h  \
 mcc_generated_files/pin_manager.h  \
+mcc_generated_files/../SSD1306.h  \
 mcc_generated_files/../_24AA512.h 
