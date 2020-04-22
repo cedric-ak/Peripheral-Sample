@@ -9,12 +9,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _I2C_start `(v ~T0 @X0 0 ef ]
 "12
 [v _I2C_Write `(v ~T0 @X0 0 ef1`uc ]
-"14
-[v _I2C_stop `(v ~T0 @X0 0 ef ]
 "16
 [v _I2C_repeated_Start `(v ~T0 @X0 0 ef ]
 "17
 [v _I2C_read `(i ~T0 @X0 0 ef1`i ]
+"5957 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
+[v _SSP2BUF `Vuc ~T0 @X0 0 e@3957 ]
+"14 mcc_generated_files/../I2C.h
+[v _I2C_stop `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7093,10 +7095,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;_25LC512.h: 19: void rStatus_Reg(void);
 [; ;_25LC512.h: 20: void wStatus_Reg(void);
 [; ;_25LC512.h: 21: void EEPROM_25LC512_loop(void);
-[; ;MCP28003.h: 20: void MCP23008_Init(uint8_t portDirection);
-[; ;MCP28003.h: 21: void MCP23008_Write(uint8_t data);
-[; ;MCP28003.h: 22: void MCP23008_loop(void);
-[; ;MCP28003.h: 23: char MCP23008_read(void);
+[; ;MCP28003.h: 33: void MCP23008_Write(int port, int data);
+[; ;MCP28003.h: 34: void MCP23008_pinMode(int port, int mode);
+[; ;MCP28003.h: 35: void MCP23008_pullUp(int port);
+[; ;MCP28003.h: 36: uint8_t MCP23008_read(int port);
 [; ;MCP9801.h: 21: void MCP9801_Init(void);
 [; ;MCP9801.h: 22: uint8_t MCP9801_TempRead(void);
 "27 mcc_generated_files/../MCP9801.h
@@ -7131,9 +7133,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SSD1306.h: 75: void displayClear(void);
 [; ;SSD1306.h: 76: void displaySetCursor(void);
 [; ;SSD1306.h: 77: void displayWrite(uint8_t x, uint8_t y, int address);
-[v F7803 `uc ~T0 @X0 -> 16 `i t ]
+[v F7805 `uc ~T0 @X0 -> 16 `i t ]
 "80 mcc_generated_files/../SSD1306.h
-[v _columm `F7803 ~T0 @X0 -> 2 `i e ]
+[v _columm `F7805 ~T0 @X0 -> 2 `i e ]
 [i _columm
 :U ..
 :U ..
@@ -7200,13 +7202,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SSD1306.h: 86: uint32_t bfSize;
 [; ;mcc.h: 42: void SYSTEM_Initialize(void);
 [; ;mcc.h: 55: void OSCILLATOR_Initialize(void);
-"16 MCP23008_IO_expender.c
-[v _MCP23008_Init `(v ~T0 @X0 1 ef1`uc ]
+"15 MCP23008_IO_expender.c
+[v _MCP23008_pinMode `(v ~T0 @X0 1 ef2`i`i ]
 {
-[; ;MCP23008_IO_expender.c: 16: void MCP23008_Init(uint8_t portDirection){
-[e :U _MCP23008_Init ]
-[v _portDirection `uc ~T0 @X0 1 r1 ]
+[; ;MCP23008_IO_expender.c: 15: void MCP23008_pinMode(int port, int mode) {
+[e :U _MCP23008_pinMode ]
+[v _port `i ~T0 @X0 1 r1 ]
+[v _mode `i ~T0 @X0 1 r2 ]
 [f ]
+"16
+[v _dataRead `i ~T0 @X0 1 a ]
+[; ;MCP23008_IO_expender.c: 16: int dataRead;
 [; ;MCP23008_IO_expender.c: 17: I2C_start();
 "17
 [e ( _I2C_start ..  ]
@@ -7216,83 +7222,445 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP23008_IO_expender.c: 19: I2C_Write(0x00);
 "19
 [e ( _I2C_Write (1 -> -> 0 `i `uc ]
-[; ;MCP23008_IO_expender.c: 20: I2C_Write(portDirection);
+[; ;MCP23008_IO_expender.c: 20: I2C_repeated_Start();
 "20
-[e ( _I2C_Write (1 _portDirection ]
-[; ;MCP23008_IO_expender.c: 21: I2C_stop();
+[e ( _I2C_repeated_Start ..  ]
+[; ;MCP23008_IO_expender.c: 21: I2C_Write(0x40 | 0x01);
 "21
-[e ( _I2C_stop ..  ]
-[; ;MCP23008_IO_expender.c: 22: }
+[e ( _I2C_Write (1 -> | -> 64 `i -> 1 `i `uc ]
+[; ;MCP23008_IO_expender.c: 22: I2C_read(1);
 "22
+[e ( _I2C_read (1 -> 1 `i ]
+[; ;MCP23008_IO_expender.c: 23: dataRead = SSP2BUF;
+"23
+[e = _dataRead -> _SSP2BUF `i ]
+[; ;MCP23008_IO_expender.c: 24: I2C_stop();
+"24
+[e ( _I2C_stop ..  ]
+[; ;MCP23008_IO_expender.c: 26: I2C_start();
+"26
+[e ( _I2C_start ..  ]
+[; ;MCP23008_IO_expender.c: 27: I2C_Write(0x40);
+"27
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+[; ;MCP23008_IO_expender.c: 28: I2C_Write(0x00);
+"28
+[e ( _I2C_Write (1 -> -> 0 `i `uc ]
+[; ;MCP23008_IO_expender.c: 29: if (mode == 0x01) {
+"29
+[e $ ! == _mode -> 1 `i 838  ]
+{
+[; ;MCP23008_IO_expender.c: 30: I2C_Write(dataRead | (0x01 << port));
+"30
+[e ( _I2C_Write (1 -> | _dataRead << -> 1 `i _port `uc ]
+"31
+}
+[; ;MCP23008_IO_expender.c: 31: } else {
+[e $U 839  ]
+[e :U 838 ]
+{
+[; ;MCP23008_IO_expender.c: 32: I2C_Write(dataRead & ~(0x01 << port));
+"32
+[e ( _I2C_Write (1 -> & _dataRead ~ << -> 1 `i _port `uc ]
+"33
+}
+[e :U 839 ]
+[; ;MCP23008_IO_expender.c: 33: }
+[; ;MCP23008_IO_expender.c: 34: I2C_stop();
+"34
+[e ( _I2C_stop ..  ]
+[; ;MCP23008_IO_expender.c: 35: }
+"35
 [e :UE 837 ]
 }
-"24
-[v _MCP23008_Write `(v ~T0 @X0 1 ef1`uc ]
-{
-[; ;MCP23008_IO_expender.c: 24: void MCP23008_Write(uint8_t data){
-[e :U _MCP23008_Write ]
-[v _data `uc ~T0 @X0 1 r1 ]
-[f ]
-[; ;MCP23008_IO_expender.c: 25: I2C_start();
-"25
-[e ( _I2C_start ..  ]
-[; ;MCP23008_IO_expender.c: 26: I2C_Write(0x40);
-"26
-[e ( _I2C_Write (1 -> -> 64 `i `uc ]
-[; ;MCP23008_IO_expender.c: 27: I2C_Write(0x0A);
-"27
-[e ( _I2C_Write (1 -> -> 10 `i `uc ]
-[; ;MCP23008_IO_expender.c: 28: I2C_Write(data);
-"28
-[e ( _I2C_Write (1 _data ]
-[; ;MCP23008_IO_expender.c: 29: I2C_stop();
-"29
-[e ( _I2C_stop ..  ]
-[; ;MCP23008_IO_expender.c: 30: }
-"30
-[e :UE 838 ]
-}
-"32
-[v _MCP23008_read `(uc ~T0 @X0 1 ef ]
-{
-[; ;MCP23008_IO_expender.c: 32: char MCP23008_read(void){
-[e :U _MCP23008_read ]
-[f ]
-[; ;MCP23008_IO_expender.c: 33: I2C_start();
-"33
-[e ( _I2C_start ..  ]
-[; ;MCP23008_IO_expender.c: 34: I2C_Write(0x40);
-"34
-[e ( _I2C_Write (1 -> -> 64 `i `uc ]
-[; ;MCP23008_IO_expender.c: 35: I2C_Write(0x09);
-"35
-[e ( _I2C_Write (1 -> -> 9 `i `uc ]
-[; ;MCP23008_IO_expender.c: 36: I2C_repeated_Start();
-"36
-[e ( _I2C_repeated_Start ..  ]
-[; ;MCP23008_IO_expender.c: 37: I2C_Write(0x41);
 "37
-[e ( _I2C_Write (1 -> -> 65 `i `uc ]
-[; ;MCP23008_IO_expender.c: 38: I2C_read(1);
-"38
-[e ( _I2C_read (1 -> 1 `i ]
-[; ;MCP23008_IO_expender.c: 39: I2C_stop();
-"39
-[e ( _I2C_stop ..  ]
-[; ;MCP23008_IO_expender.c: 40: }
-"40
-[e :UE 839 ]
-}
-"41
-[v _MCP23008_loop `(v ~T0 @X0 1 ef ]
+[v _MCP23008_Write `(v ~T0 @X0 1 ef2`i`i ]
 {
-[; ;MCP23008_IO_expender.c: 41: void MCP23008_loop(void) {
-[e :U _MCP23008_loop ]
+[; ;MCP23008_IO_expender.c: 37: void MCP23008_Write(int port, int data) {
+[e :U _MCP23008_Write ]
+[v _port `i ~T0 @X0 1 r1 ]
+[v _data `i ~T0 @X0 1 r2 ]
 [f ]
-[; ;MCP23008_IO_expender.c: 42: MCP23008_Write(0x7);
+"38
+[v _dataRead `i ~T0 @X0 1 a ]
+[; ;MCP23008_IO_expender.c: 38: int dataRead;
+[; ;MCP23008_IO_expender.c: 39: I2C_start();
+"39
+[e ( _I2C_start ..  ]
+[; ;MCP23008_IO_expender.c: 40: I2C_Write(0x40);
+"40
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+[; ;MCP23008_IO_expender.c: 41: I2C_Write(0x0A);
+"41
+[e ( _I2C_Write (1 -> -> 10 `i `uc ]
+[; ;MCP23008_IO_expender.c: 42: I2C_repeated_Start();
 "42
-[e ( _MCP23008_Write (1 -> -> 7 `i `uc ]
-[; ;MCP23008_IO_expender.c: 54: }
+[e ( _I2C_repeated_Start ..  ]
+[; ;MCP23008_IO_expender.c: 43: I2C_Write(0x40 | 0x01);
+"43
+[e ( _I2C_Write (1 -> | -> 64 `i -> 1 `i `uc ]
+[; ;MCP23008_IO_expender.c: 44: I2C_read(1);
+"44
+[e ( _I2C_read (1 -> 1 `i ]
+[; ;MCP23008_IO_expender.c: 45: dataRead = SSP2BUF;
+"45
+[e = _dataRead -> _SSP2BUF `i ]
+[; ;MCP23008_IO_expender.c: 46: I2C_stop();
+"46
+[e ( _I2C_stop ..  ]
+[; ;MCP23008_IO_expender.c: 48: I2C_start();
+"48
+[e ( _I2C_start ..  ]
+[; ;MCP23008_IO_expender.c: 49: I2C_Write(0x40);
+"49
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+[; ;MCP23008_IO_expender.c: 50: I2C_Write(0x0A);
+"50
+[e ( _I2C_Write (1 -> -> 10 `i `uc ]
+[; ;MCP23008_IO_expender.c: 51: if (data == 1) {
+"51
+[e $ ! == _data -> 1 `i 841  ]
+{
+[; ;MCP23008_IO_expender.c: 52: I2C_Write(dataRead | (0x01 << port));
+"52
+[e ( _I2C_Write (1 -> | _dataRead << -> 1 `i _port `uc ]
+"53
+}
+[; ;MCP23008_IO_expender.c: 53: } else {
+[e $U 842  ]
+[e :U 841 ]
+{
+[; ;MCP23008_IO_expender.c: 54: I2C_Write(dataRead & ~(0x01 << port));
 "54
+[e ( _I2C_Write (1 -> & _dataRead ~ << -> 1 `i _port `uc ]
+"55
+}
+[e :U 842 ]
+[; ;MCP23008_IO_expender.c: 55: }
+[; ;MCP23008_IO_expender.c: 56: I2C_stop();
+"56
+[e ( _I2C_stop ..  ]
+[; ;MCP23008_IO_expender.c: 57: }
+"57
 [e :UE 840 ]
+}
+"59
+[v _MCP23008_read `(uc ~T0 @X0 1 ef1`i ]
+{
+[; ;MCP23008_IO_expender.c: 59: uint8_t MCP23008_read(int port) {
+[e :U _MCP23008_read ]
+[v _port `i ~T0 @X0 1 r1 ]
+[f ]
+"60
+[v _dataRead `i ~T0 @X0 1 a ]
+[; ;MCP23008_IO_expender.c: 60: int dataRead;
+[; ;MCP23008_IO_expender.c: 61: I2C_start();
+"61
+[e ( _I2C_start ..  ]
+[; ;MCP23008_IO_expender.c: 62: I2C_Write(0x40);
+"62
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+[; ;MCP23008_IO_expender.c: 63: I2C_Write(0x09);
+"63
+[e ( _I2C_Write (1 -> -> 9 `i `uc ]
+[; ;MCP23008_IO_expender.c: 64: I2C_repeated_Start();
+"64
+[e ( _I2C_repeated_Start ..  ]
+[; ;MCP23008_IO_expender.c: 65: I2C_Write(0x41 | 0x01);
+"65
+[e ( _I2C_Write (1 -> | -> 65 `i -> 1 `i `uc ]
+[; ;MCP23008_IO_expender.c: 66: I2C_read(1);
+"66
+[e ( _I2C_read (1 -> 1 `i ]
+[; ;MCP23008_IO_expender.c: 67: dataRead = (SSP2BUF & (0x01 << port));
+"67
+[e = _dataRead & -> _SSP2BUF `i << -> 1 `i _port ]
+[; ;MCP23008_IO_expender.c: 68: I2C_stop();
+"68
+[e ( _I2C_stop ..  ]
+[; ;MCP23008_IO_expender.c: 69: if (dataRead == 0) {
+"69
+[e $ ! == _dataRead -> 0 `i 844  ]
+{
+[; ;MCP23008_IO_expender.c: 70: return 0;
+"70
+[e ) -> -> 0 `i `uc ]
+[e $UE 843  ]
+"71
+}
+[; ;MCP23008_IO_expender.c: 71: } else {
+[e $U 845  ]
+[e :U 844 ]
+{
+[; ;MCP23008_IO_expender.c: 72: return 1;
+"72
+[e ) -> -> 1 `i `uc ]
+[e $UE 843  ]
+"73
+}
+[e :U 845 ]
+[; ;MCP23008_IO_expender.c: 73: }
+[; ;MCP23008_IO_expender.c: 74: }
+"74
+[e :UE 843 ]
+}
+"76
+[v _MCP23008_pullUp `(v ~T0 @X0 1 ef1`i ]
+{
+[; ;MCP23008_IO_expender.c: 76: void MCP23008_pullUp(int port) {
+[e :U _MCP23008_pullUp ]
+[v _port `i ~T0 @X0 1 r1 ]
+[f ]
+"77
+[v _dataRead `i ~T0 @X0 1 a ]
+[; ;MCP23008_IO_expender.c: 77: int dataRead;
+[; ;MCP23008_IO_expender.c: 78: I2C_start();
+"78
+[e ( _I2C_start ..  ]
+[; ;MCP23008_IO_expender.c: 79: I2C_Write(0x40);
+"79
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+[; ;MCP23008_IO_expender.c: 80: I2C_Write(0x06);
+"80
+[e ( _I2C_Write (1 -> -> 6 `i `uc ]
+[; ;MCP23008_IO_expender.c: 81: I2C_repeated_Start();
+"81
+[e ( _I2C_repeated_Start ..  ]
+[; ;MCP23008_IO_expender.c: 82: I2C_Write(0x40 | 0x01);
+"82
+[e ( _I2C_Write (1 -> | -> 64 `i -> 1 `i `uc ]
+[; ;MCP23008_IO_expender.c: 83: I2C_read(1);
+"83
+[e ( _I2C_read (1 -> 1 `i ]
+[; ;MCP23008_IO_expender.c: 84: dataRead = SSP2BUF;
+"84
+[e = _dataRead -> _SSP2BUF `i ]
+[; ;MCP23008_IO_expender.c: 85: I2C_stop();
+"85
+[e ( _I2C_stop ..  ]
+[; ;MCP23008_IO_expender.c: 87: I2C_start();
+"87
+[e ( _I2C_start ..  ]
+[; ;MCP23008_IO_expender.c: 88: I2C_Write(0x40);
+"88
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+[; ;MCP23008_IO_expender.c: 89: I2C_Write(0x06);
+"89
+[e ( _I2C_Write (1 -> -> 6 `i `uc ]
+[; ;MCP23008_IO_expender.c: 90: I2C_Write(dataRead | (0x01 << port));
+"90
+[e ( _I2C_Write (1 -> | _dataRead << -> 1 `i _port `uc ]
+[; ;MCP23008_IO_expender.c: 91: I2C_stop();
+"91
+[e ( _I2C_stop ..  ]
+[; ;MCP23008_IO_expender.c: 92: }
+"92
+[e :UE 846 ]
+}
+"94
+[v _MCP23008_ISR `(uc ~T0 @X0 1 ef2`i`i ]
+{
+[; ;MCP23008_IO_expender.c: 94: uint8_t MCP23008_ISR(int port, int INT_polarity) {
+[e :U _MCP23008_ISR ]
+[v _port `i ~T0 @X0 1 r1 ]
+[v _INT_polarity `i ~T0 @X0 1 r2 ]
+[f ]
+"95
+[v _dataRead `i ~T0 @X0 1 a ]
+[; ;MCP23008_IO_expender.c: 95: int dataRead;
+[; ;MCP23008_IO_expender.c: 98: I2C_start();
+"98
+[e ( _I2C_start ..  ]
+[; ;MCP23008_IO_expender.c: 99: I2C_Write(0x40);
+"99
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+[; ;MCP23008_IO_expender.c: 100: I2C_Write(0x02);
+"100
+[e ( _I2C_Write (1 -> -> 2 `i `uc ]
+[; ;MCP23008_IO_expender.c: 101: I2C_repeated_Start();
+"101
+[e ( _I2C_repeated_Start ..  ]
+[; ;MCP23008_IO_expender.c: 102: I2C_Write(0x40 | 0x01);
+"102
+[e ( _I2C_Write (1 -> | -> 64 `i -> 1 `i `uc ]
+[; ;MCP23008_IO_expender.c: 103: I2C_read(1);
+"103
+[e ( _I2C_read (1 -> 1 `i ]
+[; ;MCP23008_IO_expender.c: 104: dataRead = SSP2BUF;
+"104
+[e = _dataRead -> _SSP2BUF `i ]
+[; ;MCP23008_IO_expender.c: 105: I2C_stop();
+"105
+[e ( _I2C_stop ..  ]
+[; ;MCP23008_IO_expender.c: 108: I2C_start();
+"108
+[e ( _I2C_start ..  ]
+[; ;MCP23008_IO_expender.c: 109: I2C_Write(0x40);
+"109
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+[; ;MCP23008_IO_expender.c: 110: I2C_Write(0x02);
+"110
+[e ( _I2C_Write (1 -> -> 2 `i `uc ]
+[; ;MCP23008_IO_expender.c: 111: I2C_Write(dataRead | (0x01 << port));
+"111
+[e ( _I2C_Write (1 -> | _dataRead << -> 1 `i _port `uc ]
+[; ;MCP23008_IO_expender.c: 112: I2C_stop();
+"112
+[e ( _I2C_stop ..  ]
+[; ;MCP23008_IO_expender.c: 115: I2C_start();
+"115
+[e ( _I2C_start ..  ]
+[; ;MCP23008_IO_expender.c: 116: I2C_Write(0x40);
+"116
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+[; ;MCP23008_IO_expender.c: 117: I2C_Write(0x04);
+"117
+[e ( _I2C_Write (1 -> -> 4 `i `uc ]
+[; ;MCP23008_IO_expender.c: 118: I2C_repeated_Start();
+"118
+[e ( _I2C_repeated_Start ..  ]
+[; ;MCP23008_IO_expender.c: 119: I2C_Write(0x40 | 0x01);
+"119
+[e ( _I2C_Write (1 -> | -> 64 `i -> 1 `i `uc ]
+[; ;MCP23008_IO_expender.c: 120: I2C_read(1);
+"120
+[e ( _I2C_read (1 -> 1 `i ]
+[; ;MCP23008_IO_expender.c: 121: dataRead = SSP2BUF;
+"121
+[e = _dataRead -> _SSP2BUF `i ]
+[; ;MCP23008_IO_expender.c: 122: I2C_stop();
+"122
+[e ( _I2C_stop ..  ]
+[; ;MCP23008_IO_expender.c: 125: I2C_start();
+"125
+[e ( _I2C_start ..  ]
+[; ;MCP23008_IO_expender.c: 126: I2C_Write(0x40);
+"126
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+[; ;MCP23008_IO_expender.c: 127: I2C_Write(0x04);
+"127
+[e ( _I2C_Write (1 -> -> 4 `i `uc ]
+[; ;MCP23008_IO_expender.c: 128: I2C_Write(dataRead | (0x01 << port));
+"128
+[e ( _I2C_Write (1 -> | _dataRead << -> 1 `i _port `uc ]
+[; ;MCP23008_IO_expender.c: 129: I2C_stop();
+"129
+[e ( _I2C_stop ..  ]
+[; ;MCP23008_IO_expender.c: 131: I2C_start();
+"131
+[e ( _I2C_start ..  ]
+[; ;MCP23008_IO_expender.c: 132: I2C_Write(0x40);
+"132
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+[; ;MCP23008_IO_expender.c: 133: I2C_Write(0x05);
+"133
+[e ( _I2C_Write (1 -> -> 5 `i `uc ]
+[; ;MCP23008_IO_expender.c: 134: I2C_Write(INT_polarity);
+"134
+[e ( _I2C_Write (1 -> _INT_polarity `uc ]
+[; ;MCP23008_IO_expender.c: 135: I2C_stop();
+"135
+[e ( _I2C_stop ..  ]
+[; ;MCP23008_IO_expender.c: 138: I2C_start();
+"138
+[e ( _I2C_start ..  ]
+[; ;MCP23008_IO_expender.c: 139: I2C_Write(0x40);
+"139
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+[; ;MCP23008_IO_expender.c: 140: I2C_Write(0x03);
+"140
+[e ( _I2C_Write (1 -> -> 3 `i `uc ]
+[; ;MCP23008_IO_expender.c: 141: I2C_repeated_Start();
+"141
+[e ( _I2C_repeated_Start ..  ]
+[; ;MCP23008_IO_expender.c: 142: I2C_Write(0x40 | 0x01);
+"142
+[e ( _I2C_Write (1 -> | -> 64 `i -> 1 `i `uc ]
+[; ;MCP23008_IO_expender.c: 143: I2C_read(1);
+"143
+[e ( _I2C_read (1 -> 1 `i ]
+[; ;MCP23008_IO_expender.c: 144: dataRead = SSP2BUF;
+"144
+[e = _dataRead -> _SSP2BUF `i ]
+[; ;MCP23008_IO_expender.c: 145: I2C_stop();
+"145
+[e ( _I2C_stop ..  ]
+[; ;MCP23008_IO_expender.c: 147: I2C_start();
+"147
+[e ( _I2C_start ..  ]
+[; ;MCP23008_IO_expender.c: 148: I2C_Write(0x40);
+"148
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+[; ;MCP23008_IO_expender.c: 149: I2C_Write(0x03);
+"149
+[e ( _I2C_Write (1 -> -> 3 `i `uc ]
+[; ;MCP23008_IO_expender.c: 150: I2C_Write(dataRead & ~(INT_polarity << port));
+"150
+[e ( _I2C_Write (1 -> & _dataRead ~ << _INT_polarity _port `uc ]
+[; ;MCP23008_IO_expender.c: 151: I2C_stop();
+"151
+[e ( _I2C_stop ..  ]
+[; ;MCP23008_IO_expender.c: 152: }
+"152
+[e :UE 847 ]
+}
+"154
+[v _portINT_status `(uc ~T0 @X0 1 ef1`i ]
+{
+[; ;MCP23008_IO_expender.c: 154: uint8_t portINT_status(int port) {
+[e :U _portINT_status ]
+[v _port `i ~T0 @X0 1 r1 ]
+[f ]
+"156
+[v _dataRead `i ~T0 @X0 1 a ]
+[; ;MCP23008_IO_expender.c: 156: int dataRead;
+[; ;MCP23008_IO_expender.c: 157: I2C_start();
+"157
+[e ( _I2C_start ..  ]
+[; ;MCP23008_IO_expender.c: 158: I2C_Write(0x40);
+"158
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+[; ;MCP23008_IO_expender.c: 159: I2C_Write(0x08);
+"159
+[e ( _I2C_Write (1 -> -> 8 `i `uc ]
+[; ;MCP23008_IO_expender.c: 160: I2C_repeated_Start();
+"160
+[e ( _I2C_repeated_Start ..  ]
+[; ;MCP23008_IO_expender.c: 161: I2C_Write(0x40 | 0x01);
+"161
+[e ( _I2C_Write (1 -> | -> 64 `i -> 1 `i `uc ]
+[; ;MCP23008_IO_expender.c: 162: I2C_read(1);
+"162
+[e ( _I2C_read (1 -> 1 `i ]
+[; ;MCP23008_IO_expender.c: 163: dataRead = (SSP2BUF & (0x01 << port));
+"163
+[e = _dataRead & -> _SSP2BUF `i << -> 1 `i _port ]
+[; ;MCP23008_IO_expender.c: 164: I2C_stop();
+"164
+[e ( _I2C_stop ..  ]
+[; ;MCP23008_IO_expender.c: 165: if (dataRead == 0) {
+"165
+[e $ ! == _dataRead -> 0 `i 849  ]
+{
+[; ;MCP23008_IO_expender.c: 166: return 0;
+"166
+[e ) -> -> 0 `i `uc ]
+[e $UE 848  ]
+"167
+}
+[; ;MCP23008_IO_expender.c: 167: } else {
+[e $U 850  ]
+[e :U 849 ]
+{
+[; ;MCP23008_IO_expender.c: 168: return 1;
+"168
+[e ) -> -> 1 `i `uc ]
+[e $UE 848  ]
+"169
+}
+[e :U 850 ]
+[; ;MCP23008_IO_expender.c: 169: }
+[; ;MCP23008_IO_expender.c: 170: }
+"170
+[e :UE 848 ]
 }

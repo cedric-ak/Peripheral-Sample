@@ -9532,11 +9532,11 @@ void rStatus_Reg(void);
 void wStatus_Reg(void);
 void EEPROM_25LC512_loop(void);
 
-# 20 "mcc_generated_files/../MCP28003.h"
-void MCP23008_Init(uint8_t portDirection);
-void MCP23008_Write(uint8_t data);
-void MCP23008_loop(void);
-char MCP23008_read(void);
+# 33 "mcc_generated_files/../MCP28003.h"
+void MCP23008_Write(int port, int data);
+void MCP23008_pinMode(int port, int mode);
+void MCP23008_pullUp(int port);
+uint8_t MCP23008_read(int port);
 
 # 21 "mcc_generated_files/../MCP9801.h"
 void MCP9801_Init(void);
@@ -9604,15 +9604,20 @@ void main(void) {
 interrupt_Init();
 SYSTEM_Initialize();
 do { TRISCbits.TRISC0 = 0; } while(0);
-
 I2C_buffClear();
 _delay((unsigned long)((10)*(16000000/4000.0)));
 
-SSD1306_Init();
-_delay((unsigned long)((2000)*(16000000/4000.0)));
-displaySetCursor();
-while (1) {
+MCP23008_pinMode(3, 0x01);
+MCP23008_pinMode(5, 0x00);
+MCP23008_pullUp(3);
 
-# 24
+while (1) {
+_delay((unsigned long)((500)*(16000000/4000.0)));
+if (MCP23008_read(3) == 0) {
+_delay((unsigned long)((10)*(16000000/4000.0)));
+if (MCP23008_read(3) == 0) {
+MCP23008_Write(5, 1);
+}
+}
 }
 }

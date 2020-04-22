@@ -9532,11 +9532,11 @@ void rStatus_Reg(void);
 void wStatus_Reg(void);
 void EEPROM_25LC512_loop(void);
 
-# 20 "mcc_generated_files/../MCP28003.h"
-void MCP23008_Init(uint8_t portDirection);
-void MCP23008_Write(uint8_t data);
-void MCP23008_loop(void);
-char MCP23008_read(void);
+# 33 "mcc_generated_files/../MCP28003.h"
+void MCP23008_Write(int port, int data);
+void MCP23008_pinMode(int port, int mode);
+void MCP23008_pullUp(int port);
+uint8_t MCP23008_read(int port);
 
 # 21 "mcc_generated_files/../MCP9801.h"
 void MCP9801_Init(void);
@@ -9651,7 +9651,6 @@ void displayClear(void){
 void displaySetCursor(void){
 displayWrite(7,7,0x22);
 displayWrite(1,1,0x21);
-
 I2C_start();
 I2C_Write(0x7A);
 I2C_Write(0x41);

@@ -7105,10 +7105,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;_25LC512.h: 19: void rStatus_Reg(void);
 [; ;_25LC512.h: 20: void wStatus_Reg(void);
 [; ;_25LC512.h: 21: void EEPROM_25LC512_loop(void);
-[; ;MCP28003.h: 20: void MCP23008_Init(uint8_t portDirection);
-[; ;MCP28003.h: 21: void MCP23008_Write(uint8_t data);
-[; ;MCP28003.h: 22: void MCP23008_loop(void);
-[; ;MCP28003.h: 23: char MCP23008_read(void);
+[; ;MCP28003.h: 33: void MCP23008_Write(int port, int data);
+[; ;MCP28003.h: 34: void MCP23008_pinMode(int port, int mode);
+[; ;MCP28003.h: 35: void MCP23008_pullUp(int port);
+[; ;MCP28003.h: 36: uint8_t MCP23008_read(int port);
 [; ;MCP9801.h: 21: void MCP9801_Init(void);
 [; ;MCP9801.h: 22: uint8_t MCP9801_TempRead(void);
 "27 mcc_generated_files/../MCP9801.h
@@ -7143,9 +7143,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SSD1306.h: 75: void displayClear(void);
 [; ;SSD1306.h: 76: void displaySetCursor(void);
 [; ;SSD1306.h: 77: void displayWrite(uint8_t x, uint8_t y, int address);
-[v F7803 `uc ~T0 @X0 -> 16 `i t ]
+[v F7805 `uc ~T0 @X0 -> 16 `i t ]
 "80 mcc_generated_files/../SSD1306.h
-[v _columm `F7803 ~T0 @X0 -> 2 `i e ]
+[v _columm `F7805 ~T0 @X0 -> 2 `i e ]
 [i _columm
 :U ..
 :U ..

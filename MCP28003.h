@@ -16,11 +16,24 @@ extern "C" {
 #define MCP23008_IODIR         0x00
 #define MCP23008_OLAT          0x0A
 #define MCP23008_GPIO          0x09
+#define MCP23008_IPOL          0x01
+#define MCP23008_GPINTEN       0x02
+#define MCP23008_DEFVAL        0x03
+#define MCP23008_INTCON        0x04
+#define MCP23008_IOCON         0x05
+#define MCP23008_GPPU          0x06
+#define MCP23008_INTF          0x07
+#define MCP23008_INTCAP        0x08
 
-void MCP23008_Init(uint8_t portDirection);
-void MCP23008_Write(uint8_t data);
-void MCP23008_loop(void);
-char MCP23008_read(void);
+#define input           0x01
+#define output          0x00
+#define Active_high     0x06
+#define Active_low      0x04
+
+    void MCP23008_Write(int port, int data);
+    void MCP23008_pinMode(int port, int mode);
+    void MCP23008_pullUp(int port);
+    uint8_t MCP23008_read(int port);
 
 
 #ifdef	__cplusplus

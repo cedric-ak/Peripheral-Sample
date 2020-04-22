@@ -14,8 +14,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "14 mcc_generated_files/../I2C.h
 [v _I2C_stop `(v ~T0 @X0 0 ef ]
 "62 RTC_MCP79411.c
-[c E7776 0 16 32 48 64 112 .. ]
-[n E7776 ALARM_MASK second minute hour dayWk date SMHDD  ]
+[c E7778 0 16 32 48 64 112 .. ]
+[n E7778 ALARM_MASK second minute hour dayWk date SMHDD  ]
 "16 mcc_generated_files/../I2C.h
 [v _I2C_repeated_Start `(v ~T0 @X0 0 ef ]
 "17
@@ -7110,10 +7110,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;_25LC512.h: 19: void rStatus_Reg(void);
 [; ;_25LC512.h: 20: void wStatus_Reg(void);
 [; ;_25LC512.h: 21: void EEPROM_25LC512_loop(void);
-[; ;MCP28003.h: 20: void MCP23008_Init(uint8_t portDirection);
-[; ;MCP28003.h: 21: void MCP23008_Write(uint8_t data);
-[; ;MCP28003.h: 22: void MCP23008_loop(void);
-[; ;MCP28003.h: 23: char MCP23008_read(void);
+[; ;MCP28003.h: 33: void MCP23008_Write(int port, int data);
+[; ;MCP28003.h: 34: void MCP23008_pinMode(int port, int mode);
+[; ;MCP28003.h: 35: void MCP23008_pullUp(int port);
+[; ;MCP28003.h: 36: uint8_t MCP23008_read(int port);
 [; ;MCP9801.h: 21: void MCP9801_Init(void);
 [; ;MCP9801.h: 22: uint8_t MCP9801_TempRead(void);
 "27 mcc_generated_files/../MCP9801.h
@@ -7148,9 +7148,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SSD1306.h: 75: void displayClear(void);
 [; ;SSD1306.h: 76: void displaySetCursor(void);
 [; ;SSD1306.h: 77: void displayWrite(uint8_t x, uint8_t y, int address);
-[v F7803 `uc ~T0 @X0 -> 16 `i t ]
+[v F7805 `uc ~T0 @X0 -> 16 `i t ]
 "80 mcc_generated_files/../SSD1306.h
-[v _columm `F7803 ~T0 @X0 -> 2 `i e ]
+[v _columm `F7805 ~T0 @X0 -> 2 `i e ]
 [i _columm
 :U ..
 :U ..
@@ -7399,12 +7399,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 841  ]
 "62
 [e :U 842 ]
-[e [\ _alarmMask , $ -> . `E7776 0 `uc 843
- , $ -> . `E7776 1 `uc 844
- , $ -> . `E7776 2 `uc 845
- , $ -> . `E7776 3 `uc 846
- , $ -> . `E7776 4 `uc 847
- , $ -> . `E7776 5 `uc 848
+[e [\ _alarmMask , $ -> . `E7778 0 `uc 843
+ , $ -> . `E7778 1 `uc 844
+ , $ -> . `E7778 2 `uc 845
+ , $ -> . `E7778 3 `uc 846
+ , $ -> . `E7778 4 `uc 847
+ , $ -> . `E7778 5 `uc 848
  841 ]
 "81
 [e :U 841 ]

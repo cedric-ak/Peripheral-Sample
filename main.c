@@ -7,19 +7,20 @@ void main(void) {
     interrupt_Init();
     SYSTEM_Initialize();
     CS1_SetDigitalOutput();
-//    SSD1306_RESET_SetDigitalOutput();
     I2C_buffClear();
     __delay_ms(10);
-    
-    SSD1306_Init();
-  __delay_ms(2000);
-        displaySetCursor();
+
+    MCP23008_pinMode(3, input);
+    MCP23008_pinMode(5, output);
+    MCP23008_pullUp(3);
+
     while (true) {
-      
-        //        EUSART1_Write(MAX31855_Read());
-        //        if (!Button2_PORT) {
-        //            Led_Toggle();
-        //            //          MCP794x_INTF_CLR();
-        //        }
+        __delay_ms(500);
+        if (MCP23008_read(3) == 0) {
+            __delay_ms(10);
+            if (MCP23008_read(3) == 0) {
+                MCP23008_Write(5, 1);
+            }
+        }
     }
 }
