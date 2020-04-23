@@ -66,7 +66,7 @@ void MCP23008_pullUp(int port) {
     I2C_stop();
 }
 
-uint8_t MCP23008_ISR_EN(int port) {
+uint8_t MCP23008_ISR_EN(int port, int INTedge) {
     int dataRead;
     /*Read GPIO pin interrupt-on-change register*/
     dataRead = MCP23008_reagReg(MCP23008_GPINTEN);
@@ -83,6 +83,8 @@ uint8_t MCP23008_ISR_EN(int port) {
     I2C_Write(MCP23008_IOCON);
     I2C_Write(Active_high);
     I2C_stop();
+    
+    MCP23008_ISR_polarity(port,INTedge);
 }
 
 void MCP23008_ISR_polarity(int port, int INTedge) {

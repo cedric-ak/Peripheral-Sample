@@ -9532,12 +9532,12 @@ void rStatus_Reg(void);
 void wStatus_Reg(void);
 void EEPROM_25LC512_loop(void);
 
-# 37 "mcc_generated_files/../MCP28003.h"
+# 38 "mcc_generated_files/../MCP28003.h"
 void MCP23008_Write(int port, int data);
 void MCP23008_pinMode(int port, int mode);
 void MCP23008_pullUp(int port);
 uint8_t MCP23008_read(int port);
-uint8_t MCP23008_ISR_EN(int port);
+uint8_t MCP23008_ISR_EN(int port, int INTedge);
 uint8_t portINT_status(int port);
 int MCP23008_reagReg(int regAdd);
 void MCP23008_ISR_polarity(int port, int INTedge);
@@ -9614,15 +9614,14 @@ _delay((unsigned long)((10)*(16000000/4000.0)));
 
 
 MCP23008_pinMode(5, 0x00);
-MCP23008_pullUp(3);
-MCP23008_ISR_EN(3);
-MCP23008_ISR_polarity(3, 0x00);
 MCP23008_pinMode(3, 0x01);
+MCP23008_pullUp(3);
+MCP23008_ISR_EN(3,0x00);
 
 while (1) {
 MCP23008_INTclear();
-_delay((unsigned long)((500)*(16000000/4000.0)));
+_delay((unsigned long)((300)*(16000000/4000.0)));
 
-# 29
+# 28
 }
 }

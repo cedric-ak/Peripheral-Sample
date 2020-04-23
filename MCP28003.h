@@ -39,7 +39,7 @@ extern "C" {
     void MCP23008_pinMode(int port, int mode);
     void MCP23008_pullUp(int port);
     uint8_t MCP23008_read(int port);
-    uint8_t MCP23008_ISR_EN(int port);
+    uint8_t MCP23008_ISR_EN(int port, int INTedge);
     uint8_t portINT_status(int port);
     int MCP23008_reagReg(int regAdd);
     void MCP23008_ISR_polarity(int port, int INTedge);
