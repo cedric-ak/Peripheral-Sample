@@ -31,6 +31,7 @@ extern "C" {
     /*interrupt polarity*/
 #define Active_high     0x04
 #define Active_low      0x06
+    
 #define fallingEdge     0x00
 #define risingEdge      0x01
 
