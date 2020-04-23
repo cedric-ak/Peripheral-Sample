@@ -9532,11 +9532,16 @@ void rStatus_Reg(void);
 void wStatus_Reg(void);
 void EEPROM_25LC512_loop(void);
 
-# 33 "mcc_generated_files/../MCP28003.h"
+# 37 "mcc_generated_files/../MCP28003.h"
 void MCP23008_Write(int port, int data);
 void MCP23008_pinMode(int port, int mode);
 void MCP23008_pullUp(int port);
 uint8_t MCP23008_read(int port);
+uint8_t MCP23008_ISR_EN(int port);
+uint8_t portINT_status(int port);
+int MCP23008_reagReg(int regAdd);
+void MCP23008_ISR_polarity(int port, int INTedge);
+void MCP23008_INTclear(void);
 
 # 21 "mcc_generated_files/../MCP9801.h"
 void MCP9801_Init(void);
@@ -9596,17 +9601,10 @@ void SYSTEM_Initialize(void);
 # 55
 void OSCILLATOR_Initialize(void);
 
-# 15 "MCP23008_IO_expender.c"
+# 11 "MCP23008_IO_expender.c"
 void MCP23008_pinMode(int port, int mode) {
 int dataRead;
-I2C_start();
-I2C_Write(0x40);
-I2C_Write(0x00);
-I2C_repeated_Start();
-I2C_Write(0x40 | 0x01);
-I2C_read(1);
-dataRead = SSP2BUF;
-I2C_stop();
+dataRead = MCP23008_reagReg(0x00);
 
 I2C_start();
 I2C_Write(0x40);
@@ -9621,14 +9619,7 @@ I2C_stop();
 
 void MCP23008_Write(int port, int data) {
 int dataRead;
-I2C_start();
-I2C_Write(0x40);
-I2C_Write(0x0A);
-I2C_repeated_Start();
-I2C_Write(0x40 | 0x01);
-I2C_read(1);
-dataRead = SSP2BUF;
-I2C_stop();
+dataRead = MCP23008_reagReg(0x0A);
 
 I2C_start();
 I2C_Write(0x40);
@@ -9660,14 +9651,7 @@ return 1;
 
 void MCP23008_pullUp(int port) {
 int dataRead;
-I2C_start();
-I2C_Write(0x40);
-I2C_Write(0x06);
-I2C_repeated_Start();
-I2C_Write(0x40 | 0x01);
-I2C_read(1);
-dataRead = SSP2BUF;
-I2C_stop();
+dataRead = MCP23008_reagReg(0x06);
 
 I2C_start();
 I2C_Write(0x40);
@@ -9676,19 +9660,10 @@ I2C_Write(dataRead | (0x01 << port));
 I2C_stop();
 }
 
-uint8_t MCP23008_ISR(int port, int INT_polarity) {
+uint8_t MCP23008_ISR_EN(int port) {
 int dataRead;
 
-
-I2C_start();
-I2C_Write(0x40);
-I2C_Write(0x02);
-I2C_repeated_Start();
-I2C_Write(0x40 | 0x01);
-I2C_read(1);
-dataRead = SSP2BUF;
-I2C_stop();
-
+dataRead = MCP23008_reagReg(0x02);
 
 I2C_start();
 I2C_Write(0x40);
@@ -9696,43 +9671,34 @@ I2C_Write(0x02);
 I2C_Write(dataRead | (0x01 << port));
 I2C_stop();
 
-
-I2C_start();
-I2C_Write(0x40);
-I2C_Write(0x04);
-I2C_repeated_Start();
-I2C_Write(0x40 | 0x01);
-I2C_read(1);
-dataRead = SSP2BUF;
-I2C_stop();
-
-
-I2C_start();
-I2C_Write(0x40);
-I2C_Write(0x04);
-I2C_Write(dataRead | (0x01 << port));
-I2C_stop();
 
 I2C_start();
 I2C_Write(0x40);
 I2C_Write(0x05);
-I2C_Write(INT_polarity);
+I2C_Write(0x04);
 I2C_stop();
+}
 
+void MCP23008_ISR_polarity(int port, int INTedge) {
+int dataRead;
 
+dataRead = MCP23008_reagReg(0x03);
 I2C_start();
 I2C_Write(0x40);
 I2C_Write(0x03);
-I2C_repeated_Start();
-I2C_Write(0x40 | 0x01);
-I2C_read(1);
-dataRead = SSP2BUF;
+if (INTedge == 0x00) {
+I2C_Write(dataRead |(0x01 << port));
+} else {
+I2C_Write(dataRead & ~(0x01 << port));
+}
 I2C_stop();
 
+
+dataRead = MCP23008_reagReg(0x04);
 I2C_start();
 I2C_Write(0x40);
-I2C_Write(0x03);
-I2C_Write(dataRead & ~(INT_polarity << port));
+I2C_Write(0x04);
+I2C_Write(dataRead |(0x01 << port));
 I2C_stop();
 }
 
@@ -9753,3 +9719,21 @@ return 0;
 return 1;
 }
 }
+
+int MCP23008_reagReg(int regAdd) {
+int dataRead;
+I2C_start();
+I2C_Write(0x40);
+I2C_Write(regAdd);
+I2C_repeated_Start();
+I2C_Write(0x40 | 0x01);
+I2C_read(1);
+dataRead = SSP2BUF;
+I2C_stop();
+return dataRead;
+}
+
+void MCP23008_INTclear(void){
+MCP23008_reagReg(0x08);
+}
+

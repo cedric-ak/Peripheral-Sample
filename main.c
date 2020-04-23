@@ -9,18 +9,22 @@ void main(void) {
     CS1_SetDigitalOutput();
     I2C_buffClear();
     __delay_ms(10);
+    //    I2C_BusSCan();
 
-    MCP23008_pinMode(3, input);
     MCP23008_pinMode(5, output);
     MCP23008_pullUp(3);
+    MCP23008_ISR_EN(3);
+    MCP23008_ISR_polarity(3, fallingEdge);
+    MCP23008_pinMode(3, input);
 
     while (true) {
+        MCP23008_INTclear();
         __delay_ms(500);
-        if (MCP23008_read(3) == 0) {
-            __delay_ms(10);
-            if (MCP23008_read(3) == 0) {
-                MCP23008_Write(5, 1);
-            }
-        }
+        //                if (MCP23008_read(3) == 0) {
+        //                    __delay_ms(10);
+        //                    if (MCP23008_read(3) == 0) {
+        //                        MCP23008_Write(5, 1);
+        //                    }
+        //                }
     }
 }

@@ -10,14 +10,7 @@
 
 void MCP23008_pinMode(int port, int mode) { //mode: input/output
     int dataRead;
-    I2C_start();
-    I2C_Write(MCP23008_WriteAddress);
-    I2C_Write(MCP23008_IODIR);
-    I2C_repeated_Start();
-    I2C_Write(MCP23008_WriteAddress | 0x01);
-    I2C_read(NACK);
-    dataRead = SSP2BUF;
-    I2C_stop();
+    dataRead = MCP23008_reagReg(MCP23008_IODIR);
 
     I2C_start();
     I2C_Write(MCP23008_WriteAddress); //device address
@@ -32,14 +25,7 @@ void MCP23008_pinMode(int port, int mode) { //mode: input/output
 
 void MCP23008_Write(int port, int data) {
     int dataRead;
-    I2C_start();
-    I2C_Write(MCP23008_WriteAddress);
-    I2C_Write(MCP23008_OLAT);
-    I2C_repeated_Start();
-    I2C_Write(MCP23008_WriteAddress | 0x01);
-    I2C_read(NACK);
-    dataRead = SSP2BUF;
-    I2C_stop();
+    dataRead = MCP23008_reagReg(MCP23008_OLAT);
 
     I2C_start();
     I2C_Write(MCP23008_WriteAddress); //device address
@@ -71,14 +57,7 @@ uint8_t MCP23008_read(int port) {
 
 void MCP23008_pullUp(int port) {
     int dataRead;
-    I2C_start();
-    I2C_Write(MCP23008_WriteAddress);
-    I2C_Write(MCP23008_GPPU);
-    I2C_repeated_Start();
-    I2C_Write(MCP23008_WriteAddress | 0x01);
-    I2C_read(NACK);
-    dataRead = SSP2BUF;
-    I2C_stop();
+    dataRead = MCP23008_reagReg(MCP23008_GPPU);
 
     I2C_start();
     I2C_Write(MCP23008_WriteAddress); //device address
@@ -87,63 +66,45 @@ void MCP23008_pullUp(int port) {
     I2C_stop();
 }
 
-uint8_t MCP23008_ISR(int port, int INT_polarity) {
+uint8_t MCP23008_ISR_EN(int port) {
     int dataRead;
-
     /*Read GPIO pin interrupt-on-change register*/
-    I2C_start();
-    I2C_Write(MCP23008_WriteAddress);
-    I2C_Write(MCP23008_GPINTEN);
-    I2C_repeated_Start();
-    I2C_Write(MCP23008_WriteAddress | 0x01);
-    I2C_read(NACK);
-    dataRead = SSP2BUF;
-    I2C_stop();
-
+    dataRead = MCP23008_reagReg(MCP23008_GPINTEN);
     /*Enable GPIO input pin for interrupt-on-change event*/
     I2C_start();
     I2C_Write(MCP23008_WriteAddress); //device address
-    I2C_Write(MCP23008_GPINTEN); //select slave device LAT register
+    I2C_Write(MCP23008_GPINTEN);
     I2C_Write(dataRead | (0x01 << port));
-    I2C_stop();
-
-    /*INTERRUPT CONTROL (INTCON)*/
-    I2C_start();
-    I2C_Write(MCP23008_WriteAddress);
-    I2C_Write(MCP23008_INTCON);
-    I2C_repeated_Start();
-    I2C_Write(MCP23008_WriteAddress | 0x01);
-    I2C_read(NACK);
-    dataRead = SSP2BUF;
-    I2C_stop();
-
-    /*INTERRUPT CONTROL (INTCON)*/
-    I2C_start();
-    I2C_Write(MCP23008_WriteAddress); //device address
-    I2C_Write(MCP23008_INTCON); //select slave device LAT register
-    I2C_Write(dataRead | (0x01 << port));
-    I2C_stop();
-
-    I2C_start();
-    I2C_Write(MCP23008_WriteAddress); //device address
-    I2C_Write(MCP23008_IOCON); //select slave device LAT register
-    I2C_Write(INT_polarity);
-    I2C_stop();
-
-    /*DEFAULT COMPARE (DEFVAL) REGISTER FOR INTERRUPT-ON-CHANGE*/
-    I2C_start();
-    I2C_Write(MCP23008_WriteAddress);
-    I2C_Write(MCP23008_DEFVAL);
-    I2C_repeated_Start();
-    I2C_Write(MCP23008_WriteAddress | 0x01);
-    I2C_read(NACK);
-    dataRead = SSP2BUF;
     I2C_stop();
     
+//    dataRead = MCP23008_reagReg(MCP23008_IOCON);
     I2C_start();
     I2C_Write(MCP23008_WriteAddress); //device address
-    I2C_Write(MCP23008_DEFVAL);       //select slave device LAT register
-    I2C_Write(dataRead & ~(INT_polarity << port));
+    I2C_Write(MCP23008_IOCON);
+    I2C_Write(Active_high);
+    I2C_stop();
+}
+
+void MCP23008_ISR_polarity(int port, int INTedge) {
+    int dataRead;
+    /*DEFAULT COMPARE (DEFVAL) REGISTER FOR INTERRUPT-ON-CHANGE*/
+    dataRead = MCP23008_reagReg(MCP23008_DEFVAL);
+    I2C_start();
+    I2C_Write(MCP23008_WriteAddress); //device address
+    I2C_Write(MCP23008_DEFVAL);
+    if (INTedge == fallingEdge) {
+        I2C_Write(dataRead |(0x01 << port));
+    } else {
+        I2C_Write(dataRead & ~(0x01 << port));
+    }
+    I2C_stop();
+
+    /*INTERRUPT CONTROL (INTCON)*/
+    dataRead = MCP23008_reagReg(MCP23008_INTCON);
+    I2C_start();
+    I2C_Write(MCP23008_WriteAddress); //device address
+    I2C_Write(MCP23008_INTCON);
+    I2C_Write(dataRead |(0x01 << port));
     I2C_stop();
 }
 
@@ -164,3 +125,21 @@ uint8_t portINT_status(int port) {
         return 1;
     }
 }
+
+int MCP23008_reagReg(int regAdd) {
+    int dataRead;
+    I2C_start();
+    I2C_Write(MCP23008_WriteAddress);
+    I2C_Write(regAdd);
+    I2C_repeated_Start();
+    I2C_Write(MCP23008_WriteAddress | 0x01);
+    I2C_read(NACK);
+    dataRead = SSP2BUF;
+    I2C_stop();
+    return dataRead;
+}
+
+void MCP23008_INTclear(void){
+    MCP23008_reagReg(MCP23008_INTCAP);
+}
+/*to clear interrupt status, INTCAP or GPIO must be read*/

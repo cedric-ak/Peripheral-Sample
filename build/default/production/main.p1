@@ -24,14 +24,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 "164 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h
 [v __delay `JF7202 ~T0 @X0 0 e ]
 [p i __delay ]
-"34 mcc_generated_files/../MCP28003.h
+"38 mcc_generated_files/../MCP28003.h
 [v _MCP23008_pinMode `(v ~T0 @X0 0 ef2`i`i ]
-"35
+"39
 [v _MCP23008_pullUp `(v ~T0 @X0 0 ef1`i ]
-"36
-[v _MCP23008_read `(uc ~T0 @X0 0 ef1`i ]
-"33
-[v _MCP23008_Write `(v ~T0 @X0 0 ef2`i`i ]
+"41
+[v _MCP23008_ISR_EN `(uc ~T0 @X0 0 ef1`i ]
+"44
+[v _MCP23008_ISR_polarity `(v ~T0 @X0 0 ef2`i`i ]
+"45
+[v _MCP23008_INTclear `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7110,10 +7112,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;_25LC512.h: 19: void rStatus_Reg(void);
 [; ;_25LC512.h: 20: void wStatus_Reg(void);
 [; ;_25LC512.h: 21: void EEPROM_25LC512_loop(void);
-[; ;MCP28003.h: 33: void MCP23008_Write(int port, int data);
-[; ;MCP28003.h: 34: void MCP23008_pinMode(int port, int mode);
-[; ;MCP28003.h: 35: void MCP23008_pullUp(int port);
-[; ;MCP28003.h: 36: uint8_t MCP23008_read(int port);
+[; ;MCP28003.h: 37: void MCP23008_Write(int port, int data);
+[; ;MCP28003.h: 38: void MCP23008_pinMode(int port, int mode);
+[; ;MCP28003.h: 39: void MCP23008_pullUp(int port);
+[; ;MCP28003.h: 40: uint8_t MCP23008_read(int port);
+[; ;MCP28003.h: 41: uint8_t MCP23008_ISR_EN(int port);
+[; ;MCP28003.h: 42: uint8_t portINT_status(int port);
+[; ;MCP28003.h: 43: int MCP23008_reagReg(int regAdd);
+[; ;MCP28003.h: 44: void MCP23008_ISR_polarity(int port, int INTedge);
+[; ;MCP28003.h: 45: void MCP23008_INTclear(void);
 [; ;MCP9801.h: 21: void MCP9801_Init(void);
 [; ;MCP9801.h: 22: uint8_t MCP9801_TempRead(void);
 "27 mcc_generated_files/../MCP9801.h
@@ -7148,9 +7155,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SSD1306.h: 75: void displayClear(void);
 [; ;SSD1306.h: 76: void displaySetCursor(void);
 [; ;SSD1306.h: 77: void displayWrite(uint8_t x, uint8_t y, int address);
-[v F7805 `uc ~T0 @X0 -> 16 `i t ]
+[v F7816 `uc ~T0 @X0 -> 16 `i t ]
 "80 mcc_generated_files/../SSD1306.h
-[v _columm `F7805 ~T0 @X0 -> 2 `i e ]
+[v _columm `F7816 ~T0 @X0 -> 2 `i e ]
 [i _columm
 :U ..
 :U ..
@@ -7244,52 +7251,39 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 11: _delay((unsigned long)((10)*(16000000/4000.0)));
 "11
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 13: MCP23008_pinMode(3, 0x01);
-"13
-[e ( _MCP23008_pinMode (2 , -> 3 `i -> 1 `i ]
 [; ;main.c: 14: MCP23008_pinMode(5, 0x00);
 "14
 [e ( _MCP23008_pinMode (2 , -> 5 `i -> 0 `i ]
 [; ;main.c: 15: MCP23008_pullUp(3);
 "15
 [e ( _MCP23008_pullUp (1 -> 3 `i ]
-[; ;main.c: 17: while (1) {
+[; ;main.c: 16: MCP23008_ISR_EN(3);
+"16
+[e ( _MCP23008_ISR_EN (1 -> 3 `i ]
+[; ;main.c: 17: MCP23008_ISR_polarity(3, 0x00);
 "17
+[e ( _MCP23008_ISR_polarity (2 , -> 3 `i -> 0 `i ]
+[; ;main.c: 18: MCP23008_pinMode(3, 0x01);
+"18
+[e ( _MCP23008_pinMode (2 , -> 3 `i -> 1 `i ]
+[; ;main.c: 20: while (1) {
+"20
 [e :U 842 ]
 {
-[; ;main.c: 18: _delay((unsigned long)((500)*(16000000/4000.0)));
-"18
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 19: if (MCP23008_read(3) == 0) {
-"19
-[e $ ! == -> ( _MCP23008_read (1 -> 3 `i `i -> 0 `i 844  ]
-{
-[; ;main.c: 20: _delay((unsigned long)((10)*(16000000/4000.0)));
-"20
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 21: if (MCP23008_read(3) == 0) {
+[; ;main.c: 21: MCP23008_INTclear();
 "21
-[e $ ! == -> ( _MCP23008_read (1 -> 3 `i `i -> 0 `i 845  ]
-{
-[; ;main.c: 22: MCP23008_Write(5, 1);
+[e ( _MCP23008_INTclear ..  ]
+[; ;main.c: 22: _delay((unsigned long)((500)*(16000000/4000.0)));
 "22
-[e ( _MCP23008_Write (2 , -> 5 `i -> 1 `i ]
-"23
-}
-[e :U 845 ]
-"24
-}
-[e :U 844 ]
-"25
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"29
 }
 [e :U 841 ]
-"17
+"20
 [e $U 842  ]
 [e :U 843 ]
-[; ;main.c: 23: }
-[; ;main.c: 24: }
-[; ;main.c: 25: }
-[; ;main.c: 26: }
-"26
+[; ;main.c: 29: }
+[; ;main.c: 30: }
+"30
 [e :UE 837 ]
 }
