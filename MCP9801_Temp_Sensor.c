@@ -11,12 +11,12 @@ void MCP9801_Init(void) {
     I2C_start();
     I2C_Write(MCP9801_ADDRES_WRITE);
     I2C_Write(MCP9801_CONFIG_ADD);
-    I2C_Write(0x60); //oneshot disabled, ADC 12 bit resolution, fault queue default, active low(default), COMP/INT power up default, shutdown disabled
+    I2C_Write(0x60); //one-shot disabled, ADC 12 bit resolution, fault queue default, active low(default), COMP/INT power up default, shutdown disabled
     I2C_stop();
 }
 
 
-uint8_t MCP9801_TempRead(void){
+int8_t MCP9801_TempRead(void){
     I2C_start();
     I2C_Write(MCP9801_ADDRES_WRITE);   //write command
     I2C_Write(MCP9801_TA_ADD);

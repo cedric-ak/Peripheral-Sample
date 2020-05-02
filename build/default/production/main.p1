@@ -1,14 +1,17 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "24 mcc_generated_files/../MCP9801.h
-[u S835 `uc -> 2 `i `ui 1 ]
+[u S835 `uc -> 2 `i `i 1 ]
 [n S835 . MSB_LSB TempData ]
 "17 mcc_generated_files/../MAX31855K.h
 [u S836 `uc -> 4 `i `ul 1 ]
 [n S836 . MAX31855 rawDate ]
+"36 mcc_generated_files/../MCP3423.h
+[u S837 `uc -> 2 `i `ul 1 ]
+[n S837 . Byte dataRead ]
 [p mainexit ]
 "3 main.c
 [v _interrupt_Init `(v ~T0 @X0 0 ef ]
-"42 mcc_generated_files/mcc.h
+"43 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "9212 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
 [s S430 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -24,14 +27,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "164 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h
 [v __delay `JF7202 ~T0 @X0 0 e ]
 [p i __delay ]
-"39 mcc_generated_files/../MCP28003.h
-[v _MCP23008_pinMode `(v ~T0 @X0 0 ef2`i`i ]
-"40
-[v _MCP23008_pullUp `(v ~T0 @X0 0 ef1`i ]
-"42
-[v _MCP23008_ISR_EN `(uc ~T0 @X0 0 ef2`i`i ]
-"46
-[v _MCP23008_INTclear `(v ~T0 @X0 0 ef ]
+"34 mcc_generated_files/../MCP3423.h
+[v _MCP342x_read `(ul ~T0 @X0 0 ef1`i ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7085,9 +7082,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart1.h: 345: void EUSART1_Write(uint8_t txData);
 [; ;eusart1.h: 346: void EUSART1_Write_Text(uint8_t *pbData, uint8_t iSize);
 [; ;eusart1.h: 347: void EUSART1_itoa(uint32_t data, int base);
-[; ;eusart1.h: 369: void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
-[; ;eusart1.h: 387: void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
-[; ;eusart1.h: 405: void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
+[; ;eusart1.h: 366: void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
+[; ;eusart1.h: 384: void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
+[; ;eusart1.h: 402: void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 [; ;I2C.h: 11: void I2C_Init(uint8_t frequency);
 [; ;I2C.h: 12: void I2C_Write(uint8_t data);
 [; ;I2C.h: 14: void I2C_stop(void);
@@ -7120,12 +7117,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP28003.h: 45: void MCP23008_ISR_polarity(int port, int INTedge);
 [; ;MCP28003.h: 46: void MCP23008_INTclear(void);
 [; ;MCP9801.h: 21: void MCP9801_Init(void);
-[; ;MCP9801.h: 22: uint8_t MCP9801_TempRead(void);
+[; ;MCP9801.h: 22: int8_t MCP9801_TempRead(void);
 "27 mcc_generated_files/../MCP9801.h
 [v _ADC `S835 ~T0 @X0 1 e ]
 [; ;MCP9801.h: 24: union{
 [; ;MCP9801.h: 25: uint8_t MSB_LSB[2];
-[; ;MCP9801.h: 26: uint16_t TempData;
+[; ;MCP9801.h: 26: int16_t TempData;
 [; ;MCP9801.h: 27: }ADC;
 [; ;_24AA512.h: 17: uint8_t EEPROM_24AA512_Read(int addHigh, int addLow);
 [; ;_24AA512.h: 18: void EEPROM_24AA512_Write(int addHigh, int AddLow, int data);
@@ -7139,7 +7136,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP79411.h: 66: uint8_t MCP7941x_read(uint8_t Register);
 [; ;MCP79411.h: 67: void MCP794x_writeEEPROM(uint8_t Register, uint8_t data);
 [; ;MCP79411.h: 68: uint8_t MCP794x_readEEPROM(uint8_t Register);
-[; ;MCP79411.h: 69: void MCP794x_getID(void);
+[; ;MCP79411.h: 69: double* MCP794x_getID(void);
 [; ;MCP79411.h: 71: enum ALARM_MASK {second = 0x00, minute = 0x10, hour = 0x20, dayWk = 0x30, date = 0x40, SMHDD = 0x70};
 [; ;MAX31855K.h: 15: uint32_t MAX31855_Read(void);
 "20 mcc_generated_files/../MAX31855K.h
@@ -7220,8 +7217,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 "86
 [v _bfSize `ul ~T0 @X0 1 e ]
 [; ;SSD1306.h: 86: uint32_t bfSize;
-[; ;mcc.h: 42: void SYSTEM_Initialize(void);
-[; ;mcc.h: 55: void OSCILLATOR_Initialize(void);
+[; ;MCP3423.h: 34: uint32_t MCP342x_read(int channel);
+"39 mcc_generated_files/../MCP3423.h
+[v _MCP342x_ADC `S837 ~T0 @X0 1 e ]
+[; ;MCP3423.h: 36: union {
+[; ;MCP3423.h: 37: char Byte[2];
+[; ;MCP3423.h: 38: uint32_t dataRead;
+[; ;MCP3423.h: 39: } MCP342x_ADC;
+[; ;mcc.h: 43: void SYSTEM_Initialize(void);
+[; ;mcc.h: 56: void OSCILLATOR_Initialize(void);
 [; ;main.c: 3: extern void interrupt_Init(void);
 [v $root$_main `(v ~T0 @X0 0 e ]
 "5 main.c
@@ -7238,47 +7242,41 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _SYSTEM_Initialize ..  ]
 [; ;main.c: 9: do { TRISCbits.TRISC0 = 0; } while(0);
 "9
-[e :U 840 ]
+[e :U 841 ]
 {
 [e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 839 ]
+[e :U 840 ]
 [; ;main.c: 10: I2C_buffClear();
 "10
 [e ( _I2C_buffClear ..  ]
 [; ;main.c: 11: _delay((unsigned long)((10)*(16000000/4000.0)));
 "11
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 14: MCP23008_pinMode(5, 0x00);
-"14
-[e ( _MCP23008_pinMode (2 , -> 5 `i -> 0 `i ]
-[; ;main.c: 15: MCP23008_pinMode(3, 0x01);
+[; ;main.c: 13: _delay((unsigned long)((300)*(16000000/4000000.0)));
+"13
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+[; ;main.c: 15: _delay((unsigned long)((300)*(16000000/4000000.0)));
 "15
-[e ( _MCP23008_pinMode (2 , -> 3 `i -> 1 `i ]
-[; ;main.c: 16: MCP23008_pullUp(3);
-"16
-[e ( _MCP23008_pullUp (1 -> 3 `i ]
-[; ;main.c: 17: MCP23008_ISR_EN(3,0x00);
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+[; ;main.c: 17: while (1) {
 "17
-[e ( _MCP23008_ISR_EN (2 , -> 3 `i -> 0 `i ]
-[; ;main.c: 19: while (1) {
-"19
-[e :U 842 ]
-{
-[; ;main.c: 20: MCP23008_INTclear();
-"20
-[e ( _MCP23008_INTclear ..  ]
-[; ;main.c: 21: _delay((unsigned long)((300)*(16000000/4000.0)));
-"21
-[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"28
-}
-[e :U 841 ]
-"19
-[e $U 842  ]
 [e :U 843 ]
-[; ;main.c: 28: }
-[; ;main.c: 29: }
-"29
-[e :UE 837 ]
+{
+[; ;main.c: 18: MCP342x_read(0x01);
+"18
+[e ( _MCP342x_read (1 -> 1 `i ]
+[; ;main.c: 19: _delay((unsigned long)((500)*(16000000/4000.0)));
+"19
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"20
+}
+[e :U 842 ]
+"17
+[e $U 843  ]
+[e :U 844 ]
+[; ;main.c: 20: }
+[; ;main.c: 21: }
+"21
+[e :UE 838 ]
 }

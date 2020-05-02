@@ -345,10 +345,7 @@ uint8_t EUSART1_Read(void);
 void EUSART1_Write(uint8_t txData);
 void EUSART1_Write_Text(uint8_t *pbData, uint8_t iSize);
 void EUSART1_itoa(uint32_t data, int base);
-
-
-
-
+//void EUSART1_ftoa(float input);
 
 /**
   @Summary

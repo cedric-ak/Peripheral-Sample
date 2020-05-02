@@ -12,6 +12,7 @@ mcc_generated_files/../MCP28003.h  \
 mcc_generated_files/../MCP9801.h  \
 mcc_generated_files/../MCP23S08.h  \
 mcc_generated_files/spi1.h  \
+mcc_generated_files/../MCP3423.h  \
 mcc_generated_files/../MCP4131.h  \
 mcc_generated_files/../_25LC512.h  \
 mcc_generated_files/pin_manager.h  \

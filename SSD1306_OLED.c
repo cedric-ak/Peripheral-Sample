@@ -46,10 +46,7 @@ SSD1306_writeCMD(SSD1306_DISPLAYOFF, SSD1306_DISPLAYOFF);             //0xAE Dis
     SSD1306_writeCMD(SSD1306_CHARGEPUMP, 0x14);                        //0x8D Enable charge pump regulator
     SSD1306_writeCMD(SSD1306_DEACTIVATE_SCROLL,SSD1306_DEACTIVATE_SCROLL);    //0x2E deactivate scroll
     SSD1306_writeCMD(SSD1306_DISPLAYON, SSD1306_DISPLAYON);           //0xAF Display ON
-    
-    
-    
-    
+      
 }
 
 /**********************************************************

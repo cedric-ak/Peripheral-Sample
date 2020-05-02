@@ -50,7 +50,7 @@
 #include "eusart1.h"
 
 volatile eusart1_status_t eusart1RxLastError;
-uint8_t TxData[256];
+uint8_t TxData[100];
 
 /**
   Section: EUSART1 APIs
@@ -146,7 +146,7 @@ void EUSART1_itoa(uint32_t data, int base) { //convert and print integer to char
     char buf[10];
     itoa(buf, data, base);
     EUSART1_Write_Text(buf, sizeof (buf));
-    EUSART1_Write_Text(" ", 2);   
+    EUSART1_Write_Text(" ", 2);
 }
 
 void EUSART1_DefaultFramingErrorHandler(void) {

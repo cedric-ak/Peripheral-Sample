@@ -9,21 +9,12 @@ void main(void) {
     CS1_SetDigitalOutput();
     I2C_buffClear();
     __delay_ms(10);
-    //    I2C_BusSCan();
-
-    MCP23008_pinMode(5, output);
-    MCP23008_pinMode(3, input);
-    MCP23008_pullUp(3);
-    MCP23008_ISR_EN(3,fallingEdge);
-    
+    //        I2C_BusSCan();
+    __delay_us(300); //acquisition tim
+    //       MCP342x_read(MCP342x_CH2);
+    __delay_us(300); //acquisition tim
+    //       MCP342x_read(MCP342x_CH1);
     while (true) {
-        MCP23008_INTclear();
-        __delay_ms(300);
-        //                if (MCP23008_read(3) == 0) {
-        //                    __delay_ms(10);
-        //                    if (MCP23008_read(3) == 0) {
-        //                        MCP23008_Write(5, 1);
-        //                    }
-        //                }
+        __delay_ms(500);
     }
 }

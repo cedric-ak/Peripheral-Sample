@@ -19,17 +19,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 "6896
 [v _SPBRGH1 `Vuc ~T0 @X0 0 e@3967 ]
 [v F7534 `(v ~T0 @X0 0 tf ]
-"369 mcc_generated_files/eusart1.h
+"366 mcc_generated_files/eusart1.h
 [v _EUSART1_SetFramingErrorHandler `(v ~T0 @X0 0 ef1`*F7534 ]
 "62 mcc_generated_files/eusart1.c
 [v _EUSART1_DefaultFramingErrorHandler `(v ~T0 @X0 0 ef ]
 [v F7538 `(v ~T0 @X0 0 tf ]
-"387 mcc_generated_files/eusart1.h
+"384 mcc_generated_files/eusart1.h
 [v _EUSART1_SetOverrunErrorHandler `(v ~T0 @X0 0 ef1`*F7538 ]
 "63 mcc_generated_files/eusart1.c
 [v _EUSART1_DefaultOverrunErrorHandler `(v ~T0 @X0 0 ef ]
 [v F7542 `(v ~T0 @X0 0 tf ]
-"405 mcc_generated_files/eusart1.h
+"402 mcc_generated_files/eusart1.h
 [v _EUSART1_SetErrorHandler `(v ~T0 @X0 0 ef1`*F7542 ]
 "64 mcc_generated_files/eusart1.c
 [v _EUSART1_DefaultErrorHandler `(v ~T0 @X0 0 ef ]
@@ -7103,15 +7103,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart1.h: 345: void EUSART1_Write(uint8_t txData);
 [; ;eusart1.h: 346: void EUSART1_Write_Text(uint8_t *pbData, uint8_t iSize);
 [; ;eusart1.h: 347: void EUSART1_itoa(uint32_t data, int base);
-[; ;eusart1.h: 369: void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
-[; ;eusart1.h: 387: void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
-[; ;eusart1.h: 405: void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
+[; ;eusart1.h: 366: void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
+[; ;eusart1.h: 384: void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
+[; ;eusart1.h: 402: void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 "52 mcc_generated_files/eusart1.c
 [v _eusart1RxLastError `VS833 ~T0 @X0 1 e ]
 [; ;eusart1.c: 52: volatile eusart1_status_t eusart1RxLastError;
 "53
-[v _TxData `uc ~T0 @X0 -> 256 `i e ]
-[; ;eusart1.c: 53: uint8_t TxData[256];
+[v _TxData `uc ~T0 @X0 -> 100 `i e ]
+[; ;eusart1.c: 53: uint8_t TxData[100];
 "58
 [v _EUSART1_FramingErrorHandler `*F7547 ~T0 @X0 1 e ]
 [; ;eusart1.c: 58: void (*EUSART1_FramingErrorHandler)(void);

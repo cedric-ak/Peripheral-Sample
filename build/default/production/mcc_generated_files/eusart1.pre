@@ -9422,18 +9422,18 @@ void EUSART1_Write(uint8_t txData);
 void EUSART1_Write_Text(uint8_t *pbData, uint8_t iSize);
 void EUSART1_itoa(uint32_t data, int base);
 
-# 369
+# 366
 void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
 
-# 387
+# 384
 void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
 
-# 405
+# 402
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 
 # 52 "mcc_generated_files/eusart1.c"
 volatile eusart1_status_t eusart1RxLastError;
-uint8_t TxData[256];
+uint8_t TxData[100];
 
 # 58
 void (*EUSART1_FramingErrorHandler)(void);

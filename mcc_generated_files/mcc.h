@@ -22,6 +22,7 @@
 #include "../MCP79411.h"
 #include "../MAX31855K.h"
 #include "../SSD1306.h"
+#include "../MCP3423.h"
 
 #define DEC 10
 #define HEX 16

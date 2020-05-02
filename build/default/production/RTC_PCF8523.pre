@@ -9494,13 +9494,13 @@ void EUSART1_Write(uint8_t txData);
 void EUSART1_Write_Text(uint8_t *pbData, uint8_t iSize);
 void EUSART1_itoa(uint32_t data, int base);
 
-# 369
+# 366
 void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
 
-# 387
+# 384
 void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
 
-# 405
+# 402
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 
 # 11 "mcc_generated_files/../I2C.h"
@@ -9545,11 +9545,11 @@ void MCP23008_INTclear(void);
 
 # 21 "mcc_generated_files/../MCP9801.h"
 void MCP9801_Init(void);
-uint8_t MCP9801_TempRead(void);
+int8_t MCP9801_TempRead(void);
 
 union{
 uint8_t MSB_LSB[2];
-uint16_t TempData;
+int16_t TempData;
 }ADC;
 
 # 17 "mcc_generated_files/../_24AA512.h"
@@ -9567,7 +9567,7 @@ uint8_t MCP794x_INTF_CLR(void);
 uint8_t MCP7941x_read(uint8_t Register);
 void MCP794x_writeEEPROM(uint8_t Register, uint8_t data);
 uint8_t MCP794x_readEEPROM(uint8_t Register);
-void MCP794x_getID(void);
+double* MCP794x_getID(void);
 
 enum ALARM_MASK {second = 0x00, minute = 0x10, hour = 0x20, dayWk = 0x30, date = 0x40, SMHDD = 0x70};
 
@@ -9595,25 +9595,34 @@ uint8_t page[8]= {0xb0, 0xb1, 0xb2, 0xb3, 0xb4, 0xb5, 0xb6, 0xb7};
 uint16_t *buffer;
 uint32_t bfSize;
 
-# 42 "mcc_generated_files/mcc.h"
+# 34 "mcc_generated_files/../MCP3423.h"
+uint32_t MCP342x_read(int channel);
+
+union {
+char Byte[2];
+uint32_t dataRead;
+} MCP342x_ADC;
+
+# 43 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 55
+# 56
 void OSCILLATOR_Initialize(void);
 
-# 3 "RTC_PCF8523.c"
+# 10 "RTC_PCF8523.c"
 void PCF8523_RTC_Init(void) {
 
-# 11
+# 18
 PCF8523_write(0X00, 0x80);
 
-# 18
+# 25
 PCF8523_write(0x02, 0x80);
 
-# 24
+# 31
 PCF8523_write(0x0F, 0xF8);
 }
 
+# 41
 void PCF8523_setTime(uint8_t hour, uint8_t minute, uint8_t second) {
 int Register[4] = {0x03, 0x04, 0x05};
 for (int timeReg = 0; timeReg < 3; timeReg++) {
@@ -9626,6 +9635,7 @@ PCF8523_write(Register[timeReg], decimalToBCD(hour)&0x7F);
 }
 }
 
+# 61
 void PCF8523_setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year) {
 uint8_t Register[5] = {0x06, 0x07, 0x08, 0x09};
 for (int timeReg = 0; timeReg < 4; timeReg++) {
@@ -9642,13 +9652,14 @@ break;
 }
 }
 
+# 84
 void PCF8523_setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay) {
 PCF8523_write(0X00, 0x80 | 0x02);
 PCF8523_write(alarmReg, decimalToBCD(minute + hour + weekDay)&0x7F);
 PCF8523_write(0x01, 0x00);
 }
 
-# 68
+# 98
 void PCF8523_countDown(uint8_t timeUnit, uint8_t time) {
 PCF8523_write(0x0F, 0xFA);
 PCF8523_write(0x01, 0x02);
@@ -9656,6 +9667,7 @@ PCF8523_write(0x10, timeUnit);
 PCF8523_write(0x11, time);
 }
 
+# 113
 uint8_t PCF8523_rtcRead(uint8_t address) {
 I2C_start();
 I2C_Write(0xD0);
@@ -9668,18 +9680,20 @@ I2C_stop();
 return BCDtoDecimal(SSP2BUF);
 }
 
+# 132
+int PCF8523_rtc_INTF_CLR(int interruptFlag) {
+PCF8523_write(0x01, interruptFlag);
+_delay((unsigned long)((5)*(16000000/4000.0)));
+return;
+}
+
+# 145
 void PCF8523_write(uint8_t regAdd, uint8_t data) {
 I2C_start();
 I2C_Write(0xD0);
 I2C_Write(regAdd);
 I2C_Write(data);
 I2C_stop();
-}
-
-int PCF8523_rtc_INTF_CLR(int interruptFlag) {
-PCF8523_write(0x01, interruptFlag);
-_delay((unsigned long)((5)*(16000000/4000.0)));
-return;
 }
 
 uint8_t decimalToBCD(int DecValue) {

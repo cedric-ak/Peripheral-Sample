@@ -319,7 +319,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Bootloader Generator" name="SCL_ANALOG_PIN"/>
-         <value/>
+         <value></value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG3L" settingAlias="DSWDTPS" alias="K524"/>
@@ -334,12 +334,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="I2C RTCC" name="combo_I2C_Channel"/>
-         <value>MSSP1</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="MSSP1" registerAlias="SSPCON2" settingAlias="ACKDT" alias="acknowledge"/>
          <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="I2C RTCC" name="combo_I2C_Channel"/>
+         <value>MSSP1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="MSSP1" registerAlias="SSPCON2" settingAlias="ACKEN" alias="disabled"/>
@@ -643,7 +643,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="SPIMASTER" name="pubSubSPIMASTERConfigurations"/>
-         <value>3922.4548969352113</value>
+         <value>8243.985811356088</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="TRISD" settingAlias="TRISD3" alias="output"/>
@@ -1154,12 +1154,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Bootloader Generator" name="AutoBaud"/>
-         <value>Hardware</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART1" name="baudRateErrorLabel"/>
          <value>Error: 0.160 %</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Bootloader Generator" name="AutoBaud"/>
+         <value>Hardware</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="RTCC" name="RTCC"/>
@@ -1247,7 +1247,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Bootloader Generator" name="SDA_ANALOG_PIN"/>
-         <value/>
+         <value></value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="INTERNAL OSCILLATOR" registerAlias="REFOCON" settingAlias="ROON"/>
@@ -1735,7 +1735,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Bootloader Generator" name="TX_ANALOG_SFR"/>
-         <value/>
+         <value></value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="System Module" registerAlias="CONFIG1L" settingAlias="CFGPLLEN"/>
@@ -1971,7 +1971,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="SPIMASTER" name="validate"/>
-         <value>0.14146101218103468</value>
+         <value>0.7092171478245811</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="RTCC" registerAlias="RTCCFG" settingAlias="RTCOE" alias="enabled"/>
@@ -2247,7 +2247,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="SPIMASTER" name="pubSubspiSubscriber"/>
-         <value>5026.9850567611475</value>
+         <value>7076.016947512411</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="WPUB" settingAlias="WPUB0" alias="clear"/>
@@ -2415,7 +2415,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Bootloader Generator" name="EntryPin"/>
-         <value/>
+         <value></value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="MSSP2" registerAlias="SSPCON1" settingAlias="SSPOV" alias="no_overflow"/>
@@ -3031,7 +3031,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Bootloader Generator" name="SDA_ANALOG_SFR"/>
-         <value/>
+         <value></value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="LATC" settingAlias="LATC4" alias="clear"/>
@@ -3127,7 +3127,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Bootloader Generator" name="IndicatorPin"/>
-         <value/>
+         <value></value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="trisUserSetRD5"/>
@@ -3667,7 +3667,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Bootloader Generator" name="pubSubBootloader Generator_EUSART/interface"/>
-         <value>9486.230746705443</value>
+         <value>2665.0829163724575</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="ODCON1" settingAlias="CCP7OD" alias="disabled"/>
@@ -3815,7 +3815,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Bootloader Generator" name="TX_ANALOG_PIN"/>
-         <value/>
+         <value></value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="MSSP1" registerAlias="SSPCON2" settingAlias="GCEN"/>
@@ -3883,7 +3883,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Bootloader Generator" name="RX_ANALOG_PIN"/>
-         <value/>
+         <value></value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISC" settingAlias="TRISC5"/>
@@ -4787,7 +4787,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Bootloader Generator" name="SCL_ANALOG_SFR"/>
-         <value/>
+         <value></value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="RCIDL"/>
@@ -4818,12 +4818,12 @@
          <value>1</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="I2C RTCC" name="enableEEPROM"/>
-         <value>enabled</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="SENDB"/>
          <value>sync_break_complete</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="I2C RTCC" name="enableEEPROM"/>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART1" registerAlias="TXSTA"/>
@@ -5855,7 +5855,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Bootloader Generator" name="RX_ANALOG_SFR"/>
-         <value/>
+         <value></value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="RCIDL" alias="bit_received"/>
@@ -5914,12 +5914,12 @@
          <value>0</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="I2C RTCC" name="rtccYear"/>
-         <value>0</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="SPIMASTER" name="spiSubscriber"/>
          <value>MSSP2-Foundation Services Library</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="I2C RTCC" name="rtccYear"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG2L" settingAlias="IESO" alias="OFF"/>
@@ -6543,7 +6543,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Bootloader Generator" name="communicationSource"/>
-         <value/>
+         <value></value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="RTCC" registerAlias="ALRMVALL" settingAlias="ALRMVALL"/>

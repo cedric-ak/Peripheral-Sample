@@ -9494,13 +9494,13 @@ void EUSART1_Write(uint8_t txData);
 void EUSART1_Write_Text(uint8_t *pbData, uint8_t iSize);
 void EUSART1_itoa(uint32_t data, int base);
 
-# 369
+# 366
 void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
 
-# 387
+# 384
 void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
 
-# 405
+# 402
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 
 # 11 "mcc_generated_files/../I2C.h"
@@ -9545,11 +9545,11 @@ void MCP23008_INTclear(void);
 
 # 21 "mcc_generated_files/../MCP9801.h"
 void MCP9801_Init(void);
-uint8_t MCP9801_TempRead(void);
+int8_t MCP9801_TempRead(void);
 
 union{
 uint8_t MSB_LSB[2];
-uint16_t TempData;
+int16_t TempData;
 }ADC;
 
 # 17 "mcc_generated_files/../_24AA512.h"
@@ -9567,7 +9567,7 @@ uint8_t MCP794x_INTF_CLR(void);
 uint8_t MCP7941x_read(uint8_t Register);
 void MCP794x_writeEEPROM(uint8_t Register, uint8_t data);
 uint8_t MCP794x_readEEPROM(uint8_t Register);
-void MCP794x_getID(void);
+double* MCP794x_getID(void);
 
 enum ALARM_MASK {second = 0x00, minute = 0x10, hour = 0x20, dayWk = 0x30, date = 0x40, SMHDD = 0x70};
 
@@ -9595,13 +9595,21 @@ uint8_t page[8]= {0xb0, 0xb1, 0xb2, 0xb3, 0xb4, 0xb5, 0xb6, 0xb7};
 uint16_t *buffer;
 uint32_t bfSize;
 
-# 42 "mcc_generated_files/mcc.h"
+# 34 "mcc_generated_files/../MCP3423.h"
+uint32_t MCP342x_read(int channel);
+
+union {
+char Byte[2];
+uint32_t dataRead;
+} MCP342x_ADC;
+
+# 43 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 55
+# 56
 void OSCILLATOR_Initialize(void);
 
-# 16 "RTC_MCP79411.c"
+# 17 "RTC_MCP79411.c"
 void MCP794x_setTime(uint8_t hour, uint8_t minute, uint8_t second) {
 I2C_start();
 I2C_Write(0xDE);
@@ -9612,7 +9620,7 @@ I2C_Write(decimalToBCD(hour & 0x1F));
 I2C_stop();
 }
 
-# 32
+# 33
 void MCP794x_setDate(uint8_t date, uint8_t weekDay, uint8_t month, uint8_t year) {
 I2C_start();
 I2C_Write(0xDE);
@@ -9632,7 +9640,7 @@ I2C_Write(value);
 I2C_stop();
 }
 
-# 58
+# 59
 void MCP794x_setAlarm(uint8_t alarmMask, uint8_t time) {
 MCP794x_writeRtcc(0x0D, 0x00);
 MCP794x_writeRtcc(0x0D, alarmMask);
@@ -9660,7 +9668,7 @@ break;
 MCP794x_writeRtcc(0x07, 0x10);
 }
 
-# 91
+# 92
 void MCP794x_writeEEPROM(uint8_t Register, uint8_t data) {
 I2C_start();
 I2C_Write(0xAE);
@@ -9669,7 +9677,7 @@ I2C_Write(data);
 I2C_stop();
 }
 
-# 105
+# 106
 uint8_t MCP794x_readEEPROM(uint8_t Register) {
 I2C_start();
 I2C_Write(0xAE);
@@ -9681,9 +9689,9 @@ I2C_stop();
 return SSP2BUF;
 }
 
-# 122
-void MCP794x_getID(void) {
-uint8_t UID[8];
+# 123
+double* MCP794x_getID(void) {
+char UID[8];
 I2C_start();
 I2C_Write(0xAE);
 I2C_Write(0xf0);
@@ -9692,13 +9700,14 @@ I2C_Write(0xAE | 0x01);
 for (int index = 0; index < 8; index++) {
 I2C_read(0);
 UID[index] = SSP2BUF;
-if (UID[index] < 16)
-EUSART1_Write_Text("0", 2);
-EUSART1_itoa(UID[index], 16);
+
+# 136
 }
-EUSART1_Write_Text("\r", 2);
+
 I2C_read(1);
 I2C_stop();
+
+return UID;
 }
 
 uint8_t MCP794x_INTF_CLR(void) {
@@ -9706,7 +9715,7 @@ MCP794x_writeRtcc(0x0D, MCP7941x_read(0x0D)& 0xF5);
 _delay((unsigned long)((10)*(16000000/4000.0)));
 }
 
-# 152
+# 155
 uint8_t MCP7941x_read(uint8_t Register) {
 I2C_start();
 I2C_Write(0xDE);

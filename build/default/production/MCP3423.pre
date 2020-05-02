@@ -1,5 +1,5 @@
 
-# 1 "MAX31855K.c"
+# 1 "MCP3423.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -9609,19 +9609,29 @@ void SYSTEM_Initialize(void);
 # 56
 void OSCILLATOR_Initialize(void);
 
-# 10 "MAX31855K.c"
-uint32_t MAX31855_Read(void) {
-uint8_t dataRead[5];
-do { LATCbits.LATC0 = 0; } while(0);
-_delay((unsigned long)((2)*(16000000/4000.0)));
-MAX31_ADC.MAX31855[3] = SPI1_Exchange8bit(0xff);
-MAX31_ADC.MAX31855[2] = SPI1_Exchange8bit(0xff);
-MAX31_ADC.MAX31855[1] = SPI1_Exchange8bit(0xff);
-MAX31_ADC.MAX31855[0] = SPI1_Exchange8bit(0xff);
-_delay((unsigned long)((2)*(16000000/4000.0)));
+# 11 "MCP3423.c"
+uint32_t MCP342x_read(int channel) {
 
+I2C_start();
+I2C_Write(0xD0);
+I2C_Write(0x8C | (channel << 5));
+I2C_stop();
 
-do { LATCbits.LATC0 = 1; } while(0);
-EUSART1_itoa((MAX31_ADC.rawDate), 16);
+_delay((unsigned long)((300)*(16000000/4000000.0)));
+I2C_start();
+I2C_Write(0xD0 | 0x01);
+for (int dataIndex = 3; dataIndex > 0; dataIndex--) {
+dataIndex == 1 ? I2C_read(1) : I2C_read(0);
+MCP342x_ADC.Byte[dataIndex-1] = SSP2BUF;
+}
+MCP342x_ADC.Byte[2] = MCP342x_ADC.Byte[2] >> 6;
+I2C_stop();
+
+I2C_start();
+I2C_Write(0xD0);
+I2C_Write(0x00);
+I2C_stop();
+return ( (MCP342x_ADC.dataRead >> 2)* (15.25 * pow(10, -6))) / 1;
+
 }
 

@@ -1,5 +1,12 @@
 #include "mcc_generated_files/mcc.h"
 
+/**********************************************************
+**Name:     PCF8523_RTC_Init
+**Function: Initializes RTC chip
+**Input:    none
+**Output:   none
+**note:     This function is to be called once prior running RTC
+**********************************************************/
 void PCF8523_RTC_Init(void) {
     /*
      * 12.5pf
@@ -24,6 +31,13 @@ void PCF8523_RTC_Init(void) {
     PCF8523_write(TMR_CLKOUT_CTRL, 0xF8);
 }
 
+/**********************************************************
+**Name:     PCF8523_setTime
+**Function: Set time of the day 
+**Input:    hour/minute and seconds in decimal
+**Output:   none
+**note:     This function is to be called once prior running RTC
+**********************************************************/
 void PCF8523_setTime(uint8_t hour, uint8_t minute, uint8_t second) {
     int Register[4] = {SECONDS, MINUTES, HOURS};
     for (int timeReg = 0; timeReg < 3; timeReg++) {
@@ -36,6 +50,14 @@ void PCF8523_setTime(uint8_t hour, uint8_t minute, uint8_t second) {
     }
 }
 
+/**********************************************************
+**Name:     PCF8523_setDate
+**Function: Set date of the year 
+**Input:    day, week day, month, year in decimal
+**Output:   none
+**note:     week day and months are predefined in header file
+ *          e.g: PCF8523_setDate(09, Tue, Mar, 21); Tuesday 09/03/2021 
+**********************************************************/
 void PCF8523_setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year) {
     uint8_t Register[5] = {DAYS, WEEKDAYS, MONTHS, YEARS};
     for (int timeReg = 0; timeReg < 4; timeReg++) {
@@ -52,10 +74,17 @@ void PCF8523_setDate(uint8_t day, uint8_t weekday, uint8_t month, uint8_t year) 
     }
 }
 
+/**********************************************************
+**Name:     PCF8523_setAlarm
+**Function: RTC Initialize alarm in hour/minutes or seconds
+**Input:    Alarm register (defined in Header file), time variable
+**Output:   none
+**note:     One alarm can be used at the time, none used alarm set value to 0 in software, eg: PCF8523_setAlarm(MINUTE_ALARM, 15, 0 ,0 ,0);
+**********************************************************/
 void PCF8523_setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t day, uint8_t weekDay) {
-    PCF8523_write(CONTROL_1, 0x80 | 0x02); // Alarm interrupt enabled
+    PCF8523_write(CONTROL_1, 0x80 | 0x02);                               // Alarm interrupt enabled
     PCF8523_write(alarmReg, decimalToBCD(minute + hour + weekDay)&0x7F); //only one alarm can be enabled at the time. set unused alarm value to zero
-    PCF8523_write(CONTROL_2, 0x00); //clear all alarm interrupt flag (this function disabled WTAIE, CTAIE, CTBIE), 
+    PCF8523_write(CONTROL_2, 0x00);                                      //clear all alarm interrupt flag (this function disabled WTAIE, CTAIE, CTBIE), 
 }
 
 /**********************************************************
@@ -63,7 +92,8 @@ void PCF8523_setAlarm(uint8_t alarmReg, uint8_t minute, uint8_t hour, uint8_t da
 **Function: RTC Initialize count down of timer A
 **Input:    time unit(hours, minutes, seconds), time in decimal format
 **Output:   none
-**note:     time variable maximum 255
+**note:     time variable maximum 255, e.g:PCF8523_countDown(hours, 2); 
+            interrupt generated every 2 hours. interrupt flag must be cleared in software 
 **********************************************************/
 void PCF8523_countDown(uint8_t timeUnit, uint8_t time) {
     PCF8523_write(TMR_CLKOUT_CTRL, 0xFA); //enable timer A pulse interrupt
@@ -72,7 +102,15 @@ void PCF8523_countDown(uint8_t timeUnit, uint8_t time) {
     PCF8523_write(TMR_A_REG, time);       //max 255 in decimal
 }
 
-uint8_t PCF8523_rtcRead(uint8_t address) {      //this function reads time/date (pass the address of desired variable to read) 
+/**********************************************************
+**Name:     PCF8523_rtcRead
+**Function: Read RTC registers, can be used to read and return time
+**Input:    Desired register address 
+**Output:   Returns 1 byte unsigned value from register 
+**note:     this function reads time/date (pass the address of desired variable to read) 
+            e.g: PCF8523_rtcRead(HOURS);  returns current hour in decimal
+**********************************************************/
+uint8_t PCF8523_rtcRead(uint8_t address) {      
     I2C_start();
     I2C_Write(SLAVE_ADDRESS);
     I2C_Write(address);
@@ -81,21 +119,35 @@ uint8_t PCF8523_rtcRead(uint8_t address) {      //this function reads time/date 
     I2C_Write(SLAVE_ADDRESS|0x01);  //read command
     I2C_read(NACK);
     I2C_stop();
-    return BCDtoDecimal(SSP2BUF);   //return time/date in decimal
+    return BCDtoDecimal(SSP2BUF);   
 }
 
+/**********************************************************
+**Name:     PCF8523_rtc_INTF_CLR
+**Function: RTC interrupt flags clear
+**Input:    watchdog timer INT flag (WTAF), count down timer A INT flag (CTAF), count down timer B INT flag(CTBF) 
+**Output:   
+**note:     watchdog timer and count down timer B interrupt not configured in this library
+**********************************************************/
+int PCF8523_rtc_INTF_CLR(int interruptFlag) {    
+    PCF8523_write(CONTROL_2, interruptFlag); 
+    __delay_ms(5);
+    return;
+}
+
+/**********************************************************
+**Name:     PCF8523_write
+**Function: write to register 
+**Input:    register address and data to be written
+**Output:   
+**note:     
+**********************************************************/
 void PCF8523_write(uint8_t regAdd, uint8_t data) {
     I2C_start();
     I2C_Write(SLAVE_ADDRESS);
     I2C_Write(regAdd);
     I2C_Write(data);
     I2C_stop();
-}
-
-int PCF8523_rtc_INTF_CLR(int interruptFlag) { //RTC interrupt flags clear   
-    PCF8523_write(CONTROL_2, interruptFlag); 
-    __delay_ms(5);
-    return;
 }
 
 uint8_t decimalToBCD(int DecValue) {

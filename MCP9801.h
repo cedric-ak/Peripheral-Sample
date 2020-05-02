@@ -19,11 +19,11 @@ extern "C" {
 #define MCP9801_TSET         0x11   //Temperature Limit-set register
 
 void MCP9801_Init(void);
-uint8_t MCP9801_TempRead(void);
+int8_t MCP9801_TempRead(void);
 
 union{
     uint8_t MSB_LSB[2];
-    uint16_t TempData;
+    int16_t TempData;
 }ADC;
 
 

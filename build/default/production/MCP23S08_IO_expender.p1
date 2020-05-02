@@ -1,10 +1,13 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "24 mcc_generated_files/../MCP9801.h
-[u S835 `uc -> 2 `i `ui 1 ]
+[u S835 `uc -> 2 `i `i 1 ]
 [n S835 . MSB_LSB TempData ]
 "17 mcc_generated_files/../MAX31855K.h
 [u S836 `uc -> 4 `i `ul 1 ]
 [n S836 . MAX31855 rawDate ]
+"36 mcc_generated_files/../MCP3423.h
+[u S837 `uc -> 2 `i `ul 1 ]
+[n S837 . Byte dataRead ]
 "8573 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
 [s S408 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S408 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
@@ -7075,9 +7078,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart1.h: 345: void EUSART1_Write(uint8_t txData);
 [; ;eusart1.h: 346: void EUSART1_Write_Text(uint8_t *pbData, uint8_t iSize);
 [; ;eusart1.h: 347: void EUSART1_itoa(uint32_t data, int base);
-[; ;eusart1.h: 369: void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
-[; ;eusart1.h: 387: void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
-[; ;eusart1.h: 405: void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
+[; ;eusart1.h: 366: void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void));
+[; ;eusart1.h: 384: void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
+[; ;eusart1.h: 402: void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 [; ;I2C.h: 11: void I2C_Init(uint8_t frequency);
 [; ;I2C.h: 12: void I2C_Write(uint8_t data);
 [; ;I2C.h: 14: void I2C_stop(void);
@@ -7110,12 +7113,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP28003.h: 45: void MCP23008_ISR_polarity(int port, int INTedge);
 [; ;MCP28003.h: 46: void MCP23008_INTclear(void);
 [; ;MCP9801.h: 21: void MCP9801_Init(void);
-[; ;MCP9801.h: 22: uint8_t MCP9801_TempRead(void);
+[; ;MCP9801.h: 22: int8_t MCP9801_TempRead(void);
 "27 mcc_generated_files/../MCP9801.h
 [v _ADC `S835 ~T0 @X0 1 e ]
 [; ;MCP9801.h: 24: union{
 [; ;MCP9801.h: 25: uint8_t MSB_LSB[2];
-[; ;MCP9801.h: 26: uint16_t TempData;
+[; ;MCP9801.h: 26: int16_t TempData;
 [; ;MCP9801.h: 27: }ADC;
 [; ;_24AA512.h: 17: uint8_t EEPROM_24AA512_Read(int addHigh, int addLow);
 [; ;_24AA512.h: 18: void EEPROM_24AA512_Write(int addHigh, int AddLow, int data);
@@ -7129,7 +7132,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP79411.h: 66: uint8_t MCP7941x_read(uint8_t Register);
 [; ;MCP79411.h: 67: void MCP794x_writeEEPROM(uint8_t Register, uint8_t data);
 [; ;MCP79411.h: 68: uint8_t MCP794x_readEEPROM(uint8_t Register);
-[; ;MCP79411.h: 69: void MCP794x_getID(void);
+[; ;MCP79411.h: 69: double* MCP794x_getID(void);
 [; ;MCP79411.h: 71: enum ALARM_MASK {second = 0x00, minute = 0x10, hour = 0x20, dayWk = 0x30, date = 0x40, SMHDD = 0x70};
 [; ;MAX31855K.h: 15: uint32_t MAX31855_Read(void);
 "20 mcc_generated_files/../MAX31855K.h
@@ -7210,8 +7213,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 "86
 [v _bfSize `ul ~T0 @X0 1 e ]
 [; ;SSD1306.h: 86: uint32_t bfSize;
-[; ;mcc.h: 42: void SYSTEM_Initialize(void);
-[; ;mcc.h: 55: void OSCILLATOR_Initialize(void);
+[; ;MCP3423.h: 34: uint32_t MCP342x_read(int channel);
+"39 mcc_generated_files/../MCP3423.h
+[v _MCP342x_ADC `S837 ~T0 @X0 1 e ]
+[; ;MCP3423.h: 36: union {
+[; ;MCP3423.h: 37: char Byte[2];
+[; ;MCP3423.h: 38: uint32_t dataRead;
+[; ;MCP3423.h: 39: } MCP342x_ADC;
+[; ;mcc.h: 43: void SYSTEM_Initialize(void);
+[; ;mcc.h: 56: void OSCILLATOR_Initialize(void);
 "13 MCP23S08_IO_expender.c
 [v _MCP23S08_Init `(v ~T0 @X0 1 ef1`uc ]
 {
@@ -7221,11 +7231,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;MCP23S08_IO_expender.c: 14: do { LATCbits.LATC0 = 0; } while(0);
 "14
-[e :U 840 ]
+[e :U 841 ]
 {
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 839 ]
+[e :U 840 ]
 [; ;MCP23S08_IO_expender.c: 15: SPI1_Exchange8bit(0x40);
 "15
 [e ( _SPI1_Exchange8bit (1 -> -> 64 `i `uc ]
@@ -7240,14 +7250,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;MCP23S08_IO_expender.c: 19: do { LATCbits.LATC0 = 1; } while(0);
 "19
-[e :U 843 ]
+[e :U 844 ]
 {
 [e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 842 ]
+[e :U 843 ]
 [; ;MCP23S08_IO_expender.c: 20: }
 "20
-[e :UE 837 ]
+[e :UE 838 ]
 }
 "22
 [v _MCP23S08Write `(v ~T0 @X0 1 ef1`uc ]
@@ -7258,11 +7268,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;MCP23S08_IO_expender.c: 23: do { LATCbits.LATC0 = 0; } while(0);
 "23
-[e :U 847 ]
+[e :U 848 ]
 {
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 846 ]
+[e :U 847 ]
 [; ;MCP23S08_IO_expender.c: 24: SPI1_Exchange8bit(0x40);
 "24
 [e ( _SPI1_Exchange8bit (1 -> -> 64 `i `uc ]
@@ -7277,14 +7287,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;MCP23S08_IO_expender.c: 28: do { LATCbits.LATC0 = 1; } while(0);
 "28
-[e :U 850 ]
+[e :U 851 ]
 {
 [e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 849 ]
+[e :U 850 ]
 [; ;MCP23S08_IO_expender.c: 29: }
 "29
-[e :UE 844 ]
+[e :UE 845 ]
 }
 "32
 [v _MCP23S08_loop `(v ~T0 @X0 1 ef ]
@@ -7297,9 +7307,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [v _leftShif `i ~T0 @X0 1 a ]
 [e = _leftShif -> 0 `i ]
-[e $ < _leftShif -> 8 `i 852  ]
-[e $U 853  ]
-[e :U 852 ]
+[e $ < _leftShif -> 8 `i 853  ]
+[e $U 854  ]
+[e :U 853 ]
 {
 [; ;MCP23S08_IO_expender.c: 34: MCP23S08Write(0x01<<leftShif);
 "34
@@ -7311,8 +7321,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "33
 [e ++ _leftShif -> 1 `i ]
-[e $ < _leftShif -> 8 `i 852  ]
-[e :U 853 ]
+[e $ < _leftShif -> 8 `i 853  ]
+[e :U 854 ]
 "36
 }
 [; ;MCP23S08_IO_expender.c: 36: }_delay((unsigned long)((1000)*(16000000/4000.0)));
@@ -7322,9 +7332,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [v _rightShif `i ~T0 @X0 1 a ]
 [e = _rightShif -> 0 `i ]
-[e $ < _rightShif -> 8 `i 855  ]
-[e $U 856  ]
-[e :U 855 ]
+[e $ < _rightShif -> 8 `i 856  ]
+[e $U 857  ]
+[e :U 856 ]
 {
 [; ;MCP23S08_IO_expender.c: 39: MCP23S08Write(0x80 >> rightShif);
 "39
@@ -7336,13 +7346,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "38
 [e ++ _rightShif -> 1 `i ]
-[e $ < _rightShif -> 8 `i 855  ]
-[e :U 856 ]
+[e $ < _rightShif -> 8 `i 856  ]
+[e :U 857 ]
 "41
 }
 [; ;MCP23S08_IO_expender.c: 41: }_delay((unsigned long)((1000)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;MCP23S08_IO_expender.c: 42: }
 "42
-[e :UE 851 ]
+[e :UE 852 ]
 }
