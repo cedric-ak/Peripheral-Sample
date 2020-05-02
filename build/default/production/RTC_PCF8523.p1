@@ -6,8 +6,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [u S836 `uc -> 4 `i `ul 1 ]
 [n S836 . MAX31855 rawDate ]
 "36 mcc_generated_files/../MCP3423.h
-[u S837 `uc -> 2 `i `ul 1 ]
-[n S837 . Byte dataRead ]
+[u S839 `uc -> 2 `i `ul 1 ]
+[n S839 . Byte dataRead ]
 "48 mcc_generated_files/../PCF8523.h
 [v _PCF8523_write `(v ~T0 @X0 0 ef2`uc`uc ]
 "50
@@ -7144,81 +7144,47 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MAX31855K.h: 18: char MAX31855[4];
 [; ;MAX31855K.h: 19: uint32_t rawDate;
 [; ;MAX31855K.h: 20: }MAX31_ADC;
-[; ;SSD1306.h: 73: void SSD1306_Init(void);
-[; ;SSD1306.h: 74: void SSD1306_writeCMD(uint8_t controlReg, uint8_t dataByte);
-[; ;SSD1306.h: 75: void displayClear(void);
-[; ;SSD1306.h: 76: void displaySetCursor(void);
-[; ;SSD1306.h: 77: void displayWrite(uint8_t x, uint8_t y, int address);
-[v F7817 `uc ~T0 @X0 -> 16 `i t ]
-"80 mcc_generated_files/../SSD1306.h
-[v _columm `F7817 ~T0 @X0 -> 2 `i e ]
-[i _columm
-:U ..
-:U ..
--> -> 0 `i `uc
--> -> 1 `i `uc
--> -> 2 `i `uc
--> -> 3 `i `uc
--> -> 4 `i `uc
--> -> 5 `i `uc
--> -> 6 `i `uc
--> -> 7 `i `uc
--> -> 8 `i `uc
--> -> 9 `i `uc
--> -> 10 `i `uc
--> -> 11 `i `uc
--> -> 12 `i `uc
--> -> 13 `i `uc
--> -> 14 `i `uc
--> -> 15 `i `uc
-..
-:U ..
-"81
--> -> 16 `i `uc
--> -> 17 `i `uc
--> -> 18 `i `uc
--> -> 19 `i `uc
--> -> 20 `i `uc
--> -> 21 `i `uc
--> -> 22 `i `uc
--> -> 23 `i `uc
--> -> 24 `i `uc
--> -> 25 `i `uc
--> -> 26 `i `uc
--> -> 27 `i `uc
--> -> 28 `i `uc
--> -> 29 `i `uc
--> -> 30 `i `uc
--> -> 31 `i `uc
-..
-..
-]
-[; ;SSD1306.h: 80: uint8_t columm[2][16] ={{0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F},
-[; ;SSD1306.h: 81: {0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F}};
-"83
-[v _page `uc ~T0 @X0 -> 8 `i e ]
-[i _page
-:U ..
--> -> 176 `i `uc
--> -> 177 `i `uc
--> -> 178 `i `uc
--> -> 179 `i `uc
--> -> 180 `i `uc
--> -> 181 `i `uc
--> -> 182 `i `uc
--> -> 183 `i `uc
-..
-]
-[; ;SSD1306.h: 83: uint8_t page[8]= {0xb0, 0xb1, 0xb2, 0xb3, 0xb4, 0xb5, 0xb6, 0xb7};
-"85
-[v _buffer `*ui ~T0 @X0 1 e ]
-[; ;SSD1306.h: 85: uint16_t *buffer;
-"86
-[v _bfSize `ul ~T0 @X0 1 e ]
-[; ;SSD1306.h: 86: uint32_t bfSize;
+[; ;SSD1306.h: 81: void SSD1306_Init(void);
+[; ;SSD1306.h: 82: void SSD1306_writeCMD(uint8_t controlReg, uint8_t dataByte);
+[; ;SSD1306.h: 83: void clearDisplay(void);
+[; ;SSD1306.h: 84: void setCursor(int16_t x, int16_t y);
+[; ;SSD1306.h: 85: void setTextSize(uint8_t s);
+[; ;SSD1306.h: 86: void setTextWrap(bool w);
+[; ;SSD1306.h: 87: void setTextColor(uint16_t c);
+[; ;SSD1306.h: 88: void setRotatation(uint8_t rotation);
+[; ;SSD1306.h: 91: uint8_t getRotation(void);
+[; ;SSD1306.h: 92: uint16_t width(void);
+[; ;SSD1306.h: 93: uint16_t height(void);
+[; ;SSD1306.h: 94: void invertDisplay(uint8_t i);
+[; ;SSD1306.h: 95: void SSD1306_writeData(uint8_t data);
+[; ;SSD1306.h: 96: void startscrollright(uint8_t start, uint8_t stop);
+[; ;SSD1306.h: 97: void startscrollleft(uint8_t start, uint8_t stop);
+[; ;SSD1306.h: 98: void startscrolldiagright(uint8_t start, uint8_t stop);
+[; ;SSD1306.h: 99: void stopscroll(void);
+[; ;SSD1306.h: 100: void dim(bool status);
+[; ;SSD1306.h: 101: void display(void);
+"103 mcc_generated_files/../SSD1306.h
+[v _rotation `uc ~T0 @X0 1 e ]
+[; ;SSD1306.h: 103: uint8_t rotation;
+"104
+[v _cursor_x `i ~T0 @X0 1 e ]
+[v _cursor_y `i ~T0 @X0 1 e ]
+[; ;SSD1306.h: 104: int16_t cursor_x, cursor_y;
+[; ;SSD1306.h: 106: typedef struct {
+[; ;SSD1306.h: 107: uint16_t bitmapOffset;
+[; ;SSD1306.h: 108: uint8_t width, height;
+[; ;SSD1306.h: 109: uint8_t xAdvance;
+[; ;SSD1306.h: 110: int8_t xOffset, yOffset;
+[; ;SSD1306.h: 111: } GFXglyph;
+[; ;SSD1306.h: 113: typedef struct {
+[; ;SSD1306.h: 114: uint8_t *bitmap;
+[; ;SSD1306.h: 115: GFXglyph *glyph;
+[; ;SSD1306.h: 116: uint8_t first, last;
+[; ;SSD1306.h: 117: uint8_t yAdvance;
+[; ;SSD1306.h: 118: } GFXfont;
 [; ;MCP3423.h: 34: uint32_t MCP342x_read(int channel);
 "39 mcc_generated_files/../MCP3423.h
-[v _MCP342x_ADC `S837 ~T0 @X0 1 e ]
+[v _MCP342x_ADC `S839 ~T0 @X0 1 e ]
 [; ;MCP3423.h: 36: union {
 [; ;MCP3423.h: 37: char Byte[2];
 [; ;MCP3423.h: 38: uint32_t dataRead;
@@ -7242,7 +7208,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _PCF8523_write (2 , -> -> 15 `i `uc -> -> 248 `i `uc ]
 [; ;RTC_PCF8523.c: 32: }
 "32
-[e :UE 838 ]
+[e :UE 840 ]
 }
 "41
 [v _PCF8523_setTime `(v ~T0 @X0 1 ef3`uc`uc`uc ]
@@ -7253,8 +7219,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _minute `uc ~T0 @X0 1 r2 ]
 [v _second `uc ~T0 @X0 1 r3 ]
 [f ]
-[v F7836 `i ~T0 @X0 -> 4 `i s ]
-[i F7836
+[v F7879 `i ~T0 @X0 -> 4 `i s ]
+[i F7879
 :U ..
 "42
 -> 3 `i
@@ -7264,53 +7230,53 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [v _Register `i ~T0 @X0 -> 4 `i a ]
 [; ;RTC_PCF8523.c: 42: int Register[4] = {0x03, 0x04, 0x05};
-[e = _Register F7836 ]
+[e = _Register F7879 ]
 [; ;RTC_PCF8523.c: 43: for (int timeReg = 0; timeReg < 3; timeReg++) {
 "43
 {
 [v _timeReg `i ~T0 @X0 1 a ]
 [e = _timeReg -> 0 `i ]
-[e $ < _timeReg -> 3 `i 840  ]
-[e $U 841  ]
-[e :U 840 ]
+[e $ < _timeReg -> 3 `i 842  ]
+[e $U 843  ]
+[e :U 842 ]
 {
 [; ;RTC_PCF8523.c: 44: if (Register[timeReg] == 0x03)
 "44
-[e $ ! == *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> 3 `i 843  ]
+[e $ ! == *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> 3 `i 845  ]
 [; ;RTC_PCF8523.c: 45: PCF8523_write(Register[timeReg], decimalToBCD(second)&0x7F);
 "45
 [e ( _PCF8523_write (2 , -> *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux `uc -> & -> ( _decimalToBCD (1 -> _second `i `i -> 127 `i `uc ]
-[e $U 844  ]
+[e $U 846  ]
 "46
-[e :U 843 ]
+[e :U 845 ]
 [; ;RTC_PCF8523.c: 46: else if (Register[timeReg] == 0x04)
-[e $ ! == *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> 4 `i 845  ]
+[e $ ! == *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> 4 `i 847  ]
 [; ;RTC_PCF8523.c: 47: PCF8523_write(Register[timeReg], decimalToBCD(minute)&0x7F);
 "47
 [e ( _PCF8523_write (2 , -> *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux `uc -> & -> ( _decimalToBCD (1 -> _minute `i `i -> 127 `i `uc ]
-[e $U 846  ]
+[e $U 848  ]
 "48
-[e :U 845 ]
+[e :U 847 ]
 [; ;RTC_PCF8523.c: 48: else if (Register[timeReg] == 0x05)
-[e $ ! == *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> 5 `i 847  ]
+[e $ ! == *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> 5 `i 849  ]
 [; ;RTC_PCF8523.c: 49: PCF8523_write(Register[timeReg], decimalToBCD(hour)&0x7F);
 "49
 [e ( _PCF8523_write (2 , -> *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux `uc -> & -> ( _decimalToBCD (1 -> _hour `i `i -> 127 `i `uc ]
-[e :U 847 ]
+[e :U 849 ]
 "50
+[e :U 848 ]
 [e :U 846 ]
-[e :U 844 ]
 }
 "43
 [e ++ _timeReg -> 1 `i ]
-[e $ < _timeReg -> 3 `i 840  ]
-[e :U 841 ]
+[e $ < _timeReg -> 3 `i 842  ]
+[e :U 843 ]
 "50
 }
 [; ;RTC_PCF8523.c: 50: }
 [; ;RTC_PCF8523.c: 51: }
 "51
-[e :UE 839 ]
+[e :UE 841 ]
 }
 "61
 [v _PCF8523_setDate `(v ~T0 @X0 1 ef4`uc`uc`uc`uc ]
@@ -7322,8 +7288,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _month `uc ~T0 @X0 1 r3 ]
 [v _year `uc ~T0 @X0 1 r4 ]
 [f ]
-[v F7843 `uc ~T0 @X0 -> 5 `i s ]
-[i F7843
+[v F7886 `uc ~T0 @X0 -> 5 `i s ]
+[i F7886
 :U ..
 "62
 -> -> 6 `i `uc
@@ -7334,73 +7300,73 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [v _Register `uc ~T0 @X0 -> 5 `i a ]
 [; ;RTC_PCF8523.c: 62: uint8_t Register[5] = {0x06, 0x07, 0x08, 0x09};
-[e = _Register F7843 ]
+[e = _Register F7886 ]
 [; ;RTC_PCF8523.c: 63: for (int timeReg = 0; timeReg < 4; timeReg++) {
 "63
 {
 [v _timeReg `i ~T0 @X0 1 a ]
 [e = _timeReg -> 0 `i ]
-[e $ < _timeReg -> 4 `i 849  ]
-[e $U 850  ]
-[e :U 849 ]
+[e $ < _timeReg -> 4 `i 851  ]
+[e $U 852  ]
+[e :U 851 ]
 {
 [; ;RTC_PCF8523.c: 64: switch (Register[timeReg]) {
 "64
-[e $U 853  ]
+[e $U 855  ]
 {
 [; ;RTC_PCF8523.c: 65: case 0x06:PCF8523_write(Register[timeReg], decimalToBCD(day)&0x7F);
 "65
-[e :U 854 ]
+[e :U 856 ]
 [e ( _PCF8523_write (2 , *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> & -> ( _decimalToBCD (1 -> _day `i `i -> 127 `i `uc ]
 [; ;RTC_PCF8523.c: 66: break;
 "66
-[e $U 852  ]
+[e $U 854  ]
 [; ;RTC_PCF8523.c: 67: case 0x07:PCF8523_write(Register[timeReg], decimalToBCD(weekday)&0x7F);
 "67
-[e :U 855 ]
+[e :U 857 ]
 [e ( _PCF8523_write (2 , *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> & -> ( _decimalToBCD (1 -> _weekday `i `i -> 127 `i `uc ]
 [; ;RTC_PCF8523.c: 68: break;
 "68
-[e $U 852  ]
+[e $U 854  ]
 [; ;RTC_PCF8523.c: 69: case 0x08:PCF8523_write(Register[timeReg], decimalToBCD(month)&0x7F);
 "69
-[e :U 856 ]
+[e :U 858 ]
 [e ( _PCF8523_write (2 , *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> & -> ( _decimalToBCD (1 -> _month `i `i -> 127 `i `uc ]
 [; ;RTC_PCF8523.c: 70: break;
 "70
-[e $U 852  ]
+[e $U 854  ]
 [; ;RTC_PCF8523.c: 71: case 0x09:PCF8523_write(Register[timeReg], decimalToBCD(year)&0x7F);
 "71
-[e :U 857 ]
+[e :U 859 ]
 [e ( _PCF8523_write (2 , *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux -> & -> ( _decimalToBCD (1 -> _year `i `i -> 127 `i `uc ]
 [; ;RTC_PCF8523.c: 72: break;
 "72
-[e $U 852  ]
+[e $U 854  ]
 "73
 }
 [; ;RTC_PCF8523.c: 73: }
-[e $U 852  ]
+[e $U 854  ]
 "64
-[e :U 853 ]
-[e [\ *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux , $ -> -> 6 `i `uc 854
- , $ -> -> 7 `i `uc 855
- , $ -> -> 8 `i `uc 856
- , $ -> -> 9 `i `uc 857
- 852 ]
+[e :U 855 ]
+[e [\ *U + &U _Register * -> -> _timeReg `ui `ux -> -> # *U &U _Register `ui `ux , $ -> -> 6 `i `uc 856
+ , $ -> -> 7 `i `uc 857
+ , $ -> -> 8 `i `uc 858
+ , $ -> -> 9 `i `uc 859
+ 854 ]
 "73
-[e :U 852 ]
+[e :U 854 ]
 "74
 }
 "63
 [e ++ _timeReg -> 1 `i ]
-[e $ < _timeReg -> 4 `i 849  ]
-[e :U 850 ]
+[e $ < _timeReg -> 4 `i 851  ]
+[e :U 852 ]
 "74
 }
 [; ;RTC_PCF8523.c: 74: }
 [; ;RTC_PCF8523.c: 75: }
 "75
-[e :UE 848 ]
+[e :UE 850 ]
 }
 "84
 [v _PCF8523_setAlarm `(v ~T0 @X0 1 ef5`uc`uc`uc`uc`uc ]
@@ -7424,7 +7390,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _PCF8523_write (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
 [; ;RTC_PCF8523.c: 88: }
 "88
-[e :UE 858 ]
+[e :UE 860 ]
 }
 "98
 [v _PCF8523_countDown `(v ~T0 @X0 1 ef2`uc`uc ]
@@ -7448,7 +7414,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _PCF8523_write (2 , -> -> 17 `i `uc _time ]
 [; ;RTC_PCF8523.c: 103: }
 "103
-[e :UE 859 ]
+[e :UE 861 ]
 }
 "113
 [v _PCF8523_rtcRead `(uc ~T0 @X0 1 ef1`uc ]
@@ -7484,10 +7450,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTC_PCF8523.c: 122: return BCDtoDecimal(SSP2BUF);
 "122
 [e ) ( _BCDtoDecimal (1 -> _SSP2BUF `i ]
-[e $UE 860  ]
+[e $UE 862  ]
 [; ;RTC_PCF8523.c: 123: }
 "123
-[e :UE 860 ]
+[e :UE 862 ]
 }
 "132
 [v _PCF8523_rtc_INTF_CLR `(i ~T0 @X0 1 ef1`i ]
@@ -7504,10 +7470,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;RTC_PCF8523.c: 135: return;
 "135
-[e $UE 861  ]
+[e $UE 863  ]
 [; ;RTC_PCF8523.c: 136: }
 "136
-[e :UE 861 ]
+[e :UE 863 ]
 }
 "145
 [v _PCF8523_write `(v ~T0 @X0 1 ef2`uc`uc ]
@@ -7534,7 +7500,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _I2C_stop ..  ]
 [; ;RTC_PCF8523.c: 151: }
 "151
-[e :UE 862 ]
+[e :UE 864 ]
 }
 "153
 [v _decimalToBCD `(uc ~T0 @X0 1 ef1`i ]
@@ -7546,10 +7512,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTC_PCF8523.c: 154: return (((DecValue / 10) << 4) | (DecValue % 10));
 "154
 [e ) -> | << / _DecValue -> 10 `i -> 4 `i % _DecValue -> 10 `i `uc ]
-[e $UE 863  ]
+[e $UE 865  ]
 [; ;RTC_PCF8523.c: 155: }
 "155
-[e :UE 863 ]
+[e :UE 865 ]
 }
 "157
 [v _BCDtoDecimal `(uc ~T0 @X0 1 ef1`i ]
@@ -7561,8 +7527,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTC_PCF8523.c: 158: return (((BCDvalue >> 4)*10) + (BCDvalue & 0xF));
 "158
 [e ) -> + * >> _BCDvalue -> 4 `i -> 10 `i & _BCDvalue -> 15 `i `uc ]
-[e $UE 864  ]
+[e $UE 866  ]
 [; ;RTC_PCF8523.c: 159: }
 "159
-[e :UE 864 ]
+[e :UE 866 ]
 }

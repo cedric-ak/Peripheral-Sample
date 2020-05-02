@@ -9,11 +9,9 @@ void main(void) {
     CS1_SetDigitalOutput();
     I2C_buffClear();
     __delay_ms(10);
-    //        I2C_BusSCan();
-    __delay_us(300); //acquisition tim
-    //       MCP342x_read(MCP342x_CH2);
-    __delay_us(300); //acquisition tim
-    //       MCP342x_read(MCP342x_CH1);
+    SSD1306_Init();
+//    clearDisplay();
+//    dim(true);
     while (true) {
         __delay_ms(500);
     }

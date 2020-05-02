@@ -6,8 +6,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [u S836 `uc -> 4 `i `ul 1 ]
 [n S836 . MAX31855 rawDate ]
 "36 mcc_generated_files/../MCP3423.h
-[u S837 `uc -> 2 `i `ul 1 ]
-[n S837 . Byte dataRead ]
+[u S839 `uc -> 2 `i `ul 1 ]
+[n S839 . Byte dataRead ]
 "15 mcc_generated_files/../I2C.h
 [v _I2C_start `(v ~T0 @X0 0 ef ]
 "12
@@ -7147,81 +7147,47 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MAX31855K.h: 18: char MAX31855[4];
 [; ;MAX31855K.h: 19: uint32_t rawDate;
 [; ;MAX31855K.h: 20: }MAX31_ADC;
-[; ;SSD1306.h: 73: void SSD1306_Init(void);
-[; ;SSD1306.h: 74: void SSD1306_writeCMD(uint8_t controlReg, uint8_t dataByte);
-[; ;SSD1306.h: 75: void displayClear(void);
-[; ;SSD1306.h: 76: void displaySetCursor(void);
-[; ;SSD1306.h: 77: void displayWrite(uint8_t x, uint8_t y, int address);
-[v F7817 `uc ~T0 @X0 -> 16 `i t ]
-"80 mcc_generated_files/../SSD1306.h
-[v _columm `F7817 ~T0 @X0 -> 2 `i e ]
-[i _columm
-:U ..
-:U ..
--> -> 0 `i `uc
--> -> 1 `i `uc
--> -> 2 `i `uc
--> -> 3 `i `uc
--> -> 4 `i `uc
--> -> 5 `i `uc
--> -> 6 `i `uc
--> -> 7 `i `uc
--> -> 8 `i `uc
--> -> 9 `i `uc
--> -> 10 `i `uc
--> -> 11 `i `uc
--> -> 12 `i `uc
--> -> 13 `i `uc
--> -> 14 `i `uc
--> -> 15 `i `uc
-..
-:U ..
-"81
--> -> 16 `i `uc
--> -> 17 `i `uc
--> -> 18 `i `uc
--> -> 19 `i `uc
--> -> 20 `i `uc
--> -> 21 `i `uc
--> -> 22 `i `uc
--> -> 23 `i `uc
--> -> 24 `i `uc
--> -> 25 `i `uc
--> -> 26 `i `uc
--> -> 27 `i `uc
--> -> 28 `i `uc
--> -> 29 `i `uc
--> -> 30 `i `uc
--> -> 31 `i `uc
-..
-..
-]
-[; ;SSD1306.h: 80: uint8_t columm[2][16] ={{0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F},
-[; ;SSD1306.h: 81: {0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F}};
-"83
-[v _page `uc ~T0 @X0 -> 8 `i e ]
-[i _page
-:U ..
--> -> 176 `i `uc
--> -> 177 `i `uc
--> -> 178 `i `uc
--> -> 179 `i `uc
--> -> 180 `i `uc
--> -> 181 `i `uc
--> -> 182 `i `uc
--> -> 183 `i `uc
-..
-]
-[; ;SSD1306.h: 83: uint8_t page[8]= {0xb0, 0xb1, 0xb2, 0xb3, 0xb4, 0xb5, 0xb6, 0xb7};
-"85
-[v _buffer `*ui ~T0 @X0 1 e ]
-[; ;SSD1306.h: 85: uint16_t *buffer;
-"86
-[v _bfSize `ul ~T0 @X0 1 e ]
-[; ;SSD1306.h: 86: uint32_t bfSize;
+[; ;SSD1306.h: 81: void SSD1306_Init(void);
+[; ;SSD1306.h: 82: void SSD1306_writeCMD(uint8_t controlReg, uint8_t dataByte);
+[; ;SSD1306.h: 83: void clearDisplay(void);
+[; ;SSD1306.h: 84: void setCursor(int16_t x, int16_t y);
+[; ;SSD1306.h: 85: void setTextSize(uint8_t s);
+[; ;SSD1306.h: 86: void setTextWrap(bool w);
+[; ;SSD1306.h: 87: void setTextColor(uint16_t c);
+[; ;SSD1306.h: 88: void setRotatation(uint8_t rotation);
+[; ;SSD1306.h: 91: uint8_t getRotation(void);
+[; ;SSD1306.h: 92: uint16_t width(void);
+[; ;SSD1306.h: 93: uint16_t height(void);
+[; ;SSD1306.h: 94: void invertDisplay(uint8_t i);
+[; ;SSD1306.h: 95: void SSD1306_writeData(uint8_t data);
+[; ;SSD1306.h: 96: void startscrollright(uint8_t start, uint8_t stop);
+[; ;SSD1306.h: 97: void startscrollleft(uint8_t start, uint8_t stop);
+[; ;SSD1306.h: 98: void startscrolldiagright(uint8_t start, uint8_t stop);
+[; ;SSD1306.h: 99: void stopscroll(void);
+[; ;SSD1306.h: 100: void dim(bool status);
+[; ;SSD1306.h: 101: void display(void);
+"103 mcc_generated_files/../SSD1306.h
+[v _rotation `uc ~T0 @X0 1 e ]
+[; ;SSD1306.h: 103: uint8_t rotation;
+"104
+[v _cursor_x `i ~T0 @X0 1 e ]
+[v _cursor_y `i ~T0 @X0 1 e ]
+[; ;SSD1306.h: 104: int16_t cursor_x, cursor_y;
+[; ;SSD1306.h: 106: typedef struct {
+[; ;SSD1306.h: 107: uint16_t bitmapOffset;
+[; ;SSD1306.h: 108: uint8_t width, height;
+[; ;SSD1306.h: 109: uint8_t xAdvance;
+[; ;SSD1306.h: 110: int8_t xOffset, yOffset;
+[; ;SSD1306.h: 111: } GFXglyph;
+[; ;SSD1306.h: 113: typedef struct {
+[; ;SSD1306.h: 114: uint8_t *bitmap;
+[; ;SSD1306.h: 115: GFXglyph *glyph;
+[; ;SSD1306.h: 116: uint8_t first, last;
+[; ;SSD1306.h: 117: uint8_t yAdvance;
+[; ;SSD1306.h: 118: } GFXfont;
 [; ;MCP3423.h: 34: uint32_t MCP342x_read(int channel);
 "39 mcc_generated_files/../MCP3423.h
-[v _MCP342x_ADC `S837 ~T0 @X0 1 e ]
+[v _MCP342x_ADC `S839 ~T0 @X0 1 e ]
 [; ;MCP3423.h: 36: union {
 [; ;MCP3423.h: 37: char Byte[2];
 [; ;MCP3423.h: 38: uint32_t dataRead;
@@ -7260,7 +7226,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _I2C_stop ..  ]
 [; ;RTC_MCP79411.c: 25: }
 "25
-[e :UE 838 ]
+[e :UE 840 ]
 }
 "33
 [v _MCP794x_setDate `(v ~T0 @X0 1 ef4`uc`uc`uc`uc ]
@@ -7298,7 +7264,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _I2C_stop ..  ]
 [; ;RTC_MCP79411.c: 42: }
 "42
-[e :UE 839 ]
+[e :UE 841 ]
 }
 "44
 [v _MCP794x_writeRtcc `(v ~T0 @X0 1 ef2`uc`uc ]
@@ -7325,7 +7291,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _I2C_stop ..  ]
 [; ;RTC_MCP79411.c: 50: }
 "50
-[e :UE 840 ]
+[e :UE 842 ]
 }
 "59
 [v _MCP794x_setAlarm `(v ~T0 @X0 1 ef2`uc`uc ]
@@ -7343,46 +7309,46 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _MCP794x_writeRtcc (2 , -> -> 13 `i `uc _alarmMask ]
 [; ;RTC_MCP79411.c: 63: switch (alarmMask) {
 "63
-[e $U 843  ]
+[e $U 845  ]
 {
 [; ;RTC_MCP79411.c: 64: case second:MCP794x_writeRtcc(0x0A, decimalToBCD(time));
 "64
-[e :U 844 ]
+[e :U 846 ]
 [e ( _MCP794x_writeRtcc (2 , -> -> 10 `i `uc ( _decimalToBCD (1 -> _time `i ]
 [; ;RTC_MCP79411.c: 65: break;
 "65
-[e $U 842  ]
+[e $U 844  ]
 [; ;RTC_MCP79411.c: 66: case minute:MCP794x_writeRtcc(0x0B, decimalToBCD(time));
 "66
-[e :U 845 ]
+[e :U 847 ]
 [e ( _MCP794x_writeRtcc (2 , -> -> 11 `i `uc ( _decimalToBCD (1 -> _time `i ]
 [; ;RTC_MCP79411.c: 67: break;
 "67
-[e $U 842  ]
+[e $U 844  ]
 [; ;RTC_MCP79411.c: 68: case hour:MCP794x_writeRtcc(0x0C, (decimalToBCD(time)) & 0xBF);
 "68
-[e :U 846 ]
+[e :U 848 ]
 [e ( _MCP794x_writeRtcc (2 , -> -> 12 `i `uc -> & -> ( _decimalToBCD (1 -> _time `i `i -> 191 `i `uc ]
 [; ;RTC_MCP79411.c: 69: break;
 "69
-[e $U 842  ]
+[e $U 844  ]
 [; ;RTC_MCP79411.c: 70: case dayWk:MCP794x_writeRtcc(0x0D, (decimalToBCD(time)) >> 6);
 "70
-[e :U 847 ]
+[e :U 849 ]
 [e ( _MCP794x_writeRtcc (2 , -> -> 13 `i `uc -> >> -> ( _decimalToBCD (1 -> _time `i `i -> 6 `i `uc ]
 [; ;RTC_MCP79411.c: 71: break;
 "71
-[e $U 842  ]
+[e $U 844  ]
 [; ;RTC_MCP79411.c: 72: case date:MCP794x_writeRtcc(0x0E, decimalToBCD(time));
 "72
-[e :U 848 ]
+[e :U 850 ]
 [e ( _MCP794x_writeRtcc (2 , -> -> 14 `i `uc ( _decimalToBCD (1 -> _time `i ]
 [; ;RTC_MCP79411.c: 73: break;
 "73
-[e $U 842  ]
+[e $U 844  ]
 [; ;RTC_MCP79411.c: 74: case SMHDD:
 "74
-[e :U 849 ]
+[e :U 851 ]
 [; ;RTC_MCP79411.c: 75: MCP794x_writeRtcc(0x0A, decimalToBCD(time));
 "75
 [e ( _MCP794x_writeRtcc (2 , -> -> 10 `i `uc ( _decimalToBCD (1 -> _time `i ]
@@ -7403,28 +7369,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _MCP794x_writeRtcc (2 , -> -> 15 `i `uc ( _decimalToBCD (1 -> _time `i ]
 [; ;RTC_MCP79411.c: 81: break;
 "81
-[e $U 842  ]
+[e $U 844  ]
 "82
 }
 [; ;RTC_MCP79411.c: 82: }
-[e $U 842  ]
+[e $U 844  ]
 "63
-[e :U 843 ]
-[e [\ _alarmMask , $ -> . `E7790 0 `uc 844
- , $ -> . `E7790 1 `uc 845
- , $ -> . `E7790 2 `uc 846
- , $ -> . `E7790 3 `uc 847
- , $ -> . `E7790 4 `uc 848
- , $ -> . `E7790 5 `uc 849
- 842 ]
+[e :U 845 ]
+[e [\ _alarmMask , $ -> . `E7790 0 `uc 846
+ , $ -> . `E7790 1 `uc 847
+ , $ -> . `E7790 2 `uc 848
+ , $ -> . `E7790 3 `uc 849
+ , $ -> . `E7790 4 `uc 850
+ , $ -> . `E7790 5 `uc 851
+ 844 ]
 "82
-[e :U 842 ]
+[e :U 844 ]
 [; ;RTC_MCP79411.c: 83: MCP794x_writeRtcc(0x07, 0x10);
 "83
 [e ( _MCP794x_writeRtcc (2 , -> -> 7 `i `uc -> -> 16 `i `uc ]
 [; ;RTC_MCP79411.c: 84: }
 "84
-[e :UE 841 ]
+[e :UE 843 ]
 }
 "92
 [v _MCP794x_writeEEPROM `(v ~T0 @X0 1 ef2`uc`uc ]
@@ -7451,7 +7417,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _I2C_stop ..  ]
 [; ;RTC_MCP79411.c: 98: }
 "98
-[e :UE 850 ]
+[e :UE 852 ]
 }
 "106
 [v _MCP794x_readEEPROM `(uc ~T0 @X0 1 ef1`uc ]
@@ -7484,10 +7450,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTC_MCP79411.c: 114: return SSP2BUF;
 "114
 [e ) _SSP2BUF ]
-[e $UE 851  ]
+[e $UE 853  ]
 [; ;RTC_MCP79411.c: 115: }
 "115
-[e :UE 851 ]
+[e :UE 853 ]
 }
 "123
 [v _MCP794x_getID `(*d ~T0 @X0 1 ef ]
@@ -7518,9 +7484,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [v _index `i ~T0 @X0 1 a ]
 [e = _index -> 0 `i ]
-[e $ < _index -> 8 `i 853  ]
-[e $U 854  ]
-[e :U 853 ]
+[e $ < _index -> 8 `i 855  ]
+[e $U 856  ]
+[e :U 855 ]
 {
 [; ;RTC_MCP79411.c: 131: I2C_read(0);
 "131
@@ -7532,8 +7498,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "130
 [e ++ _index -> 1 `i ]
-[e $ < _index -> 8 `i 853  ]
-[e :U 854 ]
+[e $ < _index -> 8 `i 855  ]
+[e :U 856 ]
 "136
 }
 [; ;RTC_MCP79411.c: 136: }
@@ -7546,10 +7512,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTC_MCP79411.c: 141: return UID;
 "141
 [e ) -> &U _UID `*d ]
-[e $UE 852  ]
+[e $UE 854  ]
 [; ;RTC_MCP79411.c: 142: }
 "142
-[e :UE 852 ]
+[e :UE 854 ]
 }
 "144
 [v _MCP794x_INTF_CLR `(uc ~T0 @X0 1 ef ]
@@ -7565,7 +7531,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;RTC_MCP79411.c: 147: }
 "147
-[e :UE 856 ]
+[e :UE 858 ]
 }
 "155
 [v _MCP7941x_read `(uc ~T0 @X0 1 ef1`uc ]
@@ -7595,8 +7561,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTC_MCP79411.c: 162: return SSP2BUF;
 "162
 [e ) _SSP2BUF ]
-[e $UE 857  ]
+[e $UE 859  ]
 [; ;RTC_MCP79411.c: 163: }
 "163
-[e :UE 857 ]
+[e :UE 859 ]
 }

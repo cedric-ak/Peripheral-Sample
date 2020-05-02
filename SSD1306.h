@@ -12,14 +12,17 @@
 extern "C" {
 #endif
     
-/*comment out I2C address not used*/
+/*comment out address not used*/
 //#define SD1306_ADDRESS  0x78
 #define SSD1306_ADDRESS  0x7A
     
   /*comment out display not used*/  
 #define SSD1306_128_64           
-//#define SSD1306_128_32
+//#define SSD1306_96_16
     
+#define BLACK 0
+#define WHITE 1
+#define INVERSE 2
     /*Fundamental Command  (data sheet: 10 COMMAND DESCRIPTION)*/
 
 #define SSD1306_MEMORYMODE          0x20  // Set Memory Addressing Mode
@@ -69,21 +72,67 @@ extern "C" {
  #define SSD1306_LCDWIDTH  128 //display width w/SSD1306_128_32 defined
  #define SSD1306_LCDHEIGHT  32 //display height w/SSD1306_128_32 defined
 #endif
+
+#if defined SSD1306_96_16
+  #define SSD1306_LCDWIDTH                  96
+  #define SSD1306_LCDHEIGHT                 16
+#endif
  
 void SSD1306_Init(void);
 void SSD1306_writeCMD(uint8_t controlReg, uint8_t dataByte);
-void displayClear(void);
-void displaySetCursor(void);
-void displayWrite(uint8_t x, uint8_t y, int address);
+void clearDisplay(void);
+void setCursor(int16_t x, int16_t y);
+void setTextSize(uint8_t s);
+void setTextWrap(bool w);
+void setTextColor(uint16_t c);
+void setRotatation(uint8_t rotation);
+//void setFont(const GFXfont *f = NULL);
+
+uint8_t getRotation(void);
+uint16_t width(void);
+uint16_t height(void);
+void invertDisplay(uint8_t i);
+void SSD1306_writeData(uint8_t data);
+void startscrollright(uint8_t start, uint8_t stop);
+void startscrollleft(uint8_t start, uint8_t stop);
+void startscrolldiagright(uint8_t start, uint8_t stop);
+void stopscroll(void);
+void dim(bool status);
+void display(void);
+
+uint8_t rotation;
+int16_t cursor_x, cursor_y;
+
+typedef struct { // Data stored PER GLYPH
+	uint16_t bitmapOffset;     // Pointer into GFXfont->bitmap
+	uint8_t  width, height;    // Bitmap dimensions in pixels
+	uint8_t  xAdvance;         // Distance to advance cursor (x axis)
+	int8_t   xOffset, yOffset; // Dist from cursor pos to UL corner
+} GFXglyph;
+
+typedef struct { // Data stored for FONT AS A WHOLE:
+	uint8_t  *bitmap;      // Glyph bitmaps, concatenated
+	GFXglyph *glyph;       // Glyph array
+	uint8_t   first, last; // ASCII extents
+	uint8_t   yAdvance;    // Newline distance (y axis)
+} GFXfont;
 
 
-uint8_t columm[2][16] ={{0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F}, 
-                        {0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F}};
 
-uint8_t page[8]= {0xb0, 0xb1, 0xb2, 0xb3, 0xb4, 0xb5, 0xb6, 0xb7};    //display page select
-                      
-uint16_t *buffer;
-uint32_t bfSize;
+
+
+
+
+
+
+
+//uint8_t columm[2][16] ={{0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F}, 
+//                        {0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F}};
+//
+//uint8_t page[8]= {0xb0, 0xb1, 0xb2, 0xb3, 0xb4, 0xb5, 0xb6, 0xb7};    //display page select
+//                      
+//uint16_t *buffer;
+//uint32_t bfSize;
 
 #ifdef	__cplusplus
 }

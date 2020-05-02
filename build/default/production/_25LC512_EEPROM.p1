@@ -6,8 +6,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [u S836 `uc -> 4 `i `ul 1 ]
 [n S836 . MAX31855 rawDate ]
 "36 mcc_generated_files/../MCP3423.h
-[u S837 `uc -> 2 `i `ul 1 ]
-[n S837 . Byte dataRead ]
+[u S839 `uc -> 2 `i `ul 1 ]
+[n S839 . Byte dataRead ]
 "8573 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
 [s S408 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S408 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
@@ -7173,81 +7173,47 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MAX31855K.h: 18: char MAX31855[4];
 [; ;MAX31855K.h: 19: uint32_t rawDate;
 [; ;MAX31855K.h: 20: }MAX31_ADC;
-[; ;SSD1306.h: 73: void SSD1306_Init(void);
-[; ;SSD1306.h: 74: void SSD1306_writeCMD(uint8_t controlReg, uint8_t dataByte);
-[; ;SSD1306.h: 75: void displayClear(void);
-[; ;SSD1306.h: 76: void displaySetCursor(void);
-[; ;SSD1306.h: 77: void displayWrite(uint8_t x, uint8_t y, int address);
-[v F7817 `uc ~T0 @X0 -> 16 `i t ]
-"80 mcc_generated_files/../SSD1306.h
-[v _columm `F7817 ~T0 @X0 -> 2 `i e ]
-[i _columm
-:U ..
-:U ..
--> -> 0 `i `uc
--> -> 1 `i `uc
--> -> 2 `i `uc
--> -> 3 `i `uc
--> -> 4 `i `uc
--> -> 5 `i `uc
--> -> 6 `i `uc
--> -> 7 `i `uc
--> -> 8 `i `uc
--> -> 9 `i `uc
--> -> 10 `i `uc
--> -> 11 `i `uc
--> -> 12 `i `uc
--> -> 13 `i `uc
--> -> 14 `i `uc
--> -> 15 `i `uc
-..
-:U ..
-"81
--> -> 16 `i `uc
--> -> 17 `i `uc
--> -> 18 `i `uc
--> -> 19 `i `uc
--> -> 20 `i `uc
--> -> 21 `i `uc
--> -> 22 `i `uc
--> -> 23 `i `uc
--> -> 24 `i `uc
--> -> 25 `i `uc
--> -> 26 `i `uc
--> -> 27 `i `uc
--> -> 28 `i `uc
--> -> 29 `i `uc
--> -> 30 `i `uc
--> -> 31 `i `uc
-..
-..
-]
-[; ;SSD1306.h: 80: uint8_t columm[2][16] ={{0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F},
-[; ;SSD1306.h: 81: {0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F}};
-"83
-[v _page `uc ~T0 @X0 -> 8 `i e ]
-[i _page
-:U ..
--> -> 176 `i `uc
--> -> 177 `i `uc
--> -> 178 `i `uc
--> -> 179 `i `uc
--> -> 180 `i `uc
--> -> 181 `i `uc
--> -> 182 `i `uc
--> -> 183 `i `uc
-..
-]
-[; ;SSD1306.h: 83: uint8_t page[8]= {0xb0, 0xb1, 0xb2, 0xb3, 0xb4, 0xb5, 0xb6, 0xb7};
-"85
-[v _buffer `*ui ~T0 @X0 1 e ]
-[; ;SSD1306.h: 85: uint16_t *buffer;
-"86
-[v _bfSize `ul ~T0 @X0 1 e ]
-[; ;SSD1306.h: 86: uint32_t bfSize;
+[; ;SSD1306.h: 81: void SSD1306_Init(void);
+[; ;SSD1306.h: 82: void SSD1306_writeCMD(uint8_t controlReg, uint8_t dataByte);
+[; ;SSD1306.h: 83: void clearDisplay(void);
+[; ;SSD1306.h: 84: void setCursor(int16_t x, int16_t y);
+[; ;SSD1306.h: 85: void setTextSize(uint8_t s);
+[; ;SSD1306.h: 86: void setTextWrap(bool w);
+[; ;SSD1306.h: 87: void setTextColor(uint16_t c);
+[; ;SSD1306.h: 88: void setRotatation(uint8_t rotation);
+[; ;SSD1306.h: 91: uint8_t getRotation(void);
+[; ;SSD1306.h: 92: uint16_t width(void);
+[; ;SSD1306.h: 93: uint16_t height(void);
+[; ;SSD1306.h: 94: void invertDisplay(uint8_t i);
+[; ;SSD1306.h: 95: void SSD1306_writeData(uint8_t data);
+[; ;SSD1306.h: 96: void startscrollright(uint8_t start, uint8_t stop);
+[; ;SSD1306.h: 97: void startscrollleft(uint8_t start, uint8_t stop);
+[; ;SSD1306.h: 98: void startscrolldiagright(uint8_t start, uint8_t stop);
+[; ;SSD1306.h: 99: void stopscroll(void);
+[; ;SSD1306.h: 100: void dim(bool status);
+[; ;SSD1306.h: 101: void display(void);
+"103 mcc_generated_files/../SSD1306.h
+[v _rotation `uc ~T0 @X0 1 e ]
+[; ;SSD1306.h: 103: uint8_t rotation;
+"104
+[v _cursor_x `i ~T0 @X0 1 e ]
+[v _cursor_y `i ~T0 @X0 1 e ]
+[; ;SSD1306.h: 104: int16_t cursor_x, cursor_y;
+[; ;SSD1306.h: 106: typedef struct {
+[; ;SSD1306.h: 107: uint16_t bitmapOffset;
+[; ;SSD1306.h: 108: uint8_t width, height;
+[; ;SSD1306.h: 109: uint8_t xAdvance;
+[; ;SSD1306.h: 110: int8_t xOffset, yOffset;
+[; ;SSD1306.h: 111: } GFXglyph;
+[; ;SSD1306.h: 113: typedef struct {
+[; ;SSD1306.h: 114: uint8_t *bitmap;
+[; ;SSD1306.h: 115: GFXglyph *glyph;
+[; ;SSD1306.h: 116: uint8_t first, last;
+[; ;SSD1306.h: 117: uint8_t yAdvance;
+[; ;SSD1306.h: 118: } GFXfont;
 [; ;MCP3423.h: 34: uint32_t MCP342x_read(int channel);
 "39 mcc_generated_files/../MCP3423.h
-[v _MCP342x_ADC `S837 ~T0 @X0 1 e ]
+[v _MCP342x_ADC `S839 ~T0 @X0 1 e ]
 [; ;MCP3423.h: 36: union {
 [; ;MCP3423.h: 37: char Byte[2];
 [; ;MCP3423.h: 38: uint32_t dataRead;
@@ -7264,28 +7230,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;_25LC512_EEPROM.c: 14: do { LATCbits.LATC0 = 0; } while(0);
 "14
-[e :U 841 ]
+[e :U 843 ]
 {
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 840 ]
+[e :U 842 ]
 [; ;_25LC512_EEPROM.c: 15: SPI1_Exchange8bit(0x06);
 "15
 [e ( _SPI1_Exchange8bit (1 -> -> 6 `i `uc ]
 [; ;_25LC512_EEPROM.c: 16: do { LATCbits.LATC0 = 1; } while(0);
 "16
-[e :U 844 ]
+[e :U 846 ]
 {
 [e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 843 ]
+[e :U 845 ]
 [; ;_25LC512_EEPROM.c: 18: do { LATCbits.LATC0 = 0; } while(0);
 "18
-[e :U 847 ]
+[e :U 849 ]
 {
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 846 ]
+[e :U 848 ]
 [; ;_25LC512_EEPROM.c: 19: _delay((unsigned long)((2)*(16000000/4000.0)));
 "19
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
@@ -7306,7 +7272,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;_25LC512_EEPROM.c: 28: }
 "28
-[e :UE 838 ]
+[e :UE 840 ]
 }
 "30
 [v _EEPROM_25LC512_Read `(uc ~T0 @X0 1 ef1`uc ]
@@ -7317,11 +7283,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;_25LC512_EEPROM.c: 31: do { LATCbits.LATC0 = 0; } while(0);
 "31
-[e :U 851 ]
+[e :U 853 ]
 {
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 850 ]
+[e :U 852 ]
 [; ;_25LC512_EEPROM.c: 32: _delay((unsigned long)((2)*(16000000/4000.0)));
 "32
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
@@ -7342,7 +7308,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;_25LC512_EEPROM.c: 41: }
 "41
-[e :UE 848 ]
+[e :UE 850 ]
 }
 "43
 [v _chipErase `(v ~T0 @X0 1 ef ]
@@ -7352,31 +7318,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;_25LC512_EEPROM.c: 44: do { LATCbits.LATC0 = 0; } while(0);
 "44
-[e :U 855 ]
+[e :U 857 ]
 {
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 854 ]
+[e :U 856 ]
 [; ;_25LC512_EEPROM.c: 45: SPI1_Exchange8bit(0x06);
 "45
 [e ( _SPI1_Exchange8bit (1 -> -> 6 `i `uc ]
 [; ;_25LC512_EEPROM.c: 46: do { LATCbits.LATC0 = 1; } while(0);
 "46
-[e :U 858 ]
+[e :U 860 ]
 {
 [e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 857 ]
+[e :U 859 ]
 [; ;_25LC512_EEPROM.c: 47: _delay((unsigned long)((2)*(16000000/4000.0)));
 "47
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;_25LC512_EEPROM.c: 48: do { LATCbits.LATC0 = 0; } while(0);
 "48
-[e :U 861 ]
+[e :U 863 ]
 {
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 860 ]
+[e :U 862 ]
 [; ;_25LC512_EEPROM.c: 49: _delay((unsigned long)((2)*(16000000/4000.0)));
 "49
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
@@ -7385,14 +7351,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _SPI1_Exchange8bit (1 -> -> 199 `i `uc ]
 [; ;_25LC512_EEPROM.c: 51: do { LATCbits.LATC0 = 1; } while(0);
 "51
-[e :U 864 ]
+[e :U 866 ]
 {
 [e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 863 ]
+[e :U 865 ]
 [; ;_25LC512_EEPROM.c: 52: }
 "52
-[e :UE 852 ]
+[e :UE 854 ]
 }
 "54
 [v _rStatus_Reg `(v ~T0 @X0 1 ef ]
@@ -7402,11 +7368,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;_25LC512_EEPROM.c: 55: do { LATCbits.LATC0 = 0; } while(0);
 "55
-[e :U 868 ]
+[e :U 870 ]
 {
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 867 ]
+[e :U 869 ]
 [; ;_25LC512_EEPROM.c: 56: SPI1_Exchange8bit(0x05);
 "56
 [e ( _SPI1_Exchange8bit (1 -> -> 5 `i `uc ]
@@ -7415,17 +7381,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _SPI1_Exchange8bit (1 -> -> 255 `i `uc ]
 [; ;_25LC512_EEPROM.c: 58: do { LATCbits.LATC0 = 1; } while(0);
 "58
-[e :U 871 ]
+[e :U 873 ]
 {
 [e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 870 ]
+[e :U 872 ]
 [; ;_25LC512_EEPROM.c: 59: _delay((unsigned long)((2)*(16000000/4000.0)));
 "59
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;_25LC512_EEPROM.c: 60: }
 "60
-[e :UE 865 ]
+[e :UE 867 ]
 }
 "62
 [v _wStatus_Reg `(v ~T0 @X0 1 ef ]
@@ -7435,11 +7401,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;_25LC512_EEPROM.c: 63: do { LATCbits.LATC0 = 0; } while(0);
 "63
-[e :U 875 ]
+[e :U 877 ]
 {
 [e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 874 ]
+[e :U 876 ]
 [; ;_25LC512_EEPROM.c: 64: SPI1_Exchange8bit(0x01);
 "64
 [e ( _SPI1_Exchange8bit (1 -> -> 1 `i `uc ]
@@ -7448,17 +7414,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _SPI1_Exchange8bit (1 -> -> 0 `i `uc ]
 [; ;_25LC512_EEPROM.c: 66: do { LATCbits.LATC0 = 1; } while(0);
 "66
-[e :U 878 ]
+[e :U 880 ]
 {
 [e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 877 ]
+[e :U 879 ]
 [; ;_25LC512_EEPROM.c: 67: _delay((unsigned long)((5)*(16000000/4000.0)));
 "67
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 [; ;_25LC512_EEPROM.c: 68: }
 "68
-[e :UE 872 ]
+[e :UE 874 ]
 }
 "70
 [v _EEPROM_25LC512_loop `(v ~T0 @X0 1 ef ]
@@ -7468,11 +7434,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;_25LC512_EEPROM.c: 71: if (PORTBbits.RB7) {
 "71
-[e $ ! != -> . . _PORTBbits 0 7 `i -> -> -> 0 `i `Vuc `i 880  ]
+[e $ ! != -> . . _PORTBbits 0 7 `i -> -> -> 0 `i `Vuc `i 882  ]
 {
 [; ;_25LC512_EEPROM.c: 72: if (PORTBbits.RB7) {
 "72
-[e $ ! != -> . . _PORTBbits 0 7 `i -> -> -> 0 `i `Vuc `i 881  ]
+[e $ ! != -> . . _PORTBbits 0 7 `i -> -> -> 0 `i `Vuc `i 883  ]
 {
 [; ;_25LC512_EEPROM.c: 73: EEPROM_25LC512_Write(0x12, (0x00));
 "73
@@ -7482,9 +7448,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [v _d_Zise `i ~T0 @X0 1 a ]
 [e = _d_Zise -> 0 `i ]
-[e $ < _d_Zise -> 128 `i 882  ]
-[e $U 883  ]
-[e :U 882 ]
+[e $ < _d_Zise -> 128 `i 884  ]
+[e $U 885  ]
+[e :U 884 ]
 {
 [; ;_25LC512_EEPROM.c: 75: SPI1_Exchange8bit(0x00 + d_Zise);
 "75
@@ -7493,40 +7459,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "74
 [e ++ _d_Zise -> 1 `i ]
-[e $ < _d_Zise -> 128 `i 882  ]
-[e :U 883 ]
+[e $ < _d_Zise -> 128 `i 884  ]
+[e :U 885 ]
 "76
 }
 [; ;_25LC512_EEPROM.c: 76: }
 [; ;_25LC512_EEPROM.c: 77: do { LATCbits.LATC0 = 1; } while(0);
 "77
-[e :U 887 ]
+[e :U 889 ]
 {
 [e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 886 ]
+[e :U 888 ]
 "78
 }
-[e :U 881 ]
+[e :U 883 ]
 [; ;_25LC512_EEPROM.c: 78: }
 [; ;_25LC512_EEPROM.c: 79: while (PORTBbits.RB7);
 "79
-[e $U 888  ]
-[e :U 889 ]
-[e :U 888 ]
-[e $ != -> . . _PORTBbits 0 7 `i -> -> -> 0 `i `Vuc `i 889  ]
+[e $U 890  ]
+[e :U 891 ]
 [e :U 890 ]
+[e $ != -> . . _PORTBbits 0 7 `i -> -> -> 0 `i `Vuc `i 891  ]
+[e :U 892 ]
 "80
 }
-[e :U 880 ]
+[e :U 882 ]
 [; ;_25LC512_EEPROM.c: 80: }
 [; ;_25LC512_EEPROM.c: 81: if (PORTBbits.RB0) {
 "81
-[e $ ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 891  ]
+[e $ ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 893  ]
 {
 [; ;_25LC512_EEPROM.c: 82: if (PORTBbits.RB0) {
 "82
-[e $ ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 892  ]
+[e $ ! != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 894  ]
 {
 [; ;_25LC512_EEPROM.c: 83: EEPROM_25LC512_Read(0x12);
 "83
@@ -7536,9 +7502,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [v _d_Zise `i ~T0 @X0 1 a ]
 [e = _d_Zise -> 0 `i ]
-[e $ < _d_Zise -> 128 `i 893  ]
-[e $U 894  ]
-[e :U 893 ]
+[e $ < _d_Zise -> 128 `i 895  ]
+[e $U 896  ]
+[e :U 895 ]
 {
 [; ;_25LC512_EEPROM.c: 85: SPI1_Exchange8bit(0x12 + d_Zise);
 "85
@@ -7547,34 +7513,34 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "84
 [e ++ _d_Zise -> 1 `i ]
-[e $ < _d_Zise -> 128 `i 893  ]
-[e :U 894 ]
+[e $ < _d_Zise -> 128 `i 895  ]
+[e :U 896 ]
 "86
 }
 [; ;_25LC512_EEPROM.c: 86: }
 [; ;_25LC512_EEPROM.c: 87: do { LATCbits.LATC0 = 1; } while(0);
 "87
-[e :U 898 ]
+[e :U 900 ]
 {
 [e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 897 ]
+[e :U 899 ]
 "88
 }
-[e :U 892 ]
+[e :U 894 ]
 [; ;_25LC512_EEPROM.c: 88: }
 [; ;_25LC512_EEPROM.c: 89: while (PORTBbits.RB0);
 "89
-[e $U 899  ]
-[e :U 900 ]
-[e :U 899 ]
-[e $ != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 900  ]
+[e $U 901  ]
+[e :U 902 ]
 [e :U 901 ]
+[e $ != -> . . _PORTBbits 0 0 `i -> -> -> 0 `i `Vuc `i 902  ]
+[e :U 903 ]
 "90
 }
-[e :U 891 ]
+[e :U 893 ]
 [; ;_25LC512_EEPROM.c: 90: }
 [; ;_25LC512_EEPROM.c: 91: }
 "91
-[e :UE 879 ]
+[e :UE 881 ]
 }
