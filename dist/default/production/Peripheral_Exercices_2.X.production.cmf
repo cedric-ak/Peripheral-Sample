@@ -11,6 +11,9 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
+$C:\Users\CEDRIC\AppData\Local\Temp\s6r0.obj
+init CODE 0 0 0 4 1
+config CONFIG 0 FFF8 FFF8 8 1
 $dist/default/production\Peripheral_Exercices_2.X.production.obj
 cinit CODE 0 14DA 14DA 66 1
 text0 CODE 0 1616 1616 38 1
@@ -40,9 +43,6 @@ smallconst SMALLCONST 0 F00 F00 3E 1
 dataBIGRAM BIGRAM 1 C4 C4 400 1
 dataCOMRAM COMRAM 1 3A 3A D 1
 bssCOMRAM COMRAM 1 1 1 22 1
-$C:\Users\CEDRIC\AppData\Local\Temp\sfmk.obj
-init CODE 0 0 0 4 1
-config CONFIG 0 FFF8 FFF8 8 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -262,56 +262,56 @@ $dist/default/production\Peripheral_Exercices_2.X.production.obj
 1636 text0 CODE >15:F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
 1636 text0 CODE >16:F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
 164C text0 CODE >15:F:\WORK\Personal\Peripheral_Exercices_2.X\main.c
-14DA cinit CODE >12893:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14DA cinit CODE >12895:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14DA cinit CODE >12898:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14DA cinit CODE >12970:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14DC cinit CODE >12971:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14DE cinit CODE >12972:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14E0 cinit CODE >12973:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14E2 cinit CODE >12974:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14E4 cinit CODE >12975:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14E6 cinit CODE >12976:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14EA cinit CODE >12977:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14EE cinit CODE >12978:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14EE cinit CODE >12979:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14F0 cinit CODE >12980:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14F4 cinit CODE >12981:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14F6 cinit CODE >12982:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14F8 cinit CODE >12983:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14FA cinit CODE >12984:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14FC cinit CODE >12985:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-14FE cinit CODE >12989:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1500 cinit CODE >12990:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1502 cinit CODE >12991:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1504 cinit CODE >12992:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1506 cinit CODE >12993:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1508 cinit CODE >12994:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-150A cinit CODE >12995:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-150E cinit CODE >12996:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1512 cinit CODE >12997:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1512 cinit CODE >12998:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1514 cinit CODE >12999:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1518 cinit CODE >13000:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-151A cinit CODE >13001:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-151C cinit CODE >13002:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-151E cinit CODE >13006:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1522 cinit CODE >13007:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1524 cinit CODE >13008:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1524 cinit CODE >13009:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1526 cinit CODE >13010:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1528 cinit CODE >13011:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-152A cinit CODE >13014:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-152E cinit CODE >13015:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1530 cinit CODE >13016:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1530 cinit CODE >13017:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1532 cinit CODE >13018:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1534 cinit CODE >13019:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1536 cinit CODE >13025:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1536 cinit CODE >13028:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-1538 cinit CODE >13029:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-153A cinit CODE >13030:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
-153C cinit CODE >13031:C:\Users\CEDRIC\AppData\Local\Temp\sfmk.
+14DA cinit CODE >12893:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14DA cinit CODE >12895:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14DA cinit CODE >12898:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14DA cinit CODE >12970:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14DC cinit CODE >12971:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14DE cinit CODE >12972:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14E0 cinit CODE >12973:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14E2 cinit CODE >12974:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14E4 cinit CODE >12975:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14E6 cinit CODE >12976:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14EA cinit CODE >12977:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14EE cinit CODE >12978:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14EE cinit CODE >12979:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14F0 cinit CODE >12980:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14F4 cinit CODE >12981:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14F6 cinit CODE >12982:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14F8 cinit CODE >12983:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14FA cinit CODE >12984:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14FC cinit CODE >12985:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+14FE cinit CODE >12989:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1500 cinit CODE >12990:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1502 cinit CODE >12991:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1504 cinit CODE >12992:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1506 cinit CODE >12993:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1508 cinit CODE >12994:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+150A cinit CODE >12995:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+150E cinit CODE >12996:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1512 cinit CODE >12997:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1512 cinit CODE >12998:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1514 cinit CODE >12999:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1518 cinit CODE >13000:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+151A cinit CODE >13001:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+151C cinit CODE >13002:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+151E cinit CODE >13006:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1522 cinit CODE >13007:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1524 cinit CODE >13008:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1524 cinit CODE >13009:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1526 cinit CODE >13010:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1528 cinit CODE >13011:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+152A cinit CODE >13014:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+152E cinit CODE >13015:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1530 cinit CODE >13016:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1530 cinit CODE >13017:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1532 cinit CODE >13018:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1534 cinit CODE >13019:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1536 cinit CODE >13025:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1536 cinit CODE >13028:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+1538 cinit CODE >13029:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+153A cinit CODE >13030:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
+153C cinit CODE >13031:C:\Users\CEDRIC\AppData\Local\Temp\s6r0.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -332,7 +332,7 @@ __size_of_I2C_buffClear 0 0 ABS 0 - dist/default/production\Peripheral_Exercices
 _SSP1STATbits FC7 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 EUSART1_SetErrorHandler@interruptHandler 23 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\Peripheral_Exercices_2.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\CEDRIC\AppData\Local\Temp\sfmk.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\CEDRIC\AppData\Local\Temp\s6r0.obj
 _EUSART1_Initialize 15D8 0 CODE 0 text9 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_WPCFG$OFF 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __end_of_I2C_Write 16E2 0 CODE 0 text17 dist/default/production\Peripheral_Exercices_2.X.production.obj
@@ -342,11 +342,11 @@ _LATB F8A 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.
 _LATC F8B 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _LATD F8C 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _LATE F8D 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\CEDRIC\AppData\Local\Temp\sfmk.obj
+___sp 0 0 STACK 2 stack C:\Users\CEDRIC\AppData\Local\Temp\s6r0.obj
 __end_of_I2C_start 1758 0 CODE 0 text16 dist/default/production\Peripheral_Exercices_2.X.production.obj
 _main 1616 0 CODE 0 text0 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __size_of_I2C_Write 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
-start 0 0 CODE 0 init C:\Users\CEDRIC\AppData\Local\Temp\sfmk.obj
+start 0 0 CODE 0 init C:\Users\CEDRIC\AppData\Local\Temp\s6r0.obj
 __size_of___aldiv 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __size_of_I2C_start 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
@@ -363,11 +363,11 @@ __HdataBIGRAM 0 0 ABS 0 dataBIGRAM dist/default/production\Peripheral_Exercices_
 _I2C_start 174E 0 CODE 0 text16 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\CEDRIC\AppData\Local\Temp\sfmk.obj
-intlevel0 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\sfmk.obj
-intlevel1 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\sfmk.obj
-intlevel2 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\sfmk.obj
-intlevel3 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\sfmk.obj
+__accesstop 60 0 ABS 0 - C:\Users\CEDRIC\AppData\Local\Temp\s6r0.obj
+intlevel0 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\s6r0.obj
+intlevel1 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\s6r0.obj
+intlevel2 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\s6r0.obj
+intlevel3 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\s6r0.obj
 __size_of_EUSART1_SetErrorHandler 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __end_oflog@coeff F3A 0 SMALLCONST 0 smallconst dist/default/production\Peripheral_Exercices_2.X.production.obj
@@ -385,8 +385,8 @@ _SPI1_Initialize 170A 0 CODE 0 text3 dist/default/production\Peripheral_Exercice
 _ANCON0 F48 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 _ANCON1 F49 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __LdataBIGRAM 0 0 ABS 0 dataBIGRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\CEDRIC\AppData\Local\Temp\sfmk.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\CEDRIC\AppData\Local\Temp\sfmk.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\CEDRIC\AppData\Local\Temp\s6r0.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\CEDRIC\AppData\Local\Temp\s6r0.obj
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 _Buffer C4 0 BIGRAM 1 dataBIGRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 _I2C_Init 1540 0 CODE 0 text6 dist/default/production\Peripheral_Exercices_2.X.production.obj
@@ -477,7 +477,7 @@ __Hbank13 0 0 ABS 0 bank13 dist/default/production\Peripheral_Exercices_2.X.prod
 __Hbank14 0 0 ABS 0 bank14 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\Peripheral_Exercices_2.X.production.obj
-__smallconst F00 0 SMALLCONST 0 smallconst C:\Users\CEDRIC\AppData\Local\Temp\sfmk.obj
+__smallconst F00 0 SMALLCONST 0 smallconst C:\Users\CEDRIC\AppData\Local\Temp\s6r0.obj
 _BAUDCON1 F7E 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Hconfig 10000 0 CONFIG 0 config dist/default/production\Peripheral_Exercices_2.X.production.obj
@@ -611,8 +611,8 @@ __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\Peripheral_Exercices_2.X.p
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\Peripheral_Exercices_2.X.production.obj
 _MAX31_ADC F 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 __end_of_EUSART1_SetFramingErrorHandler 1744 0 CODE 0 text11 dist/default/production\Peripheral_Exercices_2.X.production.obj
-stackhi EAF 0 ABS 0 - C:\Users\CEDRIC\AppData\Local\Temp\sfmk.obj
-stacklo 4C4 0 ABS 0 - C:\Users\CEDRIC\AppData\Local\Temp\sfmk.obj
+stackhi EAF 0 ABS 0 - C:\Users\CEDRIC\AppData\Local\Temp\s6r0.obj
+stacklo 4C4 0 ABS 0 - C:\Users\CEDRIC\AppData\Local\Temp\s6r0.obj
 __end_of_EUSART1_SetOverrunErrorHandler 173A 0 CODE 0 text10 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Lintcode 0 0 CODE 0 intcode dist/default/production\Peripheral_Exercices_2.X.production.obj
 __CFG_PLLSEL$PLL4X 0 0 ABS 0 - dist/default/production\Peripheral_Exercices_2.X.production.obj
@@ -663,7 +663,7 @@ __Ltext15 0 0 ABS 0 text15 dist/default/production\Peripheral_Exercices_2.X.prod
 __Ltext16 0 0 ABS 0 text16 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Ltext17 0 0 ABS 0 text17 dist/default/production\Peripheral_Exercices_2.X.production.obj
 __Ltext18 0 0 ABS 0 text18 dist/default/production\Peripheral_Exercices_2.X.production.obj
-__ramtop F00 0 RAM 0 ramtop C:\Users\CEDRIC\AppData\Local\Temp\sfmk.obj
+__ramtop F00 0 RAM 0 ramtop C:\Users\CEDRIC\AppData\Local\Temp\s6r0.obj
 ___aldiv@dividend 29 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 _cursor_x 17 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj
 _cursor_y 15 0 COMRAM 1 bssCOMRAM dist/default/production\Peripheral_Exercices_2.X.production.obj

@@ -9555,7 +9555,7 @@ int16_t TempData;
 # 17 "mcc_generated_files/../_24AA512.h"
 uint8_t EEPROM_24AA512_Read(int addHigh, int addLow);
 void EEPROM_24AA512_Write(int addHigh, int AddLow, int data);
-uint8_t EEPROM_24AA512_pageWrite(uint8_t page,uint16_t data);
+uint8_t EEPROM_24AA512_pageWrite(uint8_t page,uint16_t *data);
 uint8_t EEPROM_24AA512_pageRead(uint8_t page);
 
 # 61 "mcc_generated_files/../MCP79411.h"

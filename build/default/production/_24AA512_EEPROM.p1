@@ -7121,7 +7121,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP9801.h: 27: }ADC;
 [; ;_24AA512.h: 17: uint8_t EEPROM_24AA512_Read(int addHigh, int addLow);
 [; ;_24AA512.h: 18: void EEPROM_24AA512_Write(int addHigh, int AddLow, int data);
-[; ;_24AA512.h: 19: uint8_t EEPROM_24AA512_pageWrite(uint8_t page,uint16_t data);
+[; ;_24AA512.h: 19: uint8_t EEPROM_24AA512_pageWrite(uint8_t page,uint16_t *data);
 [; ;_24AA512.h: 20: uint8_t EEPROM_24AA512_pageRead(uint8_t page);
 [; ;MCP79411.h: 61: void MCP794x_setTime(uint8_t hour, uint8_t minute, uint8_t second) ;
 [; ;MCP79411.h: 62: void MCP794x_setDate(uint8_t date, uint8_t weekDay, uint8_t month, uint8_t year);
@@ -7255,12 +7255,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 841 ]
 }
 "32
-[v _EEPROM_24AA512_pageWrite `(uc ~T0 @X0 1 ef2`uc`ui ]
+[v _EEPROM_24AA512_pageWrite `(uc ~T0 @X0 1 ef2`uc`*ui ]
 {
-[; ;_24AA512_EEPROM.c: 32: uint8_t EEPROM_24AA512_pageWrite(uint8_t page, uint16_t data) {
+[; ;_24AA512_EEPROM.c: 32: uint8_t EEPROM_24AA512_pageWrite(uint8_t page, uint16_t *data) {
 [e :U _EEPROM_24AA512_pageWrite ]
 [v _page `uc ~T0 @X0 1 r1 ]
-[v _data `ui ~T0 @X0 1 r2 ]
+[v _data `*ui ~T0 @X0 1 r2 ]
 [f ]
 "33
 [v _address `ui ~T0 @X0 1 a ]
@@ -7287,9 +7287,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 844  ]
 [e :U 843 ]
 {
-[; ;_24AA512_EEPROM.c: 39: I2C_Write(data);
+[; ;_24AA512_EEPROM.c: 39: I2C_Write(data[index]);
 "39
-[e ( _I2C_Write (1 -> _data `uc ]
+[e ( _I2C_Write (1 -> *U + _data * -> _index `x -> -> # *U _data `i `x `uc ]
 "40
 }
 "38

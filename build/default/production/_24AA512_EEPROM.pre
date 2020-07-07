@@ -9555,7 +9555,7 @@ int16_t TempData;
 # 17 "mcc_generated_files/../_24AA512.h"
 uint8_t EEPROM_24AA512_Read(int addHigh, int addLow);
 void EEPROM_24AA512_Write(int addHigh, int AddLow, int data);
-uint8_t EEPROM_24AA512_pageWrite(uint8_t page,uint16_t data);
+uint8_t EEPROM_24AA512_pageWrite(uint8_t page,uint16_t *data);
 uint8_t EEPROM_24AA512_pageRead(uint8_t page);
 
 # 61 "mcc_generated_files/../MCP79411.h"
@@ -9654,14 +9654,14 @@ I2C_read(1);
 I2C_stop();
 }
 
-uint8_t EEPROM_24AA512_pageWrite(uint8_t page, uint16_t data) {
+uint8_t EEPROM_24AA512_pageWrite(uint8_t page, uint16_t *data) {
 uint16_t address = (page * pow(2, 7) - pow(2, 7));
 I2C_start();
 I2C_Write(0xA0);
 I2C_Write(address >> 8);
 I2C_Write((address - (address >> 8)*256));
 for (int index = 0; index < 128; index++) {
-I2C_Write(data);
+I2C_Write(data[index]);
 }
 I2C_stop();
 }

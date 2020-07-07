@@ -29,14 +29,14 @@ uint8_t EEPROM_24AA512_Read(int addHigh, int addLow) {
     I2C_stop();
 }
 
-uint8_t EEPROM_24AA512_pageWrite(uint8_t page, uint16_t data) {
+uint8_t EEPROM_24AA512_pageWrite(uint8_t page, uint16_t *data) {
     uint16_t address = (page * pow(2, 7) - pow(2, 7));
     I2C_start();
     I2C_Write(slaveAdd); //write command
     I2C_Write(address >> 8); //address high
     I2C_Write((address - (address >> 8)*256)); //address low
     for (int index = 0; index < 128; index++) {
-        I2C_Write(data);
+        I2C_Write(data[index]);
     }
     I2C_stop();
 }
