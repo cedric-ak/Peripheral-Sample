@@ -6,13 +6,16 @@ void main(void) {
     // Initialize the device
     interrupt_Init();
     SYSTEM_Initialize();
-    CS1_SetDigitalOutput();
+
     I2C_buffClear();
     __delay_ms(10);
+    
     SSD1306_Init();
-//    clearDisplay();
-//    dim(true);
+    SSD1306_clearDisplay();
+    SSD1306_setCursor(1,1);
+    SSD1306_Print("If you reading this It's worked");
     while (true) {
-        __delay_ms(500);
+        
+//        __delay_ms(500);
     }
 }

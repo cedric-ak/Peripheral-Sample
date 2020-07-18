@@ -6,8 +6,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [u S836 `uc -> 4 `i `ul 1 ]
 [n S836 . MAX31855 rawDate ]
 "36 mcc_generated_files/../MCP3423.h
-[u S839 `uc -> 2 `i `ul 1 ]
-[n S839 . Byte dataRead ]
+[u S837 `uc -> 2 `i `ul 1 ]
+[n S837 . Byte dataRead ]
 "15 mcc_generated_files/../I2C.h
 [v _I2C_start `(v ~T0 @X0 0 ef ]
 "12
@@ -7140,47 +7140,44 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MAX31855K.h: 18: char MAX31855[4];
 [; ;MAX31855K.h: 19: uint32_t rawDate;
 [; ;MAX31855K.h: 20: }MAX31_ADC;
-[; ;SSD1306.h: 81: void SSD1306_Init(void);
-[; ;SSD1306.h: 82: void SSD1306_writeCMD(uint8_t controlReg, uint8_t dataByte);
-[; ;SSD1306.h: 83: void clearDisplay(void);
-[; ;SSD1306.h: 84: void setCursor(int16_t x, int16_t y);
-[; ;SSD1306.h: 85: void setTextSize(uint8_t s);
-[; ;SSD1306.h: 86: void setTextWrap(bool w);
-[; ;SSD1306.h: 87: void setTextColor(uint16_t c);
-[; ;SSD1306.h: 88: void setRotatation(uint8_t rotation);
-[; ;SSD1306.h: 91: uint8_t getRotation(void);
-[; ;SSD1306.h: 92: uint16_t width(void);
-[; ;SSD1306.h: 93: uint16_t height(void);
-[; ;SSD1306.h: 94: void invertDisplay(uint8_t i);
-[; ;SSD1306.h: 95: void SSD1306_writeData(uint8_t data);
-[; ;SSD1306.h: 96: void startscrollright(uint8_t start, uint8_t stop);
-[; ;SSD1306.h: 97: void startscrollleft(uint8_t start, uint8_t stop);
-[; ;SSD1306.h: 98: void startscrolldiagright(uint8_t start, uint8_t stop);
-[; ;SSD1306.h: 99: void stopscroll(void);
-[; ;SSD1306.h: 100: void dim(bool status);
-[; ;SSD1306.h: 101: void display(void);
-"103 mcc_generated_files/../SSD1306.h
-[v _rotation `uc ~T0 @X0 1 e ]
-[; ;SSD1306.h: 103: uint8_t rotation;
-"104
-[v _cursor_x `i ~T0 @X0 1 e ]
-[v _cursor_y `i ~T0 @X0 1 e ]
-[; ;SSD1306.h: 104: int16_t cursor_x, cursor_y;
-[; ;SSD1306.h: 106: typedef struct {
-[; ;SSD1306.h: 107: uint16_t bitmapOffset;
-[; ;SSD1306.h: 108: uint8_t width, height;
-[; ;SSD1306.h: 109: uint8_t xAdvance;
-[; ;SSD1306.h: 110: int8_t xOffset, yOffset;
-[; ;SSD1306.h: 111: } GFXglyph;
-[; ;SSD1306.h: 113: typedef struct {
-[; ;SSD1306.h: 114: uint8_t *bitmap;
-[; ;SSD1306.h: 115: GFXglyph *glyph;
-[; ;SSD1306.h: 116: uint8_t first, last;
-[; ;SSD1306.h: 117: uint8_t yAdvance;
-[; ;SSD1306.h: 118: } GFXfont;
+[; ;SSD1306.h: 82: void SSD1306_Init(void);
+[; ;SSD1306.h: 83: void SSD1306_writeCMD(uint8_t controlReg, uint8_t dataByte);
+[; ;SSD1306.h: 84: void SSD1306_clearDisplay(void);
+[; ;SSD1306.h: 85: void SSD1306_setCursor(uint8_t x, uint8_t y);
+[; ;SSD1306.h: 86: void SSD1306_setTextSize(uint8_t s);
+[; ;SSD1306.h: 87: void SSD1306_setTextWrap(uint8_t w);
+[; ;SSD1306.h: 88: void SSD1306_setTextColor(uint16_t c);
+[; ;SSD1306.h: 89: void SSD1306_setRotatation(uint8_t rotation);
+[; ;SSD1306.h: 92: uint8_t getRotation(void);
+[; ;SSD1306.h: 93: uint16_t width(void);
+[; ;SSD1306.h: 94: uint16_t height(void);
+[; ;SSD1306.h: 95: void SSD1306_invertDisplay(uint8_t i);
+[; ;SSD1306.h: 96: void SSD1306_writeData(uint8_t data);
+[; ;SSD1306.h: 97: void SSD1306_startscrollright(uint8_t start, uint8_t stop);
+[; ;SSD1306.h: 98: void SSD1306_startscrollleft(uint8_t start, uint8_t stop);
+[; ;SSD1306.h: 99: void SSD1306_startscrolldiagright(uint8_t start, uint8_t stop);
+[; ;SSD1306.h: 100: void SSD1306_stopscroll(void);
+[; ;SSD1306.h: 101: void SSD1306_dim(bool status);
+[; ;SSD1306.h: 102: void SSD1306_display(void);
+[; ;SSD1306.h: 103: void SSD1306_PutC(char c);
+[; ;SSD1306.h: 104: void SSD1306_Print(char *s);
+"107 mcc_generated_files/../SSD1306.h
+[v _x_pos `uc ~T0 @X0 1 e ]
+[i _x_pos
+-> -> 1 `i `uc
+]
+[v _y_pos `uc ~T0 @X0 1 e ]
+[i _y_pos
+-> -> 1 `i `uc
+]
+[v _wrap `uc ~T0 @X0 1 e ]
+[i _wrap
+-> -> 1 `i `uc
+]
+[; ;SSD1306.h: 107: uint8_t x_pos = 1, y_pos = 1, wrap = 1;
 [; ;MCP3423.h: 34: uint32_t MCP342x_read(int channel);
 "39 mcc_generated_files/../MCP3423.h
-[v _MCP342x_ADC `S839 ~T0 @X0 1 e ]
+[v _MCP342x_ADC `S837 ~T0 @X0 1 e ]
 [; ;MCP3423.h: 36: union {
 [; ;MCP3423.h: 37: char Byte[2];
 [; ;MCP3423.h: 38: uint32_t dataRead;
@@ -7220,9 +7217,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [v _dataIndex `i ~T0 @X0 1 a ]
 [e = _dataIndex -> 3 `i ]
-[e $ > _dataIndex -> 0 `i 841  ]
-[e $U 842  ]
-[e :U 841 ]
+[e $ > _dataIndex -> 0 `i 839  ]
+[e $U 840  ]
+[e :U 839 ]
 {
 [; ;MCP3423.c: 22: dataIndex == 1 ? I2C_read(1) : I2C_read(0);
 "22
@@ -7234,8 +7231,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "21
 [e -- _dataIndex -> 1 `i ]
-[e $ > _dataIndex -> 0 `i 841  ]
-[e :U 842 ]
+[e $ > _dataIndex -> 0 `i 839  ]
+[e :U 840 ]
 "24
 }
 [; ;MCP3423.c: 24: }
@@ -7260,8 +7257,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MCP3423.c: 32: return ( (MCP342x_ADC.dataRead >> 2)* (15.25 * pow(10, -6))) / 1;
 "32
 [e ) -> / * -> >> . _MCP342x_ADC 1 -> 2 `i `d * .15.25 ( _pow (2 , -> -> 10 `i `d -> -U -> 6 `i `d -> -> 1 `i `d `ul ]
-[e $UE 840  ]
+[e $UE 838  ]
 [; ;MCP3423.c: 34: }
 "34
-[e :UE 840 ]
+[e :UE 838 ]
 }

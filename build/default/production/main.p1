@@ -6,29 +6,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 [u S836 `uc -> 4 `i `ul 1 ]
 [n S836 . MAX31855 rawDate ]
 "36 mcc_generated_files/../MCP3423.h
-[u S839 `uc -> 2 `i `ul 1 ]
-[n S839 . Byte dataRead ]
+[u S837 `uc -> 2 `i `ul 1 ]
+[n S837 . Byte dataRead ]
 [p mainexit ]
 "3 main.c
 [v _interrupt_Init `(v ~T0 @X0 0 ef ]
 "43 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"9212 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18lf46j13.h
-[s S430 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S430 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-"9211
-[u S429 `S430 1 ]
-[n S429 . . ]
-"9223
-[v _TRISCbits `VS429 ~T0 @X0 0 e@3988 ]
 "19 mcc_generated_files/../I2C.h
 [v _I2C_buffClear `(v ~T0 @X0 0 ef ]
 [v F7202 `(v ~T0 @X0 1 tf1`ul ]
 "164 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h
 [v __delay `JF7202 ~T0 @X0 0 e ]
 [p i __delay ]
-"81 mcc_generated_files/../SSD1306.h
+"82 mcc_generated_files/../SSD1306.h
 [v _SSD1306_Init `(v ~T0 @X0 0 ef ]
+"84
+[v _SSD1306_clearDisplay `(v ~T0 @X0 0 ef ]
+"85
+[v _SSD1306_setCursor `(v ~T0 @X0 0 ef2`uc`uc ]
+"104
+[v _SSD1306_Print `(v ~T0 @X0 0 ef1`*uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7145,47 +7143,44 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MAX31855K.h: 18: char MAX31855[4];
 [; ;MAX31855K.h: 19: uint32_t rawDate;
 [; ;MAX31855K.h: 20: }MAX31_ADC;
-[; ;SSD1306.h: 81: void SSD1306_Init(void);
-[; ;SSD1306.h: 82: void SSD1306_writeCMD(uint8_t controlReg, uint8_t dataByte);
-[; ;SSD1306.h: 83: void clearDisplay(void);
-[; ;SSD1306.h: 84: void setCursor(int16_t x, int16_t y);
-[; ;SSD1306.h: 85: void setTextSize(uint8_t s);
-[; ;SSD1306.h: 86: void setTextWrap(bool w);
-[; ;SSD1306.h: 87: void setTextColor(uint16_t c);
-[; ;SSD1306.h: 88: void setRotatation(uint8_t rotation);
-[; ;SSD1306.h: 91: uint8_t getRotation(void);
-[; ;SSD1306.h: 92: uint16_t width(void);
-[; ;SSD1306.h: 93: uint16_t height(void);
-[; ;SSD1306.h: 94: void invertDisplay(uint8_t i);
-[; ;SSD1306.h: 95: void SSD1306_writeData(uint8_t data);
-[; ;SSD1306.h: 96: void startscrollright(uint8_t start, uint8_t stop);
-[; ;SSD1306.h: 97: void startscrollleft(uint8_t start, uint8_t stop);
-[; ;SSD1306.h: 98: void startscrolldiagright(uint8_t start, uint8_t stop);
-[; ;SSD1306.h: 99: void stopscroll(void);
-[; ;SSD1306.h: 100: void dim(bool status);
-[; ;SSD1306.h: 101: void display(void);
-"103 mcc_generated_files/../SSD1306.h
-[v _rotation `uc ~T0 @X0 1 e ]
-[; ;SSD1306.h: 103: uint8_t rotation;
-"104
-[v _cursor_x `i ~T0 @X0 1 e ]
-[v _cursor_y `i ~T0 @X0 1 e ]
-[; ;SSD1306.h: 104: int16_t cursor_x, cursor_y;
-[; ;SSD1306.h: 106: typedef struct {
-[; ;SSD1306.h: 107: uint16_t bitmapOffset;
-[; ;SSD1306.h: 108: uint8_t width, height;
-[; ;SSD1306.h: 109: uint8_t xAdvance;
-[; ;SSD1306.h: 110: int8_t xOffset, yOffset;
-[; ;SSD1306.h: 111: } GFXglyph;
-[; ;SSD1306.h: 113: typedef struct {
-[; ;SSD1306.h: 114: uint8_t *bitmap;
-[; ;SSD1306.h: 115: GFXglyph *glyph;
-[; ;SSD1306.h: 116: uint8_t first, last;
-[; ;SSD1306.h: 117: uint8_t yAdvance;
-[; ;SSD1306.h: 118: } GFXfont;
+[; ;SSD1306.h: 82: void SSD1306_Init(void);
+[; ;SSD1306.h: 83: void SSD1306_writeCMD(uint8_t controlReg, uint8_t dataByte);
+[; ;SSD1306.h: 84: void SSD1306_clearDisplay(void);
+[; ;SSD1306.h: 85: void SSD1306_setCursor(uint8_t x, uint8_t y);
+[; ;SSD1306.h: 86: void SSD1306_setTextSize(uint8_t s);
+[; ;SSD1306.h: 87: void SSD1306_setTextWrap(uint8_t w);
+[; ;SSD1306.h: 88: void SSD1306_setTextColor(uint16_t c);
+[; ;SSD1306.h: 89: void SSD1306_setRotatation(uint8_t rotation);
+[; ;SSD1306.h: 92: uint8_t getRotation(void);
+[; ;SSD1306.h: 93: uint16_t width(void);
+[; ;SSD1306.h: 94: uint16_t height(void);
+[; ;SSD1306.h: 95: void SSD1306_invertDisplay(uint8_t i);
+[; ;SSD1306.h: 96: void SSD1306_writeData(uint8_t data);
+[; ;SSD1306.h: 97: void SSD1306_startscrollright(uint8_t start, uint8_t stop);
+[; ;SSD1306.h: 98: void SSD1306_startscrollleft(uint8_t start, uint8_t stop);
+[; ;SSD1306.h: 99: void SSD1306_startscrolldiagright(uint8_t start, uint8_t stop);
+[; ;SSD1306.h: 100: void SSD1306_stopscroll(void);
+[; ;SSD1306.h: 101: void SSD1306_dim(bool status);
+[; ;SSD1306.h: 102: void SSD1306_display(void);
+[; ;SSD1306.h: 103: void SSD1306_PutC(char c);
+[; ;SSD1306.h: 104: void SSD1306_Print(char *s);
+"107 mcc_generated_files/../SSD1306.h
+[v _x_pos `uc ~T0 @X0 1 e ]
+[i _x_pos
+-> -> 1 `i `uc
+]
+[v _y_pos `uc ~T0 @X0 1 e ]
+[i _y_pos
+-> -> 1 `i `uc
+]
+[v _wrap `uc ~T0 @X0 1 e ]
+[i _wrap
+-> -> 1 `i `uc
+]
+[; ;SSD1306.h: 107: uint8_t x_pos = 1, y_pos = 1, wrap = 1;
 [; ;MCP3423.h: 34: uint32_t MCP342x_read(int channel);
 "39 mcc_generated_files/../MCP3423.h
-[v _MCP342x_ADC `S839 ~T0 @X0 1 e ]
+[v _MCP342x_ADC `S837 ~T0 @X0 1 e ]
 [; ;MCP3423.h: 36: union {
 [; ;MCP3423.h: 37: char Byte[2];
 [; ;MCP3423.h: 38: uint32_t dataRead;
@@ -7206,37 +7201,38 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 8: SYSTEM_Initialize();
 "8
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 9: do { TRISCbits.TRISC0 = 0; } while(0);
-"9
-[e :U 843 ]
-{
-[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 842 ]
 [; ;main.c: 10: I2C_buffClear();
 "10
 [e ( _I2C_buffClear ..  ]
 [; ;main.c: 11: _delay((unsigned long)((10)*(16000000/4000.0)));
 "11
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-[; ;main.c: 12: SSD1306_Init();
-"12
+[; ;main.c: 13: SSD1306_Init();
+"13
 [e ( _SSD1306_Init ..  ]
-[; ;main.c: 15: while (1) {
+[; ;main.c: 14: SSD1306_clearDisplay();
+"14
+[e ( _SSD1306_clearDisplay ..  ]
+[; ;main.c: 15: SSD1306_setCursor(1,1);
 "15
-[e :U 845 ]
-{
-[; ;main.c: 16: _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( _SSD1306_setCursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 16: SSD1306_Print("If you reading this It's worked");
 "16
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[e ( _SSD1306_Print (1 -> :s 1C `*uc ]
+[; ;main.c: 17: while (1) {
 "17
+[e :U 840 ]
+{
+"20
 }
-[e :U 844 ]
-"15
-[e $U 845  ]
-[e :U 846 ]
-[; ;main.c: 17: }
-[; ;main.c: 18: }
-"18
-[e :UE 840 ]
+[e :U 839 ]
+"17
+[e $U 840  ]
+[e :U 841 ]
+[; ;main.c: 20: }
+[; ;main.c: 21: }
+"21
+[e :UE 838 ]
 }
+[a 1C 73 102 32 121 111 117 32 114 101 97 100 105 110 103 32 116 104 105 115 32 73 116 39 115 32 119 111 114 107 101 100 0 ]
+
