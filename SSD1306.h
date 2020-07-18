@@ -95,7 +95,7 @@ uint16_t height(void);
 void SSD1306_invertDisplay(uint8_t i);
 void SSD1306_writeData(uint8_t data);
 void SSD1306_startscrollright(uint8_t start, uint8_t stop);
-void SSD1306_startscrollleft(uint8_t start, uint8_t stop);
+void SSD1306_startscrollLeft(uint8_t start, uint8_t stop);
 void SSD1306_startscrolldiagright(uint8_t start, uint8_t stop);
 void SSD1306_stopscroll(void);
 void SSD1306_dim(bool status);
@@ -103,8 +103,9 @@ void SSD1306_display(void);
 void SSD1306_PutC(char c);
 void SSD1306_Print(char *s);
 
+//void SSD1306_DrawPixel(uint8_t x, uint8_t y, bool color = true);
 
-uint8_t x_pos = 1, y_pos = 1, wrap = 1;
+uint8_t x_pos = 1, y_pos = 1, wrap = 1, text_size = 1;
 
 #ifdef	__cplusplus
 }

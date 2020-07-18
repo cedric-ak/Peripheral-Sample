@@ -9596,7 +9596,7 @@ uint16_t height(void);
 void SSD1306_invertDisplay(uint8_t i);
 void SSD1306_writeData(uint8_t data);
 void SSD1306_startscrollright(uint8_t start, uint8_t stop);
-void SSD1306_startscrollleft(uint8_t start, uint8_t stop);
+void SSD1306_startscrollLeft(uint8_t start, uint8_t stop);
 void SSD1306_startscrolldiagright(uint8_t start, uint8_t stop);
 void SSD1306_stopscroll(void);
 void SSD1306_dim(bool status);
@@ -9605,7 +9605,8 @@ void SSD1306_PutC(char c);
 void SSD1306_Print(char *s);
 
 
-uint8_t x_pos = 1, y_pos = 1, wrap = 1;
+
+uint8_t x_pos = 1, y_pos = 1, wrap = 1, text_size = 1;
 
 # 34 "mcc_generated_files/../MCP3423.h"
 uint32_t MCP342x_read(int channel);
@@ -9846,39 +9847,44 @@ const char Font[] = {
 
 };
 
-# 256
+# 255
+void SSD1306_TextSize(uint8_t t_size)
+{
+if(t_size < 1)
+t_size = 1;
+text_size = t_size;
+}
+
 void SSD1306_startscrollright(uint8_t start, uint8_t stop) {
-SSD1306_writeCMD(0x26, 0x26);
-SSD1306_writeData(0X00);
+SSD1306_writeCMD(0x26, 0x00);
 SSD1306_writeData(start);
-SSD1306_writeData(0X00);
+SSD1306_writeData(0x00);
 SSD1306_writeData(stop);
-SSD1306_writeData(0X00);
-SSD1306_writeData(0XFF);
+SSD1306_writeData(0x00);
+SSD1306_writeData(0xFF);
 SSD1306_writeCMD(0x2F, 0x2F);
 }
 
-# 272
-void SSD1306_startscrollleft(uint8_t start, uint8_t stop) {
-SSD1306_writeCMD(0x27, 0x27);
-SSD1306_writeData(0X00);
+# 277
+void SSD1306_startscrollLeft(uint8_t start, uint8_t stop) {
+SSD1306_writeCMD(0x27, 0x00);
 SSD1306_writeData(start);
-SSD1306_writeData(0X00);
+SSD1306_writeData(0x00);
 SSD1306_writeData(stop);
-SSD1306_writeData(0X00);
-SSD1306_writeData(0XFF);
+SSD1306_writeData(0x00);
+SSD1306_writeData(0xFF);
 SSD1306_writeCMD(0x2F, 0x2F);
 }
 
-# 288
+# 292
 void SSD1306_startscrolldiagright(uint8_t start, uint8_t stop) {
 SSD1306_writeCMD(0xA3, 0x00);
 SSD1306_writeCMD(64, 64);
 SSD1306_writeCMD(0x29, 0x00);
 SSD1306_writeData(start);
-SSD1306_writeData(0X00);
+SSD1306_writeData(0x00);
 SSD1306_writeData(stop);
-SSD1306_writeData(0X01);
+SSD1306_writeData(0x01);
 SSD1306_writeCMD(0x2F, 0x2F);
 }
 
@@ -9948,7 +9954,7 @@ if (wrap && (x_pos == 1))
 
 y_pos = y_pos % 8 + 1;
 
-# 373
+# 377
 }
 
 void SSD1306_Print(char *s) {
@@ -9968,13 +9974,13 @@ SSD1306_writeData(0);
 
 SSD1306_writeData(127);
 
-# 395
+# 399
 SSD1306_writeCMD(0x22, 0x22);
 SSD1306_writeData(0);
 
 SSD1306_writeData(7);
 
-# 405
+# 409
 I2C_start();
 I2C_Write(0x7A);
 I2C_Write(0x40);

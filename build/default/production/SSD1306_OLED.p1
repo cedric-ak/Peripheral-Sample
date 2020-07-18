@@ -7161,14 +7161,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SSD1306.h: 95: void SSD1306_invertDisplay(uint8_t i);
 [; ;SSD1306.h: 96: void SSD1306_writeData(uint8_t data);
 [; ;SSD1306.h: 97: void SSD1306_startscrollright(uint8_t start, uint8_t stop);
-[; ;SSD1306.h: 98: void SSD1306_startscrollleft(uint8_t start, uint8_t stop);
+[; ;SSD1306.h: 98: void SSD1306_startscrollLeft(uint8_t start, uint8_t stop);
 [; ;SSD1306.h: 99: void SSD1306_startscrolldiagright(uint8_t start, uint8_t stop);
 [; ;SSD1306.h: 100: void SSD1306_stopscroll(void);
 [; ;SSD1306.h: 101: void SSD1306_dim(bool status);
 [; ;SSD1306.h: 102: void SSD1306_display(void);
 [; ;SSD1306.h: 103: void SSD1306_PutC(char c);
 [; ;SSD1306.h: 104: void SSD1306_Print(char *s);
-"107 mcc_generated_files/../SSD1306.h
+"108 mcc_generated_files/../SSD1306.h
 [v _x_pos `uc ~T0 @X0 1 e ]
 [i _x_pos
 -> -> 1 `i `uc
@@ -7181,7 +7181,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [i _wrap
 -> -> 1 `i `uc
 ]
-[; ;SSD1306.h: 107: uint8_t x_pos = 1, y_pos = 1, wrap = 1;
+[v _text_size `uc ~T0 @X0 1 e ]
+[i _text_size
+-> -> 1 `i `uc
+]
+[; ;SSD1306.h: 108: uint8_t x_pos = 1, y_pos = 1, wrap = 1, text_size = 1;
 [; ;MCP3423.h: 34: uint32_t MCP342x_read(int channel);
 "39 mcc_generated_files/../MCP3423.h
 [v _MCP342x_ADC `S837 ~T0 @X0 1 e ]
@@ -9174,420 +9178,439 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SSD1306_OLED.c: 246: 0x00, 0x41, 0x36, 0x08, 0x00,
 [; ;SSD1306_OLED.c: 247: 0x02, 0x01, 0x02, 0x04, 0x02
 [; ;SSD1306_OLED.c: 249: };
+"255
+[v _SSD1306_TextSize `(v ~T0 @X0 1 ef1`uc ]
 "256
+{
+[; ;SSD1306_OLED.c: 255: void SSD1306_TextSize(uint8_t t_size)
+[; ;SSD1306_OLED.c: 256: {
+[e :U _SSD1306_TextSize ]
+"255
+[v _t_size `uc ~T0 @X0 1 r1 ]
+"256
+[f ]
+[; ;SSD1306_OLED.c: 257: if(t_size < 1)
+"257
+[e $ ! < -> _t_size `i -> 1 `i 851  ]
+[; ;SSD1306_OLED.c: 258: t_size = 1;
+"258
+[e = _t_size -> -> 1 `i `uc ]
+[e :U 851 ]
+[; ;SSD1306_OLED.c: 259: text_size = t_size;
+"259
+[e = _text_size _t_size ]
+[; ;SSD1306_OLED.c: 260: }
+"260
+[e :UE 850 ]
+}
+"262
 [v _SSD1306_startscrollright `(v ~T0 @X0 1 ef2`uc`uc ]
 {
-[; ;SSD1306_OLED.c: 256: void SSD1306_startscrollright(uint8_t start, uint8_t stop) {
+[; ;SSD1306_OLED.c: 262: void SSD1306_startscrollright(uint8_t start, uint8_t stop) {
 [e :U _SSD1306_startscrollright ]
 [v _start `uc ~T0 @X0 1 r1 ]
 [v _stop `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;SSD1306_OLED.c: 257: SSD1306_writeCMD(0x26, 0x26);
-"257
-[e ( _SSD1306_writeCMD (2 , -> -> 38 `i `uc -> -> 38 `i `uc ]
-[; ;SSD1306_OLED.c: 258: SSD1306_writeData(0X00);
-"258
-[e ( _SSD1306_writeData (1 -> -> 0 `i `uc ]
-[; ;SSD1306_OLED.c: 259: SSD1306_writeData(start);
-"259
-[e ( _SSD1306_writeData (1 _start ]
-[; ;SSD1306_OLED.c: 260: SSD1306_writeData(0X00);
-"260
-[e ( _SSD1306_writeData (1 -> -> 0 `i `uc ]
-[; ;SSD1306_OLED.c: 261: SSD1306_writeData(stop);
-"261
-[e ( _SSD1306_writeData (1 _stop ]
-[; ;SSD1306_OLED.c: 262: SSD1306_writeData(0X00);
-"262
-[e ( _SSD1306_writeData (1 -> -> 0 `i `uc ]
-[; ;SSD1306_OLED.c: 263: SSD1306_writeData(0XFF);
+[; ;SSD1306_OLED.c: 263: SSD1306_writeCMD(0x26, 0x00);
 "263
-[e ( _SSD1306_writeData (1 -> -> 255 `i `uc ]
-[; ;SSD1306_OLED.c: 264: SSD1306_writeCMD(0x2F, 0x2F);
+[e ( _SSD1306_writeCMD (2 , -> -> 38 `i `uc -> -> 0 `i `uc ]
+[; ;SSD1306_OLED.c: 264: SSD1306_writeData(start);
 "264
-[e ( _SSD1306_writeCMD (2 , -> -> 47 `i `uc -> -> 47 `i `uc ]
-[; ;SSD1306_OLED.c: 265: }
+[e ( _SSD1306_writeData (1 _start ]
+[; ;SSD1306_OLED.c: 265: SSD1306_writeData(0x00);
 "265
-[e :UE 850 ]
+[e ( _SSD1306_writeData (1 -> -> 0 `i `uc ]
+[; ;SSD1306_OLED.c: 266: SSD1306_writeData(stop);
+"266
+[e ( _SSD1306_writeData (1 _stop ]
+[; ;SSD1306_OLED.c: 267: SSD1306_writeData(0x00);
+"267
+[e ( _SSD1306_writeData (1 -> -> 0 `i `uc ]
+[; ;SSD1306_OLED.c: 268: SSD1306_writeData(0xFF);
+"268
+[e ( _SSD1306_writeData (1 -> -> 255 `i `uc ]
+[; ;SSD1306_OLED.c: 269: SSD1306_writeCMD(0x2F, 0x2F);
+"269
+[e ( _SSD1306_writeCMD (2 , -> -> 47 `i `uc -> -> 47 `i `uc ]
+[; ;SSD1306_OLED.c: 270: }
+"270
+[e :UE 852 ]
 }
-"272
-[v _SSD1306_startscrollleft `(v ~T0 @X0 1 ef2`uc`uc ]
+"277
+[v _SSD1306_startscrollLeft `(v ~T0 @X0 1 ef2`uc`uc ]
 {
-[; ;SSD1306_OLED.c: 272: void SSD1306_startscrollleft(uint8_t start, uint8_t stop) {
-[e :U _SSD1306_startscrollleft ]
+[; ;SSD1306_OLED.c: 277: void SSD1306_startscrollLeft(uint8_t start, uint8_t stop) {
+[e :U _SSD1306_startscrollLeft ]
 [v _start `uc ~T0 @X0 1 r1 ]
 [v _stop `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;SSD1306_OLED.c: 273: SSD1306_writeCMD(0x27, 0x27);
-"273
-[e ( _SSD1306_writeCMD (2 , -> -> 39 `i `uc -> -> 39 `i `uc ]
-[; ;SSD1306_OLED.c: 274: SSD1306_writeData(0X00);
-"274
-[e ( _SSD1306_writeData (1 -> -> 0 `i `uc ]
-[; ;SSD1306_OLED.c: 275: SSD1306_writeData(start);
-"275
-[e ( _SSD1306_writeData (1 _start ]
-[; ;SSD1306_OLED.c: 276: SSD1306_writeData(0X00);
-"276
-[e ( _SSD1306_writeData (1 -> -> 0 `i `uc ]
-[; ;SSD1306_OLED.c: 277: SSD1306_writeData(stop);
-"277
-[e ( _SSD1306_writeData (1 _stop ]
-[; ;SSD1306_OLED.c: 278: SSD1306_writeData(0X00);
+[; ;SSD1306_OLED.c: 278: SSD1306_writeCMD(0x27, 0x00);
 "278
-[e ( _SSD1306_writeData (1 -> -> 0 `i `uc ]
-[; ;SSD1306_OLED.c: 279: SSD1306_writeData(0XFF);
+[e ( _SSD1306_writeCMD (2 , -> -> 39 `i `uc -> -> 0 `i `uc ]
+[; ;SSD1306_OLED.c: 279: SSD1306_writeData(start);
 "279
-[e ( _SSD1306_writeData (1 -> -> 255 `i `uc ]
-[; ;SSD1306_OLED.c: 280: SSD1306_writeCMD(0x2F, 0x2F);
+[e ( _SSD1306_writeData (1 _start ]
+[; ;SSD1306_OLED.c: 280: SSD1306_writeData(0x00);
 "280
-[e ( _SSD1306_writeCMD (2 , -> -> 47 `i `uc -> -> 47 `i `uc ]
-[; ;SSD1306_OLED.c: 281: }
+[e ( _SSD1306_writeData (1 -> -> 0 `i `uc ]
+[; ;SSD1306_OLED.c: 281: SSD1306_writeData(stop);
 "281
-[e :UE 851 ]
+[e ( _SSD1306_writeData (1 _stop ]
+[; ;SSD1306_OLED.c: 282: SSD1306_writeData(0x00);
+"282
+[e ( _SSD1306_writeData (1 -> -> 0 `i `uc ]
+[; ;SSD1306_OLED.c: 283: SSD1306_writeData(0xFF);
+"283
+[e ( _SSD1306_writeData (1 -> -> 255 `i `uc ]
+[; ;SSD1306_OLED.c: 284: SSD1306_writeCMD(0x2F, 0x2F);
+"284
+[e ( _SSD1306_writeCMD (2 , -> -> 47 `i `uc -> -> 47 `i `uc ]
+[; ;SSD1306_OLED.c: 285: }
+"285
+[e :UE 853 ]
 }
-"288
+"292
 [v _SSD1306_startscrolldiagright `(v ~T0 @X0 1 ef2`uc`uc ]
 {
-[; ;SSD1306_OLED.c: 288: void SSD1306_startscrolldiagright(uint8_t start, uint8_t stop) {
+[; ;SSD1306_OLED.c: 292: void SSD1306_startscrolldiagright(uint8_t start, uint8_t stop) {
 [e :U _SSD1306_startscrolldiagright ]
 [v _start `uc ~T0 @X0 1 r1 ]
 [v _stop `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;SSD1306_OLED.c: 289: SSD1306_writeCMD(0xA3, 0x00);
-"289
-[e ( _SSD1306_writeCMD (2 , -> -> 163 `i `uc -> -> 0 `i `uc ]
-[; ;SSD1306_OLED.c: 290: SSD1306_writeCMD(64, 64);
-"290
-[e ( _SSD1306_writeCMD (2 , -> -> 64 `i `uc -> -> 64 `i `uc ]
-[; ;SSD1306_OLED.c: 291: SSD1306_writeCMD(0x29, 0x00);
-"291
-[e ( _SSD1306_writeCMD (2 , -> -> 41 `i `uc -> -> 0 `i `uc ]
-[; ;SSD1306_OLED.c: 292: SSD1306_writeData(start);
-"292
-[e ( _SSD1306_writeData (1 _start ]
-[; ;SSD1306_OLED.c: 293: SSD1306_writeData(0X00);
+[; ;SSD1306_OLED.c: 293: SSD1306_writeCMD(0xA3, 0x00);
 "293
-[e ( _SSD1306_writeData (1 -> -> 0 `i `uc ]
-[; ;SSD1306_OLED.c: 294: SSD1306_writeData(stop);
+[e ( _SSD1306_writeCMD (2 , -> -> 163 `i `uc -> -> 0 `i `uc ]
+[; ;SSD1306_OLED.c: 294: SSD1306_writeCMD(64, 64);
 "294
-[e ( _SSD1306_writeData (1 _stop ]
-[; ;SSD1306_OLED.c: 295: SSD1306_writeData(0X01);
+[e ( _SSD1306_writeCMD (2 , -> -> 64 `i `uc -> -> 64 `i `uc ]
+[; ;SSD1306_OLED.c: 295: SSD1306_writeCMD(0x29, 0x00);
 "295
-[e ( _SSD1306_writeData (1 -> -> 1 `i `uc ]
-[; ;SSD1306_OLED.c: 296: SSD1306_writeCMD(0x2F, 0x2F);
+[e ( _SSD1306_writeCMD (2 , -> -> 41 `i `uc -> -> 0 `i `uc ]
+[; ;SSD1306_OLED.c: 296: SSD1306_writeData(start);
 "296
-[e ( _SSD1306_writeCMD (2 , -> -> 47 `i `uc -> -> 47 `i `uc ]
-[; ;SSD1306_OLED.c: 297: }
+[e ( _SSD1306_writeData (1 _start ]
+[; ;SSD1306_OLED.c: 297: SSD1306_writeData(0x00);
 "297
-[e :UE 852 ]
-}
+[e ( _SSD1306_writeData (1 -> -> 0 `i `uc ]
+[; ;SSD1306_OLED.c: 298: SSD1306_writeData(stop);
+"298
+[e ( _SSD1306_writeData (1 _stop ]
+[; ;SSD1306_OLED.c: 299: SSD1306_writeData(0x01);
 "299
-[v _SSD1306_stopscroll `(v ~T0 @X0 1 ef ]
-{
-[; ;SSD1306_OLED.c: 299: void SSD1306_stopscroll(void) {
-[e :U _SSD1306_stopscroll ]
-[f ]
-[; ;SSD1306_OLED.c: 300: SSD1306_writeCMD(0x2E, 0x2E);
+[e ( _SSD1306_writeData (1 -> -> 1 `i `uc ]
+[; ;SSD1306_OLED.c: 300: SSD1306_writeCMD(0x2F, 0x2F);
 "300
-[e ( _SSD1306_writeCMD (2 , -> -> 46 `i `uc -> -> 46 `i `uc ]
+[e ( _SSD1306_writeCMD (2 , -> -> 47 `i `uc -> -> 47 `i `uc ]
 [; ;SSD1306_OLED.c: 301: }
 "301
-[e :UE 853 ]
+[e :UE 854 ]
 }
 "303
+[v _SSD1306_stopscroll `(v ~T0 @X0 1 ef ]
+{
+[; ;SSD1306_OLED.c: 303: void SSD1306_stopscroll(void) {
+[e :U _SSD1306_stopscroll ]
+[f ]
+[; ;SSD1306_OLED.c: 304: SSD1306_writeCMD(0x2E, 0x2E);
+"304
+[e ( _SSD1306_writeCMD (2 , -> -> 46 `i `uc -> -> 46 `i `uc ]
+[; ;SSD1306_OLED.c: 305: }
+"305
+[e :UE 855 ]
+}
+"307
 [v _SSD1306_dim `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;SSD1306_OLED.c: 303: void SSD1306_dim(bool status) {
+[; ;SSD1306_OLED.c: 307: void SSD1306_dim(bool status) {
 [e :U _SSD1306_dim ]
 [v _status `uc ~T0 @X0 1 r1 ]
 [f ]
-"304
+"308
 [v _contrast `uc ~T0 @X0 1 a ]
-[; ;SSD1306_OLED.c: 304: uint8_t contrast;
-[; ;SSD1306_OLED.c: 305: if (status) {
-"305
-[e $ ! != -> _status `i -> -> -> 0 `i `uc `i 855  ]
-{
-[; ;SSD1306_OLED.c: 306: contrast = 0;
-"306
-[e = _contrast -> -> 0 `i `uc ]
-"307
-}
-[; ;SSD1306_OLED.c: 307: } else {
-[e $U 856  ]
-[e :U 855 ]
-{
-[; ;SSD1306_OLED.c: 309: contrast = 0xCF;
+[; ;SSD1306_OLED.c: 308: uint8_t contrast;
+[; ;SSD1306_OLED.c: 309: if (status) {
 "309
-[e = _contrast -> -> 207 `i `uc ]
+[e $ ! != -> _status `i -> -> -> 0 `i `uc `i 857  ]
+{
+[; ;SSD1306_OLED.c: 310: contrast = 0;
 "310
+[e = _contrast -> -> 0 `i `uc ]
+"311
 }
-[e :U 856 ]
-[; ;SSD1306_OLED.c: 310: }
-[; ;SSD1306_OLED.c: 313: SSD1306_writeCMD(0x81, 0x81);
+[; ;SSD1306_OLED.c: 311: } else {
+[e $U 858  ]
+[e :U 857 ]
+{
+[; ;SSD1306_OLED.c: 313: contrast = 0xCF;
 "313
-[e ( _SSD1306_writeCMD (2 , -> -> 129 `i `uc -> -> 129 `i `uc ]
-[; ;SSD1306_OLED.c: 314: SSD1306_writeData(contrast);
+[e = _contrast -> -> 207 `i `uc ]
 "314
-[e ( _SSD1306_writeData (1 _contrast ]
-[; ;SSD1306_OLED.c: 315: }
-"315
-[e :UE 854 ]
 }
+[e :U 858 ]
+[; ;SSD1306_OLED.c: 314: }
+[; ;SSD1306_OLED.c: 317: SSD1306_writeCMD(0x81, 0x81);
 "317
+[e ( _SSD1306_writeCMD (2 , -> -> 129 `i `uc -> -> 129 `i `uc ]
+[; ;SSD1306_OLED.c: 318: SSD1306_writeData(contrast);
+"318
+[e ( _SSD1306_writeData (1 _contrast ]
+[; ;SSD1306_OLED.c: 319: }
+"319
+[e :UE 856 ]
+}
+"321
 [v _SSD1306_setTextWrap `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;SSD1306_OLED.c: 317: void SSD1306_setTextWrap(uint8_t w) {
+[; ;SSD1306_OLED.c: 321: void SSD1306_setTextWrap(uint8_t w) {
 [e :U _SSD1306_setTextWrap ]
 [v _w `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;SSD1306_OLED.c: 318: wrap = w & 1;
-"318
+[; ;SSD1306_OLED.c: 322: wrap = w & 1;
+"322
 [e = _wrap -> & -> _w `i -> 1 `i `uc ]
-[; ;SSD1306_OLED.c: 319: }
-"319
-[e :UE 857 ]
+[; ;SSD1306_OLED.c: 323: }
+"323
+[e :UE 859 ]
 }
-"321
+"325
 [v _SSD1306_invertDisplay `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;SSD1306_OLED.c: 321: void SSD1306_invertDisplay(uint8_t i) {
+[; ;SSD1306_OLED.c: 325: void SSD1306_invertDisplay(uint8_t i) {
 [e :U _SSD1306_invertDisplay ]
 [v _i `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;SSD1306_OLED.c: 322: if (i & 1) {
-"322
-[e $ ! != & -> _i `i -> 1 `i -> 0 `i 859  ]
-{
-[; ;SSD1306_OLED.c: 323: SSD1306_writeCMD(0xA7, 0xA7);
-"323
-[e ( _SSD1306_writeCMD (2 , -> -> 167 `i `uc -> -> 167 `i `uc ]
-[; ;SSD1306_OLED.c: 324: return;
-"324
-[e $UE 858  ]
-"325
-}
-[e :U 859 ]
-[; ;SSD1306_OLED.c: 325: }
-[; ;SSD1306_OLED.c: 326: SSD1306_writeCMD(0xA6, 0xA6);
+[; ;SSD1306_OLED.c: 326: if (i & 1) {
 "326
-[e ( _SSD1306_writeCMD (2 , -> -> 166 `i `uc -> -> 166 `i `uc ]
-[; ;SSD1306_OLED.c: 327: }
+[e $ ! != & -> _i `i -> 1 `i -> 0 `i 861  ]
+{
+[; ;SSD1306_OLED.c: 327: SSD1306_writeCMD(0xA7, 0xA7);
 "327
-[e :UE 858 ]
-}
+[e ( _SSD1306_writeCMD (2 , -> -> 167 `i `uc -> -> 167 `i `uc ]
+[; ;SSD1306_OLED.c: 328: return;
+"328
+[e $UE 860  ]
 "329
+}
+[e :U 861 ]
+[; ;SSD1306_OLED.c: 329: }
+[; ;SSD1306_OLED.c: 330: SSD1306_writeCMD(0xA6, 0xA6);
+"330
+[e ( _SSD1306_writeCMD (2 , -> -> 166 `i `uc -> -> 166 `i `uc ]
+[; ;SSD1306_OLED.c: 331: }
+"331
+[e :UE 860 ]
+}
+"333
 [v _SSD1306_setCursor `(v ~T0 @X0 1 ef2`uc`uc ]
 {
-[; ;SSD1306_OLED.c: 329: void SSD1306_setCursor(uint8_t x, uint8_t y) {
+[; ;SSD1306_OLED.c: 333: void SSD1306_setCursor(uint8_t x, uint8_t y) {
 [e :U _SSD1306_setCursor ]
 [v _x `uc ~T0 @X0 1 r1 ]
 [v _y `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;SSD1306_OLED.c: 330: if ((x > 128 / 6) || y > 64 / 8)
-"330
-[e $ ! || > -> _x `i / -> 128 `i -> 6 `i > -> _y `i / -> 64 `i -> 8 `i 861  ]
-[; ;SSD1306_OLED.c: 331: return;
-"331
-[e $UE 860  ]
-[e :U 861 ]
-[; ;SSD1306_OLED.c: 332: x_pos = x;
-"332
-[e = _x_pos _x ]
-[; ;SSD1306_OLED.c: 333: y_pos = y;
-"333
-[e = _y_pos _y ]
-[; ;SSD1306_OLED.c: 334: }
+[; ;SSD1306_OLED.c: 334: if ((x > 128 / 6) || y > 64 / 8)
 "334
-[e :UE 860 ]
-}
+[e $ ! || > -> _x `i / -> 128 `i -> 6 `i > -> _y `i / -> 64 `i -> 8 `i 863  ]
+[; ;SSD1306_OLED.c: 335: return;
+"335
+[e $UE 862  ]
+[e :U 863 ]
+[; ;SSD1306_OLED.c: 336: x_pos = x;
 "336
+[e = _x_pos _x ]
+[; ;SSD1306_OLED.c: 337: y_pos = y;
+"337
+[e = _y_pos _y ]
+[; ;SSD1306_OLED.c: 338: }
+"338
+[e :UE 862 ]
+}
+"340
 [v _SSD1306_PutC `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;SSD1306_OLED.c: 336: void SSD1306_PutC(char c) {
+[; ;SSD1306_OLED.c: 340: void SSD1306_PutC(char c) {
 [e :U _SSD1306_PutC ]
 [v _c `uc ~T0 @X0 1 r1 ]
 [f ]
-"337
+"341
 [v _i `uc ~T0 @X0 1 a ]
 [v _font_c `uc ~T0 @X0 1 a ]
-[; ;SSD1306_OLED.c: 337: uint8_t i, font_c;
-[; ;SSD1306_OLED.c: 338: if ((c < ' ') || (c > '~'))
-"338
-[e $ ! || < -> _c `ui -> 32 `ui > -> _c `ui -> 126 `ui 863  ]
-[; ;SSD1306_OLED.c: 339: c = '?';
-"339
-[e = _c -> -> 63 `ui `uc ]
-[e :U 863 ]
-[; ;SSD1306_OLED.c: 340: SSD1306_writeCMD(0x21,0x21);
-"340
-[e ( _SSD1306_writeCMD (2 , -> -> 33 `i `uc -> -> 33 `i `uc ]
-[; ;SSD1306_OLED.c: 341: SSD1306_writeData(6 * (x_pos - 1));
-"341
-[e ( _SSD1306_writeData (1 -> * -> 6 `i - -> _x_pos `i -> 1 `i `uc ]
-[; ;SSD1306_OLED.c: 342: SSD1306_writeData(6 * (x_pos - 1) + 4);
+[; ;SSD1306_OLED.c: 341: uint8_t i, font_c;
+[; ;SSD1306_OLED.c: 342: if ((c < ' ') || (c > '~'))
 "342
-[e ( _SSD1306_writeData (1 -> + * -> 6 `i - -> _x_pos `i -> 1 `i -> 4 `i `uc ]
-[; ;SSD1306_OLED.c: 344: SSD1306_writeCMD(0x22,0x22);
+[e $ ! || < -> _c `ui -> 32 `ui > -> _c `ui -> 126 `ui 865  ]
+[; ;SSD1306_OLED.c: 343: c = '?';
+"343
+[e = _c -> -> 63 `ui `uc ]
+[e :U 865 ]
+[; ;SSD1306_OLED.c: 344: SSD1306_writeCMD(0x21,0x21);
 "344
-[e ( _SSD1306_writeCMD (2 , -> -> 34 `i `uc -> -> 34 `i `uc ]
-[; ;SSD1306_OLED.c: 345: SSD1306_writeData(y_pos - 1);
+[e ( _SSD1306_writeCMD (2 , -> -> 33 `i `uc -> -> 33 `i `uc ]
+[; ;SSD1306_OLED.c: 345: SSD1306_writeData(6 * (x_pos - 1));
 "345
-[e ( _SSD1306_writeData (1 -> - -> _y_pos `i -> 1 `i `uc ]
-[; ;SSD1306_OLED.c: 346: SSD1306_writeData(y_pos - 1);
+[e ( _SSD1306_writeData (1 -> * -> 6 `i - -> _x_pos `i -> 1 `i `uc ]
+[; ;SSD1306_OLED.c: 346: SSD1306_writeData(6 * (x_pos - 1) + 4);
 "346
-[e ( _SSD1306_writeData (1 -> - -> _y_pos `i -> 1 `i `uc ]
-[; ;SSD1306_OLED.c: 348: I2C_start();
+[e ( _SSD1306_writeData (1 -> + * -> 6 `i - -> _x_pos `i -> 1 `i -> 4 `i `uc ]
+[; ;SSD1306_OLED.c: 348: SSD1306_writeCMD(0x22,0x22);
 "348
-[e ( _I2C_start ..  ]
-[; ;SSD1306_OLED.c: 349: I2C_Write(0x7A);
+[e ( _SSD1306_writeCMD (2 , -> -> 34 `i `uc -> -> 34 `i `uc ]
+[; ;SSD1306_OLED.c: 349: SSD1306_writeData(y_pos - 1);
 "349
-[e ( _I2C_Write (1 -> -> 122 `i `uc ]
-[; ;SSD1306_OLED.c: 350: I2C_Write(0x40);
+[e ( _SSD1306_writeData (1 -> - -> _y_pos `i -> 1 `i `uc ]
+[; ;SSD1306_OLED.c: 350: SSD1306_writeData(y_pos - 1);
 "350
-[e ( _I2C_Write (1 -> -> 64 `i `uc ]
-[; ;SSD1306_OLED.c: 352: for (i = 0; i < 5; i++) {
+[e ( _SSD1306_writeData (1 -> - -> _y_pos `i -> 1 `i `uc ]
+[; ;SSD1306_OLED.c: 352: I2C_start();
 "352
+[e ( _I2C_start ..  ]
+[; ;SSD1306_OLED.c: 353: I2C_Write(0x7A);
+"353
+[e ( _I2C_Write (1 -> -> 122 `i `uc ]
+[; ;SSD1306_OLED.c: 354: I2C_Write(0x40);
+"354
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+[; ;SSD1306_OLED.c: 356: for (i = 0; i < 5; i++) {
+"356
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 5 `i 864  ]
-[e $U 865  ]
-[e :U 864 ]
+[e $ < -> _i `i -> 5 `i 866  ]
+[e $U 867  ]
+[e :U 866 ]
 {
-[; ;SSD1306_OLED.c: 353: font_c = Font[(c - 32) * 5 + i];
-"353
-[e = _font_c *U + &U _Font * -> -> + * - -> _c `i -> 32 `i -> 5 `i -> _i `i `ui `ux -> -> # *U &U _Font `ui `ux ]
-[; ;SSD1306_OLED.c: 355: I2C_Write(font_c);
-"355
-[e ( _I2C_Write (1 _font_c ]
-"356
-}
-"352
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 5 `i 864  ]
-[e :U 865 ]
-"356
-}
-[; ;SSD1306_OLED.c: 356: }
-[; ;SSD1306_OLED.c: 357: I2C_stop();
+[; ;SSD1306_OLED.c: 357: font_c = Font[(c - 32) * 5 + i];
 "357
-[e ( _I2C_stop ..  ]
-[; ;SSD1306_OLED.c: 360: x_pos = x_pos % 21 + 1;
+[e = _font_c *U + &U _Font * -> -> + * - -> _c `i -> 32 `i -> 5 `i -> _i `i `ui `ux -> -> # *U &U _Font `ui `ux ]
+[; ;SSD1306_OLED.c: 359: I2C_Write(font_c);
+"359
+[e ( _I2C_Write (1 _font_c ]
 "360
-[e = _x_pos -> + % -> _x_pos `i -> 21 `i -> 1 `i `uc ]
-[; ;SSD1306_OLED.c: 361: if (wrap && (x_pos == 1))
-"361
-[e $ ! && != -> _wrap `i -> -> -> 0 `i `uc `i == -> _x_pos `i -> 1 `i 867  ]
-[; ;SSD1306_OLED.c: 363: y_pos = y_pos % 8 + 1;
-"363
-[e = _y_pos -> + % -> _y_pos `i -> 8 `i -> 1 `i `uc ]
-[e :U 867 ]
-[; ;SSD1306_OLED.c: 373: }
-"373
-[e :UE 862 ]
 }
-"375
+"356
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 5 `i 866  ]
+[e :U 867 ]
+"360
+}
+[; ;SSD1306_OLED.c: 360: }
+[; ;SSD1306_OLED.c: 361: I2C_stop();
+"361
+[e ( _I2C_stop ..  ]
+[; ;SSD1306_OLED.c: 364: x_pos = x_pos % 21 + 1;
+"364
+[e = _x_pos -> + % -> _x_pos `i -> 21 `i -> 1 `i `uc ]
+[; ;SSD1306_OLED.c: 365: if (wrap && (x_pos == 1))
+"365
+[e $ ! && != -> _wrap `i -> -> -> 0 `i `uc `i == -> _x_pos `i -> 1 `i 869  ]
+[; ;SSD1306_OLED.c: 367: y_pos = y_pos % 8 + 1;
+"367
+[e = _y_pos -> + % -> _y_pos `i -> 8 `i -> 1 `i `uc ]
+[e :U 869 ]
+[; ;SSD1306_OLED.c: 377: }
+"377
+[e :UE 864 ]
+}
+"379
 [v _SSD1306_Print `(v ~T0 @X0 1 ef1`*uc ]
 {
-[; ;SSD1306_OLED.c: 375: void SSD1306_Print(char *s) {
+[; ;SSD1306_OLED.c: 379: void SSD1306_Print(char *s) {
 [e :U _SSD1306_Print ]
 [v _s `*uc ~T0 @X0 1 r1 ]
 [f ]
-"376
-[v _i `uc ~T0 @X0 1 a ]
-[; ;SSD1306_OLED.c: 376: uint8_t i = 0;
-[e = _i -> -> 0 `i `uc ]
-[; ;SSD1306_OLED.c: 377: while (s[i] != '\0') {
-"377
-[e $U 869  ]
-[e :U 870 ]
-{
-[; ;SSD1306_OLED.c: 378: if (s[i] == ' ' & x_pos == 1)
-"378
-[e $ ! & == -> *U + _s * -> _i `ux -> -> # *U _s `ui `ux `ui -> 32 `ui == -> _x_pos `i -> 1 `i 872  ]
-[; ;SSD1306_OLED.c: 379: i++;
-"379
-[e ++ _i -> -> 1 `i `uc ]
-[e $U 873  ]
 "380
-[e :U 872 ]
-[; ;SSD1306_OLED.c: 380: else
-[; ;SSD1306_OLED.c: 381: SSD1306_PutC(s[i++]);
+[v _i `uc ~T0 @X0 1 a ]
+[; ;SSD1306_OLED.c: 380: uint8_t i = 0;
+[e = _i -> -> 0 `i `uc ]
+[; ;SSD1306_OLED.c: 381: while (s[i] != '\0') {
 "381
-[e ( _SSD1306_PutC (1 *U + _s * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U _s `ui `ux ]
-[e :U 873 ]
+[e $U 871  ]
+[e :U 872 ]
+{
+[; ;SSD1306_OLED.c: 382: if (s[i] == ' ' & x_pos == 1)
 "382
-}
-[e :U 869 ]
-"377
-[e $ != -> *U + _s * -> _i `ux -> -> # *U _s `ui `ux `ui -> 0 `ui 870  ]
-[e :U 871 ]
-[; ;SSD1306_OLED.c: 382: }
-[; ;SSD1306_OLED.c: 383: }
+[e $ ! & == -> *U + _s * -> _i `ux -> -> # *U _s `ui `ux `ui -> 32 `ui == -> _x_pos `i -> 1 `i 874  ]
+[; ;SSD1306_OLED.c: 383: i++;
 "383
-[e :UE 868 ]
-}
+[e ++ _i -> -> 1 `i `uc ]
+[e $U 875  ]
+"384
+[e :U 874 ]
+[; ;SSD1306_OLED.c: 384: else
+[; ;SSD1306_OLED.c: 385: SSD1306_PutC(s[i++]);
 "385
+[e ( _SSD1306_PutC (1 *U + _s * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U _s `ui `ux ]
+[e :U 875 ]
+"386
+}
+[e :U 871 ]
+"381
+[e $ != -> *U + _s * -> _i `ux -> -> # *U _s `ui `ux `ui -> 0 `ui 872  ]
+[e :U 873 ]
+[; ;SSD1306_OLED.c: 386: }
+[; ;SSD1306_OLED.c: 387: }
+"387
+[e :UE 870 ]
+}
+"389
 [v _SSD1306_clearDisplay `(v ~T0 @X0 1 ef ]
 {
-[; ;SSD1306_OLED.c: 385: void SSD1306_clearDisplay(void) {
+[; ;SSD1306_OLED.c: 389: void SSD1306_clearDisplay(void) {
 [e :U _SSD1306_clearDisplay ]
 [f ]
-"386
-[v _i `ui ~T0 @X0 1 a ]
-[; ;SSD1306_OLED.c: 386: uint16_t i;
-[; ;SSD1306_OLED.c: 387: SSD1306_writeCMD(0x21, 0x21);
-"387
-[e ( _SSD1306_writeCMD (2 , -> -> 33 `i `uc -> -> 33 `i `uc ]
-[; ;SSD1306_OLED.c: 388: SSD1306_writeData(0);
-"388
-[e ( _SSD1306_writeData (1 -> -> 0 `i `uc ]
-[; ;SSD1306_OLED.c: 390: SSD1306_writeData(127);
 "390
-[e ( _SSD1306_writeData (1 -> -> 127 `i `uc ]
-[; ;SSD1306_OLED.c: 395: SSD1306_writeCMD(0x22, 0x22);
-"395
-[e ( _SSD1306_writeCMD (2 , -> -> 34 `i `uc -> -> 34 `i `uc ]
-[; ;SSD1306_OLED.c: 396: SSD1306_writeData(0);
-"396
+[v _i `ui ~T0 @X0 1 a ]
+[; ;SSD1306_OLED.c: 390: uint16_t i;
+[; ;SSD1306_OLED.c: 391: SSD1306_writeCMD(0x21, 0x21);
+"391
+[e ( _SSD1306_writeCMD (2 , -> -> 33 `i `uc -> -> 33 `i `uc ]
+[; ;SSD1306_OLED.c: 392: SSD1306_writeData(0);
+"392
 [e ( _SSD1306_writeData (1 -> -> 0 `i `uc ]
-[; ;SSD1306_OLED.c: 398: SSD1306_writeData(7);
-"398
+[; ;SSD1306_OLED.c: 394: SSD1306_writeData(127);
+"394
+[e ( _SSD1306_writeData (1 -> -> 127 `i `uc ]
+[; ;SSD1306_OLED.c: 399: SSD1306_writeCMD(0x22, 0x22);
+"399
+[e ( _SSD1306_writeCMD (2 , -> -> 34 `i `uc -> -> 34 `i `uc ]
+[; ;SSD1306_OLED.c: 400: SSD1306_writeData(0);
+"400
+[e ( _SSD1306_writeData (1 -> -> 0 `i `uc ]
+[; ;SSD1306_OLED.c: 402: SSD1306_writeData(7);
+"402
 [e ( _SSD1306_writeData (1 -> -> 7 `i `uc ]
-[; ;SSD1306_OLED.c: 405: I2C_start();
-"405
-[e ( _I2C_start ..  ]
-[; ;SSD1306_OLED.c: 406: I2C_Write(0x7A);
-"406
-[e ( _I2C_Write (1 -> -> 122 `i `uc ]
-[; ;SSD1306_OLED.c: 407: I2C_Write(0x40);
-"407
-[e ( _I2C_Write (1 -> -> 64 `i `uc ]
-[; ;SSD1306_OLED.c: 409: for (i = 0; i < 64 * 128 / 8; i++) {
+[; ;SSD1306_OLED.c: 409: I2C_start();
 "409
+[e ( _I2C_start ..  ]
+[; ;SSD1306_OLED.c: 410: I2C_Write(0x7A);
+"410
+[e ( _I2C_Write (1 -> -> 122 `i `uc ]
+[; ;SSD1306_OLED.c: 411: I2C_Write(0x40);
+"411
+[e ( _I2C_Write (1 -> -> 64 `i `uc ]
+[; ;SSD1306_OLED.c: 413: for (i = 0; i < 64 * 128 / 8; i++) {
+"413
 {
 [e = _i -> -> 0 `i `ui ]
-[e $ < _i -> / * -> 64 `i -> 128 `i -> 8 `i `ui 875  ]
-[e $U 876  ]
-[e :U 875 ]
+[e $ < _i -> / * -> 64 `i -> 128 `i -> 8 `i `ui 877  ]
+[e $U 878  ]
+[e :U 877 ]
 {
-[; ;SSD1306_OLED.c: 410: I2C_Write(0);
-"410
+[; ;SSD1306_OLED.c: 414: I2C_Write(0);
+"414
 [e ( _I2C_Write (1 -> -> 0 `i `uc ]
-"411
+"415
 }
-"409
-[e ++ _i -> -> 1 `i `ui ]
-[e $ < _i -> / * -> 64 `i -> 128 `i -> 8 `i `ui 875  ]
-[e :U 876 ]
-"411
-}
-[; ;SSD1306_OLED.c: 411: }
-[; ;SSD1306_OLED.c: 412: I2C_stop();
-"412
-[e ( _I2C_stop ..  ]
-[; ;SSD1306_OLED.c: 413: }
 "413
-[e :UE 874 ]
+[e ++ _i -> -> 1 `i `ui ]
+[e $ < _i -> / * -> 64 `i -> 128 `i -> 8 `i `ui 877  ]
+[e :U 878 ]
+"415
+}
+[; ;SSD1306_OLED.c: 415: }
+[; ;SSD1306_OLED.c: 416: I2C_stop();
+"416
+[e ( _I2C_stop ..  ]
+[; ;SSD1306_OLED.c: 417: }
+"417
+[e :UE 876 ]
 }

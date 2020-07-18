@@ -9,13 +9,13 @@ void main(void) {
 
     I2C_buffClear();
     __delay_ms(10);
-    
+
     SSD1306_Init();
     SSD1306_clearDisplay();
-    SSD1306_setCursor(1,1);
-    SSD1306_Print("If you reading this It's worked");
+    SSD1306_setCursor(1, 1);
+    SSD1306_Print("OLED DISPLAY");
+
     while (true) {
-        
-//        __delay_ms(500);
+        //        __delay_ms(500);
     }
 }

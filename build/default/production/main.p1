@@ -7157,14 +7157,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SSD1306.h: 95: void SSD1306_invertDisplay(uint8_t i);
 [; ;SSD1306.h: 96: void SSD1306_writeData(uint8_t data);
 [; ;SSD1306.h: 97: void SSD1306_startscrollright(uint8_t start, uint8_t stop);
-[; ;SSD1306.h: 98: void SSD1306_startscrollleft(uint8_t start, uint8_t stop);
+[; ;SSD1306.h: 98: void SSD1306_startscrollLeft(uint8_t start, uint8_t stop);
 [; ;SSD1306.h: 99: void SSD1306_startscrolldiagright(uint8_t start, uint8_t stop);
 [; ;SSD1306.h: 100: void SSD1306_stopscroll(void);
 [; ;SSD1306.h: 101: void SSD1306_dim(bool status);
 [; ;SSD1306.h: 102: void SSD1306_display(void);
 [; ;SSD1306.h: 103: void SSD1306_PutC(char c);
 [; ;SSD1306.h: 104: void SSD1306_Print(char *s);
-"107 mcc_generated_files/../SSD1306.h
+"108 mcc_generated_files/../SSD1306.h
 [v _x_pos `uc ~T0 @X0 1 e ]
 [i _x_pos
 -> -> 1 `i `uc
@@ -7177,7 +7177,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [i _wrap
 -> -> 1 `i `uc
 ]
-[; ;SSD1306.h: 107: uint8_t x_pos = 1, y_pos = 1, wrap = 1;
+[v _text_size `uc ~T0 @X0 1 e ]
+[i _text_size
+-> -> 1 `i `uc
+]
+[; ;SSD1306.h: 108: uint8_t x_pos = 1, y_pos = 1, wrap = 1, text_size = 1;
 [; ;MCP3423.h: 34: uint32_t MCP342x_read(int channel);
 "39 mcc_generated_files/../MCP3423.h
 [v _MCP342x_ADC `S837 ~T0 @X0 1 e ]
@@ -7213,20 +7217,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 14: SSD1306_clearDisplay();
 "14
 [e ( _SSD1306_clearDisplay ..  ]
-[; ;main.c: 15: SSD1306_setCursor(1,1);
+[; ;main.c: 15: SSD1306_setCursor(1, 1);
 "15
 [e ( _SSD1306_setCursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 16: SSD1306_Print("If you reading this It's worked");
+[; ;main.c: 16: SSD1306_Print("OLED DISPLAY");
 "16
 [e ( _SSD1306_Print (1 -> :s 1C `*uc ]
-[; ;main.c: 17: while (1) {
-"17
+[; ;main.c: 18: while (1) {
+"18
 [e :U 840 ]
 {
 "20
 }
 [e :U 839 ]
-"17
+"18
 [e $U 840  ]
 [e :U 841 ]
 [; ;main.c: 20: }
@@ -7234,5 +7238,5 @@ Version 3.2 HI-TECH Software Intermediate Code
 "21
 [e :UE 838 ]
 }
-[a 1C 73 102 32 121 111 117 32 114 101 97 100 105 110 103 32 116 104 105 115 32 73 116 39 115 32 119 111 114 107 101 100 0 ]
+[a 1C 79 76 69 68 32 68 73 83 80 76 65 89 0 ]
 

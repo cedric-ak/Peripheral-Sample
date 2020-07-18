@@ -7160,14 +7160,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SSD1306.h: 95: void SSD1306_invertDisplay(uint8_t i);
 [; ;SSD1306.h: 96: void SSD1306_writeData(uint8_t data);
 [; ;SSD1306.h: 97: void SSD1306_startscrollright(uint8_t start, uint8_t stop);
-[; ;SSD1306.h: 98: void SSD1306_startscrollleft(uint8_t start, uint8_t stop);
+[; ;SSD1306.h: 98: void SSD1306_startscrollLeft(uint8_t start, uint8_t stop);
 [; ;SSD1306.h: 99: void SSD1306_startscrolldiagright(uint8_t start, uint8_t stop);
 [; ;SSD1306.h: 100: void SSD1306_stopscroll(void);
 [; ;SSD1306.h: 101: void SSD1306_dim(bool status);
 [; ;SSD1306.h: 102: void SSD1306_display(void);
 [; ;SSD1306.h: 103: void SSD1306_PutC(char c);
 [; ;SSD1306.h: 104: void SSD1306_Print(char *s);
-"107 mcc_generated_files/../SSD1306.h
+"108 mcc_generated_files/../SSD1306.h
 [v _x_pos `uc ~T0 @X0 1 e ]
 [i _x_pos
 -> -> 1 `i `uc
@@ -7180,7 +7180,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [i _wrap
 -> -> 1 `i `uc
 ]
-[; ;SSD1306.h: 107: uint8_t x_pos = 1, y_pos = 1, wrap = 1;
+[v _text_size `uc ~T0 @X0 1 e ]
+[i _text_size
+-> -> 1 `i `uc
+]
+[; ;SSD1306.h: 108: uint8_t x_pos = 1, y_pos = 1, wrap = 1, text_size = 1;
 [; ;MCP3423.h: 34: uint32_t MCP342x_read(int channel);
 "39 mcc_generated_files/../MCP3423.h
 [v _MCP342x_ADC `S837 ~T0 @X0 1 e ]

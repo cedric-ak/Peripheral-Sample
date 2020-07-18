@@ -252,15 +252,20 @@ const char Font[] = {
 // Activate a right handed scroll for rows start through stop
 // Hint, the display is 16 rows tall. To scroll the whole display, run:
 // display.scrollright(0x00, 0x0F)
+void SSD1306_TextSize(uint8_t t_size)
+{
+  if(t_size < 1)
+    t_size = 1;
+  text_size = t_size;
+} 
 
 void SSD1306_startscrollright(uint8_t start, uint8_t stop) {
-    SSD1306_writeCMD(SSD1306_RIGHT_HORIZONTAL_SCROLL, SSD1306_RIGHT_HORIZONTAL_SCROLL);
-    SSD1306_writeData(0X00);
+    SSD1306_writeCMD(SSD1306_RIGHT_HORIZONTAL_SCROLL, 0x00);
     SSD1306_writeData(start);
-    SSD1306_writeData(0X00);
+    SSD1306_writeData(0x00);
     SSD1306_writeData(stop);
-    SSD1306_writeData(0X00);
-    SSD1306_writeData(0XFF);
+    SSD1306_writeData(0x00);
+    SSD1306_writeData(0xFF);
     SSD1306_writeCMD(SSD1306_ACTIVATE_SCROLL, SSD1306_ACTIVATE_SCROLL);
 }
 
@@ -269,14 +274,13 @@ void SSD1306_startscrollright(uint8_t start, uint8_t stop) {
 // Hint, the display is 16 rows tall. To scroll the whole display, run:
 // display.scrollright(0x00, 0x0F)
 
-void SSD1306_startscrollleft(uint8_t start, uint8_t stop) {
-    SSD1306_writeCMD(SSD1306_LEFT_HORIZONTAL_SCROLL, SSD1306_LEFT_HORIZONTAL_SCROLL);
-    SSD1306_writeData(0X00);
+void SSD1306_startscrollLeft(uint8_t start, uint8_t stop) {
+    SSD1306_writeCMD(SSD1306_LEFT_HORIZONTAL_SCROLL, 0x00);
     SSD1306_writeData(start);
-    SSD1306_writeData(0X00);
+    SSD1306_writeData(0x00);
     SSD1306_writeData(stop);
-    SSD1306_writeData(0X00);
-    SSD1306_writeData(0XFF);
+    SSD1306_writeData(0x00);
+    SSD1306_writeData(0xFF);
     SSD1306_writeCMD(SSD1306_ACTIVATE_SCROLL, SSD1306_ACTIVATE_SCROLL);
 }
 
@@ -290,9 +294,9 @@ void SSD1306_startscrolldiagright(uint8_t start, uint8_t stop) {
     SSD1306_writeCMD(SSD1306_LCDHEIGHT, SSD1306_LCDHEIGHT);
     SSD1306_writeCMD(SSD1306_VERTICAL_AND_RIGHT_HORIZONTAL_SCROLL, 0x00);
     SSD1306_writeData(start);
-    SSD1306_writeData(0X00);
+    SSD1306_writeData(0x00);
     SSD1306_writeData(stop);
-    SSD1306_writeData(0X01);
+    SSD1306_writeData(0x01);
     SSD1306_writeCMD(SSD1306_ACTIVATE_SCROLL, SSD1306_ACTIVATE_SCROLL);
 }
 
