@@ -9625,7 +9625,7 @@ void OSCILLATOR_Initialize(void);
 void SSD1306_Init(void) {
 
 do { LATEbits.LATE2 = 1; } while(0);
-_delay((unsigned long)((1)*(16000000/4000.0)));
+_delay((unsigned long)((10)*(16000000/4000.0)));
 do { LATEbits.LATE2 = 0; } while(0);
 _delay((unsigned long)((10)*(16000000/4000.0)));
 do { LATEbits.LATE2 = 1; } while(0);
@@ -9636,16 +9636,17 @@ SSD1306_writeCMD(0xA8, 63);
 
 # 26
 SSD1306_writeCMD(0xD3, 0x0);
+SSD1306_writeCMD(0x8D,0x8D);
 SSD1306_writeCMD(0x20, 0x00);
-SSD1306_writeCMD(0x40, 0x40|0x0);
-SSD1306_writeCMD(0xA0, 0xA0);
+SSD1306_writeCMD(0x40, 0x40);
+SSD1306_writeCMD(0xA1, 0xA1);
 SSD1306_writeCMD(0xC8, 0xC8);
 
 
 SSD1306_writeCMD(0xDA, 0x12);
 SSD1306_writeCMD(0x81, 0x7F);
 
-# 45
+# 46
 SSD1306_writeCMD(0xD9, 0xD9);
 SSD1306_writeCMD(0xDB, 0x40);
 SSD1306_writeCMD(0xA4, 0xA4);
@@ -9654,7 +9655,6 @@ SSD1306_writeCMD(0xD5, 0x80);
 SSD1306_writeCMD(0x8D, 0x14);
 SSD1306_writeCMD(0x2E, 0x2E);
 SSD1306_writeCMD(0xAF, 0xAF);
-
 }
 
 # 63

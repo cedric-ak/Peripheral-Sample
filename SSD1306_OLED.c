@@ -10,7 +10,7 @@
 void SSD1306_Init(void) {
 
     SSD1306_RESET_SetHigh();
-    __delay_ms(1);
+    __delay_ms(10);
     SSD1306_RESET_SetLow();
     __delay_ms(10);
     SSD1306_RESET_SetHigh();
@@ -24,9 +24,10 @@ void SSD1306_Init(void) {
 #endif
 
     SSD1306_writeCMD(SSD1306_SETDISPLAYOFFSET, 0x0); //0xD3 Set Display Offset start at 0
+    SSD1306_writeCMD(SSD1306_CHARGEPUMP,SSD1306_CHARGEPUMP);
     SSD1306_writeCMD(SSD1306_MEMORYMODE, 0x00); //0x20 memory addressing horizontal mode
-    SSD1306_writeCMD(SSD1306_SETDISPLAYSTARTLINE, SSD1306_SETDISPLAYSTARTLINE|0x0); //0x40 Set Display Start Line to 0
-    SSD1306_writeCMD(SSD1306_SEGREMAP_ADD_0, SSD1306_SEGREMAP_ADD_0); //0xA0 Set Segment re-map A0h
+    SSD1306_writeCMD(SSD1306_SETDISPLAYSTARTLINE, SSD1306_SETDISPLAYSTARTLINE); //0x40 Set Display Start Line to 0
+    SSD1306_writeCMD(SSD1306_SEGREMAP_ADD_7F, SSD1306_SEGREMAP_ADD_7F); //0xA0 Set Segment re-map A0h
     SSD1306_writeCMD(SSD1306_COMSCANDEC, SSD1306_COMSCANDEC); //0xC8 Set COM Output Scan Direction Normal (0xC4 for mirror images)
 
 #ifdef SSD1306_128_64
@@ -50,7 +51,6 @@ void SSD1306_Init(void) {
     SSD1306_writeCMD(SSD1306_CHARGEPUMP, 0x14); //0x8D Enable charge pump regulator
     SSD1306_writeCMD(SSD1306_DEACTIVATE_SCROLL, SSD1306_DEACTIVATE_SCROLL); //0x2E deactivate scroll
     SSD1306_writeCMD(SSD1306_DISPLAYON, SSD1306_DISPLAYON); //0xAF Display ON
-
 }
 
 /**********************************************************
