@@ -95,6 +95,7 @@ void MCP794x_writeEEPROM(uint8_t Register, uint8_t data) {
     I2C_Write(Register);
     I2C_Write(data);
     I2C_stop();
+    __delay_ms(10);
 }
 
 /**********************************************************
@@ -115,13 +116,56 @@ uint8_t MCP794x_readEEPROM(uint8_t Register) {
 }
 
 /**********************************************************
+ **Name:     MCP7941x get EEPROM 
+ **Function: read multiple byte of EEPROM data 
+ **Input:    EEPROM read address location and number of byte 
+ **Output:   data read
+ **********************************************************/
+uint32_t MCP794x_getEEPROM(int address, int dataSize){
+  dataOut = 0;
+  for(int index = 0; index < dataSize; index++){
+    dataOut += MCP794x_readEEPROM(address + index) * pow(256,index);
+  }
+    return dataOut;
+}
+
+/**********************************************************
+ **Name:     MCP7941x put EEPROM 
+ **Function: write multiple byte of EEPROM data 
+ **Input:    EEPROM read address location and number of byte 
+ **Output:   data read
+ **********************************************************/
+void MCP794x_putEEPROM(uint8_t address, uint32_t dataWrite, uint8_t byteNumb){
+    
+    for(int index = 0; index < byteNumb; index++){   //clear address for x number of bytes
+      MCP794x_writeEEPROM((address + index), (0xff >> (index * 8)));
+   }
+     
+ if(dataWrite <= _1BYTE_SIZE){
+    MCP794x_writeEEPROM(address, dataWrite);
+ }else if((dataWrite > _1BYTE_SIZE) && (dataWrite <= _2BYTES_SIZE)){
+   for(int index = 0; index < 2; index++){
+      MCP794x_writeEEPROM((address + index), (dataWrite >> (index * 8)));
+   }
+ }else if(dataWrite > _2BYTES_SIZE && dataWrite <= _4BYTES_SIZE){
+   for(int index = 0; index < 4; index++){
+      MCP794x_writeEEPROM((address + index), (dataWrite >> (index * 8)));
+   }
+ }else{
+      for(int index = 0; index < 8; index++){
+      MCP794x_writeEEPROM((address + index), (dataWrite >> (index * 8)));
+   }
+ }
+}
+
+/**********************************************************
  **Name:     MCP7941x get ID
  **Function: reads and print MCP7941x unique ID
  **Input:    none
  **Output:   return 8byte Device unique ID (read data sheet for UID length);
  **********************************************************/
 double* MCP794x_getID(void) {
-    char UID[8];
+    char UID[10];
     I2C_start();
     I2C_Write(MCP7941x_EEPROM_ADD);
     I2C_Write(0xf0);

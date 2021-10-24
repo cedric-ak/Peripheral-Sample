@@ -56,3 +56,29 @@ uint8_t EEPROM_24AA512_pageRead(uint8_t page) {
     I2C_read(NACK);
     I2C_stop();
 }
+
+void EEPROM_put(uint8_t HighAddress, uint8_t LowAddress, uint32_t dataWrite) {
+    if (dataWrite <= _1BYTE_SIZE) {
+        EEPROM_24AA512_Write(HighAddress, LowAddress, dataWrite);
+    } else if ((dataWrite > _1BYTE_SIZE) && (dataWrite <= _2BYTES_SIZE)) {
+        for (int index = 0; index < 2; index++) {
+            EEPROM_24AA512_Write(HighAddress, LowAddress + index, (dataWrite >> (index * 8)));
+        }
+    } else if (dataWrite > _2BYTES_SIZE && dataWrite <= _4BYTES_SIZE) {
+        for (int index = 0; index < 4; index++) {
+            EEPROM_24AA512_Write(HighAddress, LowAddress + index, (dataWrite >> (index * 8)));
+        }
+    } else {
+        for (int index = 0; index < 8; index++) {
+            EEPROM_24AA512_Write(HighAddress, LowAddress + index, (dataWrite >> (index * 8)));
+        }
+    }
+}
+
+uint32_t EEPROM_get(uint8_t HighAddress, uint8_t LowAddress, int dataSize) {
+    dataOut = 0;
+    for (int index = 0; index < dataSize; index++) {
+        dataOut += EEPROM_24AA512_Read(HighAddress, LowAddress + index) * pow(256, index);
+    }
+    return dataOut;
+}

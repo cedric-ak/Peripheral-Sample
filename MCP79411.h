@@ -67,7 +67,8 @@ uint8_t MCP7941x_read(uint8_t Register);
 void MCP794x_writeEEPROM(uint8_t Register, uint8_t data);
 uint8_t MCP794x_readEEPROM(uint8_t Register);
 double* MCP794x_getID(void);
-
+uint32_t MCP794x_getEEPROM(int address, int dataSize);
+void MCP794x_putEEPROM(uint8_t address, uint32_t dataWrite, uint8_t byteNumb);
 enum ALARM_MASK {second = 0x00, minute =  0x10, hour = 0x20, dayWk = 0x30, date = 0x40, SMHDD = 0x70};
 
 #ifdef	__cplusplus

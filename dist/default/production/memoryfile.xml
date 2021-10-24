@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\Peripheral_Exercices_2.X.production.hex">
+  <executable name="dist/default/production\Peripheral-Sample-master.production.hex">
     <memory name="program">
       <units>bytes</units>
       <length>65528</length>
-      <used>3253</used>
-      <free>62275</free>
+      <used>8055</used>
+      <free>57473</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>3760</length>
-      <used>1192</used>
-      <free>2568</free>
+      <used>1302</used>
+      <free>2458</free>
     </memory>
   </executable>
 </project>

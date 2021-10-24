@@ -1,0 +1,1601 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.o
+init CODE 0 0 0 4 1
+config CONFIG 4 FFF8 FFF8 8 1
+$dist/default/production\Peripheral-Sample-master.production.o
+cinit CODE 0 E760 E760 7E 1
+text0 CODE 0 E672 E672 76 1
+text1 CODE 0 E0C2 E0C2 A 1
+text2 CODE 0 E112 E112 18 1
+text3 CODE 0 E0CC E0CC E 1
+text4 CODE 0 E328 E328 44 1
+text5 CODE 0 E1B2 E1B2 2A 1
+text6 CODE 0 E406 E406 54 1
+text7 CODE 0 EAE6 EAE6 CC 1
+text8 CODE 0 E2E8 E2E8 40 1
+text9 CODE 0 E0B8 E0B8 A 1
+text10 CODE 0 E0AE E0AE A 1
+text11 CODE 0 E0A4 E0A4 A 1
+text12 CODE 0 E3B2 E3B2 54 1
+text13 CODE 0 E270 E270 38 1
+text14 CODE 0 E51C E51C 70 1
+text15 CODE 0 E860 E860 84 1
+text16 CODE 0 F648 F648 1B0 1
+text17 CODE 0 E1DC E1DC 2C 1
+text18 CODE 0 F104 F104 102 1
+text19 CODE 0 F324 F324 17C 1
+text20 CODE 0 F206 F206 11E 1
+text21 CODE 0 F7F8 F7F8 1E8 1
+text22 CODE 0 EA1C EA1C CA 1
+text23 CODE 0 ED56 ED56 DE 1
+text24 CODE 0 E8E4 E8E4 8A 1
+text25 CODE 0 EC84 EC84 D2 1
+text26 CODE 0 E5FE E5FE 74 1
+text27 CODE 0 E6E8 E6E8 78 1
+text28 CODE 0 EBB2 EBB2 D2 1
+text29 CODE 0 E18C E18C 26 1
+text30 CODE 0 EF1A EF1A F4 1
+text31 CODE 0 E2A8 E2A8 40 1
+text32 CODE 0 F4A0 F4A0 1A8 1
+text33 CODE 0 E168 E168 24 1
+text34 CODE 0 EE34 EE34 E6 1
+text35 CODE 0 E238 E238 38 1
+text36 CODE 0 E45A E45A 5C 1
+text37 CODE 0 E144 E144 24 1
+text38 CODE 0 E96E E96E AE 1
+text39 CODE 0 E208 E208 30 1
+text40 CODE 0 E09A E09A A 1
+text41 CODE 0 E0FA E0FA 18 1
+text42 CODE 0 E0EA E0EA 10 1
+text43 CODE 0 E090 E090 A 1
+text44 CODE 0 E12A E12A 1A 1
+text45 CODE 0 E086 E086 A 1
+text46 CODE 0 E36C E36C 46 1
+text47 CODE 0 F00E F00E F6 1
+text48 CODE 0 E4B6 E4B6 66 1
+text49 CODE 0 E7DE E7DE 82 1
+text50 CODE 0 E58C E58C 72 1
+idataBIGRAM CODE 0 F9E0 F9E0 400 1
+idataCOMRAM CODE 0 E084 E084 2 1
+cstackCOMRAM COMRAM 1 1 1 5D 1
+cstackBANK0 BANK0 1 60 60 23 1
+bssBANK0 BANK0 1 83 83 21 1
+bssBANK1 BANK1 1 100 100 64 1
+idataBANK0 CODE 0 E0DB E0DB F 1
+dataBANK0 BANK0 1 A4 A4 F 1
+dataBIGRAM BIGRAM 1 164 164 400 1
+dataCOMRAM COMRAM 1 5E 5E 2 1
+mediumconst MEDIUMCONST 0 FDE0 FDE0 218 1
+config CONFIG 4 FFF8 FFF8 8 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM B3-FF 1
+RAM 564-EAF 1
+SFR EB0-FFF 1
+BANK0 B3-FF 1
+BANK5 564-5FF 1
+BANK6 600-6FF 1
+BANK7 700-7FF 1
+BANK8 800-8FF 1
+BANK9 900-9FF 1
+CONST 4-E083 1
+CONST E0DA-E0DA 1
+STACK 564-EAF 1
+SMALLCONST F00-E083 1
+SMALLCONST E0DA-E0DA 1
+CODE 4-E083 1
+CODE E0DA-E0DA 1
+BANK10 A00-AFF 1
+BANK11 B00-BFF 1
+BANK12 C00-CFF 1
+BANK13 D00-DFF 1
+BANK14 E00-EAF 1
+BIGRAM B3-FF 1
+BIGRAM 564-EAF 1
+MEDIUMCONST F00-E083 1
+MEDIUMCONST E0DA-E0DA 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\Peripheral-Sample-master.production.o
+E58C text50 CODE >135:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E58C text50 CODE >136:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E592 text50 CODE >137:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E5CC text50 CODE >138:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E5DE text50 CODE >139:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E5E2 text50 CODE >140:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E5F2 text50 CODE >136:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E7DE text49 CODE >7:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+E7DE text49 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+E7EE text49 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+E7FA text49 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+E7FE text49 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+E800 text49 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+E80A text49 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+E80C text49 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+E810 text49 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+E81A text49 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+E82E text49 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+E83E text49 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+E840 text49 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+E84A text49 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+E84E text49 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+E84E text49 CODE >29:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+E85E text49 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+E4B6 text48 CODE >7:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\llmod.c
+E4B6 text48 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\llmod.c
+E4C2 text48 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\llmod.c
+E4C6 text48 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\llmod.c
+E4C8 text48 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\llmod.c
+E4D2 text48 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\llmod.c
+E4D4 text48 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\llmod.c
+E4D8 text48 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\llmod.c
+E4EC text48 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\llmod.c
+E4FC text48 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\llmod.c
+E506 text48 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\llmod.c
+E50A text48 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\llmod.c
+E50A text48 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\llmod.c
+E51A text48 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\llmod.c
+F00E text47 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ltoa.c
+F00E text47 CODE >38:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ltoa.c
+F01E text47 CODE >40:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ltoa.c
+F054 text47 CODE >41:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ltoa.c
+F058 text47 CODE >42:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ltoa.c
+F064 text47 CODE >43:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ltoa.c
+F076 text47 CODE >45:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ltoa.c
+F0A0 text47 CODE >46:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ltoa.c
+F0D6 text47 CODE >47:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ltoa.c
+F0DC text47 CODE >48:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ltoa.c
+F0E0 text47 CODE >49:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ltoa.c
+F0E4 text47 CODE >50:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ltoa.c
+F0F6 text47 CODE >51:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ltoa.c
+E36C text46 CODE >145:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E36C text46 CODE >147:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E390 text46 CODE >148:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E3A0 text46 CODE >149:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E3B0 text46 CODE >150:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E086 text45 CODE >63:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E086 text45 CODE >64:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E088 text45 CODE >65:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E08C text45 CODE >66:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E08E text45 CODE >67:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E12A text44 CODE >31:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E12C text44 CODE >32:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E130 text44 CODE >33:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E134 text44 CODE >34:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E138 text44 CODE >35:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E13A text44 CODE >36:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E13E text44 CODE >37:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E142 text44 CODE >40:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E090 text43 CODE >51:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E090 text43 CODE >52:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E092 text43 CODE >53:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E096 text43 CODE >54:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E098 text43 CODE >55:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E0EA text42 CODE >81:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E0EA text42 CODE >82:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E0EE text42 CODE >83:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E0F4 text42 CODE >84:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E0F8 text42 CODE >85:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E0FA text41 CODE >42:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E0FA text41 CODE >43:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E0FC text41 CODE >44:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E100 text41 CODE >45:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E10A text41 CODE >46:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E10C text41 CODE >47:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E09A text40 CODE >57:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E09A text40 CODE >58:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E09C text40 CODE >59:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E0A0 text40 CODE >60:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E0A2 text40 CODE >61:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E208 text39 CODE >107:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E20A text39 CODE >108:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E20E text39 CODE >109:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E214 text39 CODE >110:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E21A text39 CODE >111:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E21E text39 CODE >112:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E224 text39 CODE >113:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E230 text39 CODE >114:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E234 text39 CODE >115:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E236 text39 CODE >116:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E96E text38 CODE >62:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+E96E text38 CODE >64:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+E97E text38 CODE >65:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+E98C text38 CODE >67:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+E98E text38 CODE >68:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+E996 text38 CODE >66:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+E9B4 text38 CODE >71:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+E9B6 text38 CODE >72:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+E9C2 text38 CODE >73:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+E9CA text38 CODE >70:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+E9E8 text38 CODE >76:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+E9EA text38 CODE >77:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+E9F2 text38 CODE >75:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+E9FC text38 CODE >79:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+E9FE text38 CODE >80:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+EA00 text38 CODE >81:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+EA04 text38 CODE >82:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+EA08 text38 CODE >83:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+EA0C text38 CODE >84:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+EA0E text38 CODE >85:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+EA1A text38 CODE >86:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\float.c
+E144 text37 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lbtoft.c
+E146 text37 CODE >29:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lbtoft.c
+E166 text37 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lbtoft.c
+E45A text36 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lltoft.c
+E45A text36 CODE >38:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lltoft.c
+E45E text36 CODE >41:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lltoft.c
+E460 text36 CODE >42:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lltoft.c
+E46A text36 CODE >43:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lltoft.c
+E46C text36 CODE >41:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lltoft.c
+E490 text36 CODE >45:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lltoft.c
+E4B4 text36 CODE >46:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\lltoft.c
+E238 text35 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awtoft.c
+E238 text35 CODE >36:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awtoft.c
+E23C text35 CODE >37:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awtoft.c
+E240 text35 CODE >38:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awtoft.c
+E248 text35 CODE >39:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awtoft.c
+E24C text35 CODE >41:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awtoft.c
+E26E text35 CODE >42:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awtoft.c
+EE34 text34 CODE >54:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EE34 text34 CODE >63:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EE4E text34 CODE >64:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EE5C text34 CODE >65:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EE76 text34 CODE >66:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EE84 text34 CODE >67:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EE90 text34 CODE >68:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EE96 text34 CODE >69:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EE9A text34 CODE >70:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EE9E text34 CODE >71:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EEA2 text34 CODE >72:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EEA4 text34 CODE >73:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EEB0 text34 CODE >74:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EEB2 text34 CODE >75:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EEBE text34 CODE >76:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EEC2 text34 CODE >78:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EECA text34 CODE >79:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EEDA text34 CODE >80:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EEE6 text34 CODE >81:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EEE8 text34 CODE >82:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EEE8 text34 CODE >83:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EEF0 text34 CODE >84:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EEF4 text34 CODE >85:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+EF18 text34 CODE >86:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftdiv.c
+E168 text33 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftneg.c
+E168 text33 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftneg.c
+E172 text33 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftneg.c
+E17E text33 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftneg.c
+E18A text33 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftneg.c
+F4A0 text32 CODE >86:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F4A0 text32 CODE >90:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F4B4 text32 CODE >91:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F4C8 text32 CODE >92:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F4E2 text32 CODE >93:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F4F0 text32 CODE >94:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F50A text32 CODE >95:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F518 text32 CODE >96:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F51C text32 CODE >97:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F51E text32 CODE >98:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F520 text32 CODE >99:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F522 text32 CODE >100:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F524 text32 CODE >101:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F526 text32 CODE >102:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F532 text32 CODE >103:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F534 text32 CODE >104:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F540 text32 CODE >106:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F548 text32 CODE >110:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F550 text32 CODE >111:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F552 text32 CODE >112:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F56A text32 CODE >114:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F572 text32 CODE >115:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F574 text32 CODE >113:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F57E text32 CODE >117:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F586 text32 CODE >121:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F58E text32 CODE >122:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F590 text32 CODE >123:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F5A8 text32 CODE >125:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F5B0 text32 CODE >126:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F5B2 text32 CODE >124:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F5BA text32 CODE >129:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F5BE text32 CODE >131:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F5CA text32 CODE >132:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F5D6 text32 CODE >133:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F5D6 text32 CODE >134:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F5DA text32 CODE >136:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F5E6 text32 CODE >137:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F5F2 text32 CODE >139:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F5F6 text32 CODE >140:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F602 text32 CODE >141:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F606 text32 CODE >142:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F612 text32 CODE >143:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F61E text32 CODE >144:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F622 text32 CODE >146:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+F646 text32 CODE >148:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftadd.c
+E2A8 text31 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftsub.c
+E2A8 text31 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftsub.c
+E2B2 text31 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftsub.c
+E2BE text31 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftsub.c
+E2E6 text31 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftsub.c
+EF1A text30 CODE >62:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EF1A text30 CODE >67:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EF34 text30 CODE >68:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EF42 text30 CODE >69:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EF5C text30 CODE >70:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EF6A text30 CODE >71:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EF70 text30 CODE >72:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EF74 text30 CODE >73:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EF78 text30 CODE >74:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EF7C text30 CODE >75:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EF7E text30 CODE >77:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EF80 text30 CODE >78:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EF8C text30 CODE >79:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EF98 text30 CODE >134:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EF9C text30 CODE >136:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EFA0 text30 CODE >137:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EFAC text30 CODE >138:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EFB4 text30 CODE >139:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EFBC text30 CODE >140:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EFC0 text30 CODE >143:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EFC4 text30 CODE >145:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EFC8 text30 CODE >146:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EFD4 text30 CODE >147:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EFDC text30 CODE >148:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EFE4 text30 CODE >149:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+EFE8 text30 CODE >156:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+F00C text30 CODE >157:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftmul.c
+E18C text29 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul16.c
+E18C text29 CODE >37:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul16.c
+E198 text29 CODE >38:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul16.c
+E1A0 text29 CODE >39:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul16.c
+E1A8 text29 CODE >52:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul16.c
+E1B0 text29 CODE >53:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul16.c
+EBB2 text28 CODE >4:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\evalpoly.c
+EBB2 text28 CODE >8:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\evalpoly.c
+EBF0 text28 CODE >9:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\evalpoly.c
+EBF2 text28 CODE >10:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\evalpoly.c
+EC6E text28 CODE >9:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\evalpoly.c
+EC76 text28 CODE >11:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\evalpoly.c
+EC82 text28 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\evalpoly.c
+E6E8 text27 CODE >42:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\altoft.c
+E6E8 text27 CODE >45:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\altoft.c
+E6EC text27 CODE >46:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\altoft.c
+E6F0 text27 CODE >47:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\altoft.c
+E6F4 text27 CODE >48:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\altoft.c
+E704 text27 CODE >49:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\altoft.c
+E70A text27 CODE >53:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\altoft.c
+E714 text27 CODE >54:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\altoft.c
+E716 text27 CODE >52:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\altoft.c
+E73A text27 CODE >56:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\altoft.c
+E75E text27 CODE >57:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\altoft.c
+E5FE text26 CODE >4:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftge.c
+E5FE text26 CODE >6:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftge.c
+E602 text26 CODE >7:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftge.c
+E620 text26 CODE >8:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftge.c
+E624 text26 CODE >9:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftge.c
+E642 text26 CODE >10:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftge.c
+E64E text26 CODE >11:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftge.c
+E65A text26 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftge.c
+E670 text26 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\ftge.c
+EC84 text25 CODE >44:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+EC84 text25 CODE >49:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+EC9E text25 CODE >50:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+ECB0 text25 CODE >51:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+ECD6 text25 CODE >52:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+ECD8 text25 CODE >53:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+ECE4 text25 CODE >54:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+ECF2 text25 CODE >55:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+ECF6 text25 CODE >56:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+ECFA text25 CODE >57:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+ED04 text25 CODE >60:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+ED0E text25 CODE >61:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+ED14 text25 CODE >63:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+ED1C text25 CODE >66:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+ED26 text25 CODE >67:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+ED28 text25 CODE >65:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+ED2E text25 CODE >70:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+ED34 text25 CODE >71:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+ED44 text25 CODE >72:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+ED54 text25 CODE >73:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\fttol.c
+E8E4 text24 CODE >254:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+E8E4 text24 CODE >256:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+E8EE text24 CODE >257:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+E8FE text24 CODE >258:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+E90C text24 CODE >261:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+E92A text24 CODE >262:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+E946 text24 CODE >263:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+E956 text24 CODE >268:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+E95E text24 CODE >269:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+E960 text24 CODE >273:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+E96C text24 CODE >274:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+ED56 text23 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\floor.c
+ED56 text23 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\floor.c
+ED6E text23 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\floor.c
+ED72 text23 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\floor.c
+ED76 text23 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\floor.c
+ED84 text23 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\floor.c
+ED92 text23 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\floor.c
+ED9E text23 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\floor.c
+EDAC text23 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\floor.c
+EDDC text23 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\floor.c
+EDFC text23 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\floor.c
+EE26 text23 CODE >29:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\floor.c
+EE32 text23 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\floor.c
+EA1C text22 CODE >277:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+EA1C text22 CODE >279:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+EA26 text22 CODE >280:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+EA34 text22 CODE >282:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+EA4A text22 CODE >283:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+EA5E text22 CODE >287:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+EA62 text22 CODE >288:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+EA6C text22 CODE >289:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+EA7A text22 CODE >291:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+EA84 text22 CODE >292:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+EA8E text22 CODE >293:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+EA92 text22 CODE >294:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+EAA0 text22 CODE >296:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+EAAE text22 CODE >300:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+EAC2 text22 CODE >301:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+EAD8 text22 CODE >306:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+EAE4 text22 CODE >307:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\frexp.c
+F7F8 text21 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F7F8 text21 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F802 text21 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F810 text21 CODE >34:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F830 text21 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F83A text21 CODE >36:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F848 text21 CODE >38:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F868 text21 CODE >39:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F872 text21 CODE >40:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F880 text21 CODE >43:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F88C text21 CODE >44:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F892 text21 CODE >45:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F8AE text21 CODE >46:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F8D6 text21 CODE >47:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F90A text21 CODE >48:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F93E text21 CODE >49:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F982 text21 CODE >50:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F988 text21 CODE >52:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F99A text21 CODE >53:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F9A8 text21 CODE >54:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F9D2 text21 CODE >55:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F9D2 text21 CODE >56:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F9DE text21 CODE >57:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\exp.c
+F206 text20 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\log.c
+F206 text20 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\log.c
+F20A text20 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\log.c
+F214 text20 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\log.c
+F222 text20 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\log.c
+F22C text20 CODE >29:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\log.c
+F236 text20 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\log.c
+F244 text20 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\log.c
+F2A0 text20 CODE >33:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\log.c
+F2A6 text20 CODE >34:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\log.c
+F2D2 text20 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\log.c
+F322 text20 CODE >36:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\log.c
+F324 text19 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F324 text19 CODE >7:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F32A text19 CODE >10:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F334 text19 CODE >11:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F354 text19 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F35E text19 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F35E text19 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F36C text19 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F376 text19 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F384 text19 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F388 text19 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F3A8 text19 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F3D0 text19 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F3DA text19 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F3E8 text19 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F3F0 text19 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F40C text19 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F46C text19 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F474 text19 CODE >29:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F492 text19 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F49E text19 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\pow.c
+F104 text18 CODE >124:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F104 text18 CODE >125:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F116 text18 CODE >126:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F120 text18 CODE >127:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F1DA text18 CODE >126:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F1F4 text18 CODE >129:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F204 text18 CODE >130:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E1DC text17 CODE >92:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E1DE text17 CODE >93:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E1E2 text17 CODE >94:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E1E8 text17 CODE >95:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E1EE text17 CODE >96:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E1F4 text17 CODE >97:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E1F8 text17 CODE >98:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E206 text17 CODE >99:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F648 text16 CODE >138:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F64A text16 CODE >140:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F654 text16 CODE >141:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F686 text16 CODE >140:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F6A4 text16 CODE >144:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F6B0 text16 CODE >145:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F6BA text16 CODE >146:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F6D2 text16 CODE >147:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F6DA text16 CODE >148:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F71A text16 CODE >147:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F730 text16 CODE >150:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F73A text16 CODE >151:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F742 text16 CODE >152:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F782 text16 CODE >151:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F798 text16 CODE >155:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F7A0 text16 CODE >156:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F7E0 text16 CODE >155:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+F7F6 text16 CODE >159:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E860 text15 CODE >7:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E860 text15 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E864 text15 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E868 text15 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E870 text15 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E874 text15 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E878 text15 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E880 text15 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E884 text15 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E88C text15 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E894 text15 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E898 text15 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E89A text15 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E8A0 text15 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E8A2 text15 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E8A6 text15 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E8AC text15 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E8B8 text15 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E8C0 text15 CODE >33:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E8C2 text15 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E8C8 text15 CODE >36:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E8CC text15 CODE >38:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E8D2 text15 CODE >39:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E8DA text15 CODE >40:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E8E2 text15 CODE >41:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+E51C text14 CODE >7:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E51C text14 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E520 text14 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E524 text14 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E52C text14 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E530 text14 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E534 text14 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E53C text14 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E544 text14 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E548 text14 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E54A text14 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E550 text14 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E552 text14 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E556 text14 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E562 text14 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E56A text14 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E570 text14 CODE >29:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E574 text14 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E57A text14 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E582 text14 CODE >33:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E58A text14 CODE >34:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+E270 text13 CODE >153:F:\WORK\Personal\Peripheral-Sample-master\RTC_PCF8523.c
+E270 text13 CODE >154:F:\WORK\Personal\Peripheral-Sample-master\RTC_PCF8523.c
+E2A6 text13 CODE >155:F:\WORK\Personal\Peripheral-Sample-master\RTC_PCF8523.c
+E3B2 text12 CODE >17:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E3B4 text12 CODE >18:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E3B8 text12 CODE >19:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E3BE text12 CODE >20:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E3C4 text12 CODE >21:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E3DC text12 CODE >22:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E3EA text12 CODE >23:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E400 text12 CODE >24:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E404 text12 CODE >25:F:\WORK\Personal\Peripheral-Sample-master\RTC_MCP79411.c
+E0A4 text11 CODE >174:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E0A4 text11 CODE >175:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E0AC text11 CODE >176:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E0AE text10 CODE >166:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E0AE text10 CODE >167:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E0B6 text10 CODE >168:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E0B8 text9 CODE >170:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E0B8 text9 CODE >171:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E0C0 text9 CODE >172:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E2E8 text8 CODE >68:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E2E8 text8 CODE >72:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E2EC text8 CODE >75:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E2F0 text8 CODE >78:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E2F4 text8 CODE >81:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E2F8 text8 CODE >84:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E2FC text8 CODE >87:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E308 text8 CODE >88:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E314 text8 CODE >89:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E320 text8 CODE >91:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+E326 text8 CODE >93:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/eusart1.c
+EAE6 text7 CODE >7:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EAE6 text7 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EAEA text7 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EAEE text7 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EAFE text7 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EB02 text7 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EB06 text7 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EB16 text7 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EB1A text7 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EB2A text7 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EB36 text7 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EB3A text7 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EB3C text7 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EB46 text7 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EB48 text7 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EB4C text7 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EB56 text7 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EB6A text7 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EB7A text7 CODE >33:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EB7C text7 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EB86 text7 CODE >36:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EB8A text7 CODE >38:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EB90 text7 CODE >39:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EBA0 text7 CODE >40:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+EBB0 text7 CODE >41:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\aldiv.c
+E406 text6 CODE >20:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E408 text6 CODE >21:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E40A text6 CODE >22:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E40C text6 CODE >23:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E40E text6 CODE >24:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E410 text6 CODE >25:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E418 text6 CODE >26:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E41A text6 CODE >27:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E41C text6 CODE >28:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E458 text6 CODE >29:F:\WORK\Personal\Peripheral-Sample-master\I2C.c
+E1B2 text5 CODE >59:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/mcc.c
+E1B2 text5 CODE >62:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/mcc.c
+E1B6 text5 CODE >64:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/mcc.c
+E1BA text5 CODE >66:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/mcc.c
+E1C0 text5 CODE >68:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/mcc.c
+E1C4 text5 CODE >69:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/mcc.c
+E1DA text5 CODE >70:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/mcc.c
+E328 text4 CODE >52:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E328 text4 CODE >57:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E32C text4 CODE >58:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E330 text4 CODE >59:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E334 text4 CODE >60:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E338 text4 CODE >61:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E33C text4 CODE >66:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E340 text4 CODE >67:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E344 text4 CODE >68:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E348 text4 CODE >69:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E34C text4 CODE >70:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E34E text4 CODE >75:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E354 text4 CODE >76:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E358 text4 CODE >81:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E35A text4 CODE >82:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E35C text4 CODE >83:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E35E text4 CODE >88:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E362 text4 CODE >89:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E366 text4 CODE >90:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E36A text4 CODE >95:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/pin_manager.c
+E0CC text3 CODE >65:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/spi1.c
+E0CC text3 CODE >70:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/spi1.c
+E0D0 text3 CODE >73:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/spi1.c
+E0D4 text3 CODE >76:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/spi1.c
+E0D8 text3 CODE >77:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/spi1.c
+E112 text2 CODE >50:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/mcc.c
+E112 text2 CODE >52:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/mcc.c
+E116 text2 CODE >53:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/mcc.c
+E11A text2 CODE >54:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/mcc.c
+E11E text2 CODE >55:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/mcc.c
+E122 text2 CODE >56:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/mcc.c
+E128 text2 CODE >57:F:\WORK\Personal\Peripheral-Sample-master\mcc_generated_files/mcc.c
+E0C2 text1 CODE >15:F:\WORK\Personal\Peripheral-Sample-master\Interrupt.c
+E0C2 text1 CODE >16:F:\WORK\Personal\Peripheral-Sample-master\Interrupt.c
+E0C4 text1 CODE >17:F:\WORK\Personal\Peripheral-Sample-master\Interrupt.c
+E0C6 text1 CODE >18:F:\WORK\Personal\Peripheral-Sample-master\Interrupt.c
+E0C8 text1 CODE >19:F:\WORK\Personal\Peripheral-Sample-master\Interrupt.c
+E0CA text1 CODE >20:F:\WORK\Personal\Peripheral-Sample-master\Interrupt.c
+E672 text0 CODE >4:F:\WORK\Personal\Peripheral-Sample-master\main.c
+E672 text0 CODE >6:F:\WORK\Personal\Peripheral-Sample-master\main.c
+E676 text0 CODE >7:F:\WORK\Personal\Peripheral-Sample-master\main.c
+E67A text0 CODE >9:F:\WORK\Personal\Peripheral-Sample-master\main.c
+E67E text0 CODE >10:F:\WORK\Personal\Peripheral-Sample-master\main.c
+E68C text0 CODE >18:F:\WORK\Personal\Peripheral-Sample-master\main.c
+E6A6 text0 CODE >19:F:\WORK\Personal\Peripheral-Sample-master\main.c
+E6B4 text0 CODE >20:F:\WORK\Personal\Peripheral-Sample-master\main.c
+E6E6 text0 CODE >21:F:\WORK\Personal\Peripheral-Sample-master\main.c
+E760 cinit CODE >13507:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E760 cinit CODE >13509:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E760 cinit CODE >13512:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E760 cinit CODE >13604:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E762 cinit CODE >13605:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E764 cinit CODE >13606:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E766 cinit CODE >13607:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E768 cinit CODE >13608:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E76A cinit CODE >13609:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E76C cinit CODE >13610:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E770 cinit CODE >13611:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E774 cinit CODE >13612:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E774 cinit CODE >13613:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E776 cinit CODE >13614:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E77A cinit CODE >13615:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E77C cinit CODE >13616:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E77E cinit CODE >13617:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E780 cinit CODE >13618:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E782 cinit CODE >13619:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E784 cinit CODE >13623:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E786 cinit CODE >13624:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E788 cinit CODE >13625:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E78A cinit CODE >13626:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E78C cinit CODE >13627:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E78E cinit CODE >13628:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E790 cinit CODE >13629:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E794 cinit CODE >13630:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E798 cinit CODE >13631:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E798 cinit CODE >13632:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E79A cinit CODE >13633:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E79E cinit CODE >13634:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7A0 cinit CODE >13635:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7A2 cinit CODE >13636:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7A4 cinit CODE >13640:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7A6 cinit CODE >13641:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7A8 cinit CODE >13642:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7AA cinit CODE >13643:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7AC cinit CODE >13644:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7AE cinit CODE >13645:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7B0 cinit CODE >13646:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7B2 cinit CODE >13647:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7B6 cinit CODE >13648:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7B8 cinit CODE >13649:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7BC cinit CODE >13653:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7C0 cinit CODE >13654:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7C2 cinit CODE >13655:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7C2 cinit CODE >13656:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7C4 cinit CODE >13657:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7C6 cinit CODE >13658:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7C8 cinit CODE >13661:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7CC cinit CODE >13662:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7CE cinit CODE >13663:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7CE cinit CODE >13664:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7D0 cinit CODE >13665:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7D2 cinit CODE >13666:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7D4 cinit CODE >13672:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7D4 cinit CODE >13675:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7D6 cinit CODE >13676:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7D8 cinit CODE >13677:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+E7DA cinit CODE >13678:C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___awdiv@counter 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__LdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production\Peripheral-Sample-master.production.o
+_pow$3067 60 0 BANK0 1 cstackBANK0 dist/default/production\Peripheral-Sample-master.production.o
+_pow$3068 63 0 BANK0 1 cstackBANK0 dist/default/production\Peripheral-Sample-master.production.o
+__Lmediumconst FDE0 0 MEDIUMCONST 0 mediumconst dist/default/production\Peripheral-Sample-master.production.o
+__Hspace_0 FFF8 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__Hspace_1 564 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__Hspace_2 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__Hspace_4 1FFF8 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__HidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\Peripheral-Sample-master.production.o
+__size_of_I2C_buffClear 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_SSP1STATbits FC7 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+frexp@eptr 4 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___ftdiv@exp 16 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+EUSART1_SetErrorHandler@interruptHandler 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/production\Peripheral-Sample-master.production.o
+__end_of_MCP794x_writeEEPROM E208 0 CODE 0 text17 dist/default/production\Peripheral-Sample-master.production.o
+__mediumconst FDE0 0 MEDIUMCONST 0 mediumconst C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.o
+_EUSART1_Initialize E2E8 0 CODE 0 text8 dist/default/production\Peripheral-Sample-master.production.o
+___awtoft@sign C 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_EUSART1_Write_Text E58C 0 CODE 0 text50 dist/default/production\Peripheral-Sample-master.production.o
+?_exp 49 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+?_log 34 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+?_pow 52 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__end_of_I2C_Write E144 0 CODE 0 text44 dist/default/production\Peripheral-Sample-master.production.o
+_MCP794x_getEEPROM$3063 6B 0 BANK0 1 cstackBANK0 dist/default/production\Peripheral-Sample-master.production.o
+_MCP794x_getEEPROM$3064 6E 0 BANK0 1 cstackBANK0 dist/default/production\Peripheral-Sample-master.production.o
+__Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\Peripheral-Sample-master.production.o
+_Font FDE1 0 MEDIUMCONST 0 mediumconst dist/default/production\Peripheral-Sample-master.production.o
+_LATA F89 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_LATB F8A 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_LATC F8B 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_LATD F8C 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_LATE F8D 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+___sp 0 0 STACK 2 stack C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.o
+__end_of_I2C_start E09A 0 CODE 0 text43 dist/default/production\Peripheral-Sample-master.production.o
+_main E672 0 CODE 0 text0 dist/default/production\Peripheral-Sample-master.production.o
+_wrap B2 0 BANK0 1 dataBANK0 dist/default/production\Peripheral-Sample-master.production.o
+__size_of_I2C_Write 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+exp@x 49 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+log@x 34 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___ftadd@f1 1C 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___ftadd@f2 1F 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+pow@x 52 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+pow@y 55 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+start 0 0 CODE 0 init C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.o
+__size_of___aldiv 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of___awdiv 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of___awmod 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of_I2C_start 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of___ftadd 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of___ftdiv 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of___ftmul 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of___ftneg 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of___ftsub 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of___fttol 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of_main 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of___lldiv 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of___llmod 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+MCP794x_putEEPROM@index_1946 11 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+MCP794x_putEEPROM@index_1947 13 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+MCP794x_putEEPROM@index_1948 15 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__end_of_SPI1_Initialize E0DA 0 CODE 0 text3 dist/default/production\Peripheral-Sample-master.production.o
+_MCP794x_getEEPROM F104 0 CODE 0 text18 dist/default/production\Peripheral-Sample-master.production.o
+pow@yi 67 0 BANK0 1 cstackBANK0 dist/default/production\Peripheral-Sample-master.production.o
+?___wmul 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___ftdiv@f1 9 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___ftdiv@f2 C 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___ftdiv@f3 13 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__size_of_I2C_Init 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of_I2C_read 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of_I2C_stop 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__end_of_I2C_buffClear E0FA 0 CODE 0 text42 dist/default/production\Peripheral-Sample-master.production.o
+__LidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\Peripheral-Sample-master.production.o
+__Hpowerup 0 0 CODE 0 powerup dist/default/production\Peripheral-Sample-master.production.o
+_I2C_Write E12A 0 CODE 0 text44 dist/default/production\Peripheral-Sample-master.production.o
+log@coeff FFDA 0 MEDIUMCONST 0 mediumconst dist/default/production\Peripheral-Sample-master.production.o
+__HdataBIGRAM 0 0 ABS 0 dataBIGRAM dist/default/production\Peripheral-Sample-master.production.o
+___awmod@sign 6 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_I2C_start E090 0 CODE 0 text43 dist/default/production\Peripheral-Sample-master.production.o
+___ftge@ff1 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___ftge@ff2 4 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__accesstop 60 0 ABS 0 - C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.o
+intlevel0 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.o
+intlevel1 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.o
+intlevel2 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.o
+intlevel3 0 0 CODE 0 text C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.o
+__size_of_EUSART1_SetErrorHandler 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__end_oflog@coeff FFF5 0 MEDIUMCONST 0 mediumconst dist/default/production\Peripheral-Sample-master.production.o
+MCP794x_getEEPROM@index 71 0 BANK0 1 cstackBANK0 dist/default/production\Peripheral-Sample-master.production.o
+_dataOut 95 0 BANK0 1 bssBANK0 dist/default/production\Peripheral-Sample-master.production.o
+___aldiv@divisor B 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Peripheral-Sample-master.production.o
+___llmod@divisor 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Hifardata 0 0 CODE 0 ifardata dist/default/production\Peripheral-Sample-master.production.o
+___aldiv@sign 10 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__pidataBIGRAM F9E0 0 CODE 0 idataBIGRAM dist/default/production\Peripheral-Sample-master.production.o
+___awdiv@sign 6 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Hclrtext 0 0 ABS 0 clrtext dist/default/production\Peripheral-Sample-master.production.o
+__pidataCOMRAM E084 0 CODE 0 idataCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___ftmul@f1 D 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___ftmul@f2 10 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+I2C_read@ACK_NACK 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___ftneg@f1 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___wmul@multiplicand 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_SPI1_Initialize E0CC 0 CODE 0 text3 dist/default/production\Peripheral-Sample-master.production.o
+_ANCON0 F48 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_ANCON1 F49 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__LdataBIGRAM 0 0 ABS 0 dataBIGRAM dist/default/production\Peripheral-Sample-master.production.o
+___awdiv@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.o
+MCP794x_putEEPROM@byteNumb 9 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.o
+__size_of___altoft 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__size_of___awtoft 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+ultoa@c 1A 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+ultoa@v 16 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_I2C_Init E406 0 CODE 0 text6 dist/default/production\Peripheral-Sample-master.production.o
+_I2C_read E0FA 0 CODE 0 text41 dist/default/production\Peripheral-Sample-master.production.o
+_I2C_stop E086 0 CODE 0 text45 dist/default/production\Peripheral-Sample-master.production.o
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\Peripheral-Sample-master.production.o
+___altoft@c 37 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__end_of___ftge E672 0 CODE 0 text26 dist/default/production\Peripheral-Sample-master.production.o
+__end_of___wmul E1B2 0 CODE 0 text29 dist/default/production\Peripheral-Sample-master.production.o
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Peripheral-Sample-master.production.o
+___ftsub@f1 28 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___ftsub@f2 2B 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___fttol@f1 28 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_TXSTA1bits FAD 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__Hmediumconst FFF8 0 MEDIUMCONST 0 mediumconst dist/default/production\Peripheral-Sample-master.production.o
+__end_of_I2C_Init E45A 0 CODE 0 text6 dist/default/production\Peripheral-Sample-master.production.o
+__end_of_I2C_read E112 0 CODE 0 text41 dist/default/production\Peripheral-Sample-master.production.o
+__end_of_I2C_stop E090 0 CODE 0 text45 dist/default/production\Peripheral-Sample-master.production.o
+__Hintcodelo 0 0 CODE 0 intcodelo dist/default/production\Peripheral-Sample-master.production.o
+___awdiv@divisor 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__size_of___ftpack 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__end_of___aldiv EBB2 0 CODE 0 text7 dist/default/production\Peripheral-Sample-master.production.o
+__end_of___awdiv E8E4 0 CODE 0 text15 dist/default/production\Peripheral-Sample-master.production.o
+__end_of___awmod E58C 0 CODE 0 text14 dist/default/production\Peripheral-Sample-master.production.o
+EUSART1_SetFramingErrorHandler@interruptHandler 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__end_of___ftadd F648 0 CODE 0 text32 dist/default/production\Peripheral-Sample-master.production.o
+__end_of___ftdiv EF1A 0 CODE 0 text34 dist/default/production\Peripheral-Sample-master.production.o
+__end_of___ftmul F00E 0 CODE 0 text30 dist/default/production\Peripheral-Sample-master.production.o
+__end_of___ftneg E18C 0 CODE 0 text33 dist/default/production\Peripheral-Sample-master.production.o
+__end_of___ftsub E2E8 0 CODE 0 text31 dist/default/production\Peripheral-Sample-master.production.o
+__end_of___fttol ED56 0 CODE 0 text25 dist/default/production\Peripheral-Sample-master.production.o
+__end_of___lldiv E860 0 CODE 0 text49 dist/default/production\Peripheral-Sample-master.production.o
+__end_of___llmod E51C 0 CODE 0 text48 dist/default/production\Peripheral-Sample-master.production.o
+MCP794x_writeEEPROM@data 2 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+?_eval_poly 28 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_MCP342x_ADC 8D 0 BANK0 1 bssBANK0 dist/default/production\Peripheral-Sample-master.production.o
+__LidataBIGRAM 0 0 ABS 0 idataBIGRAM dist/default/production\Peripheral-Sample-master.production.o
+MCP794x_getEEPROM@dataSize 5A 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+decimalToBCD@DecValue 9 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__size_of_floor 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of_frexp 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of_ldexp 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of_ultoa 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+MCP794x_putEEPROM@address 17 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+EUSART1_Write_Text@iSize 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__size_of___lbtoft 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of___lltoft 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_INTCON2bits FF1 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+___lldiv@counter D 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Lintcodelo 0 0 CODE 0 intcodelo dist/default/production\Peripheral-Sample-master.production.o
+_PIN_MANAGER_Initialize E328 0 CODE 0 text4 dist/default/production\Peripheral-Sample-master.production.o
+_SSP2CON1bits F72 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+start_initialization E760 0 CODE 0 cinit dist/default/production\Peripheral-Sample-master.production.o
+_SSP2CON2bits F71 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_eusart1RxLastError A3 0 BANK0 1 bssBANK0 dist/default/production\Peripheral-Sample-master.production.o
+_ODCON1 F42 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_ODCON2 F41 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_ODCON3 F40 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__end_of_I2C_repeated_Start E0A4 0 CODE 0 text40 dist/default/production\Peripheral-Sample-master.production.o
+_OSCCON FD3 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+pow@sign 66 0 BANK0 1 cstackBANK0 dist/default/production\Peripheral-Sample-master.production.o
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Peripheral-Sample-master.production.o
+___altoft E6E8 0 CODE 0 text27 dist/default/production\Peripheral-Sample-master.production.o
+___awtoft E238 0 CODE 0 text35 dist/default/production\Peripheral-Sample-master.production.o
+_TRISDbits F95 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_TRISEbits F96 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+___aldiv@quotient 11 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___lldiv@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___rparam_used 1 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_RCREG1 FAF 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_RCSTA1 FAC 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__end_of_SYSTEM_Initialize E12A 0 CODE 0 text2 dist/default/production\Peripheral-Sample-master.production.o
+__size_of_interrupt_Init 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__end_of___altoft E760 0 CODE 0 text27 dist/default/production\Peripheral-Sample-master.production.o
+__end_of___awtoft E270 0 CODE 0 text35 dist/default/production\Peripheral-Sample-master.production.o
+_SPBRG1 FB0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__pcstackBANK0 60 0 BANK0 1 cstackBANK0 dist/default/production\Peripheral-Sample-master.production.o
+___fttol@exp1 36 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___fttol@lval 32 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___lbtoft@c C 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___lltoft@c 9 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_TXREG1 FAE 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_TXSTA1 FAD 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+MCP794x_getEEPROM@address 58 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___ftpack E96E 0 CODE 0 text38 dist/default/production\Peripheral-Sample-master.production.o
+__size_of_SPI1_Initialize 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_TxData 100 0 BANK1 1 bssBANK1 dist/default/production\Peripheral-Sample-master.production.o
+_EUSART1_DefaultFramingErrorHandler 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_EUSART1_DefaultOverrunErrorHandler 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+isa$xinst 0 0 ABS 0 - C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.o
+___ftpack@arg 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___ftpack@exp 4 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__size_of_EUSART1_Initialize 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of_EUSART1_Write_Text 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__end_of___ftpack EA1C 0 CODE 0 text38 dist/default/production\Peripheral-Sample-master.production.o
+MCP794x_putEEPROM@dataWrite 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_I2C_repeated_Start E09A 0 CODE 0 text40 dist/default/production\Peripheral-Sample-master.production.o
+__Hbank0 0 0 ABS 0 bank0 dist/default/production\Peripheral-Sample-master.production.o
+__Hbank1 0 0 ABS 0 bank1 dist/default/production\Peripheral-Sample-master.production.o
+__Hbank2 0 0 ABS 0 bank2 dist/default/production\Peripheral-Sample-master.production.o
+__Hbank3 0 0 ABS 0 bank3 dist/default/production\Peripheral-Sample-master.production.o
+__Hbank4 0 0 ABS 0 bank4 dist/default/production\Peripheral-Sample-master.production.o
+__Hbank5 0 0 ABS 0 bank5 dist/default/production\Peripheral-Sample-master.production.o
+__Hbank6 0 0 ABS 0 bank6 dist/default/production\Peripheral-Sample-master.production.o
+__Hbank7 0 0 ABS 0 bank7 dist/default/production\Peripheral-Sample-master.production.o
+__Hbank8 0 0 ABS 0 bank8 dist/default/production\Peripheral-Sample-master.production.o
+__Hbank9 0 0 ABS 0 bank9 dist/default/production\Peripheral-Sample-master.production.o
+__Hcinit 0 0 ABS 0 cinit dist/default/production\Peripheral-Sample-master.production.o
+__Hconst 0 0 CONST 0 const dist/default/production\Peripheral-Sample-master.production.o
+exp@exponent 4F 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Hidata 0 0 CODE 0 idata dist/default/production\Peripheral-Sample-master.production.o
+__Hidloc 0 0 IDLOC 5 idloc dist/default/production\Peripheral-Sample-master.production.o
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/production\Peripheral-Sample-master.production.o
+__Hparam 0 0 COMRAM 1 rparam dist/default/production\Peripheral-Sample-master.production.o
+__size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__Hrdata 0 0 COMRAM 1 rdata dist/default/production\Peripheral-Sample-master.production.o
+__Hstack 0 0 STACK 2 stack dist/default/production\Peripheral-Sample-master.production.o
+__Htext0 0 0 ABS 0 text0 dist/default/production\Peripheral-Sample-master.production.o
+__Htext1 0 0 ABS 0 text1 dist/default/production\Peripheral-Sample-master.production.o
+__Htext2 0 0 ABS 0 text2 dist/default/production\Peripheral-Sample-master.production.o
+__Htext3 0 0 ABS 0 text3 dist/default/production\Peripheral-Sample-master.production.o
+__Htext4 0 0 ABS 0 text4 dist/default/production\Peripheral-Sample-master.production.o
+__Htext5 0 0 ABS 0 text5 dist/default/production\Peripheral-Sample-master.production.o
+__Htext6 0 0 ABS 0 text6 dist/default/production\Peripheral-Sample-master.production.o
+__Htext7 0 0 ABS 0 text7 dist/default/production\Peripheral-Sample-master.production.o
+__Htext8 0 0 ABS 0 text8 dist/default/production\Peripheral-Sample-master.production.o
+__Htext9 0 0 ABS 0 text9 dist/default/production\Peripheral-Sample-master.production.o
+__Ljflash_buffer F800 0 CODE 0 jflash_buffer dist/default/production\Peripheral-Sample-master.production.o
+__Hbank10 0 0 ABS 0 bank10 dist/default/production\Peripheral-Sample-master.production.o
+__Hbank11 0 0 ABS 0 bank11 dist/default/production\Peripheral-Sample-master.production.o
+__Hbank12 0 0 ABS 0 bank12 dist/default/production\Peripheral-Sample-master.production.o
+__Hbank13 0 0 ABS 0 bank13 dist/default/production\Peripheral-Sample-master.production.o
+__Hbank14 0 0 ABS 0 bank14 dist/default/production\Peripheral-Sample-master.production.o
+__end_of_MCP794x_setTime E406 0 CODE 0 text12 dist/default/production\Peripheral-Sample-master.production.o
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Peripheral-Sample-master.production.o
+__Hbigram 0 0 ABS 0 bigram dist/default/production\Peripheral-Sample-master.production.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.o
+_BAUDCON1 F7E 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+___lbtoft E144 0 CODE 0 text37 dist/default/production\Peripheral-Sample-master.production.o
+___lltoft E45A 0 CODE 0 text36 dist/default/production\Peripheral-Sample-master.production.o
+__end_of_MCP794x_readEEPROM E238 0 CODE 0 text39 dist/default/production\Peripheral-Sample-master.production.o
+__Hcomram 0 0 ABS 0 comram dist/default/production\Peripheral-Sample-master.production.o
+__Hconfig 10000 0 CONFIG 4 config dist/default/production\Peripheral-Sample-master.production.o
+?_MCP794x_getEEPROM 58 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Lbank0 0 0 ABS 0 bank0 dist/default/production\Peripheral-Sample-master.production.o
+__Lbank1 0 0 ABS 0 bank1 dist/default/production\Peripheral-Sample-master.production.o
+__Lbank2 0 0 ABS 0 bank2 dist/default/production\Peripheral-Sample-master.production.o
+__Lbank3 0 0 ABS 0 bank3 dist/default/production\Peripheral-Sample-master.production.o
+__Lbank4 0 0 ABS 0 bank4 dist/default/production\Peripheral-Sample-master.production.o
+__Lbank5 0 0 ABS 0 bank5 dist/default/production\Peripheral-Sample-master.production.o
+__Lbank6 0 0 ABS 0 bank6 dist/default/production\Peripheral-Sample-master.production.o
+__Lbank7 0 0 ABS 0 bank7 dist/default/production\Peripheral-Sample-master.production.o
+__Lbank8 0 0 ABS 0 bank8 dist/default/production\Peripheral-Sample-master.production.o
+__Lbank9 0 0 ABS 0 bank9 dist/default/production\Peripheral-Sample-master.production.o
+__Lcinit 0 0 ABS 0 cinit dist/default/production\Peripheral-Sample-master.production.o
+__Lconst 0 0 CONST 0 const dist/default/production\Peripheral-Sample-master.production.o
+__Lidata 0 0 CODE 0 idata dist/default/production\Peripheral-Sample-master.production.o
+__Lidloc 0 0 IDLOC 5 idloc dist/default/production\Peripheral-Sample-master.production.o
+___ftadd@exp1 27 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___ftadd@exp2 26 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___ftadd@sign 25 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/production\Peripheral-Sample-master.production.o
+__Lparam 0 0 COMRAM 1 rparam dist/default/production\Peripheral-Sample-master.production.o
+__Lrdata 0 0 COMRAM 1 rdata dist/default/production\Peripheral-Sample-master.production.o
+__Lstack 0 0 STACK 2 stack dist/default/production\Peripheral-Sample-master.production.o
+__Ltext0 0 0 ABS 0 text0 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext1 0 0 ABS 0 text1 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext2 0 0 ABS 0 text2 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext3 0 0 ABS 0 text3 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext4 0 0 ABS 0 text4 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext5 0 0 ABS 0 text5 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext6 0 0 ABS 0 text6 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext7 0 0 ABS 0 text7 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext8 0 0 ABS 0 text8 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext9 0 0 ABS 0 text9 dist/default/production\Peripheral-Sample-master.production.o
+_EUSART1_FramingErrorHandler A1 0 BANK0 1 bssBANK0 dist/default/production\Peripheral-Sample-master.production.o
+_EUSART1_OverrunErrorHandler 9F 0 BANK0 1 bssBANK0 dist/default/production\Peripheral-Sample-master.production.o
+__end_of___lbtoft E168 0 CODE 0 text37 dist/default/production\Peripheral-Sample-master.production.o
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/production\Peripheral-Sample-master.production.o
+__size_of_EUSART1_SetFramingErrorHandler 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__end_of___lltoft E4B6 0 CODE 0 text36 dist/default/production\Peripheral-Sample-master.production.o
+__size_of_EUSART1_SetOverrunErrorHandler 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\Peripheral-Sample-master.production.o
+_PORTBbits F81 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_REFOCON F3D 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_INTCONbits FF2 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+MCP794x_readEEPROM@Register 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Habs1 0 0 ABS 0 abs1 dist/default/production\Peripheral-Sample-master.production.o
+__Hdata 0 0 ABS 0 data dist/default/production\Peripheral-Sample-master.production.o
+__Hinit 4 0 CODE 0 init dist/default/production\Peripheral-Sample-master.production.o
+__Hrbit 0 0 COMRAM 1 rbit dist/default/production\Peripheral-Sample-master.production.o
+__Hrbss 0 0 COMRAM 1 rbss dist/default/production\Peripheral-Sample-master.production.o
+__Htemp 0 0 COMRAM 1 temp dist/default/production\Peripheral-Sample-master.production.o
+__Htext 0 0 ABS 0 text dist/default/production\Peripheral-Sample-master.production.o
+__Labs1 0 0 ABS 0 abs1 dist/default/production\Peripheral-Sample-master.production.o
+__Ldata 0 0 ABS 0 data dist/default/production\Peripheral-Sample-master.production.o
+__Linit 0 0 CODE 0 init dist/default/production\Peripheral-Sample-master.production.o
+__Lrbit 0 0 COMRAM 1 rbit dist/default/production\Peripheral-Sample-master.production.o
+__Lrbss 0 0 COMRAM 1 rbss dist/default/production\Peripheral-Sample-master.production.o
+__Ltemp 0 0 COMRAM 1 temp dist/default/production\Peripheral-Sample-master.production.o
+__Ltext 0 0 ABS 0 text dist/default/production\Peripheral-Sample-master.production.o
+_SSP1CON1 FC6 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_SSP1STAT FC7 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+___ftge E5FE 0 CODE 0 text26 dist/default/production\Peripheral-Sample-master.production.o
+___wmul E18C 0 CODE 0 text29 dist/default/production\Peripheral-Sample-master.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\Peripheral-Sample-master.production.o
+_SSP2STATbits F73 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Hintret 0 0 ABS 0 intret dist/default/production\Peripheral-Sample-master.production.o
+__Hirdata 0 0 CODE 0 irdata dist/default/production\Peripheral-Sample-master.production.o
+_ADC 9B 0 BANK0 1 bssBANK0 dist/default/production\Peripheral-Sample-master.production.o
+__S0 FFF8 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__S1 564 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__S2 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__S4 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_exp F7F8 0 CODE 0 text21 dist/default/production\Peripheral-Sample-master.production.o
+_log F206 0 CODE 0 text20 dist/default/production\Peripheral-Sample-master.production.o
+_pow F324 0 CODE 0 text19 dist/default/production\Peripheral-Sample-master.production.o
+__Hjflash_buffer F800 0 CODE 0 jflash_buffer dist/default/production\Peripheral-Sample-master.production.o
+_EUSART1_DefaultErrorHandler 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_exp$3069 4C 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+PCF8523_setDate@F6595 AC 0 BANK0 1 dataBANK0 dist/default/production\Peripheral-Sample-master.production.o
+_MCP794x_readEEPROM E208 0 CODE 0 text39 dist/default/production\Peripheral-Sample-master.production.o
+__HidataBIGRAM 0 0 ABS 0 idataBIGRAM dist/default/production\Peripheral-Sample-master.production.o
+eval_poly@res 31 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__size_of_MCP794x_putEEPROM 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+___awtoft@c 9 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Peripheral-Sample-master.production.o
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\Peripheral-Sample-master.production.o
+ultoa@base 14 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_MCP794x_setTime E3B2 0 CODE 0 text12 dist/default/production\Peripheral-Sample-master.production.o
+_SYSTEM_Initialize E112 0 CODE 0 text2 dist/default/production\Peripheral-Sample-master.production.o
+__end_of_exp F9E0 0 CODE 0 text21 dist/default/production\Peripheral-Sample-master.production.o
+__end_of_log F324 0 CODE 0 text20 dist/default/production\Peripheral-Sample-master.production.o
+__end_of_pow F4A0 0 CODE 0 text19 dist/default/production\Peripheral-Sample-master.production.o
+__Lintentry 0 0 ABS 0 intentry dist/default/production\Peripheral-Sample-master.production.o
+___lldiv@divisor 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Hramtop F00 0 RAM 0 ramtop dist/default/production\Peripheral-Sample-master.production.o
+MCP794x_setTime@minute D 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Hrparam 0 0 COMRAM 1 rparam dist/default/production\Peripheral-Sample-master.production.o
+__pdataBANK0 A4 0 BANK0 1 dataBANK0 dist/default/production\Peripheral-Sample-master.production.o
+__activetblptr 2 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__Hstruct 0 0 COMRAM 1 struct dist/default/production\Peripheral-Sample-master.production.o
+__size_of___ftge 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of___wmul 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\Peripheral-Sample-master.production.o
+__LbssBANK1 0 0 ABS 0 bssBANK1 dist/default/production\Peripheral-Sample-master.production.o
+__Htext10 0 0 ABS 0 text10 dist/default/production\Peripheral-Sample-master.production.o
+__Htext11 0 0 ABS 0 text11 dist/default/production\Peripheral-Sample-master.production.o
+__Htext12 0 0 ABS 0 text12 dist/default/production\Peripheral-Sample-master.production.o
+__Htext13 0 0 ABS 0 text13 dist/default/production\Peripheral-Sample-master.production.o
+__Htext14 0 0 ABS 0 text14 dist/default/production\Peripheral-Sample-master.production.o
+__Htext15 0 0 ABS 0 text15 dist/default/production\Peripheral-Sample-master.production.o
+__Htext16 0 0 ABS 0 text16 dist/default/production\Peripheral-Sample-master.production.o
+__Htext17 0 0 ABS 0 text17 dist/default/production\Peripheral-Sample-master.production.o
+__Htext18 0 0 ABS 0 text18 dist/default/production\Peripheral-Sample-master.production.o
+__Htext19 0 0 ABS 0 text19 dist/default/production\Peripheral-Sample-master.production.o
+__Htext20 0 0 ABS 0 text20 dist/default/production\Peripheral-Sample-master.production.o
+__Htext21 0 0 ABS 0 text21 dist/default/production\Peripheral-Sample-master.production.o
+__Htext22 0 0 ABS 0 text22 dist/default/production\Peripheral-Sample-master.production.o
+__Htext23 0 0 ABS 0 text23 dist/default/production\Peripheral-Sample-master.production.o
+__Htext24 0 0 ABS 0 text24 dist/default/production\Peripheral-Sample-master.production.o
+__Htext25 0 0 ABS 0 text25 dist/default/production\Peripheral-Sample-master.production.o
+__Htext26 0 0 ABS 0 text26 dist/default/production\Peripheral-Sample-master.production.o
+__Htext27 0 0 ABS 0 text27 dist/default/production\Peripheral-Sample-master.production.o
+__Htext28 0 0 ABS 0 text28 dist/default/production\Peripheral-Sample-master.production.o
+__Htext29 0 0 ABS 0 text29 dist/default/production\Peripheral-Sample-master.production.o
+__Htext30 0 0 ABS 0 text30 dist/default/production\Peripheral-Sample-master.production.o
+__Htext31 0 0 ABS 0 text31 dist/default/production\Peripheral-Sample-master.production.o
+__Htext32 0 0 ABS 0 text32 dist/default/production\Peripheral-Sample-master.production.o
+__Htext33 0 0 ABS 0 text33 dist/default/production\Peripheral-Sample-master.production.o
+__Htext34 0 0 ABS 0 text34 dist/default/production\Peripheral-Sample-master.production.o
+__Htext35 0 0 ABS 0 text35 dist/default/production\Peripheral-Sample-master.production.o
+__Htext36 0 0 ABS 0 text36 dist/default/production\Peripheral-Sample-master.production.o
+__Htext37 0 0 ABS 0 text37 dist/default/production\Peripheral-Sample-master.production.o
+__Htext38 0 0 ABS 0 text38 dist/default/production\Peripheral-Sample-master.production.o
+__Htext39 0 0 ABS 0 text39 dist/default/production\Peripheral-Sample-master.production.o
+__Htext40 0 0 ABS 0 text40 dist/default/production\Peripheral-Sample-master.production.o
+__Htext41 0 0 ABS 0 text41 dist/default/production\Peripheral-Sample-master.production.o
+__Htext42 0 0 ABS 0 text42 dist/default/production\Peripheral-Sample-master.production.o
+__Htext43 0 0 ABS 0 text43 dist/default/production\Peripheral-Sample-master.production.o
+__Htext44 0 0 ABS 0 text44 dist/default/production\Peripheral-Sample-master.production.o
+__Htext45 0 0 ABS 0 text45 dist/default/production\Peripheral-Sample-master.production.o
+__Htext46 0 0 ABS 0 text46 dist/default/production\Peripheral-Sample-master.production.o
+__Htext47 0 0 ABS 0 text47 dist/default/production\Peripheral-Sample-master.production.o
+__Htext48 0 0 ABS 0 text48 dist/default/production\Peripheral-Sample-master.production.o
+__Htext49 0 0 ABS 0 text49 dist/default/production\Peripheral-Sample-master.production.o
+__Htext50 0 0 ABS 0 text50 dist/default/production\Peripheral-Sample-master.production.o
+?___altoft 37 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+MCP794x_putEEPROM@index F 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+?___awtoft 9 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___awmod@counter 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_PIE3bits FA3 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+floor@expon 47 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___altoft@exp 3F 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__ptext10 E0AE 0 CODE 0 text10 dist/default/production\Peripheral-Sample-master.production.o
+__ptext11 E0A4 0 CODE 0 text11 dist/default/production\Peripheral-Sample-master.production.o
+__ptext12 E3B2 0 CODE 0 text12 dist/default/production\Peripheral-Sample-master.production.o
+__ptext13 E270 0 CODE 0 text13 dist/default/production\Peripheral-Sample-master.production.o
+__ptext14 E51C 0 CODE 0 text14 dist/default/production\Peripheral-Sample-master.production.o
+__ptext15 E860 0 CODE 0 text15 dist/default/production\Peripheral-Sample-master.production.o
+__ptext16 F648 0 CODE 0 text16 dist/default/production\Peripheral-Sample-master.production.o
+__ptext17 E1DC 0 CODE 0 text17 dist/default/production\Peripheral-Sample-master.production.o
+__ptext18 F104 0 CODE 0 text18 dist/default/production\Peripheral-Sample-master.production.o
+__ptext19 F324 0 CODE 0 text19 dist/default/production\Peripheral-Sample-master.production.o
+__ptext20 F206 0 CODE 0 text20 dist/default/production\Peripheral-Sample-master.production.o
+__ptext21 F7F8 0 CODE 0 text21 dist/default/production\Peripheral-Sample-master.production.o
+__ptext22 EA1C 0 CODE 0 text22 dist/default/production\Peripheral-Sample-master.production.o
+__ptext23 ED56 0 CODE 0 text23 dist/default/production\Peripheral-Sample-master.production.o
+__ptext24 E8E4 0 CODE 0 text24 dist/default/production\Peripheral-Sample-master.production.o
+__ptext25 EC84 0 CODE 0 text25 dist/default/production\Peripheral-Sample-master.production.o
+__ptext26 E5FE 0 CODE 0 text26 dist/default/production\Peripheral-Sample-master.production.o
+__ptext27 E6E8 0 CODE 0 text27 dist/default/production\Peripheral-Sample-master.production.o
+__ptext28 EBB2 0 CODE 0 text28 dist/default/production\Peripheral-Sample-master.production.o
+__ptext29 E18C 0 CODE 0 text29 dist/default/production\Peripheral-Sample-master.production.o
+__ptext30 EF1A 0 CODE 0 text30 dist/default/production\Peripheral-Sample-master.production.o
+__ptext31 E2A8 0 CODE 0 text31 dist/default/production\Peripheral-Sample-master.production.o
+__ptext32 F4A0 0 CODE 0 text32 dist/default/production\Peripheral-Sample-master.production.o
+__ptext33 E168 0 CODE 0 text33 dist/default/production\Peripheral-Sample-master.production.o
+__ptext34 EE34 0 CODE 0 text34 dist/default/production\Peripheral-Sample-master.production.o
+__ptext35 E238 0 CODE 0 text35 dist/default/production\Peripheral-Sample-master.production.o
+__ptext36 E45A 0 CODE 0 text36 dist/default/production\Peripheral-Sample-master.production.o
+__ptext37 E144 0 CODE 0 text37 dist/default/production\Peripheral-Sample-master.production.o
+__ptext38 E96E 0 CODE 0 text38 dist/default/production\Peripheral-Sample-master.production.o
+__ptext39 E208 0 CODE 0 text39 dist/default/production\Peripheral-Sample-master.production.o
+__ptext40 E09A 0 CODE 0 text40 dist/default/production\Peripheral-Sample-master.production.o
+__ptext41 E0FA 0 CODE 0 text41 dist/default/production\Peripheral-Sample-master.production.o
+__ptext42 E0EA 0 CODE 0 text42 dist/default/production\Peripheral-Sample-master.production.o
+__ptext43 E090 0 CODE 0 text43 dist/default/production\Peripheral-Sample-master.production.o
+__ptext44 E12A 0 CODE 0 text44 dist/default/production\Peripheral-Sample-master.production.o
+__ptext45 E086 0 CODE 0 text45 dist/default/production\Peripheral-Sample-master.production.o
+__ptext46 E36C 0 CODE 0 text46 dist/default/production\Peripheral-Sample-master.production.o
+__ptext47 F00E 0 CODE 0 text47 dist/default/production\Peripheral-Sample-master.production.o
+__ptext48 E4B6 0 CODE 0 text48 dist/default/production\Peripheral-Sample-master.production.o
+__ptext49 E7DE 0 CODE 0 text49 dist/default/production\Peripheral-Sample-master.production.o
+__ptext50 E58C 0 CODE 0 text50 dist/default/production\Peripheral-Sample-master.production.o
+__end_of_PIN_MANAGER_Initialize E36C 0 CODE 0 text4 dist/default/production\Peripheral-Sample-master.production.o
+___aldiv EAE6 0 CODE 0 text7 dist/default/production\Peripheral-Sample-master.production.o
+___awdiv E860 0 CODE 0 text15 dist/default/production\Peripheral-Sample-master.production.o
+___awmod E51C 0 CODE 0 text14 dist/default/production\Peripheral-Sample-master.production.o
+___ftadd F4A0 0 CODE 0 text32 dist/default/production\Peripheral-Sample-master.production.o
+___ftdiv EE34 0 CODE 0 text34 dist/default/production\Peripheral-Sample-master.production.o
+___ftmul EF1A 0 CODE 0 text30 dist/default/production\Peripheral-Sample-master.production.o
+___ftneg E168 0 CODE 0 text33 dist/default/production\Peripheral-Sample-master.production.o
+___ftsub E2A8 0 CODE 0 text31 dist/default/production\Peripheral-Sample-master.production.o
+___fttol EC84 0 CODE 0 text25 dist/default/production\Peripheral-Sample-master.production.o
+_EUSART1_ErrorHandler 9D 0 BANK0 1 bssBANK0 dist/default/production\Peripheral-Sample-master.production.o
+___lldiv E7DE 0 CODE 0 text49 dist/default/production\Peripheral-Sample-master.production.o
+___llmod E4B6 0 CODE 0 text48 dist/default/production\Peripheral-Sample-master.production.o
+MCP794x_setTime@second E 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Lbank10 0 0 ABS 0 bank10 dist/default/production\Peripheral-Sample-master.production.o
+__Lbank11 0 0 ABS 0 bank11 dist/default/production\Peripheral-Sample-master.production.o
+__Lbank12 0 0 ABS 0 bank12 dist/default/production\Peripheral-Sample-master.production.o
+__Lbank13 0 0 ABS 0 bank13 dist/default/production\Peripheral-Sample-master.production.o
+__Lbank14 0 0 ABS 0 bank14 dist/default/production\Peripheral-Sample-master.production.o
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Peripheral-Sample-master.production.o
+__Lbigram 0 0 ABS 0 bigram dist/default/production\Peripheral-Sample-master.production.o
+__Lcomram 0 0 ABS 0 comram dist/default/production\Peripheral-Sample-master.production.o
+__Lconfig 0 0 CONFIG 4 config dist/default/production\Peripheral-Sample-master.production.o
+?___ftpack 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___wmul@multiplier 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_LATCbits F8B 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_LATEbits F8D 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_EUSART1_SetErrorHandler E0A4 0 CODE 0 text11 dist/default/production\Peripheral-Sample-master.production.o
+_EUSART1_itoa E36C 0 CODE 0 text46 dist/default/production\Peripheral-Sample-master.production.o
+_RCSTA1bits FAC 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__end_of_EUSART1_SetErrorHandler E0AE 0 CODE 0 text11 dist/default/production\Peripheral-Sample-master.production.o
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/production\Peripheral-Sample-master.production.o
+__Lfardata 0 0 FARRAM 0 fardata dist/default/production\Peripheral-Sample-master.production.o
+isa$std 1 0 ABS 0 - C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.o
+__size_of_MCP794x_getEEPROM 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_MAX31_ADC 91 0 BANK0 1 bssBANK0 dist/default/production\Peripheral-Sample-master.production.o
+EUSART1_Write_Text@iSizeQueued 6 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+MCP794x_setTime@hour 11 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__end_of_EUSART1_SetFramingErrorHandler E0B8 0 CODE 0 text10 dist/default/production\Peripheral-Sample-master.production.o
+stackhi EAF 0 ABS 0 - C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.o
+stacklo 564 0 ABS 0 - C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.o
+__end_of_EUSART1_SetOverrunErrorHandler E0C2 0 CODE 0 text9 dist/default/production\Peripheral-Sample-master.production.o
+?___lbtoft 9 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Lintcode 0 0 CODE 0 intcode dist/default/production\Peripheral-Sample-master.production.o
+?___lltoft 9 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_OSCCON2 F87 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_OSCTUNE F9B 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__Lintret 0 0 ABS 0 intret dist/default/production\Peripheral-Sample-master.production.o
+__Lirdata 0 0 CODE 0 irdata dist/default/production\Peripheral-Sample-master.production.o
+__end_of_eval_poly EC84 0 CODE 0 text28 dist/default/production\Peripheral-Sample-master.production.o
+__size_of_eval_poly 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+floor@i 44 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+floor@x 41 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Lspace_0 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__Lspace_1 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__Lspace_2 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__Lspace_4 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+EUSART1_itoa@base 77 0 BANK0 1 cstackBANK0 dist/default/production\Peripheral-Sample-master.production.o
+EUSART1_itoa@data 73 0 BANK0 1 cstackBANK0 dist/default/production\Peripheral-Sample-master.production.o
+___ftmul@cntr 1A 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___ftmul@sign 1B 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\Peripheral-Sample-master.production.o
+I2C_Write@data 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_PIR1bits F9E 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_PIR3bits FA4 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__size_of_MCP794x_setTime 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of_MCP794x_writeEEPROM 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_decimalToBCD E270 0 CODE 0 text13 dist/default/production\Peripheral-Sample-master.production.o
+end_of_initialization E7D4 0 CODE 0 cinit dist/default/production\Peripheral-Sample-master.production.o
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\Peripheral-Sample-master.production.o
+__Hintentry 0 0 ABS 0 intentry dist/default/production\Peripheral-Sample-master.production.o
+___awdiv@quotient 7 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+?___aldiv 7 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_eval_poly EBB2 0 CODE 0 text28 dist/default/production\Peripheral-Sample-master.production.o
+?___awdiv 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+?___awmod 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__size_of_EUSART1_itoa 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+?___ftadd 1C 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+?___ftdiv 9 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+?___ftmul D 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+?___ftneg 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+?___ftsub 28 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+?___fttol 28 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+?___lldiv 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+?___llmod 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__end_of_MCP794x_putEEPROM F7F8 0 CODE 0 text16 dist/default/production\Peripheral-Sample-master.production.o
+__Hreset_vec 0 0 CODE 0 reset_vec dist/default/production\Peripheral-Sample-master.production.o
+ldexp@value 34 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+MCP794x_writeEEPROM@Register 4 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\Peripheral-Sample-master.production.o
+__HbssBANK1 0 0 ABS 0 bssBANK1 dist/default/production\Peripheral-Sample-master.production.o
+___awmod@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Lramtop F00 0 RAM 0 ramtop dist/default/production\Peripheral-Sample-master.production.o
+__size_of_I2C_repeated_Start 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__Lrparam 0 0 COMRAM 1 rparam dist/default/production\Peripheral-Sample-master.production.o
+__pcinit E760 0 CODE 0 cinit dist/default/production\Peripheral-Sample-master.production.o
+ultoa@buf E 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+ultoa@val 10 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___lltoft@exp 11 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__ptext0 E672 0 CODE 0 text0 dist/default/production\Peripheral-Sample-master.production.o
+__ptext1 E0C2 0 CODE 0 text1 dist/default/production\Peripheral-Sample-master.production.o
+__ptext2 E112 0 CODE 0 text2 dist/default/production\Peripheral-Sample-master.production.o
+__ptext3 E0CC 0 CODE 0 text3 dist/default/production\Peripheral-Sample-master.production.o
+__ptext4 E328 0 CODE 0 text4 dist/default/production\Peripheral-Sample-master.production.o
+__ptext5 E1B2 0 CODE 0 text5 dist/default/production\Peripheral-Sample-master.production.o
+__ptext6 E406 0 CODE 0 text6 dist/default/production\Peripheral-Sample-master.production.o
+__ptext7 EAE6 0 CODE 0 text7 dist/default/production\Peripheral-Sample-master.production.o
+__ptext8 E2E8 0 CODE 0 text8 dist/default/production\Peripheral-Sample-master.production.o
+__ptext9 E0B8 0 CODE 0 text9 dist/default/production\Peripheral-Sample-master.production.o
+__Lstruct 0 0 COMRAM 1 struct dist/default/production\Peripheral-Sample-master.production.o
+I2C_Init@F_clock 15 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Ltext10 0 0 ABS 0 text10 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext11 0 0 ABS 0 text11 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext12 0 0 ABS 0 text12 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext13 0 0 ABS 0 text13 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext14 0 0 ABS 0 text14 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext15 0 0 ABS 0 text15 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext16 0 0 ABS 0 text16 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext17 0 0 ABS 0 text17 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext18 0 0 ABS 0 text18 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext19 0 0 ABS 0 text19 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext20 0 0 ABS 0 text20 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext21 0 0 ABS 0 text21 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext22 0 0 ABS 0 text22 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext23 0 0 ABS 0 text23 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext24 0 0 ABS 0 text24 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext25 0 0 ABS 0 text25 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext26 0 0 ABS 0 text26 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext27 0 0 ABS 0 text27 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext28 0 0 ABS 0 text28 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext29 0 0 ABS 0 text29 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext30 0 0 ABS 0 text30 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext31 0 0 ABS 0 text31 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext32 0 0 ABS 0 text32 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext33 0 0 ABS 0 text33 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext34 0 0 ABS 0 text34 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext35 0 0 ABS 0 text35 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext36 0 0 ABS 0 text36 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext37 0 0 ABS 0 text37 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext38 0 0 ABS 0 text38 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext39 0 0 ABS 0 text39 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext40 0 0 ABS 0 text40 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext41 0 0 ABS 0 text41 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext42 0 0 ABS 0 text42 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext43 0 0 ABS 0 text43 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext44 0 0 ABS 0 text44 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext45 0 0 ABS 0 text45 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext46 0 0 ABS 0 text46 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext47 0 0 ABS 0 text47 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext48 0 0 ABS 0 text48 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext49 0 0 ABS 0 text49 dist/default/production\Peripheral-Sample-master.production.o
+__Ltext50 0 0 ABS 0 text50 dist/default/production\Peripheral-Sample-master.production.o
+__ramtop F00 0 RAM 0 ramtop C:\Users\CEDRIC\AppData\Local\Temp\xcAsclc.o
+___aldiv@dividend 7 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Lpowerup 0 0 CODE 0 powerup dist/default/production\Peripheral-Sample-master.production.o
+_interrupt_Init E0C2 0 CODE 0 text1 dist/default/production\Peripheral-Sample-master.production.o
+__end_of_EUSART1_itoa E3B2 0 CODE 0 text46 dist/default/production\Peripheral-Sample-master.production.o
+exp@sign 51 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\Peripheral-Sample-master.production.o
+_I2C_buffClear E0EA 0 CODE 0 text42 dist/default/production\Peripheral-Sample-master.production.o
+__size_of_decimalToBCD 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+eval_poly@d 2B 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+eval_poly@n 2D 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+eval_poly@x 28 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_MCP794x_writeEEPROM E1DC 0 CODE 0 text17 dist/default/production\Peripheral-Sample-master.production.o
+___param_bank 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Peripheral-Sample-master.production.o
+___ftmul@exp 16 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__end_of__initialization E7D4 0 CODE 0 cinit dist/default/production\Peripheral-Sample-master.production.o
+___awmod@divisor 3 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Libigdata 0 0 CODE 0 ibigdata dist/default/production\Peripheral-Sample-master.production.o
+frexp@value 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+?_floor 41 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+?_frexp 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__pidataBANK0 E0DB 0 CODE 0 idataBANK0 dist/default/production\Peripheral-Sample-master.production.o
+?_ldexp 34 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Lclrtext 0 0 ABS 0 clrtext dist/default/production\Peripheral-Sample-master.production.o
+___altoft@sign 40 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_SSP1CON1bits FC6 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_SPBRGH1 F7F 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+___ftpack@sign 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+EUSART1_itoa@buf 79 0 BANK0 1 cstackBANK0 dist/default/production\Peripheral-Sample-master.production.o
+_text_size B1 0 BANK0 1 dataBANK0 dist/default/production\Peripheral-Sample-master.production.o
+__size_of_MCP794x_readEEPROM 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+___lldiv@quotient 9 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___ftdiv@cntr 12 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___ftdiv@sign 17 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__end_of_decimalToBCD E2A8 0 CODE 0 text13 dist/default/production\Peripheral-Sample-master.production.o
+__pmediumconst FDE0 0 MEDIUMCONST 0 mediumconst dist/default/production\Peripheral-Sample-master.production.o
+_SSP1ADD FC8 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_SSP1BUF FC9 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__end_of_MCP794x_getEEPROM F206 0 CODE 0 text18 dist/default/production\Peripheral-Sample-master.production.o
+_SSP2ADD F74 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_SSP2BUF F75 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+___llmod@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___aldiv@counter F 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+___llmod@counter 9 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_EUSART1_SetFramingErrorHandler E0AE 0 CODE 0 text10 dist/default/production\Peripheral-Sample-master.production.o
+_EUSART1_SetOverrunErrorHandler E0B8 0 CODE 0 text9 dist/default/production\Peripheral-Sample-master.production.o
+__end_of_Font FFBC 0 MEDIUMCONST 0 mediumconst dist/default/production\Peripheral-Sample-master.production.o
+__end_of_main E6E8 0 CODE 0 text0 dist/default/production\Peripheral-Sample-master.production.o
+log@exponent 37 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__end_of_floor EE34 0 CODE 0 text23 dist/default/production\Peripheral-Sample-master.production.o
+__end_of_frexp E96E 0 CODE 0 text24 dist/default/production\Peripheral-Sample-master.production.o
+__end_of_ldexp EAE6 0 CODE 0 text22 dist/default/production\Peripheral-Sample-master.production.o
+_TRISA F92 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_TRISB F93 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_TRISC F94 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_TRISD F95 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+_TRISE F96 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__end_of_interrupt_Init E0CC 0 CODE 0 text1 dist/default/production\Peripheral-Sample-master.production.o
+__end_of_ultoa F104 0 CODE 0 text47 dist/default/production\Peripheral-Sample-master.production.o
+__HRAM 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__Hbss 0 0 RAM 1 bss dist/default/production\Peripheral-Sample-master.production.o
+__Hram 0 0 ABS 0 ram dist/default/production\Peripheral-Sample-master.production.o
+__Hsfr 0 0 ABS 0 sfr dist/default/production\Peripheral-Sample-master.production.o
+__LRAM 1 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__Lbss 0 0 RAM 1 bss dist/default/production\Peripheral-Sample-master.production.o
+__Lram 0 0 ABS 0 ram dist/default/production\Peripheral-Sample-master.production.o
+__Lsfr 0 0 ABS 0 sfr dist/default/production\Peripheral-Sample-master.production.o
+_errno 99 0 BANK0 1 bssBANK0 dist/default/production\Peripheral-Sample-master.production.o
+_floor ED56 0 CODE 0 text23 dist/default/production\Peripheral-Sample-master.production.o
+_frexp E8E4 0 CODE 0 text24 dist/default/production\Peripheral-Sample-master.production.o
+_ldexp EA1C 0 CODE 0 text22 dist/default/production\Peripheral-Sample-master.production.o
+ldexp@newexp 37 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_sData 83 0 BANK0 1 bssBANK0 dist/default/production\Peripheral-Sample-master.production.o
+_ultoa F00E 0 CODE 0 text47 dist/default/production\Peripheral-Sample-master.production.o
+_x_pos 5F 0 COMRAM 1 dataCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_y_pos 5E 0 COMRAM 1 dataCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+___fttol@sign1 31 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+exp@coeff FFBC 0 MEDIUMCONST 0 mediumconst dist/default/production\Peripheral-Sample-master.production.o
+_MCP794x_putEEPROM F648 0 CODE 0 text16 dist/default/production\Peripheral-Sample-master.production.o
+__size_of_exp 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of_log 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+__size_of_pow 0 0 ABS 0 - dist/default/production\Peripheral-Sample-master.production.o
+PCF8523_setTime@F6588 A4 0 BANK0 1 dataBANK0 dist/default/production\Peripheral-Sample-master.production.o
+__HdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production\Peripheral-Sample-master.production.o
+__end_of_EUSART1_Initialize E328 0 CODE 0 text8 dist/default/production\Peripheral-Sample-master.production.o
+__end_of_OSCILLATOR_Initialize E1DC 0 CODE 0 text5 dist/default/production\Peripheral-Sample-master.production.o
+__end_of_EUSART1_Write_Text E5FE 0 CODE 0 text50 dist/default/production\Peripheral-Sample-master.production.o
+__pdataBIGRAM 164 0 BIGRAM 1 dataBIGRAM dist/default/production\Peripheral-Sample-master.production.o
+__initialization E760 0 CODE 0 cinit dist/default/production\Peripheral-Sample-master.production.o
+__pbssBANK0 83 0 BANK0 1 bssBANK0 dist/default/production\Peripheral-Sample-master.production.o
+__pbssBANK1 100 0 BANK1 1 bssBANK1 dist/default/production\Peripheral-Sample-master.production.o
+__pdataCOMRAM 5E 0 COMRAM 1 dataCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__end_ofexp@coeff FFDA 0 MEDIUMCONST 0 mediumconst dist/default/production\Peripheral-Sample-master.production.o
+__Hfardata 0 0 FARRAM 0 fardata dist/default/production\Peripheral-Sample-master.production.o
+___wmul@product 5 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\Peripheral-Sample-master.production.o
+EUSART1_Write_Text@pbData 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Lifardata 0 0 CODE 0 ifardata dist/default/production\Peripheral-Sample-master.production.o
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Peripheral-Sample-master.production.o
+EUSART1_SetOverrunErrorHandler@interruptHandler 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+__Hintcode 0 0 CODE 0 intcode dist/default/production\Peripheral-Sample-master.production.o
+___ftmul@f3_as_product 17 0 COMRAM 1 cstackCOMRAM dist/default/production\Peripheral-Sample-master.production.o
+_OSCILLATOR_Initialize E1B2 0 CODE 0 text5 dist/default/production\Peripheral-Sample-master.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cinit 0 E760 E760 7E 1
+text0 0 E672 E672 76 1
+text1 0 E0C2 E0C2 A 1
+text2 0 E112 E112 18 1
+text3 0 E0CC E0CC E 1
+text4 0 E328 E328 44 1
+text5 0 E1B2 E1B2 2A 1
+text6 0 E406 E406 54 1
+text7 0 EAE6 EAE6 CC 1
+text8 0 E2E8 E2E8 40 1
+text9 0 E0B8 E0B8 A 1
+text10 0 E0AE E0AE A 1
+text11 0 E0A4 E0A4 A 1
+text12 0 E3B2 E3B2 54 1
+text13 0 E270 E270 38 1
+text14 0 E51C E51C 70 1
+text15 0 E860 E860 84 1
+text16 0 F648 F648 1B0 1
+text17 0 E1DC E1DC 2C 1
+text18 0 F104 F104 102 1
+text19 0 F324 F324 17C 1
+text20 0 F206 F206 11E 1
+text21 0 F7F8 F7F8 1E8 1
+text22 0 EA1C EA1C CA 1
+text23 0 ED56 ED56 DE 1
+text24 0 E8E4 E8E4 8A 1
+text25 0 EC84 EC84 D2 1
+text26 0 E5FE E5FE 74 1
+text27 0 E6E8 E6E8 78 1
+text28 0 EBB2 EBB2 D2 1
+text29 0 E18C E18C 26 1
+text30 0 EF1A EF1A F4 1
+text31 0 E2A8 E2A8 40 1
+text32 0 F4A0 F4A0 1A8 1
+text33 0 E168 E168 24 1
+text34 0 EE34 EE34 E6 1
+text35 0 E238 E238 38 1
+text36 0 E45A E45A 5C 1
+text37 0 E144 E144 24 1
+text38 0 E96E E96E AE 1
+text39 0 E208 E208 30 1
+text40 0 E09A E09A A 1
+text41 0 E0FA E0FA 18 1
+text42 0 E0EA E0EA 10 1
+text43 0 E090 E090 A 1
+text44 0 E12A E12A 1A 1
+text45 0 E086 E086 A 1
+text46 0 E36C E36C 46 1
+text47 0 F00E F00E F6 1
+text48 0 E4B6 E4B6 66 1
+text49 0 E7DE E7DE 82 1
+text50 0 E58C E58C 72 1
+idataBIGRAM 0 F9E0 F9E0 400 1
+idataCOMRAM 0 E084 E084 2 1
+cstackCOMRAM 1 1 1 5F 1
+cstackBANK0 1 60 60 53 1
+reset_vec 0 0 0 4 1
+bssBANK1 1 100 100 64 1
+idataBANK0 0 E0DB E0DB F 1
+dataBIGRAM 1 164 164 400 1
+mediumconst 0 FDE0 FDE0 218 1
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

@@ -144,8 +144,8 @@ void EUSART1_Write_Text(uint8_t *pbData, uint8_t iSize) {
 
 void EUSART1_itoa(uint32_t data, int base) { //convert and print integer to character in base decimal, binary or hex (DEC, BIN, HEX)
     char buf[10];
-    itoa(buf, data, base);
-    EUSART1_Write_Text(buf, sizeof (buf));
+    ultoa(buf, data, base);
+    EUSART1_Write_Text(buf, sizeof(buf));
     EUSART1_Write_Text(" ", 2);
 }
 
